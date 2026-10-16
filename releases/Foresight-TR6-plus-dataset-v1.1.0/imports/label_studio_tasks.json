@@ -1,0 +1,1634 @@
+[
+  {
+    "id": 1,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Banana/sRGB_images/20250911_101508.jpg",
+      "pilot_id": "tr6p_001",
+      "content_id": "tr6c_4d604a8485656eba02340e2e3585c095546e8796395c9fc274be507d771c9da7",
+      "relative_path": "Normal/Banana/sRGB_images/20250911_101508.jpg",
+      "produce_type": "Banana",
+      "apparent_modality": "srgb"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 2,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Banana/sRGB_images/20250912_162946.jpg",
+      "pilot_id": "tr6p_002",
+      "content_id": "tr6c_59863373275a977060a1ee2e47d0a427888f00d556a83f7add706ea38b57ea3b",
+      "relative_path": "Normal/Banana/sRGB_images/20250912_162946.jpg",
+      "produce_type": "Banana",
+      "apparent_modality": "srgb"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 3,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Banana/sRGB_images/20250913_093440.jpg",
+      "pilot_id": "tr6p_003",
+      "content_id": "tr6c_fda67262b88c97117c46365899d55da53ebe0679a31950395f0b0141430bcf6b",
+      "relative_path": "Normal/Banana/sRGB_images/20250913_093440.jpg",
+      "produce_type": "Banana",
+      "apparent_modality": "srgb"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 4,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Banana/sRGB_images/20250915_092747.jpg",
+      "pilot_id": "tr6p_004",
+      "content_id": "tr6c_e0b900a260ba49c260a9619a39e02753cb23fd240b3ef5645823b5042373c846",
+      "relative_path": "Normal/Banana/sRGB_images/20250915_092747.jpg",
+      "produce_type": "Banana",
+      "apparent_modality": "srgb"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 5,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Banana/sRGB_images/20250916_093319.jpg",
+      "pilot_id": "tr6p_005",
+      "content_id": "tr6c_39a16efb22021f7d7a659fd26c24dda93c4d1dbe1966b598eccc780692d7cb5a",
+      "relative_path": "Normal/Banana/sRGB_images/20250916_093319.jpg",
+      "produce_type": "Banana",
+      "apparent_modality": "srgb"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 6,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Banana/sRGB_images/20250917_131254.jpg",
+      "pilot_id": "tr6p_006",
+      "content_id": "tr6c_f2ac01a28686aa4ea58e9fd4b3773868e9bb39e7725df4737cbfae3601bfc65e",
+      "relative_path": "Normal/Banana/sRGB_images/20250917_131254.jpg",
+      "produce_type": "Banana",
+      "apparent_modality": "srgb"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 7,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Banana/sRGB_images/20250917_162037.jpg",
+      "pilot_id": "tr6p_007",
+      "content_id": "tr6c_c2af5fc504db7c17aae0fd5db73ac55097634df2387c6ff20cabcca2b2ac12f7",
+      "relative_path": "Normal/Banana/sRGB_images/20250917_162037.jpg",
+      "produce_type": "Banana",
+      "apparent_modality": "srgb"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 8,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Banana/sRGB_images/20250918_134003.jpg",
+      "pilot_id": "tr6p_008",
+      "content_id": "tr6c_d4897c39563eba0871970ac9170b07c8bea1d2797a815c1d9cdd629f6d16230c",
+      "relative_path": "Normal/Banana/sRGB_images/20250918_134003.jpg",
+      "produce_type": "Banana",
+      "apparent_modality": "srgb"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 9,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Banana/IR_fusion_images/20250915_093303_29.1C_30.5C.jpg",
+      "pilot_id": "tr6p_009",
+      "content_id": "tr6c_68aa41c8b0ff10dafe209acaa22a63635f590a92911dbad5fd060a1e18e37cc1",
+      "relative_path": "Normal/Banana/IR_fusion_images/20250915_093303_29.1C_30.5C.jpg",
+      "produce_type": "Banana",
+      "apparent_modality": "thermal_ir_fusion"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 10,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Banana/IR_fusion_images/20250915_133127_30.5C_31.9C.jpg",
+      "pilot_id": "tr6p_010",
+      "content_id": "tr6c_5aca17ec36cbbc825f5cffe47d86faaa6cfc3041bf7525cf274f23167b8c2cec",
+      "relative_path": "Normal/Banana/IR_fusion_images/20250915_133127_30.5C_31.9C.jpg",
+      "produce_type": "Banana",
+      "apparent_modality": "thermal_ir_fusion"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 11,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Banana/IR_fusion_images/20250916_165359_32.3C_33.8C.jpg",
+      "pilot_id": "tr6p_011",
+      "content_id": "tr6c_42903cca1b1d9197257df2621849818fb73d2b4f9c673d40dc5c48275979e660",
+      "relative_path": "Normal/Banana/IR_fusion_images/20250916_165359_32.3C_33.8C.jpg",
+      "produce_type": "Banana",
+      "apparent_modality": "thermal_ir_fusion"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 12,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Banana/IR_fusion_images/20250916_170124_31.9C_33.7C.jpg",
+      "pilot_id": "tr6p_012",
+      "content_id": "tr6c_81c3556ba818566a48f87086283ac843273cbc0a9afc4a05bf07e4ad6837e0ef",
+      "relative_path": "Normal/Banana/IR_fusion_images/20250916_170124_31.9C_33.7C.jpg",
+      "produce_type": "Banana",
+      "apparent_modality": "thermal_ir_fusion"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 13,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Banana/IR_fusion_images/20250917_093209_30.5C_31.9C.jpg",
+      "pilot_id": "tr6p_013",
+      "content_id": "tr6c_889760fe68037a23e69640c783d48b1821870601c28bb7b507f8ade6eade4b81",
+      "relative_path": "Normal/Banana/IR_fusion_images/20250917_093209_30.5C_31.9C.jpg",
+      "produce_type": "Banana",
+      "apparent_modality": "thermal_ir_fusion"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 14,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Banana/IR_fusion_images/20250917_132507_31.1C_32.6C.jpg",
+      "pilot_id": "tr6p_014",
+      "content_id": "tr6c_d64851a75aad45d60e7556b4355c1a1e7af294bbeceec5388b1f33a378373585",
+      "relative_path": "Normal/Banana/IR_fusion_images/20250917_132507_31.1C_32.6C.jpg",
+      "produce_type": "Banana",
+      "apparent_modality": "thermal_ir_fusion"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 15,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Banana/IR_fusion_images/20250918_084342_29.5C_31.1C.jpg",
+      "pilot_id": "tr6p_015",
+      "content_id": "tr6c_3eebf3447fb9dc81c30c10ab0ca4d0f83ddd68e19698f46692af2eeea0f46afd",
+      "relative_path": "Normal/Banana/IR_fusion_images/20250918_084342_29.5C_31.1C.jpg",
+      "produce_type": "Banana",
+      "apparent_modality": "thermal_ir_fusion"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 16,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Banana/IR_fusion_images/20250918_133505_29.5C_31.3C.jpg",
+      "pilot_id": "tr6p_016",
+      "content_id": "tr6c_350970c887b8656db12e1b947082e5f0a08f49c763c86d06bab55ecd599f7678",
+      "relative_path": "Normal/Banana/IR_fusion_images/20250918_133505_29.5C_31.3C.jpg",
+      "produce_type": "Banana",
+      "apparent_modality": "thermal_ir_fusion"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 17,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Carrot/sRGB_images/20250725_171408.jpg",
+      "pilot_id": "tr6p_017",
+      "content_id": "tr6c_cc3f389d0327b98fc30f06a4bac9284f8f2eabd620048f1a8a40d139413267ee",
+      "relative_path": "Normal/Carrot/sRGB_images/20250725_171408.jpg",
+      "produce_type": "Carrot",
+      "apparent_modality": "srgb"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 18,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Carrot/sRGB_images/20250726_091406.jpg",
+      "pilot_id": "tr6p_018",
+      "content_id": "tr6c_647cf6d1966d021206bb89255ce49db3ce909959dd11762701d94615ea12ed9b",
+      "relative_path": "Normal/Carrot/sRGB_images/20250726_091406.jpg",
+      "produce_type": "Carrot",
+      "apparent_modality": "srgb"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 19,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Carrot/sRGB_images/20250728_132217.jpg",
+      "pilot_id": "tr6p_019",
+      "content_id": "tr6c_f7851b65753f9b788f66184f6e9e513d12000aec1dd6b288b16309eb3809c2ac",
+      "relative_path": "Normal/Carrot/sRGB_images/20250728_132217.jpg",
+      "produce_type": "Carrot",
+      "apparent_modality": "srgb"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 20,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Carrot/sRGB_images/20250729_132719.jpg",
+      "pilot_id": "tr6p_020",
+      "content_id": "tr6c_2ac955bf60adfc52ad628bac46ccbe0a01a20b6789e6e3060f3050f29c80b534",
+      "relative_path": "Normal/Carrot/sRGB_images/20250729_132719.jpg",
+      "produce_type": "Carrot",
+      "apparent_modality": "srgb"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 21,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Carrot/sRGB_images/20250730_170910.jpg",
+      "pilot_id": "tr6p_021",
+      "content_id": "tr6c_9f1878832ca46e97d3398c92390aea18aba95d7df6c696ed60d8f932cee0ad1d",
+      "relative_path": "Normal/Carrot/sRGB_images/20250730_170910.jpg",
+      "produce_type": "Carrot",
+      "apparent_modality": "srgb"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 22,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Carrot/sRGB_images/20250731_130914.jpg",
+      "pilot_id": "tr6p_022",
+      "content_id": "tr6c_91c541f51252300c2dfaa985e60e8e599328e2856e9379c2d18bb894a4225980",
+      "relative_path": "Normal/Carrot/sRGB_images/20250731_130914.jpg",
+      "produce_type": "Carrot",
+      "apparent_modality": "srgb"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 23,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Carrot/sRGB_images/20250802_172507.jpg",
+      "pilot_id": "tr6p_023",
+      "content_id": "tr6c_642fc0299a75858ec71ae68cfabb856a8f546ad2ff36402e61dc8c151c2b7831",
+      "relative_path": "Normal/Carrot/sRGB_images/20250802_172507.jpg",
+      "produce_type": "Carrot",
+      "apparent_modality": "srgb"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 24,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Carrot/sRGB_images/20250804_164808.jpg",
+      "pilot_id": "tr6p_024",
+      "content_id": "tr6c_5a65d8ff2b4349380b14dd55ed3d35efcc48c5abcdfbfe2048fe239a2a0f8dc0",
+      "relative_path": "Normal/Carrot/sRGB_images/20250804_164808.jpg",
+      "produce_type": "Carrot",
+      "apparent_modality": "srgb"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 25,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Carrot/IR_fusion_images/20250725_170448_25.4C_28.3C.jpg",
+      "pilot_id": "tr6p_025",
+      "content_id": "tr6c_ea25cfff2fa9f8712afe0fa837d9bba7d3f7ea2846eaf1c0d0cc860aa61db24f",
+      "relative_path": "Normal/Carrot/IR_fusion_images/20250725_170448_25.4C_28.3C.jpg",
+      "produce_type": "Carrot",
+      "apparent_modality": "thermal_ir_fusion"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 26,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Carrot/IR_fusion_images/20250726_092806_23.7C_26.6C.jpg",
+      "pilot_id": "tr6p_026",
+      "content_id": "tr6c_2f77284f2ec9d54f7a1ce15d4610170c6ebcb64427f9421572deef1a0baf400b",
+      "relative_path": "Normal/Carrot/IR_fusion_images/20250726_092806_23.7C_26.6C.jpg",
+      "produce_type": "Carrot",
+      "apparent_modality": "thermal_ir_fusion"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 27,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Carrot/IR_fusion_images/20250728_132202_25.9C_29.0C.jpg",
+      "pilot_id": "tr6p_027",
+      "content_id": "tr6c_7df60a16eecdfbb37e218e657e6fd8063db0b2d747be7288bb06f8475d2edc0e",
+      "relative_path": "Normal/Carrot/IR_fusion_images/20250728_132202_25.9C_29.0C.jpg",
+      "produce_type": "Carrot",
+      "apparent_modality": "thermal_ir_fusion"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 28,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Carrot/IR_fusion_images/20250729_133305_26.6C_31.0C.jpg",
+      "pilot_id": "tr6p_028",
+      "content_id": "tr6c_cbdb242de8f12f11aab48f2ce5a6e018009eb046cbd5ed027c3f3ae6fcada9a6",
+      "relative_path": "Normal/Carrot/IR_fusion_images/20250729_133305_26.6C_31.0C.jpg",
+      "produce_type": "Carrot",
+      "apparent_modality": "thermal_ir_fusion"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 29,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Carrot/IR_fusion_images/20250730_090041_26.7C_30.2C.jpg",
+      "pilot_id": "tr6p_029",
+      "content_id": "tr6c_3641e34dedc730da420338636a8469990047d76e8745ecacd653e8f7ed3d902d",
+      "relative_path": "Normal/Carrot/IR_fusion_images/20250730_090041_26.7C_30.2C.jpg",
+      "produce_type": "Carrot",
+      "apparent_modality": "thermal_ir_fusion"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 30,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Carrot/IR_fusion_images/20250801_090808_27.6C_31.3C.jpg",
+      "pilot_id": "tr6p_030",
+      "content_id": "tr6c_7e639c02ede6d852dc925d7e063ae9404b110c134862df6018bc0fde08dd9919",
+      "relative_path": "Normal/Carrot/IR_fusion_images/20250801_090808_27.6C_31.3C.jpg",
+      "produce_type": "Carrot",
+      "apparent_modality": "thermal_ir_fusion"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 31,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Carrot/IR_fusion_images/20250802_085352_26.4C_30.0C.jpg",
+      "pilot_id": "tr6p_031",
+      "content_id": "tr6c_cfede2728d1b75bbb6e619a544be36db39150b8abb7d7d87b572b72fcb0842b0",
+      "relative_path": "Normal/Carrot/IR_fusion_images/20250802_085352_26.4C_30.0C.jpg",
+      "produce_type": "Carrot",
+      "apparent_modality": "thermal_ir_fusion"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 32,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Carrot/IR_fusion_images/20250804_131049_25.5C_27.8C.jpg",
+      "pilot_id": "tr6p_032",
+      "content_id": "tr6c_8ad11516467ab57c1010e34e80a9e06965a149fae012aa63e8bd31450b3ed89b",
+      "relative_path": "Normal/Carrot/IR_fusion_images/20250804_131049_25.5C_27.8C.jpg",
+      "produce_type": "Carrot",
+      "apparent_modality": "thermal_ir_fusion"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 33,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Guava/sRGB_images/20250625_135610.jpg",
+      "pilot_id": "tr6p_033",
+      "content_id": "tr6c_e569253bc95780cf21b0a6ed5efd7b82c76dbb303d9e3206e6eac00347dabe15",
+      "relative_path": "Normal/Guava/sRGB_images/20250625_135610.jpg",
+      "produce_type": "Guava",
+      "apparent_modality": "srgb"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 34,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Guava/sRGB_images/20250628_171525.jpg",
+      "pilot_id": "tr6p_034",
+      "content_id": "tr6c_4d595e3b528c7eb295ba190b30df86946688dcf28f55b030b0a7e81eab0dfa54",
+      "relative_path": "Normal/Guava/sRGB_images/20250628_171525.jpg",
+      "produce_type": "Guava",
+      "apparent_modality": "srgb"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 35,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Guava/sRGB_images/20250630_140349.jpg",
+      "pilot_id": "tr6p_035",
+      "content_id": "tr6c_665f9ff2ae8cbca0dcbae9cca33cdb1904cc608451a8945fa3dbf66e43802bab",
+      "relative_path": "Normal/Guava/sRGB_images/20250630_140349.jpg",
+      "produce_type": "Guava",
+      "apparent_modality": "srgb"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 36,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Guava/sRGB_images/20250701_132348.jpg",
+      "pilot_id": "tr6p_036",
+      "content_id": "tr6c_50b77cfb566c06718383e01d62c381e1c189473313a6a3a9f13189bd50c487d1",
+      "relative_path": "Normal/Guava/sRGB_images/20250701_132348.jpg",
+      "produce_type": "Guava",
+      "apparent_modality": "srgb"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 37,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Guava/sRGB_images/20250702_083902.jpg",
+      "pilot_id": "tr6p_037",
+      "content_id": "tr6c_f5e14c93d3f0337bec0aedc58ef5f00d7520bab1d914d7bd7fc703031c4eb72b",
+      "relative_path": "Normal/Guava/sRGB_images/20250702_083902.jpg",
+      "produce_type": "Guava",
+      "apparent_modality": "srgb"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 38,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Guava/sRGB_images/20250703_083523.jpg",
+      "pilot_id": "tr6p_038",
+      "content_id": "tr6c_e8aaa85621d54e08d2e39a6dba77aa5d5f73dba28bf0da04cdfe204ef6b0733f",
+      "relative_path": "Normal/Guava/sRGB_images/20250703_083523.jpg",
+      "produce_type": "Guava",
+      "apparent_modality": "srgb"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 39,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Guava/sRGB_images/20250704_083646.jpg",
+      "pilot_id": "tr6p_039",
+      "content_id": "tr6c_d5d73b4157d09b6daf2cd0288b16d85abefce5b26e3c34574cf4b184b8af220d",
+      "relative_path": "Normal/Guava/sRGB_images/20250704_083646.jpg",
+      "produce_type": "Guava",
+      "apparent_modality": "srgb"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 40,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Guava/sRGB_images/20250705_084748.jpg",
+      "pilot_id": "tr6p_040",
+      "content_id": "tr6c_b00fcb1ce8f362b7b491174a5f18e506b19f04a605387805b1404b1df96c227c",
+      "relative_path": "Normal/Guava/sRGB_images/20250705_084748.jpg",
+      "produce_type": "Guava",
+      "apparent_modality": "srgb"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 41,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Guava/IR_fusion_images/20250625_085941_27.5C_29.0C.jpg",
+      "pilot_id": "tr6p_041",
+      "content_id": "tr6c_1fb4e4aa8a572fd5de48bc0675f9259b0e69ce9bde9e8cbc703b577bd7230a70",
+      "relative_path": "Normal/Guava/IR_fusion_images/20250625_085941_27.5C_29.0C.jpg",
+      "produce_type": "Guava",
+      "apparent_modality": "thermal_ir_fusion"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 42,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Guava/IR_fusion_images/20250626_140322_27.1C_28.6C.jpg",
+      "pilot_id": "tr6p_042",
+      "content_id": "tr6c_51897dda7e41bbbb72db47583dc3568160e4ad8066c7b783752fcb2c5765789e",
+      "relative_path": "Normal/Guava/IR_fusion_images/20250626_140322_27.1C_28.6C.jpg",
+      "produce_type": "Guava",
+      "apparent_modality": "thermal_ir_fusion"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 43,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Guava/IR_fusion_images/20250627_083511_27.2C_28.2C.jpg",
+      "pilot_id": "tr6p_043",
+      "content_id": "tr6c_457f5a9ea3f62eb8d4a1f15c96ee109a7bb09f8930042cbe8de87be695a59fa4",
+      "relative_path": "Normal/Guava/IR_fusion_images/20250627_083511_27.2C_28.2C.jpg",
+      "produce_type": "Guava",
+      "apparent_modality": "thermal_ir_fusion"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 44,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Guava/IR_fusion_images/20250628_170818_28.3C_29.7C.jpg",
+      "pilot_id": "tr6p_044",
+      "content_id": "tr6c_5961d25acb3c765f985e7854353719682918c9a5e6a2073bacf245a0acf42215",
+      "relative_path": "Normal/Guava/IR_fusion_images/20250628_170818_28.3C_29.7C.jpg",
+      "produce_type": "Guava",
+      "apparent_modality": "thermal_ir_fusion"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 45,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Guava/IR_fusion_images/20250630_140556_29.6C_30.9C.jpg",
+      "pilot_id": "tr6p_045",
+      "content_id": "tr6c_78e66f8c1184600708ac0d32ddb5e937f475775be2e8a54ac3305080a36883f8",
+      "relative_path": "Normal/Guava/IR_fusion_images/20250630_140556_29.6C_30.9C.jpg",
+      "produce_type": "Guava",
+      "apparent_modality": "thermal_ir_fusion"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 46,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Guava/IR_fusion_images/20250701_171130_29.9C_31.7C.jpg",
+      "pilot_id": "tr6p_046",
+      "content_id": "tr6c_f8b3f2f7e09a8b656b9ff9ea21fffe02febcefeb8760542b3d3dc98b57207725",
+      "relative_path": "Normal/Guava/IR_fusion_images/20250701_171130_29.9C_31.7C.jpg",
+      "produce_type": "Guava",
+      "apparent_modality": "thermal_ir_fusion"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 47,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Guava/IR_fusion_images/20250703_134023_26.8C_28.4C.jpg",
+      "pilot_id": "tr6p_047",
+      "content_id": "tr6c_3734591d4b5a0685c27e2b3ecf5f104030baa2934c410df15aed9961f37259d5",
+      "relative_path": "Normal/Guava/IR_fusion_images/20250703_134023_26.8C_28.4C.jpg",
+      "produce_type": "Guava",
+      "apparent_modality": "thermal_ir_fusion"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 48,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Guava/IR_fusion_images/20250705_160440_28.7C_30.6C.jpg",
+      "pilot_id": "tr6p_048",
+      "content_id": "tr6c_e3b5d728d68e7d304eb13e058adb79c68e5f2f1343d6438b1787a26a64229c17",
+      "relative_path": "Normal/Guava/IR_fusion_images/20250705_160440_28.7C_30.6C.jpg",
+      "produce_type": "Guava",
+      "apparent_modality": "thermal_ir_fusion"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 49,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Indian_Gooseberry/sRGB_images/20250725_171131.jpg",
+      "pilot_id": "tr6p_049",
+      "content_id": "tr6c_2984709244bb4a513073b5b08ffc4372b6e4e8eda7a291a3a1f35d16bdd36bda",
+      "relative_path": "Normal/Indian_Gooseberry/sRGB_images/20250725_171131.jpg",
+      "produce_type": "Indian_Gooseberry",
+      "apparent_modality": "srgb"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 50,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Indian_Gooseberry/sRGB_images/20250728_165934.jpg",
+      "pilot_id": "tr6p_050",
+      "content_id": "tr6c_100beb9774e118d89b2b3e96d80bade149e7a8567c909cb6acb751b2c53ddf8b",
+      "relative_path": "Normal/Indian_Gooseberry/sRGB_images/20250728_165934.jpg",
+      "produce_type": "Indian_Gooseberry",
+      "apparent_modality": "srgb"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 51,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Indian_Gooseberry/sRGB_images/20250730_090353.jpg",
+      "pilot_id": "tr6p_051",
+      "content_id": "tr6c_c4c7b95c93c314cc86d93b04cda27f53f8321b35da93df673c8a1781a4eb8e87",
+      "relative_path": "Normal/Indian_Gooseberry/sRGB_images/20250730_090353.jpg",
+      "produce_type": "Indian_Gooseberry",
+      "apparent_modality": "srgb"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 52,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Indian_Gooseberry/sRGB_images/20250731_131057.jpg",
+      "pilot_id": "tr6p_052",
+      "content_id": "tr6c_35e4bacd5083bb680c010ab3df62662be172bbf707c7ad4e668e7a488b491dc6",
+      "relative_path": "Normal/Indian_Gooseberry/sRGB_images/20250731_131057.jpg",
+      "produce_type": "Indian_Gooseberry",
+      "apparent_modality": "srgb"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 53,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Indian_Gooseberry/sRGB_images/20250802_084411.jpg",
+      "pilot_id": "tr6p_053",
+      "content_id": "tr6c_6b479ea867cc50b7c13f7d957abefd71c9a07687217f5a6b0d1d5d976f74ed05",
+      "relative_path": "Normal/Indian_Gooseberry/sRGB_images/20250802_084411.jpg",
+      "produce_type": "Indian_Gooseberry",
+      "apparent_modality": "srgb"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 54,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Indian_Gooseberry/sRGB_images/20250813_165201.jpg",
+      "pilot_id": "tr6p_054",
+      "content_id": "tr6c_113a183632898d73e125c404ae5346060bae6d8340129334e433a4f4fe52a810",
+      "relative_path": "Normal/Indian_Gooseberry/sRGB_images/20250813_165201.jpg",
+      "produce_type": "Indian_Gooseberry",
+      "apparent_modality": "srgb"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 55,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Indian_Gooseberry/sRGB_images/20250815_165038.jpg",
+      "pilot_id": "tr6p_055",
+      "content_id": "tr6c_aac4c334379796b7d3d7119a568bbfe40ca1bf6fc71033784c7672fb375f3584",
+      "relative_path": "Normal/Indian_Gooseberry/sRGB_images/20250815_165038.jpg",
+      "produce_type": "Indian_Gooseberry",
+      "apparent_modality": "srgb"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 56,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Indian_Gooseberry/sRGB_images/20250908_132235.jpg",
+      "pilot_id": "tr6p_056",
+      "content_id": "tr6c_2c5d42ac388943a798b77cbe39006cd9899d447a470acc0bb5f40c4a617743a2",
+      "relative_path": "Normal/Indian_Gooseberry/sRGB_images/20250908_132235.jpg",
+      "produce_type": "Indian_Gooseberry",
+      "apparent_modality": "srgb"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 57,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Indian_Gooseberry/IR_fusion_images/20250729_132753_29.5C_31.3C.jpg",
+      "pilot_id": "tr6p_057",
+      "content_id": "tr6c_8d00c4366d2ed7bb2c145a8aa58e75939f1974e6be854c48c094228ee2856695",
+      "relative_path": "Normal/Indian_Gooseberry/IR_fusion_images/20250729_132753_29.5C_31.3C.jpg",
+      "produce_type": "Indian_Gooseberry",
+      "apparent_modality": "thermal_ir_fusion"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 58,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Indian_Gooseberry/IR_fusion_images/20250802_084454_29.2C_30.7C.jpg",
+      "pilot_id": "tr6p_058",
+      "content_id": "tr6c_c6507ac7ed334486b6aeb9a9dfc1efb6008dcad2a079438adc120b65018f313f",
+      "relative_path": "Normal/Indian_Gooseberry/IR_fusion_images/20250802_084454_29.2C_30.7C.jpg",
+      "produce_type": "Indian_Gooseberry",
+      "apparent_modality": "thermal_ir_fusion"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 59,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Indian_Gooseberry/IR_fusion_images/20250804_090645_27.4C_28.7C.jpg",
+      "pilot_id": "tr6p_059",
+      "content_id": "tr6c_ca9e44f16cb34cd5256e7b78265a257d364c881c22fd0b75c777eb47a8666004",
+      "relative_path": "Normal/Indian_Gooseberry/IR_fusion_images/20250804_090645_27.4C_28.7C.jpg",
+      "produce_type": "Indian_Gooseberry",
+      "apparent_modality": "thermal_ir_fusion"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 60,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Indian_Gooseberry/IR_fusion_images/20250805_123846_27.5C_28.9C.jpg",
+      "pilot_id": "tr6p_060",
+      "content_id": "tr6c_ac4a038911fcd63f2f566c76513649dbc57378608661b17095cfb28f7b098a10",
+      "relative_path": "Normal/Indian_Gooseberry/IR_fusion_images/20250805_123846_27.5C_28.9C.jpg",
+      "produce_type": "Indian_Gooseberry",
+      "apparent_modality": "thermal_ir_fusion"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 61,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Indian_Gooseberry/IR_fusion_images/20250809_164315_28.6C_29.9C.jpg",
+      "pilot_id": "tr6p_061",
+      "content_id": "tr6c_d120129b3f5ee161aad747fd436360d2d134b68e825392b382c40f22060820a7",
+      "relative_path": "Normal/Indian_Gooseberry/IR_fusion_images/20250809_164315_28.6C_29.9C.jpg",
+      "produce_type": "Indian_Gooseberry",
+      "apparent_modality": "thermal_ir_fusion"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 62,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Indian_Gooseberry/IR_fusion_images/20250812_134128_29.2C_30.6C.jpg",
+      "pilot_id": "tr6p_062",
+      "content_id": "tr6c_c1c86438f1b8a1d3e264c58f5ed4934b5171b27ff9d73991d596513b4810a9a0",
+      "relative_path": "Normal/Indian_Gooseberry/IR_fusion_images/20250812_134128_29.2C_30.6C.jpg",
+      "produce_type": "Indian_Gooseberry",
+      "apparent_modality": "thermal_ir_fusion"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 63,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Indian_Gooseberry/IR_fusion_images/20250903_092006_29.9C_31.3C.jpg",
+      "pilot_id": "tr6p_063",
+      "content_id": "tr6c_89615d7da543b334fc6e99708fe7799bee6b79e101fcb1429621afaf4e93e7d5",
+      "relative_path": "Normal/Indian_Gooseberry/IR_fusion_images/20250903_092006_29.9C_31.3C.jpg",
+      "produce_type": "Indian_Gooseberry",
+      "apparent_modality": "thermal_ir_fusion"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 64,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Indian_Gooseberry/IR_fusion_images/20250908_091117_29.7C_30.8C.jpg",
+      "pilot_id": "tr6p_064",
+      "content_id": "tr6c_f667c5804ac1802a2c6901b6a58c54b5cbc6f9fc676c94bd67631ff2aa1245d6",
+      "relative_path": "Normal/Indian_Gooseberry/IR_fusion_images/20250908_091117_29.7C_30.8C.jpg",
+      "produce_type": "Indian_Gooseberry",
+      "apparent_modality": "thermal_ir_fusion"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 65,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Mango/sRGB_images/20250920_123146.jpg",
+      "pilot_id": "tr6p_065",
+      "content_id": "tr6c_6e1a0a73b020e5f1e3872ea3562b6278e25539d3e8543ff20bc831be3599c330",
+      "relative_path": "Normal/Mango/sRGB_images/20250920_123146.jpg",
+      "produce_type": "Mango",
+      "apparent_modality": "srgb"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 66,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Mango/sRGB_images/20250922_165007.jpg",
+      "pilot_id": "tr6p_066",
+      "content_id": "tr6c_364655ee2fe7d2fe95b81007c11b4f9cc7f6aa7de381fd09d03ce53d790d9416",
+      "relative_path": "Normal/Mango/sRGB_images/20250922_165007.jpg",
+      "produce_type": "Mango",
+      "apparent_modality": "srgb"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 67,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Mango/sRGB_images/20250923_085304.jpg",
+      "pilot_id": "tr6p_067",
+      "content_id": "tr6c_3d7acd1fc3a0e00a60927dc93b5fe870dc3cf5a3acdec9815a313a8b2e6e1bb7",
+      "relative_path": "Normal/Mango/sRGB_images/20250923_085304.jpg",
+      "produce_type": "Mango",
+      "apparent_modality": "srgb"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 68,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Mango/sRGB_images/20250924_124825.jpg",
+      "pilot_id": "tr6p_068",
+      "content_id": "tr6c_cb50c979b4748276cc9f74369d1dbb67189f9c5ed50217ef5f808630538fd230",
+      "relative_path": "Normal/Mango/sRGB_images/20250924_124825.jpg",
+      "produce_type": "Mango",
+      "apparent_modality": "srgb"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 69,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Mango/sRGB_images/20250926_163911.jpg",
+      "pilot_id": "tr6p_069",
+      "content_id": "tr6c_c22b712807ecc2f689d59cbff7a97023fdf250ff77bdda7961b304204316be14",
+      "relative_path": "Normal/Mango/sRGB_images/20250926_163911.jpg",
+      "produce_type": "Mango",
+      "apparent_modality": "srgb"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 70,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Mango/sRGB_images/20250929_092053.jpg",
+      "pilot_id": "tr6p_070",
+      "content_id": "tr6c_bbbb3cec49872ae5d25cc7dfebef989e4ac29e7515f6c93f5eb8950d7a265790",
+      "relative_path": "Normal/Mango/sRGB_images/20250929_092053.jpg",
+      "produce_type": "Mango",
+      "apparent_modality": "srgb"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 71,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Mango/sRGB_images/20250930_170343.jpg",
+      "pilot_id": "tr6p_071",
+      "content_id": "tr6c_7330d547ad8ac55a18e010f771a4cb6fd1cf880ce60c3803277e38e205b9e373",
+      "relative_path": "Normal/Mango/sRGB_images/20250930_170343.jpg",
+      "produce_type": "Mango",
+      "apparent_modality": "srgb"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 72,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Mango/sRGB_images/20251003_084918.jpg",
+      "pilot_id": "tr6p_072",
+      "content_id": "tr6c_fd66932de9c7fc8896d1ea9f93473a991d99b4a2a607dddb0b50c0cb203e8083",
+      "relative_path": "Normal/Mango/sRGB_images/20251003_084918.jpg",
+      "produce_type": "Mango",
+      "apparent_modality": "srgb"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 73,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Mango/IR_fusion_images/20250920_162228_31.2C_32.8C.jpg",
+      "pilot_id": "tr6p_073",
+      "content_id": "tr6c_3b30974fcd6466465a496ad76c94e54801a0d9644a473e00f76a410034ac39a3",
+      "relative_path": "Normal/Mango/IR_fusion_images/20250920_162228_31.2C_32.8C.jpg",
+      "produce_type": "Mango",
+      "apparent_modality": "thermal_ir_fusion"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 74,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Mango/IR_fusion_images/20250922_132200_31.5C_32.9C.jpg",
+      "pilot_id": "tr6p_074",
+      "content_id": "tr6c_6e05a0f8d0d80c246ffec3597054cf65849677c70ecab0eafd0b53a876d75db7",
+      "relative_path": "Normal/Mango/IR_fusion_images/20250922_132200_31.5C_32.9C.jpg",
+      "produce_type": "Mango",
+      "apparent_modality": "thermal_ir_fusion"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 75,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Mango/IR_fusion_images/20250923_165420_31.6C_33.2C.jpg",
+      "pilot_id": "tr6p_075",
+      "content_id": "tr6c_4aa06a076ffbb17020fee8e6586c7642b500d6ddc892ae63cb9623100625cc50",
+      "relative_path": "Normal/Mango/IR_fusion_images/20250923_165420_31.6C_33.2C.jpg",
+      "produce_type": "Mango",
+      "apparent_modality": "thermal_ir_fusion"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 76,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Mango/IR_fusion_images/20250924_083044_30.2C_32.1C.jpg",
+      "pilot_id": "tr6p_076",
+      "content_id": "tr6c_e2290cf81b07c8800789070e195640e3437daeb309a64d8053fc14fb8f679143",
+      "relative_path": "Normal/Mango/IR_fusion_images/20250924_083044_30.2C_32.1C.jpg",
+      "produce_type": "Mango",
+      "apparent_modality": "thermal_ir_fusion"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 77,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Mango/IR_fusion_images/20250926_091310_30.8C_32.6C.jpg",
+      "pilot_id": "tr6p_077",
+      "content_id": "tr6c_1fbf4d377c03bb0631cb6a68e31075e7f604cfddbc7dde5761a36850be4d6dc8",
+      "relative_path": "Normal/Mango/IR_fusion_images/20250926_091310_30.8C_32.6C.jpg",
+      "produce_type": "Mango",
+      "apparent_modality": "thermal_ir_fusion"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 78,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Mango/IR_fusion_images/20250929_163733_29.8C_31.5C.jpg",
+      "pilot_id": "tr6p_078",
+      "content_id": "tr6c_b77ed71c4d29cfff4e23408d8c1c8c7ba8ab72c133605dbdd17b3560d1709be1",
+      "relative_path": "Normal/Mango/IR_fusion_images/20250929_163733_29.8C_31.5C.jpg",
+      "produce_type": "Mango",
+      "apparent_modality": "thermal_ir_fusion"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 79,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Mango/IR_fusion_images/20250930_091609_29.3C_31.1C.jpg",
+      "pilot_id": "tr6p_079",
+      "content_id": "tr6c_98369b0e45fa13a732e5bb066d605f754c0b9467de0deea03c925c42df92538f",
+      "relative_path": "Normal/Mango/IR_fusion_images/20250930_091609_29.3C_31.1C.jpg",
+      "produce_type": "Mango",
+      "apparent_modality": "thermal_ir_fusion"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 80,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Mango/IR_fusion_images/20251003_123850_29.8C_31.4C.jpg",
+      "pilot_id": "tr6p_080",
+      "content_id": "tr6c_f2984c328028655f4cf5430a11fe8c2c6f86b0ef38ce5aaf11ec0aab42a7f369",
+      "relative_path": "Normal/Mango/IR_fusion_images/20251003_123850_29.8C_31.4C.jpg",
+      "produce_type": "Mango",
+      "apparent_modality": "thermal_ir_fusion"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 81,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Tomato/sRGB_images/20250726_165434.jpg",
+      "pilot_id": "tr6p_081",
+      "content_id": "tr6c_e1f5be011179c3fc0f88d7b0176e5172b9bb6d23c1206fffe09f35939ca7f0af",
+      "relative_path": "Normal/Tomato/sRGB_images/20250726_165434.jpg",
+      "produce_type": "Tomato",
+      "apparent_modality": "srgb"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 82,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Tomato/sRGB_images/20250806_140624.jpg",
+      "pilot_id": "tr6p_082",
+      "content_id": "tr6c_dd7d03f39eb97e79783fb90eb7b3ed722717ef11190207f3fc27a4b5768cdc6b",
+      "relative_path": "Normal/Tomato/sRGB_images/20250806_140624.jpg",
+      "produce_type": "Tomato",
+      "apparent_modality": "srgb"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 83,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Tomato/sRGB_images/20250814_165643.jpg",
+      "pilot_id": "tr6p_083",
+      "content_id": "tr6c_c65b4970bcd04ac9a92e6f84c743722a9e5d207edb17d8d7466b2da9590213f4",
+      "relative_path": "Normal/Tomato/sRGB_images/20250814_165643.jpg",
+      "produce_type": "Tomato",
+      "apparent_modality": "srgb"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 84,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Tomato/sRGB_images/20250902_093020.jpg",
+      "pilot_id": "tr6p_084",
+      "content_id": "tr6c_8e19cc54ed263ce0e1eb8ef704dddb4696fb39d355b2dafc1699298974c5e7ef",
+      "relative_path": "Normal/Tomato/sRGB_images/20250902_093020.jpg",
+      "produce_type": "Tomato",
+      "apparent_modality": "srgb"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 85,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Tomato/sRGB_images/20250909_135335.jpg",
+      "pilot_id": "tr6p_085",
+      "content_id": "tr6c_e593d1e5732806a4c39793d028d6e9953866b627126e2efa42f7978f83a53080",
+      "relative_path": "Normal/Tomato/sRGB_images/20250909_135335.jpg",
+      "produce_type": "Tomato",
+      "apparent_modality": "srgb"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 86,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Tomato/sRGB_images/20250915_092323.jpg",
+      "pilot_id": "tr6p_086",
+      "content_id": "tr6c_799bce3a39165763cc4690dd41689c58f3bc727cadcc4865fffa6491347a0efd",
+      "relative_path": "Normal/Tomato/sRGB_images/20250915_092323.jpg",
+      "produce_type": "Tomato",
+      "apparent_modality": "srgb"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 87,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Tomato/sRGB_images/20250923_084849.jpg",
+      "pilot_id": "tr6p_087",
+      "content_id": "tr6c_f5adff7aeae1969385929f74d1db3290cc7a050382dd877a7658bc269091653f",
+      "relative_path": "Normal/Tomato/sRGB_images/20250923_084849.jpg",
+      "produce_type": "Tomato",
+      "apparent_modality": "srgb"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 88,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Tomato/sRGB_images/20250924_162740.jpg",
+      "pilot_id": "tr6p_088",
+      "content_id": "tr6c_ce671c559a6c624d97160d8ff89f595ad898cc90950b41b56d388ce42de9b5b4",
+      "relative_path": "Normal/Tomato/sRGB_images/20250924_162740.jpg",
+      "produce_type": "Tomato",
+      "apparent_modality": "srgb"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 89,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Tomato/IR_fusion_images/20250725_083842_27.3C_28.3C.jpg",
+      "pilot_id": "tr6p_089",
+      "content_id": "tr6c_3f1252fb3c468603f3ebb24999da0553426a75be5b20b2cd73db497f1416fa34",
+      "relative_path": "Normal/Tomato/IR_fusion_images/20250725_083842_27.3C_28.3C.jpg",
+      "produce_type": "Tomato",
+      "apparent_modality": "thermal_ir_fusion"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 90,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Tomato/IR_fusion_images/20250728_165847_30.8C_32.6C.jpg",
+      "pilot_id": "tr6p_090",
+      "content_id": "tr6c_b63362fd47cd33b8380f06a14d4a444e309a7748edc35458a3af369e5cf6cada",
+      "relative_path": "Normal/Tomato/IR_fusion_images/20250728_165847_30.8C_32.6C.jpg",
+      "produce_type": "Tomato",
+      "apparent_modality": "thermal_ir_fusion"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 91,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Tomato/IR_fusion_images/20250804_130120_27.2C_28.4C.jpg",
+      "pilot_id": "tr6p_091",
+      "content_id": "tr6c_f893a07a2a84134ccb0bf12c2b9ae3bc701bb500127b232097efd55d0c6ed7e0",
+      "relative_path": "Normal/Tomato/IR_fusion_images/20250804_130120_27.2C_28.4C.jpg",
+      "produce_type": "Tomato",
+      "apparent_modality": "thermal_ir_fusion"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 92,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Tomato/IR_fusion_images/20250806_135315_30.3C_31.5C.jpg",
+      "pilot_id": "tr6p_092",
+      "content_id": "tr6c_4c30544395189e8acec0a5563fcf1ea198461e1e317e282877229ae8a80360f7",
+      "relative_path": "Normal/Tomato/IR_fusion_images/20250806_135315_30.3C_31.5C.jpg",
+      "produce_type": "Tomato",
+      "apparent_modality": "thermal_ir_fusion"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 93,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Tomato/IR_fusion_images/20250814_083244_27.2C_28.4C.jpg",
+      "pilot_id": "tr6p_093",
+      "content_id": "tr6c_126d62b80fca1473bb3589cbd0bb60881193ff4ffe75e0cafc74dfd746e71ae8",
+      "relative_path": "Normal/Tomato/IR_fusion_images/20250814_083244_27.2C_28.4C.jpg",
+      "produce_type": "Tomato",
+      "apparent_modality": "thermal_ir_fusion"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 94,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Tomato/IR_fusion_images/20250912_091845_29.9C_31.2C.jpg",
+      "pilot_id": "tr6p_094",
+      "content_id": "tr6c_f676426bfb2d7c7284c221fcd14c69d7217fd9dc625642a0a26de167a18a28e3",
+      "relative_path": "Normal/Tomato/IR_fusion_images/20250912_091845_29.9C_31.2C.jpg",
+      "produce_type": "Tomato",
+      "apparent_modality": "thermal_ir_fusion"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 95,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Tomato/IR_fusion_images/20250919_162752_32.5C_33.8C.jpg",
+      "pilot_id": "tr6p_095",
+      "content_id": "tr6c_a8f527182f729f13587f6034d6cc113a2fb37bbc10b38213aef4a5a34434874d",
+      "relative_path": "Normal/Tomato/IR_fusion_images/20250919_162752_32.5C_33.8C.jpg",
+      "produce_type": "Tomato",
+      "apparent_modality": "thermal_ir_fusion"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  },
+  {
+    "id": 96,
+    "data": {
+      "image": "/data/local-files/?d=TR-6/Normal/Tomato/IR_fusion_images/20250929_164154_30.2C_31.6C.jpg",
+      "pilot_id": "tr6p_096",
+      "content_id": "tr6c_fdc5832c4e864111930993a04d1535647d3123ddaa760c0a84f66332ffed0d99",
+      "relative_path": "Normal/Tomato/IR_fusion_images/20250929_164154_30.2C_31.6C.jpg",
+      "produce_type": "Tomato",
+      "apparent_modality": "thermal_ir_fusion"
+    },
+    "meta": {
+      "annotation_status": "pending",
+      "cross_label_conflict": false,
+      "spoilage_label": "unknown"
+    },
+    "annotations": []
+  }
+]

@@ -1,0 +1,37 @@
+{
+  "pipeline_name": "Foresight-TR6+ controlled noise derivatives",
+  "version": "v1",
+  "selection_seed": "20261015",
+  "split_seed": "20261015",
+  "source_policy": "Canonical Normal-tree, conflict-free pilot images only. Original TR-6 files are never copied into derived-data as independent specimens.",
+  "label_policy": "Inherited source labels are recorded as inherited_unverified. They are not independently verified ground truth.",
+  "split_policy": "train/val/test is assigned to the source content_id and inherited by every derivative of that source.",
+  "jpeg_quality": 95,
+  "pilot": {
+    "source_set": "pilot_manifest",
+    "images_per_produce_modality": 2,
+    "expected_sources": 24
+  },
+  "transforms": {
+    "srgb": [
+      {"name": "gaussian", "severity": "low", "params": {"sigma": 8.0}},
+      {"name": "gaussian", "severity": "high", "params": {"sigma": 20.0}},
+      {"name": "salt_pepper", "severity": "low", "params": {"amount": 0.01}},
+      {"name": "salt_pepper", "severity": "high", "params": {"amount": 0.04}},
+      {"name": "speckle", "severity": "mild", "params": {"variance": 0.04}}
+    ],
+    "thermal_ir_fusion": [
+      {"name": "gaussian", "severity": "low", "params": {"sigma": 8.0}},
+      {"name": "gaussian", "severity": "high", "params": {"sigma": 20.0}},
+      {"name": "salt_pepper", "severity": "low", "params": {"amount": 0.01}},
+      {"name": "salt_pepper", "severity": "high", "params": {"amount": 0.04}},
+      {"name": "speckle", "severity": "mild", "params": {"variance": 0.04}}
+    ]
+  },
+  "notes": {
+    "srgb": "Noise is applied to stored JPEG RGB pixels without EXIF transpose or color-space conversion.",
+    "thermal_ir_fusion": "Thermal files are palette/fusion JPEGs. Noise is applied to stored uint8 channels without assuming radiometry or sRGB color science.",
+    "speckle": "Optional mild multiplicative speckle on stored pixels; included because it is a common sensor-like perturbation and is documented.",
+    "independent_test_specimens": "Derived images must not be treated as independent specimens. They stay in the source image's split."
+  }
+}

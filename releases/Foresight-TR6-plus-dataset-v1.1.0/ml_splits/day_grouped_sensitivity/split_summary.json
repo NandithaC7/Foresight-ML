@@ -1,0 +1,119 @@
+{
+  "generated_at": "2026-10-15T18:13:36",
+  "inventory": "dataset-preparation/tr6-audit/output_rerun_2026-10-15/file_inventory.csv",
+  "inventory_sha256": "7bc9165e7ba18c59485a514af2b54639c9def119e49a7c2f79694bbb60269d88",
+  "seed": 42,
+  "session_gap_seconds": 300,
+  "group_unit": "day",
+  "day_grouping_fallback_to_session_strata": [
+    "Carrot/Not_spoiled"
+  ],
+  "target_fractions": {
+    "train": 0.6,
+    "val": 0.2,
+    "test": 0.2
+  },
+  "image_files_in_inventory": 21626,
+  "invalid_image_files": 0,
+  "unique_image_contents": 10776,
+  "exclusions": {
+    "conflicting_spoilage_labels": 170,
+    "modality_out_of_scope_thermal": 5084,
+    "no_spoilage_label_normal_only": 187
+  },
+  "conflicting_contents": 170,
+  "conflicting_by_produce_modality": {
+    "Banana/thermal_ir_fusion": 153,
+    "conflict/thermal_ir_fusion": 17
+  },
+  "eligible_samples": 5335,
+  "split_counts": {
+    "train": 3076,
+    "val": 1138,
+    "test": 1121
+  },
+  "split_fractions_actual": {
+    "train": 0.5766,
+    "val": 0.2133,
+    "test": 0.2101
+  },
+  "sessions_per_split": {
+    "val": 69,
+    "train": 182,
+    "test": 66
+  },
+  "per_stratum": {
+    "Banana/Not_spoiled": {
+      "train": 51,
+      "val": 51,
+      "test": 51
+    },
+    "Banana/Spoiled": {
+      "train": 85,
+      "val": 51,
+      "test": 34
+    },
+    "Carrot/Not_spoiled": {
+      "train": 68,
+      "val": 17,
+      "test": 17
+    },
+    "Carrot/Spoiled": {
+      "train": 254,
+      "val": 51,
+      "test": 51
+    },
+    "Guava/Not_spoiled": {
+      "train": 101,
+      "val": 50,
+      "test": 51
+    },
+    "Guava/Spoiled": {
+      "train": 204,
+      "val": 51,
+      "test": 51
+    },
+    "Indian_Gooseberry/Not_spoiled": {
+      "train": 493,
+      "val": 204,
+      "test": 187
+    },
+    "Indian_Gooseberry/Spoiled": {
+      "train": 340,
+      "val": 85,
+      "test": 102
+    },
+    "Mango/Not_spoiled": {
+      "train": 154,
+      "val": 51,
+      "test": 51
+    },
+    "Mango/Spoiled": {
+      "train": 51,
+      "val": 34,
+      "test": 51
+    },
+    "Tomato/Not_spoiled": {
+      "train": 1190,
+      "val": 442,
+      "test": 441
+    },
+    "Tomato/Spoiled": {
+      "train": 85,
+      "val": 51,
+      "test": 34
+    }
+  },
+  "leakage_checks": {
+    "content_hash_in_multiple_splits": 0,
+    "session_in_multiple_splits": 0,
+    "produce_days_shared_across_splits": 2,
+    "test_sessions_sharing_calendar_day_with_train": 1,
+    "test_sessions_total": 66
+  },
+  "limitations": [
+    "TR-6 provides no specimen IDs; each produce appears to be photographed as a small number of specimens over consecutive days, so specimen identity is shared across partitions.",
+    "Session grouping keeps the 17 near-identical views of one capture together, but sessions from the same produce/day can still fall in different partitions (see leakage_checks).",
+    "Spoiled/Not_spoiled are dataset folder labels that follow capture date; they were not independently verified."
+  ]
+}

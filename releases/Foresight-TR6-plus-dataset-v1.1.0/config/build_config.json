@@ -1,0 +1,28 @@
+{
+  "extension_name": "Foresight-TR6+",
+  "source_dataset": "../TR-6",
+  "audit_output": "../dataset-preparation/tr6-audit/output",
+  "selection_seed": "20261012",
+  "pilot_images_per_produce_modality": 8,
+  "pilot_target_size": 96,
+  "pilot_modalities": [
+    "srgb",
+    "thermal_ir_fusion"
+  ],
+  "pilot_source_policy": "Canonical Normal-tree content only",
+  "spoilage_label_policy": "Normal is unlabeled; inherited Classified labels remain unverified; conflicts are never resolved automatically",
+  "cross_modal_policy": "No cross-modal pairs are created without authoritative provenance",
+  "source_copy_policy": "Do not copy source images; use relative references and derived low-resolution review sheets only",
+  "annotation_status_values": [
+    "pending",
+    "annotated",
+    "reviewed",
+    "excluded"
+  ],
+  "optional_raster_mask_values": {
+    "0": "background",
+    "1": "fruit_visible_region",
+    "2": "visible_defect_region",
+    "255": "ignore_or_ambiguous"
+  }
+}

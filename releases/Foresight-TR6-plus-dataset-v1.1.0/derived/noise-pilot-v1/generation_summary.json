@@ -1,0 +1,25 @@
+{
+  "generated_at": "2026-10-15T15:08:30.048283+00:00",
+  "output_name": "noise-pilot-v1",
+  "source_images": 24,
+  "derived_rows": 120,
+  "ok": 120,
+  "failed": 0,
+  "manifest": "manifests/derived/noise_pilot_v1_manifest.csv",
+  "image_root": "derived-data/noise-pilot-v1/images",
+  "disk_estimate": {
+    "generated_at": "2026-10-15T15:08:30.047773+00:00",
+    "source_set": "pilot_sample",
+    "source_images": 24,
+    "derived_images": 120,
+    "estimated_output_bytes": 180977784,
+    "estimated_output_mb": 172.59,
+    "disk_free_bytes": 303690825728,
+    "disk_free_gb": 282.83,
+    "safety_factor": 2.0,
+    "enough_free_space": true,
+    "note": "Estimate uses source JPEG sizes times 1.6. Actual noisy JPEGs may be larger because noise reduces compressibility."
+  },
+  "checkpoint_status": "no_trained_checkpoint_found",
+  "source_dataset_untouched": true
+}
