@@ -99,7 +99,7 @@ export default function Dashboard() {
         <div className="bento-card">
           <div>
             <h3>Shelf-Ready Rate</h3>
-            <div className="bento-subtitle">Passed freshness validation</div>
+            <div className="bento-subtitle">Predicted not spoiled (model estimate)</div>
           </div>
           <div className="bento-ring-container">
             <svg width="88" height="88" viewBox="0 0 88 88">
@@ -126,7 +126,7 @@ export default function Dashboard() {
         <div className="bento-card col-span-2">
           <div>
             <h3>Freshness distribution</h3>
-            <p style={{ fontSize: '0.82rem', color: 'var(--ink-soft)', margin: '4px 0 0' }}>Item count by outcome, most recent inspections first.</p>
+            <p style={{ fontSize: '0.82rem', color: 'var(--ink-soft)', margin: '4px 0 0' }}>Not-spoiled score per item (uncalibrated model score), last 10 items.</p>
           </div>
           <div className="bar-chart" style={{ marginTop: '20px' }}>
             {last10.length === 0 && <p style={{ fontSize: '0.85rem' }}>No scans yet.</p>}
@@ -147,7 +147,7 @@ export default function Dashboard() {
           <div className="bento-progress-breakdown">
             <div className="bento-progress-item">
               <div className="bento-progress-labels">
-                <span>Fresh</span>
+                <span>Not spoiled</span>
                 <span>{goodPct}%</span>
               </div>
               <div className="bento-progress-track">
@@ -156,7 +156,7 @@ export default function Dashboard() {
             </div>
             <div className="bento-progress-item">
               <div className="bento-progress-labels">
-                <span>Use Soon</span>
+                <span>Uncertain</span>
                 <span>{warnPct}%</span>
               </div>
               <div className="bento-progress-track">
@@ -165,7 +165,7 @@ export default function Dashboard() {
             </div>
             <div className="bento-progress-item">
               <div className="bento-progress-labels">
-                <span>Discard</span>
+                <span>Spoiled</span>
                 <span>{badPct}%</span>
               </div>
               <div className="bento-progress-track">
@@ -190,11 +190,11 @@ export default function Dashboard() {
         <div className="bento-card">
           <div>
             <h3>Needs Attention</h3>
-            <div className="bento-subtitle">Items in warning or discard tiers</div>
+            <div className="bento-subtitle">Items predicted spoiled or uncertain</div>
           </div>
           <div className="bento-list">
             {flaggedItems.length === 0 ? (
-              <div className="bento-subtitle" style={{ padding: '10px 0', textAlign: 'center' }}>All inventory is fresh!</div>
+              <div className="bento-subtitle" style={{ padding: '10px 0', textAlign: 'center' }}>No items flagged.</div>
             ) : (
               flaggedItems.map((item, index) => (
                 <div className={`bento-list-item ${item.tier}`} key={index}>

@@ -3,7 +3,7 @@ import StatBar from '../components/StatBar.jsx'
 import ItemCard from '../components/ItemCard.jsx'
 import NutritionModal from '../components/NutritionModal.jsx'
 import CameraModal from '../components/CameraModal.jsx'
-import { analyzePhoto, getStats, getNutrition, downloadReportPdf } from '../api.js'
+import { analyzePhoto, getStats, getNutrition, getHealth, downloadReportPdf } from '../api.js'
 
 const STAT_LABELS = [
   { key: 'totalInspections', label: 'Total Inspections' },
@@ -25,11 +25,18 @@ export default function Analyze() {
   const [nutriLoading, setNutriLoading] = useState(false)
   const [activeStep, setActiveStep] = useState(0) // Default to step 1 active (Capture Photo)
   const [fileName, setFileName] = useState(null) // Tracks uploaded file name
+  const [fileSize, setFileSize] = useState(null)
+  const [scan, setScan] = useState(null) // full API response (warnings, model version, mock flag)
+  const [health, setHealth] = useState(null)
+  const [healthError, setHealthError] = useState(false)
 
   const fileInputRef = useRef(null)
   const cameraInputRef = useRef(null)
 
-  useEffect(() => { refreshStats() }, [])
+  useEffect(() => {
+    refreshStats()
+    getHealth().then(h => { setHealth(h); setHealthError(false) }).catch(() => setHealthError(true))
+  }, [])
 
   async function refreshStats() {
     try { setStats(await getStats()) } catch { /* backend may not be running yet */ }
@@ -37,18 +44,21 @@ export default function Analyze() {
 
   async function handleFile(file) {
     if (!file) return
-    setFileName(file.name)
+    setFileName(file.name || 'camera-capture.jpg')
+    setFileSize(file.size)
     setLoading(true)
     setError(null)
     setActiveStep(1) // Transition to Detect Items step
     try {
       const result = await analyzePhoto(file)
       setItems(result.items)
+      setScan(result)
       await refreshStats()
       setActiveStep(2) // Transition to Get Decision step
     } catch (err) {
-      setError('Could not reach the analysis backend. Is the FastAPI server running on port 8000?')
+      setError(err?.message || 'Analysis failed.')
       setFileName(null)
+      setFileSize(null)
       setActiveStep(0)
     } finally {
       setLoading(false)
@@ -83,7 +93,7 @@ export default function Analyze() {
           <h1 className="hero-banner-title">Read Every Fruit
             Before It Spoils.</h1>
           <p className="hero-banner-text">
-            Upload or capture a photo of a crate, shelf, or fridge. Foresight finds every item in the frame and tells you what to do with each one.
+            Upload or capture a photo of a single fruit or vegetable. Foresight identifies the produce type and estimates whether it shows visible spoilage cues.
           </p>
           <button className="btn btn-primary" onClick={() => fileInputRef.current?.click()} disabled={loading}>
             {loading ? <span className="spinner" /> : null} Select Photo to Analyze
@@ -119,7 +129,14 @@ export default function Analyze() {
 
         <div className="demo-notice">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0, marginTop: 2 }}><circle cx="12" cy="12" r="9" stroke="#4B584C" strokeWidth="1.5" /><path d="M12 8v.01M12 11v5" stroke="#4B584C" strokeWidth="1.5" strokeLinecap="round" /></svg>
-          <span>Prototype mode: the FastAPI backend returns simulated placeholder results for reviewing the UI/UX — not a live model prediction yet. See the About page for the real model plan.</span>
+          <span>
+            {healthError && 'Backend unreachable — start the FastAPI server to analyze photos. '}
+            {health && health.mock_mode && <b>DEMO MOCK DATA mode is ON — results are randomly simulated, not model predictions. </b>}
+            {health && !health.mock_mode && health.model_loaded && <>Live model: <b>{health.model_version}</b> (ViT, trained on TR-6). Supports Banana, Carrot, Guava, Indian Gooseberry, Mango, Tomato — one item per photo. </>}
+            {health && !health.mock_mode && !health.model_loaded && <><b>Model unavailable:</b> {health.model_error} </>}
+            {!health && !healthError && 'Checking model status… '}
+            Visual estimate — not a food-safety guarantee.
+          </span>
         </div>
         {error && <div className="api-error">{error}</div>}
       </div>
@@ -129,14 +146,27 @@ export default function Analyze() {
       </div>
 
       {items && (
-        <div className="section">
+        <div className="section" id="latest-scan-section">
           <div className="section-head">
             <div>
               <h2>Latest scan</h2>
               <p>Tap any card's nutrition button to see facts for that item.</p>
             </div>
-            <button className="btn btn-ghost" onClick={() => { setItems(null); setFileName(null); setActiveStep(0); }}>Clear</button>
+            <button className="btn btn-ghost" onClick={() => { setItems(null); setScan(null); setFileName(null); setFileSize(null); setActiveStep(0); }}>Clear</button>
           </div>
+          {scan && (
+            <div className={scan.mock ? 'api-error' : 'demo-notice'} style={{ marginBottom: 16 }}>
+              <span>
+                {scan.mock ? <b>DEMO MOCK DATA — not a model prediction. </b> : <>Model <b>{scan.model_version}</b> · {scan.timing_ms?.inference ?? '–'} ms inference. </>}
+                {scan.disclaimer}
+                {scan.warnings?.length > 0 && (
+                  <ul style={{ margin: '6px 0 0', paddingLeft: 18 }}>
+                    {scan.warnings.map((w, i) => <li key={i}>{w}</li>)}
+                  </ul>
+                )}
+              </span>
+            </div>
+          )}
           <div className="results-grid">
             {items.map((item, i) => (
               <ItemCard key={i} item={item} onNutritionClick={openNutrition} />
@@ -256,7 +286,7 @@ export default function Analyze() {
               >
                 <div className="stepper-card-body">
                   <h4>Capture the scene</h4>
-                  <p>Take one photo of a crate, shelf, or fridge — no need to isolate items.</p>
+                  <p>Take one clear photo of a single fruit or vegetable.</p>
 
                   <div className="stepper-card-visual">
                     <div className="photo-upload-visual">
@@ -275,7 +305,7 @@ export default function Analyze() {
                               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '4px' }}>
                                 <polyline points="20 6 9 17 4 12" />
                               </svg>
-                              Uploaded (1.2 MB)
+                              Uploaded ({fileSize != null ? (fileSize / (1024 * 1024)).toFixed(1) : '?'} MB)
                             </>
                           ) : 'Awaiting upload...'}
                         </span>
@@ -302,8 +332,8 @@ export default function Analyze() {
                 onClick={() => setActiveStep(1)}
               >
                 <div className="stepper-card-body">
-                  <h4>Detect every item</h4>
-                  <p>A detection model locates each individual fruit or vegetable in frame.</p>
+                  <h4>Identify the item</h4>
+                  <p>A Vision Transformer classifies the produce type (single-item mode — no multi-item detection yet).</p>
 
                   <div className="stepper-card-visual">
                     <div className="detection-list-visual">
@@ -311,20 +341,9 @@ export default function Analyze() {
                         items.slice(0, 2).map((item, index) => (
                           <div className="detection-item-row" key={index}>
                             <span className="detection-item-name">{item.name} #{index + 1}</span>
-                            <span className="detection-item-conf">{item.freshness}%</span>
+                            <span className="detection-item-conf">{item.produce_confidence != null ? Math.round(item.produce_confidence * 100) + '%' : '–'}</span>
                           </div>
                         ))
-                      ) : activeStep >= 1 ? (
-                        <>
-                          <div className="detection-item-row">
-                            <span className="detection-item-name">Apple #1 (Red)</span>
-                            <span className="detection-item-conf">98%</span>
-                          </div>
-                          <div className="detection-item-row">
-                            <span className="detection-item-name">Orange #3 (Navel)</span>
-                            <span className="detection-item-conf">94%</span>
-                          </div>
-                        </>
                       ) : (
                         <div className="decision-skeleton-visual">
                           <div className="skeleton-line medium" />
@@ -343,7 +362,7 @@ export default function Analyze() {
                       document.getElementById('latest-scan-section')?.scrollIntoView({ behavior: 'smooth' });
                     }}
                   >
-                    {items ? 'Review Detections' : 'Pending Scan'}
+                    {items ? 'Review Result' : 'Pending Scan'}
                   </button>
                 </div>
               </div>
@@ -355,7 +374,7 @@ export default function Analyze() {
               >
                 <div className="stepper-card-body">
                   <h4>Get a decision</h4>
-                  <p>Each item gets a freshness score, days remaining, and a plain-language action.</p>
+                  <p>Each item gets a spoilage estimate, a model confidence score and a plain-language action.</p>
 
                   <div className="stepper-card-visual">
                     {items ? (
@@ -366,23 +385,9 @@ export default function Analyze() {
                           </svg>
                         </div>
                         <div className="photo-meta-info">
-                          <span className="photo-filename" style={{ color: 'var(--forest-dark)' }}>Shelf-Ready: {stats?.shelfReadyPct || '85'}%</span>
+                          <span className="photo-filename" style={{ color: 'var(--forest-dark)' }}>{items[0]?.spoilage_label || 'Result'}: {items[0]?.spoilage_confidence != null ? Math.round(items[0].spoilage_confidence * 100) + '% confidence' : ''}</span>
                           <span className="photo-status-badge" style={{ color: 'var(--ink-soft)' }}>
                             {items.length} items evaluated
-                          </span>
-                        </div>
-                      </div>
-                    ) : activeStep >= 2 ? (
-                      <div className="photo-upload-visual" style={{ background: 'rgba(16,185,129,0.06)', borderColor: 'rgba(16,185,129,0.2)' }}>
-                        <div className="photo-thumbnail-placeholder" style={{ background: '#10B981', color: 'white' }}>
-                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                            <polyline points="20 6 9 17 4 12" />
-                          </svg>
-                        </div>
-                        <div className="photo-meta-info">
-                          <span className="photo-filename" style={{ color: 'var(--forest-dark)' }}>Shelf-Ready: 85%</span>
-                          <span className="photo-status-badge" style={{ color: 'var(--ink-soft)' }}>
-                            Action: Move to front
                           </span>
                         </div>
                       </div>
@@ -403,8 +408,7 @@ export default function Analyze() {
                     disabled={!items}
                     onClick={(e) => {
                       e.stopPropagation();
-                      // Assuming downloadReportPdf function exists
-                      if (typeof downloadReportPdf === 'function') downloadReportPdf();
+                      downloadReportPdf().catch(() => setError('Could not generate the PDF report.'));
                     }}
                   >
                     Generate Report

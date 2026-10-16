@@ -8,7 +8,7 @@ function fmtDate(ts) {
     ' · ' + d.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' })
 }
 
-const TIER_LABEL = { good: 'Fresh', warn: 'Use soon', bad: 'Discarded' }
+const TIER_LABEL = { good: 'Not spoiled', warn: 'Uncertain', bad: 'Spoiled' }
 
 export default function History() {
   const [inspections, setInspections] = useState([])
@@ -30,7 +30,7 @@ export default function History() {
     })()
   }, [])
 
-  const items = inspections.flatMap(insp => insp.items.map(it => ({ ...it, ts: insp.ts })))
+  const items = inspections.flatMap(insp => insp.items.map(it => ({ ...it, ts: insp.ts, mock: it.mock || insp.mock })))
   const wasted = items.filter(i => i.tier === 'bad').length
   const total = items.length
   const wastePct = total ? Math.round((wasted / total) * 100) : 0
@@ -47,7 +47,7 @@ export default function History() {
       {error && <div className="api-error">{error}</div>}
 
       <div className="stat-bar">
-        <div className="stat-cell"><div className="stat-label">Times Wasted</div><div className="stat-value accent-rust">{wasted}</div></div>
+        <div className="stat-cell"><div className="stat-label">Predicted Spoiled</div><div className="stat-value accent-rust">{wasted}</div></div>
         <div className="stat-cell"><div className="stat-label">Waste Rate</div><div className="stat-value accent-tan">{wastePct}%</div></div>
         <div className="stat-cell"><div className="stat-label">Total Discarded</div><div className="stat-value">{wasted}</div></div>
         <div className="stat-cell"><div className="stat-label">Items Tracked</div><div className="stat-value accent-sage">{total}</div></div>
@@ -89,14 +89,14 @@ export default function History() {
 
         {!loading && items.length > 0 && (
           <table className="log-table">
-            <thead><tr><th>Scanned</th><th>Item</th><th>Freshness</th><th>Shelf-life</th><th>Status</th></tr></thead>
+            <thead><tr><th>Scanned</th><th>Item</th><th>Not-spoiled score</th><th>Shelf-life</th><th>Status</th></tr></thead>
             <tbody>
               {items.map((i, idx) => (
                 <tr key={idx}>
                   <td>{fmtDate(i.ts)}</td>
-                  <td>{i.name}</td>
+                  <td>{i.name}{i.mock ? ' (DEMO MOCK)' : ''}</td>
                   <td className="mono">{i.freshness}%</td>
-                  <td className="mono">{i.days} day{i.days === 1 ? '' : 's'}</td>
+                  <td className="mono">{i.days != null ? `${i.days} day${i.days === 1 ? '' : 's'}` : 'n/a'}</td>
                   <td><span className={`tag ${i.tier}`}>{TIER_LABEL[i.tier]}</span></td>
                 </tr>
               ))}

@@ -1,49 +1,54 @@
 const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:8000'
 
+export class ApiError extends Error {
+  constructor(status, code, message) {
+    super(message)
+    this.status = status
+    this.code = code
+  }
+}
+
 async function handle(res) {
   if (!res.ok) {
-    const text = await res.text().catch(() => '')
-    throw new Error(`API error ${res.status}: ${text}`)
+    let code = 'http_error'
+    let message = `Request failed (HTTP ${res.status}).`
+    try {
+      const body = await res.json()
+      const d = body?.detail
+      if (d && typeof d === 'object') { code = d.code || code; message = d.message || message }
+      else if (typeof d === 'string') { message = d }
+    } catch { /* non-JSON error body */ }
+    throw new ApiError(res.status, code, message)
   }
   return res.json()
 }
 
-export async function analyzePhoto(fileOrBlob) {
+async function request(path, options) {
+  let res
+  try {
+    res = await fetch(`${API_BASE}${path}`, options)
+  } catch {
+    throw new ApiError(0, 'network_error', `Could not reach the analysis backend at ${API_BASE}. Is the FastAPI server running?`)
+  }
+  return handle(res)
+}
+
+export async function analyzePhoto(fileOrBlob, { xai = true } = {}) {
   const form = new FormData()
-  form.append('photo', fileOrBlob, 'photo.jpg')
-  const res = await fetch(`${API_BASE}/api/analyze`, { method: 'POST', body: form })
-  return handle(res)
+  form.append('photo', fileOrBlob, fileOrBlob.name || 'photo.jpg')
+  return request(`/api/analyze${xai ? '?xai=true' : ''}`, { method: 'POST', body: form })
 }
 
-export async function getInspections() {
-  const res = await fetch(`${API_BASE}/api/inspections`)
-  return handle(res)
-}
-
-export async function clearInspections() {
-  const res = await fetch(`${API_BASE}/api/inspections`, { method: 'DELETE' })
-  return handle(res)
-}
-
-export async function getStats() {
-  const res = await fetch(`${API_BASE}/api/stats`)
-  return handle(res)
-}
-
-export async function getNutrition(name) {
-  const res = await fetch(`${API_BASE}/api/nutrition/${encodeURIComponent(name)}`)
-  return handle(res)
-}
-
-export async function getTips() {
-  const res = await fetch(`${API_BASE}/api/tips`)
-  return handle(res)
-}
-
-export async function getReportText() {
-  const res = await fetch(`${API_BASE}/api/report`)
-  return handle(res)
-}
+export const getHealth = () => request('/health')
+export const getModels = () => request('/api/models')
+export const getHistory = (limit = 100) => request(`/api/history?limit=${limit}`)
+export const getScan = (scanId) => request(`/api/history/${encodeURIComponent(scanId)}`)
+export const getInspections = () => request('/api/inspections')
+export const clearInspections = () => request('/api/inspections', { method: 'DELETE' })
+export const getStats = () => request('/api/stats')
+export const getNutrition = (name) => request(`/api/nutrition/${encodeURIComponent(name)}`)
+export const getTips = () => request('/api/tips')
+export const getReportText = () => request('/api/report')
 
 export function reportPdfUrl() {
   return `${API_BASE}/api/report/pdf`
