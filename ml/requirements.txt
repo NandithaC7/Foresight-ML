@@ -1,0 +1,7 @@
+# Training / experiments (in addition to backend/requirements.txt)
+-r ../backend/requirements.txt
+scikit-learn==1.9.1
+scikit-image==0.26.0
+scipy==1.17.1
+matplotlib==3.11.2
+pandas==3.0.6
