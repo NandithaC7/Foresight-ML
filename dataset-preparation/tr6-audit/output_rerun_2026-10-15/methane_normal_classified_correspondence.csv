@@ -1,0 +1,13 @@
+produce,classified_label,classified_is_exact_text_span_of_normal,normal_bytes,classified_bytes
+Banana,Not_spoiled,True,51118,20577
+Banana,Spoiled,True,51118,30539
+Carrot,Not_spoiled,True,51289,9148
+Carrot,Spoiled,True,51289,42139
+Guava,Not_spoiled,True,127433,49972
+Guava,Spoiled,True,127433,77460
+Indian_Gooseberry,Not_spoiled,True,186630,109740
+Indian_Gooseberry,Spoiled,True,186630,76888
+Mango,Not_spoiled,True,68402,41502
+Mango,Spoiled,True,68402,26898
+Tomato,Not_spoiled,True,327466,293358
+Tomato,Spoiled,True,327466,34107
