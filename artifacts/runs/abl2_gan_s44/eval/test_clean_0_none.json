@@ -1,0 +1,151 @@
+{
+  "run": "artifacts/runs/abl2_gan_s44",
+  "split": "test",
+  "corruption": "clean",
+  "level": 0.0,
+  "denoiser": "none",
+  "checkpoint_epoch": 4,
+  "backbone": "vit_small_patch16_224.augreg_in21k_ft_in1k",
+  "device": "mps",
+  "type": {
+    "n": 1071,
+    "accuracy": 1.0,
+    "macro_f1": 1.0,
+    "weighted_f1": 1.0,
+    "per_class": {
+      "Banana": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 68
+      },
+      "Carrot": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 85
+      },
+      "Guava": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 103
+      },
+      "Indian_Gooseberry": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 272
+      },
+      "Mango": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 85
+      },
+      "Tomato": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 458
+      }
+    },
+    "confusion_matrix": [
+      [
+        68,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        85,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        103,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        272,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        85,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        458
+      ]
+    ],
+    "class_names": [
+      "Banana",
+      "Carrot",
+      "Guava",
+      "Indian_Gooseberry",
+      "Mango",
+      "Tomato"
+    ],
+    "roc_auc_ovr_macro": 1.0
+  },
+  "spoil": {
+    "n": 1071,
+    "accuracy": 0.9150326797385621,
+    "macro_f1": 0.8985222044174561,
+    "weighted_f1": 0.9134657133307719,
+    "per_class": {
+      "Not_spoiled": {
+        "precision": 0.9145077720207254,
+        "recall": 0.9658002735978112,
+        "f1": 0.9394544244843646,
+        "support": 731
+      },
+      "Spoiled": {
+        "precision": 0.9163879598662207,
+        "recall": 0.8058823529411765,
+        "f1": 0.8575899843505478,
+        "support": 340
+      }
+    },
+    "confusion_matrix": [
+      [
+        706,
+        25
+      ],
+      [
+        66,
+        274
+      ]
+    ],
+    "class_names": [
+      "Not_spoiled",
+      "Spoiled"
+    ],
+    "roc_auc": 0.974189265309407
+  },
+  "mean_batched_latency_ms_per_image": 5.2537483639270555,
+  "note": "Confidence values are softmax scores, not calibrated probabilities.",
+  "composite_macro_f1": 0.9492611022087281
+}

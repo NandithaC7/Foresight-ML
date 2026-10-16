@@ -1,0 +1,13 @@
+[22:47:50] train day2_aug_s42
+early stop at epoch 5
+best val composite macro-F1 0.9496184977451827
+test_clean_0_none: type acc=1.0000 mF1=1.0000 | spoil acc=0.8617 mF1=0.8334 AUC=0.8924
+[22:55:46] train day2_aug_s43
+best val composite macro-F1 0.9620058760683761
+test_clean_0_none: type acc=1.0000 mF1=1.0000 | spoil acc=0.8644 mF1=0.8347 AUC=0.9215
+[23:11:41] train day2_aug_s44
+early stop at epoch 10
+best val composite macro-F1 0.9720051955208313
+test_clean_0_none: type acc=0.9946 mF1=0.9893 | spoil acc=0.8519 mF1=0.8221 AUC=0.9140
+[23:27:08] DAYSPLIT_V2_DONE
+EXIT 0

@@ -1,0 +1,61 @@
+{
+  "run_id": "abl2_aug_s44",
+  "manifest": "/Users/nandu/Downloads/foresight/artifacts/dataset/v1/split_manifest.csv",
+  "cache": "/Users/nandu/Downloads/foresight/artifacts/cache/srgb_256",
+  "out_root": "/Users/nandu/Downloads/foresight/artifacts/runs",
+  "backbone": "vit_small_patch16_224.augreg_in21k_ft_in1k",
+  "epochs": 10,
+  "batch_size": 32,
+  "lr": 2e-05,
+  "head_lr": 0.0002,
+  "weight_decay": 0.01,
+  "warmup_epochs": 1.0,
+  "patience": 4,
+  "aug": "conventional",
+  "freeze_backbone": false,
+  "extra_train_csv": null,
+  "lambda_type": 1.0,
+  "lambda_spoil": 1.0,
+  "seed": 44,
+  "workers": 4,
+  "device": "mps",
+  "max_batches": null,
+  "img_size": 224,
+  "mean": [
+    0.5,
+    0.5,
+    0.5
+  ],
+  "std": [
+    0.5,
+    0.5,
+    0.5
+  ],
+  "produce_classes": [
+    "Banana",
+    "Carrot",
+    "Guava",
+    "Indian_Gooseberry",
+    "Mango",
+    "Tomato"
+  ],
+  "spoilage_classes": [
+    "Not_spoiled",
+    "Spoiled"
+  ],
+  "n_train": 3177,
+  "n_train_real": 3177,
+  "n_val": 1087,
+  "manifest_sha256": "fef8f50c818be6aee3c37acf3ac4918f51bf4a30e8dc1db54630743ecdd2942a",
+  "torch": "2.14.1",
+  "python": "3.11.16",
+  "platform": "macOS-26.5.1-arm64-arm-64bit",
+  "selection_metric": "val composite macro-F1 = mean(type macro-F1, spoilage macro-F1)",
+  "scheduler": "linear warm-up then cosine decay (per step)",
+  "started_at": "2026-10-15T22:17:17",
+  "timm": "1.0.30",
+  "finished_at": "2026-10-15T22:31:09",
+  "best_val_composite_macro_f1": 0.9726498787826761,
+  "best_epoch": 5,
+  "epochs_run": 9
+}

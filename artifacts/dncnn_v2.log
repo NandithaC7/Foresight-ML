@@ -1,0 +1,20 @@
+[23:27:21] dncnn v2 training
+{'step': 2600, 'train_mse': 0.0019445797661319375}
+{'step': 2700, 'train_mse': 0.00177728570997715}
+{'corruption': 'gaussian', 'level': 0.05, 'n_val_images': 60, 'noisy_psnr': 26.107994651794435, 'dncnn_psnr': 27.367873764038087, 'median_psnr': 33.46060034434001, 'noisy_ssim': 0.350938019156456, 'dncnn_ssim': 0.7199672579765319, 'median_ssim': 0.750022554397583}
+{'corruption': 'gaussian', 'level': 0.1, 'n_val_images': 60, 'noisy_psnr': 20.312708314259847, 'dncnn_psnr': 26.571028010050455, 'median_psnr': 27.698539956410727, 'noisy_ssim': 0.14754423027237257, 'dncnn_ssim': 0.536574141184489, 'median_ssim': 0.46337345490852994}
+{'corruption': 'gaussian', 'level': 0.2, 'n_val_images': 60, 'noisy_psnr': 15.017627143859864, 'dncnn_psnr': 23.297004159291586, 'median_psnr': 21.903059164683025, 'noisy_ssim': 0.05812830533832312, 'dncnn_ssim': 0.33051571051279705, 'median_ssim': 0.2109731691579024}
+{'corruption': 'salt_pepper', 'level': 0.02, 'n_val_images': 60, 'noisy_psnr': 21.84075059890747, 'dncnn_psnr': 32.69077469507853, 'median_psnr': 47.894740168253584, 'noisy_ssim': 0.5371926367282868, 'dncnn_ssim': 0.9165794591108958, 'median_ssim': 0.9927833050489425}
+{'corruption': 'salt_pepper', 'level': 0.05, 'n_val_images': 60, 'noisy_psnr': 17.849206670125326, 'dncnn_psnr': 31.33375498453776, 'median_psnr': 46.062456639607746, 'noisy_ssim': 0.23939746444423993, 'dncnn_ssim': 0.8600235054890315, 'median_ssim': 0.992012091477712}
+{'corruption': 'salt_pepper', 'level': 0.1, 'n_val_images': 60, 'noisy_psnr': 14.834178733825684, 'dncnn_psnr': 30.047155348459878, 'median_psnr': 42.00215663909912, 'noisy_ssim': 0.09200048477699359, 'dncnn_ssim': 0.7657431483268737, 'median_ssim': 0.9886881520350774}
+test_gaussian_0.05_dncnn2: type acc=1.0000 mF1=1.0000 | spoil acc=0.9150 mF1=0.9004 AUC=0.9771
+test_gaussian_0.1_dncnn2: type acc=0.9981 mF1=0.9973 | spoil acc=0.9076 mF1=0.8926 AUC=0.9634
+test_gaussian_0.2_dncnn2: type acc=0.9935 mF1=0.9920 | spoil acc=0.8347 mF1=0.8219 AUC=0.9353
+test_salt_pepper_0.02_dncnn2: type acc=1.0000 mF1=1.0000 | spoil acc=0.9505 mF1=0.9412 AUC=0.9887
+test_salt_pepper_0.05_dncnn2: type acc=1.0000 mF1=1.0000 | spoil acc=0.9477 mF1=0.9380 AUC=0.9874
+test_salt_pepper_0.1_dncnn2: type acc=1.0000 mF1=1.0000 | spoil acc=0.9412 mF1=0.9306 AUC=0.9837
+test_speckle_0.1_dncnn2: type acc=1.0000 mF1=1.0000 | spoil acc=0.9197 mF1=0.9040 AUC=0.9786
+test_speckle_0.3_dncnn2: type acc=0.9925 mF1=0.9902 | spoil acc=0.8777 mF1=0.8631 AUC=0.9544
+test_speckle_0.5_dncnn2: type acc=0.9813 mF1=0.9755 | spoil acc=0.8394 mF1=0.8268 AUC=0.9427
+[00:05:59] DNCNN_V2_DONE
+EXIT 0

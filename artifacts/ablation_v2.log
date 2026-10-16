@@ -1,0 +1,35 @@
+[20:37:42] train abl2_noaug_s42
+best val composite macro-F1 0.9786586563003102
+test_clean_0_none: type acc=1.0000 mF1=1.0000 | spoil acc=0.9328 mF1=0.9192 AUC=0.9761
+[20:52:17] train abl2_aug_s42
+best val composite macro-F1 0.9661377288015451
+test_clean_0_none: type acc=1.0000 mF1=1.0000 | spoil acc=0.9412 mF1=0.9291 AUC=0.9817
+[21:07:16] train abl2_gan_s42
+early stop at epoch 9
+best val composite macro-F1 0.9787023104172545
+test_clean_0_none: type acc=1.0000 mF1=1.0000 | spoil acc=0.9393 mF1=0.9296 AUC=0.9690
+[21:22:30] train abl2_noaug_s43
+early stop at epoch 7
+best val composite macro-F1 0.978866284043364
+test_clean_0_none: type acc=1.0000 mF1=1.0000 | spoil acc=0.9272 mF1=0.9164 AUC=0.9684
+[21:33:00] train abl2_aug_s43
+early stop at epoch 10
+best val composite macro-F1 0.9677143774799565
+test_clean_0_none: type acc=1.0000 mF1=1.0000 | spoil acc=0.9337 mF1=0.9205 AUC=0.9832
+[21:47:53] train abl2_gan_s43
+best val composite macro-F1 0.9771945283652232
+test_clean_0_none: type acc=1.0000 mF1=1.0000 | spoil acc=0.9402 mF1=0.9286 AUC=0.9836
+[22:05:24] train abl2_noaug_s44
+early stop at epoch 7
+best val composite macro-F1 0.9770869588662356
+test_clean_0_none: type acc=1.0000 mF1=1.0000 | spoil acc=0.9216 mF1=0.9076 AUC=0.9673
+[22:17:13] train abl2_aug_s44
+early stop at epoch 9
+best val composite macro-F1 0.9726498787826761
+test_clean_0_none: type acc=1.0000 mF1=1.0000 | spoil acc=0.9430 mF1=0.9337 AUC=0.9773
+[22:32:00] train abl2_gan_s44
+early stop at epoch 8
+best val composite macro-F1 0.9755862738110568
+test_clean_0_none: type acc=1.0000 mF1=1.0000 | spoil acc=0.9150 mF1=0.8985 AUC=0.9742
+[22:47:27] ABLATION_V2_DONE
+EXIT 0
