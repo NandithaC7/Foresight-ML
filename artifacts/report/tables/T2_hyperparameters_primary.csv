@@ -1,0 +1,17 @@
+hyperparameter,value
+backbone,vit_base_patch16_224.augreg2_in21k_ft_in1k
+img_size,224
+batch_size,16
+lr,2e-05
+head_lr,0.0002
+weight_decay,0.01
+epochs,12
+warmup_epochs,1.0
+patience,4
+aug,conventional
+lambda_type,1.0
+lambda_spoil,1.0
+seed,42
+device,mps
+best_epoch,9
+epochs_run,12

@@ -1,0 +1,28 @@
+{
+  "made": [
+    "figures/01_training_loss.png",
+    "figures/02_validation_macro_f1.png",
+    "figures/03_confusion_produce_test.png",
+    "figures/04_confusion_spoilage_test.png",
+    "figures/05_per_class_metrics_test.png",
+    "figures/06_roc_spoilage_test.png",
+    "figures/07_noise_robustness.png",
+    "figures/08_denoising_psnr_ssim.png",
+    "figures/09_ablation_comparison.png",
+    "figures/10_kmeans_vit_frozen.png",
+    "figures/10_kmeans_colorhist.png",
+    "figures/11_gan_losses.png",
+    "figures/12_split_distribution.png",
+    "figures/13_api_latency.png",
+    "tables/T1_dataset_split.md",
+    "tables/T1b_exclusions.md",
+    "tables/T2_hyperparameters_primary.md",
+    "tables/T3_test_metrics_primary.md",
+    "tables/T4_ablation.md",
+    "tables/T5_noise_robustness.md",
+    "tables/T6_kmeans_alignment.md",
+    "tables/T7_denoising_quality.md",
+    "tables/T8_split_sensitivity.md"
+  ],
+  "skipped": []
+}

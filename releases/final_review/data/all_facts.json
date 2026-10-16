@@ -1,0 +1,5220 @@
+{
+ "label_date_order": {
+  "Banana": {
+   "not_spoiled_first": "2025-09-11T10:14:03",
+   "not_spoiled_last": "2025-09-13T16:19:58",
+   "spoiled_first": "2025-09-15T09:25:24",
+   "spoiled_last": "2025-09-18T16:38:28",
+   "all_not_spoiled_before_all_spoiled": true
+  },
+  "Carrot": {
+   "not_spoiled_first": "2025-07-25T08:43:28",
+   "not_spoiled_last": "2025-07-26T16:50:11",
+   "spoiled_first": "2025-07-28T08:54:54",
+   "spoiled_last": "2025-08-04T16:48:34",
+   "all_not_spoiled_before_all_spoiled": true
+  },
+  "Guava": {
+   "not_spoiled_first": "2025-06-25T09:18:10",
+   "not_spoiled_last": "2025-06-28T17:15:37",
+   "spoiled_first": "2025-06-30T08:49:13",
+   "spoiled_last": "2025-07-05T16:01:24",
+   "all_not_spoiled_before_all_spoiled": true
+  },
+  "Indian_Gooseberry": {
+   "not_spoiled_first": "2025-07-23T09:29:50",
+   "not_spoiled_last": "2025-08-12T16:38:01",
+   "spoiled_first": "2025-08-13T08:58:13",
+   "spoiled_last": "2025-09-08T16:34:28",
+   "all_not_spoiled_before_all_spoiled": true
+  },
+  "Mango": {
+   "not_spoiled_first": "2025-09-20T08:53:58",
+   "not_spoiled_last": "2025-09-26T16:39:54",
+   "spoiled_first": "2025-09-29T09:20:02",
+   "spoiled_last": "2025-10-03T15:42:14",
+   "all_not_spoiled_before_all_spoiled": true
+  },
+  "Tomato": {
+   "not_spoiled_first": "2025-07-23T09:20:34",
+   "not_spoiled_last": "2025-09-24T16:29:28",
+   "spoiled_first": "2025-09-26T09:33:25",
+   "spoiled_last": "2025-10-03T15:40:28",
+   "all_not_spoiled_before_all_spoiled": true
+  }
+ },
+ "dataset": {
+  "audit": {
+   "file_count": 21653,
+   "total_gib": 19.765155779197812,
+   "valid_images": 21626,
+   "corrupt_or_invalid_images": 0,
+   "image_counts": {
+    "thermal_ir_fusion": 10950,
+    "srgb": 10676
+   },
+   "methane_file_count": 18,
+   "methane_record_count": 26928,
+   "duplicate_groups": 10589,
+   "duplicate_excess_copies": 10850,
+   "cross_label_duplicate_groups": 170,
+   "unique_image_hashes": 10776,
+   "classified_images_exactly_duplicated_in_normal": 10796,
+   "normal_image_hashes_not_represented_in_classified": 187,
+   "verified_cross_modal_pairs": 0
+  },
+  "audit_rerun_fields_differing_from_prior": [],
+  "audit_elapsed_s": 15.743738174438477,
+  "split": {
+   "generated_at": "2026-10-15T17:55:14",
+   "inventory": "dataset-preparation/tr6-audit/output_rerun_2026-10-15/file_inventory.csv",
+   "inventory_sha256": "7bc9165e7ba18c59485a514af2b54639c9def119e49a7c2f79694bbb60269d88",
+   "seed": 42,
+   "session_gap_seconds": 300,
+   "target_fractions": {
+    "train": 0.6,
+    "val": 0.2,
+    "test": 0.2
+   },
+   "image_files_in_inventory": 21626,
+   "invalid_image_files": 0,
+   "unique_image_contents": 10776,
+   "exclusions": {
+    "conflicting_spoilage_labels": 170,
+    "modality_out_of_scope_thermal": 5084,
+    "no_spoilage_label_normal_only": 187
+   },
+   "conflicting_contents": 170,
+   "conflicting_by_produce_modality": {
+    "Banana/thermal_ir_fusion": 153,
+    "conflict/thermal_ir_fusion": 17
+   },
+   "eligible_samples": 5335,
+   "split_counts": {
+    "train": 3177,
+    "val": 1087,
+    "test": 1071
+   },
+   "split_fractions_actual": {
+    "train": 0.5955,
+    "val": 0.2037,
+    "test": 0.2007
+   },
+   "sessions_per_split": {
+    "train": 189,
+    "val": 64,
+    "test": 64
+   },
+   "per_stratum": {
+    "Banana/Not_spoiled": {
+     "train": 85,
+     "val": 34,
+     "test": 34
+    },
+    "Banana/Spoiled": {
+     "train": 102,
+     "val": 34,
+     "test": 34
+    },
+    "Carrot/Not_spoiled": {
+     "train": 68,
+     "val": 17,
+     "test": 17
+    },
+    "Carrot/Spoiled": {
+     "train": 220,
+     "val": 68,
+     "test": 68
+    },
+    "Guava/Not_spoiled": {
+     "train": 117,
+     "val": 50,
+     "test": 35
+    },
+    "Guava/Spoiled": {
+     "train": 170,
+     "val": 68,
+     "test": 68
+    },
+    "Indian_Gooseberry/Not_spoiled": {
+     "train": 544,
+     "val": 170,
+     "test": 170
+    },
+    "Indian_Gooseberry/Spoiled": {
+     "train": 323,
+     "val": 102,
+     "test": 102
+    },
+    "Mango/Not_spoiled": {
+     "train": 154,
+     "val": 51,
+     "test": 51
+    },
+    "Mango/Spoiled": {
+     "train": 68,
+     "val": 34,
+     "test": 34
+    },
+    "Tomato/Not_spoiled": {
+     "train": 1224,
+     "val": 425,
+     "test": 424
+    },
+    "Tomato/Spoiled": {
+     "train": 102,
+     "val": 34,
+     "test": 34
+    }
+   },
+   "leakage_checks": {
+    "content_hash_in_multiple_splits": 0,
+    "session_in_multiple_splits": 0,
+    "produce_days_shared_across_splits": 83,
+    "test_sessions_sharing_calendar_day_with_train": 49,
+    "test_sessions_total": 64
+   },
+   "limitations": [
+    "TR-6 provides no specimen IDs; each produce appears to be photographed as a small number of specimens over consecutive days, so specimen identity is shared across partitions.",
+    "Session grouping keeps the 17 near-identical views of one capture together, but sessions from the same produce/day can still fall in different partitions (see leakage_checks).",
+    "Spoiled/Not_spoiled are dataset folder labels that follow capture date; they were not independently verified."
+   ]
+  },
+  "daysplit": {
+   "split_counts": {
+    "train": 3076,
+    "val": 1138,
+    "test": 1121
+   },
+   "split_fractions_actual": {
+    "train": 0.5766,
+    "val": 0.2133,
+    "test": 0.2101
+   },
+   "leakage_checks": {
+    "content_hash_in_multiple_splits": 0,
+    "session_in_multiple_splits": 0,
+    "produce_days_shared_across_splits": 2,
+    "test_sessions_sharing_calendar_day_with_train": 1,
+    "test_sessions_total": 66
+   },
+   "day_grouping_fallback_to_session_strata": [
+    "Carrot/Not_spoiled"
+   ]
+  },
+  "class_distribution": {
+   "train": {
+    "type": {
+     "Banana": 187,
+     "Carrot": 288,
+     "Guava": 287,
+     "Indian_Gooseberry": 867,
+     "Mango": 222,
+     "Tomato": 1326
+    },
+    "spoil": {
+     "Not_spoiled": 2192,
+     "Spoiled": 985
+    }
+   },
+   "val": {
+    "type": {
+     "Banana": 68,
+     "Carrot": 85,
+     "Guava": 118,
+     "Indian_Gooseberry": 272,
+     "Mango": 85,
+     "Tomato": 459
+    },
+    "spoil": {
+     "Not_spoiled": 747,
+     "Spoiled": 340
+    }
+   },
+   "test": {
+    "type": {
+     "Banana": 68,
+     "Carrot": 85,
+     "Guava": 103,
+     "Indian_Gooseberry": 272,
+     "Mango": 85,
+     "Tomato": 458
+    },
+    "spoil": {
+     "Not_spoiled": 731,
+     "Spoiled": 340
+    }
+   }
+  }
+ },
+ "primary": {
+  "config": {
+   "run_id": "vit_b16_primary",
+   "manifest": "/Users/nandu/Downloads/foresight/artifacts/dataset/v1/split_manifest.csv",
+   "cache": "/Users/nandu/Downloads/foresight/artifacts/cache/srgb_256",
+   "out_root": "/Users/nandu/Downloads/foresight/artifacts/runs",
+   "backbone": "vit_base_patch16_224.augreg2_in21k_ft_in1k",
+   "epochs": 12,
+   "batch_size": 16,
+   "lr": 2e-05,
+   "head_lr": 0.0002,
+   "weight_decay": 0.01,
+   "warmup_epochs": 1.0,
+   "patience": 4,
+   "aug": "conventional",
+   "freeze_backbone": false,
+   "extra_train_csv": null,
+   "lambda_type": 1.0,
+   "lambda_spoil": 1.0,
+   "seed": 42,
+   "workers": 4,
+   "device": "mps",
+   "max_batches": null,
+   "img_size": 224,
+   "mean": [
+    0.5,
+    0.5,
+    0.5
+   ],
+   "std": [
+    0.5,
+    0.5,
+    0.5
+   ],
+   "produce_classes": [
+    "Banana",
+    "Carrot",
+    "Guava",
+    "Indian_Gooseberry",
+    "Mango",
+    "Tomato"
+   ],
+   "spoilage_classes": [
+    "Not_spoiled",
+    "Spoiled"
+   ],
+   "n_train": 3177,
+   "n_train_real": 3177,
+   "n_val": 1087,
+   "manifest_sha256": "fef8f50c818be6aee3c37acf3ac4918f51bf4a30e8dc1db54630743ecdd2942a",
+   "torch": "2.14.1",
+   "python": "3.11.16",
+   "platform": "macOS-26.5.1-arm64-arm-64bit",
+   "selection_metric": "val composite macro-F1 = mean(type macro-F1, spoilage macro-F1)",
+   "scheduler": "linear warm-up then cosine decay (per step)",
+   "started_at": "2026-10-15T18:07:48",
+   "timm": "1.0.30",
+   "finished_at": "2026-10-15T19:02:31",
+   "best_val_composite_macro_f1": 0.9858095134805103,
+   "best_epoch": 9,
+   "epochs_run": 12
+  },
+  "history": [
+   {
+    "epoch": 1,
+    "seconds": 221.7,
+    "train_loss": 0.5835055485685271,
+    "val_loss": 0.17741607926038833,
+    "train_type_acc": 0.9195075757575758,
+    "train_spoil_acc": 0.8595328282828283,
+    "val_type_acc": 1.0,
+    "val_spoil_acc": 0.9494020239190433,
+    "val_type_macro_f1": 1.0,
+    "val_spoil_macro_f1": 0.9408170679675659,
+    "val_composite_macro_f1": 0.9704085339837829
+   },
+   {
+    "epoch": 2,
+    "seconds": 353.2,
+    "train_loss": 0.2335488967929092,
+    "val_loss": 0.12172838494956165,
+    "train_type_acc": 1.0,
+    "train_spoil_acc": 0.9318181818181818,
+    "val_type_acc": 1.0,
+    "val_spoil_acc": 0.9567617295308187,
+    "val_type_macro_f1": 1.0,
+    "val_spoil_macro_f1": 0.9481963689091011,
+    "val_composite_macro_f1": 0.9740981844545505
+   },
+   {
+    "epoch": 3,
+    "seconds": 482.6,
+    "train_loss": 0.1677084938720612,
+    "val_loss": 0.2462021353163627,
+    "train_type_acc": 1.0,
+    "train_spoil_acc": 0.9479166666666666,
+    "val_type_acc": 1.0,
+    "val_spoil_acc": 0.9328426862925483,
+    "val_type_macro_f1": 1.0,
+    "val_spoil_macro_f1": 0.9167429977389215,
+    "val_composite_macro_f1": 0.9583714988694607
+   },
+   {
+    "epoch": 4,
+    "seconds": 242.8,
+    "train_loss": 0.12939703733025804,
+    "val_loss": 0.20799159427090327,
+    "train_type_acc": 0.9996843434343434,
+    "train_spoil_acc": 0.9684343434343434,
+    "val_type_acc": 1.0,
+    "val_spoil_acc": 0.9383624655013799,
+    "val_type_macro_f1": 1.0,
+    "val_spoil_macro_f1": 0.9271777724671606,
+    "val_composite_macro_f1": 0.9635888862335803
+   },
+   {
+    "epoch": 5,
+    "seconds": 247.7,
+    "train_loss": 0.12275114907542313,
+    "val_loss": 0.17399965922400465,
+    "train_type_acc": 1.0,
+    "train_spoil_acc": 0.9671717171717171,
+    "val_type_acc": 1.0,
+    "val_spoil_acc": 0.9466421343146274,
+    "val_type_macro_f1": 1.0,
+    "val_spoil_macro_f1": 0.9350635706693254,
+    "val_composite_macro_f1": 0.9675317853346628
+   },
+   {
+    "epoch": 6,
+    "seconds": 252.4,
+    "train_loss": 0.09319561882034348,
+    "val_loss": 0.10693547522487237,
+    "train_type_acc": 1.0,
+    "train_spoil_acc": 0.9728535353535354,
+    "val_type_acc": 1.0,
+    "val_spoil_acc": 0.9668813247470102,
+    "val_type_macro_f1": 1.0,
+    "val_spoil_macro_f1": 0.961664158751058,
+    "val_composite_macro_f1": 0.980832079375529
+   },
+   {
+    "epoch": 7,
+    "seconds": 262.0,
+    "train_loss": 0.06946767036196884,
+    "val_loss": 0.1823530039774565,
+    "train_type_acc": 0.9996843434343434,
+    "train_spoil_acc": 0.97885101010101,
+    "val_type_acc": 1.0,
+    "val_spoil_acc": 0.953081876724931,
+    "val_type_macro_f1": 1.0,
+    "val_spoil_macro_f1": 0.9431679435093233,
+    "val_composite_macro_f1": 0.9715839717546617
+   },
+   {
+    "epoch": 8,
+    "seconds": 248.5,
+    "train_loss": 0.0563162383693218,
+    "val_loss": 0.2164034325143088,
+    "train_type_acc": 1.0,
+    "train_spoil_acc": 0.983270202020202,
+    "val_type_acc": 1.0,
+    "val_spoil_acc": 0.9567617295308187,
+    "val_type_macro_f1": 1.0,
+    "val_spoil_macro_f1": 0.9502218091009449,
+    "val_composite_macro_f1": 0.9751109045504724
+   },
+   {
+    "epoch": 9,
+    "seconds": 249.1,
+    "train_loss": 0.03341400718860162,
+    "val_loss": 0.11115104333630546,
+    "train_type_acc": 1.0,
+    "train_spoil_acc": 0.9921085858585859,
+    "val_type_acc": 1.0,
+    "val_spoil_acc": 0.9760809567617296,
+    "val_type_macro_f1": 1.0,
+    "val_spoil_macro_f1": 0.9716190269610205,
+    "val_composite_macro_f1": 0.9858095134805103
+   },
+   {
+    "epoch": 10,
+    "seconds": 249.0,
+    "train_loss": 0.022086749709184474,
+    "val_loss": 0.19102427128443172,
+    "train_type_acc": 1.0,
+    "train_spoil_acc": 0.9943181818181818,
+    "val_type_acc": 1.0,
+    "val_spoil_acc": 0.9641214351425943,
+    "val_type_macro_f1": 1.0,
+    "val_spoil_macro_f1": 0.9574653169708298,
+    "val_composite_macro_f1": 0.9787326584854149
+   },
+   {
+    "epoch": 11,
+    "seconds": 241.6,
+    "train_loss": 0.014132999413837898,
+    "val_loss": 0.1578554381311948,
+    "train_type_acc": 1.0,
+    "train_spoil_acc": 0.9962121212121212,
+    "val_type_acc": 1.0,
+    "val_spoil_acc": 0.9668813247470102,
+    "val_type_macro_f1": 1.0,
+    "val_spoil_macro_f1": 0.9608382370601657,
+    "val_composite_macro_f1": 0.9804191185300828
+   },
+   {
+    "epoch": 12,
+    "seconds": 230.8,
+    "train_loss": 0.01581441000331896,
+    "val_loss": 0.17670241288980454,
+    "train_type_acc": 1.0,
+    "train_spoil_acc": 0.9958964646464646,
+    "val_type_acc": 1.0,
+    "val_spoil_acc": 0.9650413983440662,
+    "val_type_macro_f1": 1.0,
+    "val_spoil_macro_f1": 0.9585916385304473,
+    "val_composite_macro_f1": 0.9792958192652237
+   }
+  ],
+  "best_epoch": 9,
+  "train_minutes": 54.7,
+  "test_type": {
+   "accuracy": 1.0,
+   "macro_precision": 1.0,
+   "macro_recall": 1.0,
+   "macro_f1": 1.0,
+   "weighted_f1": 1.0,
+   "roc_auc": 1.0,
+   "n": 1071
+  },
+  "test_spoil": {
+   "accuracy": 0.9607843137254902,
+   "macro_precision": 0.9666694926031114,
+   "macro_recall": 0.9429548563611492,
+   "macro_f1": 0.953617240668179,
+   "weighted_f1": 0.9602735959304323,
+   "roc_auc": 0.9893337088597409,
+   "n": 1071
+  },
+  "test_spoil_per_class": {
+   "Not_spoiled": {
+    "precision": 0.9526938239159002,
+    "recall": 0.9917920656634747,
+    "f1": 0.9718498659517426,
+    "support": 731
+   },
+   "Spoiled": {
+    "precision": 0.9806451612903225,
+    "recall": 0.8941176470588236,
+    "f1": 0.9353846153846154,
+    "support": 340
+   }
+  },
+  "test_type_per_class": {
+   "Banana": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "support": 68
+   },
+   "Carrot": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "support": 85
+   },
+   "Guava": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "support": 103
+   },
+   "Indian_Gooseberry": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "support": 272
+   },
+   "Mango": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "support": 85
+   },
+   "Tomato": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "support": 458
+   }
+  },
+  "cm_spoil": [
+   [
+    725,
+    6
+   ],
+   [
+    36,
+    304
+   ]
+  ],
+  "cm_type": [
+   [
+    68,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    85,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    103,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    272,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    85,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    458
+   ]
+  ],
+  "batched_latency_ms": 14.373088398682686,
+  "checkpoint": "artifacts/runs/vit_b16_primary/best.pt",
+  "deployed_checkpoint": "backend/models/foresight_vit.pt",
+  "checkpoint_mb": 343.3,
+  "deployed_sha256": "49c40d4f65f9431103e6beb80d837525e875f52e9cbf0b2449c1cfdaacd225a5",
+  "run_sha256": "49c40d4f65f9431103e6beb80d837525e875f52e9cbf0b2449c1cfdaacd225a5",
+  "bootstrap": {
+   "method": "cluster bootstrap over test capture sessions (64 sessions), 2000 resamples, seed 0",
+   "spoil_macro_f1_95ci": [
+    0.9033878848750496,
+    0.9880773749453744
+   ],
+   "spoil_accuracy_95ci": [
+    0.9187656090473573,
+    0.9903663204392841
+   ],
+   "spoiled_recall_95ci": [
+    0.773109243697479,
+    0.983957219251337
+   ],
+   "n_sessions": 64
+  },
+  "calibration": {
+   "ece_10bin": 0.03841895424836604,
+   "bins": [
+    {
+     "bin": "0.55-0.60",
+     "n": 4,
+     "mean_conf": 0.5767,
+     "accuracy": 1.0
+    },
+    {
+     "bin": "0.60-0.65",
+     "n": 1,
+     "mean_conf": 0.639,
+     "accuracy": 1.0
+    },
+    {
+     "bin": "0.70-0.75",
+     "n": 4,
+     "mean_conf": 0.73855,
+     "accuracy": 0.75
+    },
+    {
+     "bin": "0.75-0.80",
+     "n": 5,
+     "mean_conf": 0.775,
+     "accuracy": 0.2
+    },
+    {
+     "bin": "0.80-0.85",
+     "n": 3,
+     "mean_conf": 0.8276,
+     "accuracy": 1.0
+    },
+    {
+     "bin": "0.85-0.90",
+     "n": 2,
+     "mean_conf": 0.8793,
+     "accuracy": 1.0
+    },
+    {
+     "bin": "0.90-0.95",
+     "n": 12,
+     "mean_conf": 0.9297333333333334,
+     "accuracy": 0.5833333333333334
+    },
+    {
+     "bin": "0.95-1.00",
+     "n": 1040,
+     "mean_conf": 0.9992849038461539,
+     "accuracy": 0.9692307692307692
+    }
+   ],
+   "n": 1071,
+   "share_of_errors_with_conf_ge_0.9": 0.8809523809523809,
+   "n_errors": 42,
+   "mean_conf_correct": 0.9953057337220604,
+   "mean_conf_wrong": 0.9585690476190477
+  },
+  "errors_by_stratum": [
+   {
+    "produce": "Banana",
+    "label": "Not_spoiled",
+    "n": 34,
+    "errors": 0,
+    "error_rate": 0.0
+   },
+   {
+    "produce": "Banana",
+    "label": "Spoiled",
+    "n": 34,
+    "errors": 0,
+    "error_rate": 0.0
+   },
+   {
+    "produce": "Carrot",
+    "label": "Not_spoiled",
+    "n": 17,
+    "errors": 0,
+    "error_rate": 0.0
+   },
+   {
+    "produce": "Carrot",
+    "label": "Spoiled",
+    "n": 68,
+    "errors": 0,
+    "error_rate": 0.0
+   },
+   {
+    "produce": "Guava",
+    "label": "Not_spoiled",
+    "n": 35,
+    "errors": 0,
+    "error_rate": 0.0
+   },
+   {
+    "produce": "Guava",
+    "label": "Spoiled",
+    "n": 68,
+    "errors": 0,
+    "error_rate": 0.0
+   },
+   {
+    "produce": "Indian_Gooseberry",
+    "label": "Not_spoiled",
+    "n": 170,
+    "errors": 6,
+    "error_rate": 0.03529411764705882
+   },
+   {
+    "produce": "Indian_Gooseberry",
+    "label": "Spoiled",
+    "n": 102,
+    "errors": 27,
+    "error_rate": 0.2647058823529412
+   },
+   {
+    "produce": "Mango",
+    "label": "Not_spoiled",
+    "n": 51,
+    "errors": 0,
+    "error_rate": 0.0
+   },
+   {
+    "produce": "Mango",
+    "label": "Spoiled",
+    "n": 34,
+    "errors": 2,
+    "error_rate": 0.058823529411764705
+   },
+   {
+    "produce": "Tomato",
+    "label": "Not_spoiled",
+    "n": 424,
+    "errors": 0,
+    "error_rate": 0.0
+   },
+   {
+    "produce": "Tomato",
+    "label": "Spoiled",
+    "n": 34,
+    "errors": 7,
+    "error_rate": 0.20588235294117646
+   }
+  ]
+ },
+ "baselines": {
+  "colorhist": {
+   "C_type": 10.0,
+   "C_spoil": 10.0,
+   "val_spoil_macro_f1": 0.8052661626899755,
+   "test_type": {
+    "accuracy": 0.9169000933706816,
+    "macro_precision": 0.8993926910408824,
+    "macro_recall": 0.8417017474730596,
+    "macro_f1": 0.8664199071212263,
+    "weighted_f1": 0.9135032651770028,
+    "roc_auc": 0.9782570033823781,
+    "n": 1071
+   },
+   "test_spoil": {
+    "accuracy": 0.8571428571428571,
+    "macro_precision": 0.8459093312186096,
+    "macro_recall": 0.8159028727770177,
+    "macro_f1": 0.8281351441777729,
+    "weighted_f1": 0.8539124527444728,
+    "roc_auc": 0.8849299911483061,
+    "n": 1071
+   }
+  },
+  "vit_frozen": {
+   "C_type": 0.01,
+   "C_spoil": 0.1,
+   "val_spoil_macro_f1": 0.9415549501756398,
+   "test_type": {
+    "accuracy": 1.0,
+    "macro_precision": 1.0,
+    "macro_recall": 1.0,
+    "macro_f1": 1.0,
+    "weighted_f1": 1.0,
+    "roc_auc": 1.0,
+    "n": 1071
+   },
+   "test_spoil": {
+    "accuracy": 0.9299719887955182,
+    "macro_precision": 0.9359164773720077,
+    "macro_recall": 0.9015047879616963,
+    "macro_f1": 0.916061006640925,
+    "weighted_f1": 0.9285362222887369,
+    "roc_auc": 0.9791944958557979,
+    "n": 1071
+   }
+  }
+ },
+ "ablation_v1": {
+  "vit_s16_noaug": {
+   "run": "artifacts/runs/vit_s16_noaug",
+   "backbone": "vit_small_patch16_224.augreg_in21k_ft_in1k",
+   "lr": 5e-05,
+   "head_lr": 0.0005,
+   "batch": 32,
+   "aug": "none",
+   "extra": false,
+   "seed": 42,
+   "n_train": 3177,
+   "n_train_real": 3177,
+   "n_val": 1087,
+   "epochs_run": 10,
+   "best_epoch": 6,
+   "best_val_spoil_macro_f1": 0.9537840136054422,
+   "best_val_composite": 0.9768920068027211,
+   "val_spoil_curve": [
+    0.8535629863271568,
+    0.9057146410309198,
+    0.8950265572187349,
+    0.934618376627022,
+    0.9405341772972622,
+    0.9537840136054422,
+    0.9473594742173795,
+    0.950213476075545,
+    0.9490024386275409,
+    0.9490024386275409
+   ],
+   "train_seconds": 749.9,
+   "manifest": "artifacts/dataset/v1/split_manifest.csv",
+   "complete": true,
+   "test_spoil": {
+    "accuracy": 0.9355742296918768,
+    "macro_precision": 0.9243382441010899,
+    "macro_recall": 0.9276333789329685,
+    "macro_f1": 0.9259562444579152,
+    "weighted_f1": 0.9356988149928348,
+    "roc_auc": 0.9850708135511388,
+    "n": 1071
+   },
+   "test_type": {
+    "accuracy": 1.0,
+    "macro_precision": 1.0,
+    "macro_recall": 1.0,
+    "macro_f1": 1.0,
+    "weighted_f1": 1.0,
+    "roc_auc": 1.0,
+    "n": 1071
+   },
+   "cm_spoil": [
+    [
+     694,
+     37
+    ],
+    [
+     32,
+     308
+    ]
+   ],
+   "latency_ms": 4.197705984985277,
+   "spoiled_recall_by_produce": {
+    "Banana": 1.0,
+    "Carrot": 1.0,
+    "Guava": 1.0,
+    "Indian_Gooseberry": 0.7647058823529411,
+    "Mango": 0.9705882352941176,
+    "Tomato": 0.7941176470588235
+   }
+  },
+  "vit_s16_aug": {
+   "run": "artifacts/runs/vit_s16_aug",
+   "backbone": "vit_small_patch16_224.augreg_in21k_ft_in1k",
+   "lr": 5e-05,
+   "head_lr": 0.0005,
+   "batch": 32,
+   "aug": "conventional",
+   "extra": false,
+   "seed": 42,
+   "n_train": 3177,
+   "n_train_real": 3177,
+   "n_val": 1087,
+   "epochs_run": 5,
+   "best_epoch": 1,
+   "best_val_spoil_macro_f1": 0.9343750159884985,
+   "best_val_composite": 0.9671875079942492,
+   "val_spoil_curve": [
+    0.9343750159884985,
+    0.8570516072065979,
+    0.8408065744436912,
+    0.8941580532942277,
+    0.910519643647471
+   ],
+   "train_seconds": 356.0,
+   "manifest": "artifacts/dataset/v1/split_manifest.csv",
+   "complete": true,
+   "test_spoil": {
+    "accuracy": 0.9028944911297853,
+    "macro_precision": 0.9214865985869161,
+    "macro_recall": 0.8557113543091655,
+    "macro_f1": 0.8793647217841856,
+    "weighted_f1": 0.8988153344990469,
+    "roc_auc": 0.9359821356723265,
+    "n": 1071
+   },
+   "test_type": {
+    "accuracy": 1.0,
+    "macro_precision": 1.0,
+    "macro_recall": 1.0,
+    "macro_f1": 1.0,
+    "weighted_f1": 1.0,
+    "roc_auc": 1.0,
+    "n": 1071
+   },
+   "cm_spoil": [
+    [
+     720,
+     11
+    ],
+    [
+     93,
+     247
+    ]
+   ],
+   "latency_ms": 4.417715885166103,
+   "spoiled_recall_by_produce": {
+    "Banana": 0.9411764705882353,
+    "Carrot": 0.8088235294117647,
+    "Guava": 0.8529411764705882,
+    "Indian_Gooseberry": 0.6274509803921569,
+    "Mango": 0.8235294117647058,
+    "Tomato": 0.29411764705882354
+   }
+  },
+  "vit_s16_aug_gan": {
+   "run": "artifacts/runs/vit_s16_aug_gan",
+   "backbone": "vit_small_patch16_224.augreg_in21k_ft_in1k",
+   "lr": 5e-05,
+   "head_lr": 0.0005,
+   "batch": 32,
+   "aug": "conventional",
+   "extra": true,
+   "seed": 42,
+   "n_train": 3657,
+   "n_train_real": 3177,
+   "n_val": 1087,
+   "epochs_run": 10,
+   "best_epoch": 9,
+   "best_val_spoil_macro_f1": 0.962276143192998,
+   "best_val_composite": 0.981138071596499,
+   "val_spoil_curve": [
+    0.828824213066468,
+    0.9142566529663304,
+    0.9391687443555048,
+    0.9058122627712544,
+    0.9375244269719751,
+    0.9404350923338265,
+    0.9502214922256381,
+    0.9439992708135185,
+    0.962276143192998,
+    0.9588720019754502
+   ],
+   "train_seconds": 857.9,
+   "manifest": "artifacts/dataset/v1/split_manifest.csv",
+   "complete": true,
+   "test_spoil": {
+    "accuracy": 0.9477124183006536,
+    "macro_precision": 0.958678065820923,
+    "macro_recall": 0.9215800273597812,
+    "macro_f1": 0.937268322887816,
+    "weighted_f1": 0.9466130398361444,
+    "roc_auc": 0.9836163193047397,
+    "n": 1071
+   },
+   "test_type": {
+    "accuracy": 1.0,
+    "macro_precision": 1.0,
+    "macro_recall": 1.0,
+    "macro_f1": 1.0,
+    "weighted_f1": 1.0,
+    "roc_auc": 1.0,
+    "n": 1071
+   },
+   "cm_spoil": [
+    [
+     726,
+     5
+    ],
+    [
+     51,
+     289
+    ]
+   ],
+   "latency_ms": 4.188840759277897,
+   "spoiled_recall_by_produce": {
+    "Banana": 1.0,
+    "Carrot": 0.9558823529411765,
+    "Guava": 1.0,
+    "Indian_Gooseberry": 0.6862745098039216,
+    "Mango": 0.9705882352941176,
+    "Tomato": 0.5588235294117647
+   }
+  },
+  "vit_s16_aug_daysplit": {
+   "run": "artifacts/runs/vit_s16_aug_daysplit",
+   "backbone": "vit_small_patch16_224.augreg_in21k_ft_in1k",
+   "lr": 5e-05,
+   "head_lr": 0.0005,
+   "batch": 32,
+   "aug": "conventional",
+   "extra": false,
+   "seed": 42,
+   "n_train": 3076,
+   "n_train_real": 3076,
+   "n_val": 1138,
+   "epochs_run": 10,
+   "best_epoch": 6,
+   "best_val_spoil_macro_f1": 0.9563707022224217,
+   "best_val_composite": 0.9781853511112109,
+   "val_spoil_curve": [
+    0.8755057027327483,
+    0.8771349198769189,
+    0.9006473295082787,
+    0.8875928914892901,
+    0.903356366408166,
+    0.9563707022224217,
+    0.9038972159376572,
+    0.9234441830468088,
+    0.9148957943833271,
+    0.9161026820601289
+   ],
+   "train_seconds": 793.7,
+   "manifest": "artifacts/dataset/v1_daygroup_sensitivity/split_manifest.csv",
+   "complete": true,
+   "test_spoil": {
+    "accuracy": 0.8331846565566459,
+    "macro_precision": 0.7986227854648906,
+    "macro_recall": 0.8404467049977886,
+    "macro_f1": 0.8115273578298228,
+    "weighted_f1": 0.8385989812383515,
+    "roc_auc": 0.9256480985746098,
+    "n": 1121
+   },
+   "test_type": {
+    "accuracy": 1.0,
+    "macro_precision": 1.0,
+    "macro_recall": 1.0,
+    "macro_f1": 1.0,
+    "weighted_f1": 1.0,
+    "roc_auc": 1.0,
+    "n": 1121
+   },
+   "cm_spoil": [
+    [
+     657,
+     141
+    ],
+    [
+     46,
+     277
+    ]
+   ],
+   "latency_ms": 4.1875340855822065,
+   "spoiled_recall_by_produce": {
+    "Banana": 1.0,
+    "Carrot": 1.0,
+    "Guava": 1.0,
+    "Indian_Gooseberry": 0.6274509803921569,
+    "Mango": 1.0,
+    "Tomato": 0.7647058823529411
+   }
+  }
+ },
+ "ablation_v2_runs": {
+  "abl2_aug_s42": {
+   "run": "artifacts/runs/abl2_aug_s42",
+   "backbone": "vit_small_patch16_224.augreg_in21k_ft_in1k",
+   "lr": 2e-05,
+   "head_lr": 0.0002,
+   "batch": 32,
+   "aug": "conventional",
+   "extra": false,
+   "seed": 42,
+   "n_train": 3177,
+   "n_train_real": 3177,
+   "n_val": 1087,
+   "epochs_run": 10,
+   "best_epoch": 9,
+   "best_val_spoil_macro_f1": 0.9322754576030903,
+   "best_val_composite": 0.9661377288015451,
+   "val_spoil_curve": [
+    0.9093206157124263,
+    0.8824254748409985,
+    0.8920286914694868,
+    0.8967833827893175,
+    0.9138726390582472,
+    0.928469125479995,
+    0.9076135919359499,
+    0.9248472869541169,
+    0.9322754576030903,
+    0.9322754576030903
+   ],
+   "train_seconds": 845.3,
+   "manifest": "artifacts/dataset/v1/split_manifest.csv",
+   "complete": true,
+   "test_spoil": {
+    "accuracy": 0.9411764705882353,
+    "macro_precision": 0.953174364374906,
+    "macro_recall": 0.9120725034199726,
+    "macro_f1": 0.9291009449634697,
+    "weighted_f1": 0.9397831407084546,
+    "roc_auc": 0.9816930876317695,
+    "n": 1071
+   },
+   "test_type": {
+    "accuracy": 1.0,
+    "macro_precision": 1.0,
+    "macro_recall": 1.0,
+    "macro_f1": 1.0,
+    "weighted_f1": 1.0,
+    "roc_auc": 1.0,
+    "n": 1071
+   },
+   "cm_spoil": [
+    [
+     725,
+     6
+    ],
+    [
+     57,
+     283
+    ]
+   ],
+   "latency_ms": 4.90946770958929,
+   "spoiled_recall_by_produce": {
+    "Banana": 0.9117647058823529,
+    "Carrot": 0.9264705882352942,
+    "Guava": 1.0,
+    "Indian_Gooseberry": 0.6666666666666666,
+    "Mango": 1.0,
+    "Tomato": 0.5588235294117647
+   },
+   "cond": "aug"
+  },
+  "abl2_aug_s43": {
+   "run": "artifacts/runs/abl2_aug_s43",
+   "backbone": "vit_small_patch16_224.augreg_in21k_ft_in1k",
+   "lr": 2e-05,
+   "head_lr": 0.0002,
+   "batch": 32,
+   "aug": "conventional",
+   "extra": false,
+   "seed": 43,
+   "n_train": 3177,
+   "n_train_real": 3177,
+   "n_val": 1087,
+   "epochs_run": 10,
+   "best_epoch": 6,
+   "best_val_spoil_macro_f1": 0.935428754959913,
+   "best_val_composite": 0.9677143774799565,
+   "val_spoil_curve": [
+    0.9009217868239173,
+    0.8808705541770059,
+    0.9251453650493441,
+    0.9060045556164846,
+    0.8763067005791155,
+    0.935428754959913,
+    0.9276661253718298,
+    0.9232822684435589,
+    0.9154667139493142,
+    0.9128742574185281
+   ],
+   "train_seconds": 834.5,
+   "manifest": "artifacts/dataset/v1/split_manifest.csv",
+   "complete": true,
+   "test_spoil": {
+    "accuracy": 0.9337068160597572,
+    "macro_precision": 0.9405949676742967,
+    "macro_recall": 0.9058139534883721,
+    "macro_f1": 0.9205377529534091,
+    "weighted_f1": 0.9323476237666709,
+    "roc_auc": 0.9832099460851371,
+    "n": 1071
+   },
+   "test_type": {
+    "accuracy": 1.0,
+    "macro_precision": 1.0,
+    "macro_recall": 1.0,
+    "macro_f1": 1.0,
+    "weighted_f1": 1.0,
+    "roc_auc": 1.0,
+    "n": 1071
+   },
+   "cm_spoil": [
+    [
+     718,
+     13
+    ],
+    [
+     58,
+     282
+    ]
+   ],
+   "latency_ms": 5.044802717676386,
+   "spoiled_recall_by_produce": {
+    "Banana": 0.9117647058823529,
+    "Carrot": 0.9852941176470589,
+    "Guava": 1.0,
+    "Indian_Gooseberry": 0.6862745098039216,
+    "Mango": 0.9705882352941176,
+    "Tomato": 0.38235294117647056
+   },
+   "cond": "aug"
+  },
+  "abl2_aug_s44": {
+   "run": "artifacts/runs/abl2_aug_s44",
+   "backbone": "vit_small_patch16_224.augreg_in21k_ft_in1k",
+   "lr": 2e-05,
+   "head_lr": 0.0002,
+   "batch": 32,
+   "aug": "conventional",
+   "extra": false,
+   "seed": 44,
+   "n_train": 3177,
+   "n_train_real": 3177,
+   "n_val": 1087,
+   "epochs_run": 9,
+   "best_epoch": 5,
+   "best_val_spoil_macro_f1": 0.9452997575653522,
+   "best_val_composite": 0.9726498787826761,
+   "val_spoil_curve": [
+    0.887397653064607,
+    0.9029746336197949,
+    0.9229658403114931,
+    0.919024011499499,
+    0.9452997575653522,
+    0.911404984322725,
+    0.909568140032113,
+    0.9156294339177438,
+    0.919541080680977
+   ],
+   "train_seconds": 830.8,
+   "manifest": "artifacts/dataset/v1/split_manifest.csv",
+   "complete": true,
+   "test_spoil": {
+    "accuracy": 0.9430438842203548,
+    "macro_precision": 0.9377473189195389,
+    "macro_recall": 0.9299589603283174,
+    "macro_f1": 0.9337035244262191,
+    "weighted_f1": 0.9427883022359381,
+    "roc_auc": 0.9772994286633943,
+    "n": 1071
+   },
+   "test_type": {
+    "accuracy": 1.0,
+    "macro_precision": 1.0,
+    "macro_recall": 1.0,
+    "macro_f1": 1.0,
+    "weighted_f1": 1.0,
+    "roc_auc": 1.0,
+    "n": 1071
+   },
+   "cm_spoil": [
+    [
+     706,
+     25
+    ],
+    [
+     36,
+     304
+    ]
+   ],
+   "latency_ms": 5.157963458660152,
+   "spoiled_recall_by_produce": {
+    "Banana": 0.9705882352941176,
+    "Carrot": 1.0,
+    "Guava": 1.0,
+    "Indian_Gooseberry": 0.6764705882352942,
+    "Mango": 1.0,
+    "Tomato": 0.9411764705882353
+   },
+   "cond": "aug"
+  },
+  "abl2_gan_s42": {
+   "run": "artifacts/runs/abl2_gan_s42",
+   "backbone": "vit_small_patch16_224.augreg_in21k_ft_in1k",
+   "lr": 2e-05,
+   "head_lr": 0.0002,
+   "batch": 32,
+   "aug": "conventional",
+   "extra": true,
+   "seed": 42,
+   "n_train": 3657,
+   "n_train_real": 3177,
+   "n_val": 1087,
+   "epochs_run": 9,
+   "best_epoch": 5,
+   "best_val_spoil_macro_f1": 0.957404620834509,
+   "best_val_composite": 0.9787023104172545,
+   "val_spoil_curve": [
+    0.8340377150096643,
+    0.8532771286953443,
+    0.9286864517976001,
+    0.8951020536694727,
+    0.957404620834509,
+    0.9487235932795044,
+    0.928986024353105,
+    0.9286864517976001,
+    0.9502966179195393
+   ],
+   "train_seconds": 859.9,
+   "manifest": "artifacts/dataset/v1/split_manifest.csv",
+   "complete": true,
+   "test_spoil": {
+    "accuracy": 0.9393090569561158,
+    "macro_precision": 0.9320662125540173,
+    "macro_recall": 0.9272229822161423,
+    "macro_f1": 0.9295848729108864,
+    "weighted_f1": 0.9391380285935113,
+    "roc_auc": 0.968974812907379,
+    "n": 1071
+   },
+   "test_type": {
+    "accuracy": 1.0,
+    "macro_precision": 1.0,
+    "macro_recall": 1.0,
+    "macro_f1": 1.0,
+    "weighted_f1": 1.0,
+    "roc_auc": 1.0,
+    "n": 1071
+   },
+   "cm_spoil": [
+    [
+     702,
+     29
+    ],
+    [
+     36,
+     304
+    ]
+   ],
+   "latency_ms": 4.835892966086581,
+   "spoiled_recall_by_produce": {
+    "Banana": 1.0,
+    "Carrot": 0.9852941176470589,
+    "Guava": 1.0,
+    "Indian_Gooseberry": 0.6764705882352942,
+    "Mango": 0.9705882352941176,
+    "Tomato": 0.9705882352941176
+   },
+   "cond": "gan"
+  },
+  "abl2_gan_s43": {
+   "run": "artifacts/runs/abl2_gan_s43",
+   "backbone": "vit_small_patch16_224.augreg_in21k_ft_in1k",
+   "lr": 2e-05,
+   "head_lr": 0.0002,
+   "batch": 32,
+   "aug": "conventional",
+   "extra": true,
+   "seed": 43,
+   "n_train": 3657,
+   "n_train_real": 3177,
+   "n_val": 1087,
+   "epochs_run": 10,
+   "best_epoch": 8,
+   "best_val_spoil_macro_f1": 0.9543890567304465,
+   "best_val_composite": 0.9771945283652232,
+   "val_spoil_curve": [
+    0.8636176112826532,
+    0.9061952751397588,
+    0.9525365195300095,
+    0.9445346760567448,
+    0.9527737502841698,
+    0.9217434509052378,
+    0.9408288338624512,
+    0.9543890567304465,
+    0.9481963689091011,
+    0.9481031212891076
+   ],
+   "train_seconds": 996.1,
+   "manifest": "artifacts/dataset/v1/split_manifest.csv",
+   "complete": true,
+   "test_spoil": {
+    "accuracy": 0.9402427637721755,
+    "macro_precision": 0.9472616060498189,
+    "macro_recall": 0.9145348837209302,
+    "macro_f1": 0.928566664443407,
+    "weighted_f1": 0.9391102091028725,
+    "roc_auc": 0.9836042488130683,
+    "n": 1071
+   },
+   "test_type": {
+    "accuracy": 1.0,
+    "macro_precision": 1.0,
+    "macro_recall": 1.0,
+    "macro_f1": 1.0,
+    "weighted_f1": 1.0,
+    "roc_auc": 1.0,
+    "n": 1071
+   },
+   "cm_spoil": [
+    [
+     720,
+     11
+    ],
+    [
+     53,
+     287
+    ]
+   ],
+   "latency_ms": 4.720661066985417,
+   "spoiled_recall_by_produce": {
+    "Banana": 0.9411764705882353,
+    "Carrot": 0.9852941176470589,
+    "Guava": 1.0,
+    "Indian_Gooseberry": 0.7058823529411765,
+    "Mango": 0.9411764705882353,
+    "Tomato": 0.47058823529411764
+   },
+   "cond": "gan"
+  },
+  "abl2_gan_s44": {
+   "run": "artifacts/runs/abl2_gan_s44",
+   "backbone": "vit_small_patch16_224.augreg_in21k_ft_in1k",
+   "lr": 2e-05,
+   "head_lr": 0.0002,
+   "batch": 32,
+   "aug": "conventional",
+   "extra": true,
+   "seed": 44,
+   "n_train": 3657,
+   "n_train_real": 3177,
+   "n_val": 1087,
+   "epochs_run": 8,
+   "best_epoch": 4,
+   "best_val_spoil_macro_f1": 0.9511725476221136,
+   "best_val_composite": 0.9755862738110568,
+   "val_spoil_curve": [
+    0.9093991083543322,
+    0.9437875492417904,
+    0.9170690005946978,
+    0.9511725476221136,
+    0.9296644628931023,
+    0.9134082428409711,
+    0.9501307519383402,
+    0.9438879155115191
+   ],
+   "train_seconds": 871.7,
+   "manifest": "artifacts/dataset/v1/split_manifest.csv",
+   "complete": true,
+   "test_spoil": {
+    "accuracy": 0.9150326797385621,
+    "macro_precision": 0.915447865943473,
+    "macro_recall": 0.8858413132694938,
+    "macro_f1": 0.8985222044174561,
+    "weighted_f1": 0.9134657133307719,
+    "roc_auc": 0.974189265309407,
+    "n": 1071
+   },
+   "test_type": {
+    "accuracy": 1.0,
+    "macro_precision": 1.0,
+    "macro_recall": 1.0,
+    "macro_f1": 1.0,
+    "weighted_f1": 1.0,
+    "roc_auc": 1.0,
+    "n": 1071
+   },
+   "cm_spoil": [
+    [
+     706,
+     25
+    ],
+    [
+     66,
+     274
+    ]
+   ],
+   "latency_ms": 5.2537483639270555,
+   "spoiled_recall_by_produce": {
+    "Banana": 1.0,
+    "Carrot": 0.9852941176470589,
+    "Guava": 1.0,
+    "Indian_Gooseberry": 0.696078431372549,
+    "Mango": 0.5588235294117647,
+    "Tomato": 0.4411764705882353
+   },
+   "cond": "gan"
+  },
+  "abl2_noaug_s42": {
+   "run": "artifacts/runs/abl2_noaug_s42",
+   "backbone": "vit_small_patch16_224.augreg_in21k_ft_in1k",
+   "lr": 2e-05,
+   "head_lr": 0.0002,
+   "batch": 32,
+   "aug": "none",
+   "extra": false,
+   "seed": 42,
+   "n_train": 3177,
+   "n_train_real": 3177,
+   "n_val": 1087,
+   "epochs_run": 10,
+   "best_epoch": 9,
+   "best_val_spoil_macro_f1": 0.9573173126006205,
+   "best_val_composite": 0.9786586563003102,
+   "val_spoil_curve": [
+    0.9495076179858788,
+    0.9396558105107328,
+    0.9245730472831766,
+    0.9152322407659685,
+    0.955512765611259,
+    0.9470466447448544,
+    0.9572424059959272,
+    0.9561845489064276,
+    0.9573173126006205,
+    0.9573173126006205
+   ],
+   "train_seconds": 820.0,
+   "manifest": "artifacts/dataset/v1/split_manifest.csv",
+   "complete": true,
+   "test_spoil": {
+    "accuracy": 0.9327731092436975,
+    "macro_precision": 0.9409411433696169,
+    "macro_recall": 0.9035567715458276,
+    "macro_f1": 0.9191969150808953,
+    "weighted_f1": 0.9312886962145073,
+    "roc_auc": 0.9760843325018106,
+    "n": 1071
+   },
+   "test_type": {
+    "accuracy": 1.0,
+    "macro_precision": 1.0,
+    "macro_recall": 1.0,
+    "macro_f1": 1.0,
+    "weighted_f1": 1.0,
+    "roc_auc": 1.0,
+    "n": 1071
+   },
+   "cm_spoil": [
+    [
+     719,
+     12
+    ],
+    [
+     60,
+     280
+    ]
+   ],
+   "latency_ms": 4.852204619843253,
+   "spoiled_recall_by_produce": {
+    "Banana": 1.0,
+    "Carrot": 1.0,
+    "Guava": 1.0,
+    "Indian_Gooseberry": 0.6862745098039216,
+    "Mango": 0.9411764705882353,
+    "Tomato": 0.23529411764705882
+   },
+   "cond": "noaug"
+  },
+  "abl2_noaug_s43": {
+   "run": "artifacts/runs/abl2_noaug_s43",
+   "backbone": "vit_small_patch16_224.augreg_in21k_ft_in1k",
+   "lr": 2e-05,
+   "head_lr": 0.0002,
+   "batch": 32,
+   "aug": "none",
+   "extra": false,
+   "seed": 43,
+   "n_train": 3177,
+   "n_train_real": 3177,
+   "n_val": 1087,
+   "epochs_run": 7,
+   "best_epoch": 3,
+   "best_val_spoil_macro_f1": 0.9577325680867279,
+   "best_val_composite": 0.978866284043364,
+   "val_spoil_curve": [
+    0.9242614269788183,
+    0.9083662307755572,
+    0.9577325680867279,
+    0.9430617080563211,
+    0.9290099268547545,
+    0.9213296112489661,
+    0.9508364783983034
+   ],
+   "train_seconds": 573.4,
+   "manifest": "artifacts/dataset/v1/split_manifest.csv",
+   "complete": true,
+   "test_spoil": {
+    "accuracy": 0.927170868347339,
+    "macro_precision": 0.9144787721746064,
+    "macro_recall": 0.9183310533515732,
+    "macro_f1": 0.9163629737609329,
+    "weighted_f1": 0.9273393030681659,
+    "roc_auc": 0.968427617284944,
+    "n": 1071
+   },
+   "test_type": {
+    "accuracy": 1.0,
+    "macro_precision": 1.0,
+    "macro_recall": 1.0,
+    "macro_f1": 1.0,
+    "weighted_f1": 1.0,
+    "roc_auc": 1.0,
+    "n": 1071
+   },
+   "cm_spoil": [
+    [
+     689,
+     42
+    ],
+    [
+     36,
+     304
+    ]
+   ],
+   "latency_ms": 4.536513739003681,
+   "spoiled_recall_by_produce": {
+    "Banana": 1.0,
+    "Carrot": 0.9852941176470589,
+    "Guava": 0.9705882352941176,
+    "Indian_Gooseberry": 0.7450980392156863,
+    "Mango": 1.0,
+    "Tomato": 0.7941176470588235
+   },
+   "cond": "noaug"
+  },
+  "abl2_noaug_s44": {
+   "run": "artifacts/runs/abl2_noaug_s44",
+   "backbone": "vit_small_patch16_224.augreg_in21k_ft_in1k",
+   "lr": 2e-05,
+   "head_lr": 0.0002,
+   "batch": 32,
+   "aug": "none",
+   "extra": false,
+   "seed": 44,
+   "n_train": 3177,
+   "n_train_real": 3177,
+   "n_val": 1087,
+   "epochs_run": 7,
+   "best_epoch": 3,
+   "best_val_spoil_macro_f1": 0.9541739177324713,
+   "best_val_composite": 0.9770869588662356,
+   "val_spoil_curve": [
+    0.8996993525686849,
+    0.9067581364598764,
+    0.9541739177324713,
+    0.9354275062476956,
+    0.9351695016341819,
+    0.9309742308165021,
+    0.9476135819335066
+   ],
+   "train_seconds": 652.8,
+   "manifest": "artifacts/dataset/v1/split_manifest.csv",
+   "complete": true,
+   "test_spoil": {
+    "accuracy": 0.9215686274509803,
+    "macro_precision": 0.9174940470681285,
+    "macro_recall": 0.899281805745554,
+    "macro_f1": 0.9075540100621486,
+    "weighted_f1": 0.9206948143763769,
+    "roc_auc": 0.9673372495372979,
+    "n": 1071
+   },
+   "test_type": {
+    "accuracy": 1.0,
+    "macro_precision": 1.0,
+    "macro_recall": 1.0,
+    "macro_f1": 1.0,
+    "weighted_f1": 1.0,
+    "roc_auc": 1.0,
+    "n": 1071
+   },
+   "cm_spoil": [
+    [
+     702,
+     29
+    ],
+    [
+     55,
+     285
+    ]
+   ],
+   "latency_ms": 5.128457343207526,
+   "spoiled_recall_by_produce": {
+    "Banana": 0.9411764705882353,
+    "Carrot": 1.0,
+    "Guava": 1.0,
+    "Indian_Gooseberry": 0.7156862745098039,
+    "Mango": 0.9705882352941176,
+    "Tomato": 0.3235294117647059
+   },
+   "cond": "noaug"
+  }
+ },
+ "daysplit_v2_runs": {
+  "day2_aug_s42": {
+   "run": "artifacts/runs/day2_aug_s42",
+   "backbone": "vit_small_patch16_224.augreg_in21k_ft_in1k",
+   "lr": 2e-05,
+   "head_lr": 0.0002,
+   "batch": 32,
+   "aug": "conventional",
+   "extra": false,
+   "seed": 42,
+   "n_train": 3076,
+   "n_train_real": 3076,
+   "n_val": 1138,
+   "epochs_run": 5,
+   "best_epoch": 1,
+   "best_val_spoil_macro_f1": 0.8992369954903655,
+   "best_val_composite": 0.9496184977451827,
+   "val_spoil_curve": [
+    0.8992369954903655,
+    0.8915799006443981,
+    0.8981560106560107,
+    0.8798814124340683,
+    0.8984000298982215
+   ],
+   "train_seconds": 418.2,
+   "manifest": "artifacts/dataset/v1_daygroup_sensitivity/split_manifest.csv",
+   "complete": true,
+   "test_spoil": {
+    "accuracy": 0.8617305976806423,
+    "macro_precision": 0.8297770700636943,
+    "macro_recall": 0.8374613003095975,
+    "macro_f1": 0.8334398967788443,
+    "weighted_f1": 0.8625266563640263,
+    "roc_auc": 0.8924206801834308,
+    "n": 1121
+   },
+   "test_type": {
+    "accuracy": 1.0,
+    "macro_precision": 1.0,
+    "macro_recall": 1.0,
+    "macro_f1": 1.0,
+    "weighted_f1": 1.0,
+    "roc_auc": 1.0,
+    "n": 1121
+   },
+   "cm_spoil": [
+    [
+     714,
+     84
+    ],
+    [
+     71,
+     252
+    ]
+   ],
+   "latency_ms": 4.9758550134056385,
+   "spoiled_recall_by_produce": {
+    "Banana": 0.9705882352941176,
+    "Carrot": 1.0,
+    "Guava": 1.0,
+    "Indian_Gooseberry": 0.5980392156862745,
+    "Mango": 1.0,
+    "Tomato": 0.14705882352941177
+   }
+  },
+  "day2_aug_s43": {
+   "run": "artifacts/runs/day2_aug_s43",
+   "backbone": "vit_small_patch16_224.augreg_in21k_ft_in1k",
+   "lr": 2e-05,
+   "head_lr": 0.0002,
+   "batch": 32,
+   "aug": "conventional",
+   "extra": false,
+   "seed": 43,
+   "n_train": 3076,
+   "n_train_real": 3076,
+   "n_val": 1138,
+   "epochs_run": 10,
+   "best_epoch": 7,
+   "best_val_spoil_macro_f1": 0.9240117521367521,
+   "best_val_composite": 0.9620058760683761,
+   "val_spoil_curve": [
+    0.8873881697194903,
+    0.8706019750929577,
+    0.9140431951925558,
+    0.884048402150301,
+    0.8952105277907894,
+    0.8734392458282014,
+    0.9240117521367521,
+    0.9003605922851567,
+    0.9074364729096688,
+    0.9061905623580031
+   ],
+   "train_seconds": 899.7,
+   "manifest": "artifacts/dataset/v1_daygroup_sensitivity/split_manifest.csv",
+   "complete": true,
+   "test_spoil": {
+    "accuracy": 0.864406779661017,
+    "macro_precision": 0.8347338935574229,
+    "macro_recall": 0.8347338935574229,
+    "macro_f1": 0.8347338935574229,
+    "weighted_f1": 0.864406779661017,
+    "roc_auc": 0.921496853589081,
+    "n": 1121
+   },
+   "test_type": {
+    "accuracy": 1.0,
+    "macro_precision": 1.0,
+    "macro_recall": 1.0,
+    "macro_f1": 1.0,
+    "weighted_f1": 1.0,
+    "roc_auc": 1.0,
+    "n": 1121
+   },
+   "cm_spoil": [
+    [
+     722,
+     76
+    ],
+    [
+     76,
+     247
+    ]
+   ],
+   "latency_ms": 5.113442155782126,
+   "spoiled_recall_by_produce": {
+    "Banana": 1.0,
+    "Carrot": 1.0,
+    "Guava": 1.0,
+    "Indian_Gooseberry": 0.5294117647058824,
+    "Mango": 0.803921568627451,
+    "Tomato": 0.47058823529411764
+   }
+  },
+  "day2_aug_s44": {
+   "run": "artifacts/runs/day2_aug_s44",
+   "backbone": "vit_small_patch16_224.augreg_in21k_ft_in1k",
+   "lr": 2e-05,
+   "head_lr": 0.0002,
+   "batch": 32,
+   "aug": "conventional",
+   "extra": false,
+   "seed": 44,
+   "n_train": 3076,
+   "n_train_real": 3076,
+   "n_val": 1138,
+   "epochs_run": 10,
+   "best_epoch": 6,
+   "best_val_spoil_macro_f1": 0.9440103910416626,
+   "best_val_composite": 0.9720051955208313,
+   "val_spoil_curve": [
+    0.87397204793049,
+    0.8592393195721539,
+    0.8647770841915143,
+    0.8777246392078374,
+    0.9197415933197923,
+    0.9440103910416626,
+    0.9066097005224824,
+    0.903205410019686,
+    0.9145843222694207,
+    0.9108189500317028
+   ],
+   "train_seconds": 871.6,
+   "manifest": "artifacts/dataset/v1_daygroup_sensitivity/split_manifest.csv",
+   "complete": true,
+   "test_spoil": {
+    "accuracy": 0.8519179304192686,
+    "macro_precision": 0.8178277467200809,
+    "macro_recall": 0.8268833849329205,
+    "macro_f1": 0.822090710925848,
+    "weighted_f1": 0.8529576592033528,
+    "roc_auc": 0.9139896956012321,
+    "n": 1121
+   },
+   "test_type": {
+    "accuracy": 0.9946476360392507,
+    "macro_precision": 0.989010989010989,
+    "macro_recall": 0.9901960784313726,
+    "macro_f1": 0.9892676767676768,
+    "weighted_f1": 0.9946577730922065,
+    "roc_auc": 1.0,
+    "n": 1121
+   },
+   "cm_spoil": [
+    [
+     707,
+     91
+    ],
+    [
+     75,
+     248
+    ]
+   ],
+   "latency_ms": 5.151771796785985,
+   "spoiled_recall_by_produce": {
+    "Banana": 0.8529411764705882,
+    "Carrot": 1.0,
+    "Guava": 1.0,
+    "Indian_Gooseberry": 0.5784313725490197,
+    "Mango": 0.8235294117647058,
+    "Tomato": 0.47058823529411764
+   }
+  }
+ },
+ "ablation_v2_summary": {
+  "noaug": {
+   "n_seeds": 3,
+   "seeds": [
+    42,
+    43,
+    44
+   ],
+   "test_spoil_macro_f1": {
+    "mean": 0.9143712996346589,
+    "std": 0.006071604704511059,
+    "values": [
+     0.9191969150808953,
+     0.9163629737609329,
+     0.9075540100621486
+    ]
+   },
+   "test_spoil_accuracy": {
+    "mean": 0.9271708683473389,
+    "std": 0.005602240896358579,
+    "values": [
+     0.9327731092436975,
+     0.927170868347339,
+     0.9215686274509803
+    ]
+   },
+   "test_spoil_macro_precision": {
+    "mean": 0.9243046542041172,
+    "std": 0.014486288326766648,
+    "values": [
+     0.9409411433696169,
+     0.9144787721746064,
+     0.9174940470681285
+    ]
+   },
+   "test_spoil_macro_recall": {
+    "mean": 0.9070565435476516,
+    "std": 0.009995236947537548,
+    "values": [
+     0.9035567715458276,
+     0.9183310533515732,
+     0.899281805745554
+    ]
+   },
+   "test_spoil_auc": {
+    "mean": 0.9706163997746842,
+    "std": 0.004766648894932563,
+    "values": [
+     0.9760843325018106,
+     0.968427617284944,
+     0.9673372495372979
+    ]
+   },
+   "test_type_macro_f1": {
+    "mean": 1.0,
+    "std": 0.0,
+    "values": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "best_val_spoil_macro_f1": {
+    "mean": 0.9564079328066066,
+    "std": 0.001945822909024171,
+    "values": [
+     0.9573173126006205,
+     0.9577325680867279,
+     0.9541739177324713
+    ]
+   },
+   "best_epoch": [
+    9,
+    3,
+    3
+   ],
+   "epochs_run": [
+    10,
+    7,
+    7
+   ],
+   "train_minutes": {
+    "mean": 11.367777777777777,
+    "std": 2.097968152849411,
+    "values": [
+     13.666666666666666,
+     9.556666666666667,
+     10.879999999999999
+    ]
+   },
+   "latency_ms": {
+    "mean": 4.839058567351486,
+    "std": 0.2961906846299306,
+    "values": [
+     4.852204619843253,
+     4.536513739003681,
+     5.128457343207526
+    ]
+   },
+   "n_train": 3177,
+   "cm_spoil_sum": [
+    [
+     2110,
+     83
+    ],
+    [
+     151,
+     869
+    ]
+   ],
+   "spoiled_recall_by_produce": {
+    "Banana": 0.9803921568627452,
+    "Carrot": 0.9950980392156863,
+    "Guava": 0.9901960784313726,
+    "Indian_Gooseberry": 0.7156862745098039,
+    "Mango": 0.9705882352941176,
+    "Tomato": 0.4509803921568627
+   }
+  },
+  "aug": {
+   "n_seeds": 3,
+   "seeds": [
+    42,
+    43,
+    44
+   ],
+   "test_spoil_macro_f1": {
+    "mean": 0.9277807407810327,
+    "std": 0.006681436142855619,
+    "values": [
+     0.9291009449634697,
+     0.9205377529534091,
+     0.9337035244262191
+    ]
+   },
+   "test_spoil_accuracy": {
+    "mean": 0.9393090569561157,
+    "std": 0.004940712065480077,
+    "values": [
+     0.9411764705882353,
+     0.9337068160597572,
+     0.9430438842203548
+    ]
+   },
+   "test_spoil_macro_precision": {
+    "mean": 0.9438388836562472,
+    "std": 0.008209182422382631,
+    "values": [
+     0.953174364374906,
+     0.9405949676742967,
+     0.9377473189195389
+    ]
+   },
+   "test_spoil_macro_recall": {
+    "mean": 0.9159484724122207,
+    "std": 0.012530470483860625,
+    "values": [
+     0.9120725034199726,
+     0.9058139534883721,
+     0.9299589603283174
+    ]
+   },
+   "test_spoil_auc": {
+    "mean": 0.980734154126767,
+    "std": 0.003069726233468365,
+    "values": [
+     0.9816930876317695,
+     0.9832099460851371,
+     0.9772994286633943
+    ]
+   },
+   "test_type_macro_f1": {
+    "mean": 1.0,
+    "std": 0.0,
+    "values": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "best_val_spoil_macro_f1": {
+    "mean": 0.9376679900427852,
+    "std": 0.006794757368296415,
+    "values": [
+     0.9322754576030903,
+     0.935428754959913,
+     0.9452997575653522
+    ]
+   },
+   "best_epoch": [
+    9,
+    6,
+    5
+   ],
+   "epochs_run": [
+    10,
+    10,
+    9
+   ],
+   "train_minutes": {
+    "mean": 13.947777777777778,
+    "std": 0.12556907498501624,
+    "values": [
+     14.088333333333333,
+     13.908333333333333,
+     13.846666666666666
+    ]
+   },
+   "latency_ms": {
+    "mean": 5.037411295308609,
+    "std": 0.1244126567919695,
+    "values": [
+     4.90946770958929,
+     5.044802717676386,
+     5.157963458660152
+    ]
+   },
+   "n_train": 3177,
+   "cm_spoil_sum": [
+    [
+     2149,
+     44
+    ],
+    [
+     151,
+     869
+    ]
+   ],
+   "spoiled_recall_by_produce": {
+    "Banana": 0.9313725490196078,
+    "Carrot": 0.9705882352941178,
+    "Guava": 1.0,
+    "Indian_Gooseberry": 0.676470588235294,
+    "Mango": 0.9901960784313726,
+    "Tomato": 0.6274509803921569
+   }
+  },
+  "gan": {
+   "n_seeds": 3,
+   "seeds": [
+    42,
+    43,
+    44
+   ],
+   "test_spoil_macro_f1": {
+    "mean": 0.9188912472572498,
+    "std": 0.017647453549388525,
+    "values": [
+     0.9295848729108864,
+     0.928566664443407,
+     0.8985222044174561
+    ]
+   },
+   "test_spoil_accuracy": {
+    "mean": 0.9315281668222845,
+    "std": 0.014293137258892056,
+    "values": [
+     0.9393090569561158,
+     0.9402427637721755,
+     0.9150326797385621
+    ]
+   },
+   "test_spoil_macro_precision": {
+    "mean": 0.931591894849103,
+    "std": 0.01591217294565472,
+    "values": [
+     0.9320662125540173,
+     0.9472616060498189,
+     0.915447865943473
+    ]
+   },
+   "test_spoil_macro_recall": {
+    "mean": 0.9091997264021888,
+    "std": 0.02120043770572423,
+    "values": [
+     0.9272229822161423,
+     0.9145348837209302,
+     0.8858413132694938
+    ]
+   },
+   "test_spoil_auc": {
+    "mean": 0.9755894423432848,
+    "std": 0.007414544525749176,
+    "values": [
+     0.968974812907379,
+     0.9836042488130683,
+     0.974189265309407
+    ]
+   },
+   "test_type_macro_f1": {
+    "mean": 1.0,
+    "std": 0.0,
+    "values": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "best_val_spoil_macro_f1": {
+    "mean": 0.9543220750623563,
+    "std": 0.0031165764933752445,
+    "values": [
+     0.957404620834509,
+     0.9543890567304465,
+     0.9511725476221136
+    ]
+   },
+   "best_epoch": [
+    5,
+    8,
+    4
+   ],
+   "epochs_run": [
+    9,
+    10,
+    8
+   ],
+   "train_minutes": {
+    "mean": 15.153888888888888,
+    "std": 1.2576624407267691,
+    "values": [
+     14.331666666666667,
+     16.601666666666667,
+     14.528333333333334
+    ]
+   },
+   "latency_ms": {
+    "mean": 4.9367674656663505,
+    "std": 0.2804946791638613,
+    "values": [
+     4.835892966086581,
+     4.720661066985417,
+     5.2537483639270555
+    ]
+   },
+   "n_train": 3657,
+   "cm_spoil_sum": [
+    [
+     2128,
+     65
+    ],
+    [
+     155,
+     865
+    ]
+   ],
+   "spoiled_recall_by_produce": {
+    "Banana": 0.9803921568627452,
+    "Carrot": 0.9852941176470589,
+    "Guava": 1.0,
+    "Indian_Gooseberry": 0.6928104575163397,
+    "Mango": 0.823529411764706,
+    "Tomato": 0.6274509803921569
+   }
+  }
+ },
+ "daysplit_v2_summary": {
+  "n_seeds": 3,
+  "seeds": [
+   42,
+   43,
+   44
+  ],
+  "test_spoil_macro_f1": {
+   "mean": 0.8300881670873718,
+   "std": 0.0069561545200896606,
+   "values": [
+    0.8334398967788443,
+    0.8347338935574229,
+    0.822090710925848
+   ]
+  },
+  "test_spoil_accuracy": {
+   "mean": 0.8593517692536426,
+   "std": 0.006575481530626211,
+   "values": [
+    0.8617305976806423,
+    0.864406779661017,
+    0.8519179304192686
+   ]
+  },
+  "test_spoil_macro_precision": {
+   "mean": 0.8274462367803993,
+   "std": 0.008690744390863718,
+   "values": [
+    0.8297770700636943,
+    0.8347338935574229,
+    0.8178277467200809
+   ]
+  },
+  "test_spoil_macro_recall": {
+   "mean": 0.8330261929333137,
+   "std": 0.005491835257472923,
+   "values": [
+    0.8374613003095975,
+    0.8347338935574229,
+    0.8268833849329205
+   ]
+  },
+  "test_spoil_auc": {
+   "mean": 0.909302409791248,
+   "std": 0.015094169443106785,
+   "values": [
+    0.8924206801834308,
+    0.921496853589081,
+    0.9139896956012321
+   ]
+  },
+  "test_type_macro_f1": {
+   "mean": 0.9964225589225589,
+   "std": 0.006196309707211876,
+   "values": [
+    1.0,
+    1.0,
+    0.9892676767676768
+   ]
+  },
+  "best_val_spoil_macro_f1": {
+   "mean": 0.9224197128895933,
+   "std": 0.022429114539401645,
+   "values": [
+    0.8992369954903655,
+    0.9240117521367521,
+    0.9440103910416626
+   ]
+  },
+  "best_epoch": [
+   1,
+   7,
+   6
+  ],
+  "epochs_run": [
+   5,
+   10,
+   10
+  ],
+  "train_minutes": {
+   "mean": 12.16388888888889,
+   "std": 4.504130922871845,
+   "values": [
+    6.97,
+    14.995000000000001,
+    14.526666666666667
+   ]
+  },
+  "latency_ms": {
+   "mean": 5.08035632199125,
+   "std": 0.09250774544301701,
+   "values": [
+    4.9758550134056385,
+    5.113442155782126,
+    5.151771796785985
+   ]
+  },
+  "n_train": 3076,
+  "cm_spoil_sum": [
+   [
+    2143,
+    251
+   ],
+   [
+    222,
+    747
+   ]
+  ],
+  "spoiled_recall_by_produce": {
+   "Banana": 0.9411764705882354,
+   "Carrot": 1.0,
+   "Guava": 1.0,
+   "Indian_Gooseberry": 0.5686274509803922,
+   "Mango": 0.8758169934640523,
+   "Tomato": 0.36274509803921573
+  }
+ },
+ "ablation_pairs": {
+  "aug_minus_noaug": {
+   "per_seed": [
+    0.009904029882574439,
+    0.004174779192476219,
+    0.026149514364070425
+   ],
+   "mean": 0.013409441146373694,
+   "min": 0.004174779192476219,
+   "max": 0.026149514364070425
+  },
+  "gan_minus_aug": {
+   "per_seed": [
+    0.00048392794741669576,
+    0.008028911489997848,
+    -0.03518132000876295
+   ],
+   "mean": -0.008889493523782802,
+   "min": -0.03518132000876295,
+   "max": 0.008028911489997848
+  },
+  "gan_minus_noaug": {
+   "per_seed": [
+    0.010387957829991135,
+    0.012203690682474067,
+    -0.009031805644692525
+   ],
+   "mean": 0.004519947622590892,
+   "min": -0.009031805644692525,
+   "max": 0.012203690682474067
+  },
+  "day_minus_session_aug": {
+   "per_seed": [
+    -0.0956610481846254,
+    -0.08580385939598623,
+    -0.11161281350037111
+   ],
+   "mean": -0.09769257369366091
+  }
+ },
+ "split_leakage": [
+  {
+   "split_scheme": "random split of raw sRGB files (Classified + Normal copies), seed 42",
+   "test_items": 2088,
+   "test_with_exact_duplicate_in_train_pct": 59.81800766283525,
+   "test_contents": 1043,
+   "test_with_same_session_in_train_pct": 100.0,
+   "test_with_same_produce_day_in_train_pct": 100.0
+  },
+  {
+   "split_scheme": "random split of de-duplicated contents (no grouping), seed 42",
+   "test_with_exact_duplicate_in_train_pct": 0.0,
+   "test_contents": 1045,
+   "test_with_same_session_in_train_pct": 99.90430622009569,
+   "test_with_same_produce_day_in_train_pct": 100.0
+  },
+  {
+   "split_scheme": "session-grouped split v1 (used for all main results)",
+   "test_with_exact_duplicate_in_train_pct": 0.0,
+   "test_contents": 1071,
+   "test_with_same_session_in_train_pct": 0.0,
+   "test_with_same_produce_day_in_train_pct": 76.19047619047619
+  },
+  {
+   "split_scheme": "day-grouped sensitivity split",
+   "test_with_exact_duplicate_in_train_pct": 0.0,
+   "test_contents": 1121,
+   "test_with_same_session_in_train_pct": 0.0,
+   "test_with_same_produce_day_in_train_pct": 1.5165031222123104
+  }
+ ],
+ "robustness": [
+  {
+   "corruption": "gaussian",
+   "level": 0.05,
+   "denoiser": "dncnn",
+   "spoil_macro_f1": 0.9195090145353797,
+   "spoil_acc": 0.930905695611578,
+   "spoil_auc": 0.9691357527963306,
+   "type_macro_f1": 0.996156939903848,
+   "file": "artifacts/runs/vit_b16_primary/eval/test_gaussian_0.05_dncnn.json"
+  },
+  {
+   "corruption": "gaussian",
+   "level": 0.05,
+   "denoiser": "dncnn2",
+   "spoil_macro_f1": 0.9004424168565828,
+   "spoil_acc": 0.9150326797385621,
+   "spoil_auc": 0.9770902068077574,
+   "type_macro_f1": 1.0,
+   "file": "artifacts/runs/vit_b16_primary/eval/test_gaussian_0.05_dncnn2.json"
+  },
+  {
+   "corruption": "gaussian",
+   "level": 0.05,
+   "denoiser": "median",
+   "spoil_macro_f1": 0.909793320120921,
+   "spoil_acc": 0.9225023342670402,
+   "spoil_auc": 0.969884123279955,
+   "type_macro_f1": 0.9988431917681271,
+   "file": "artifacts/runs/vit_b16_primary/eval/test_gaussian_0.05_median.json"
+  },
+  {
+   "corruption": "gaussian",
+   "level": 0.05,
+   "denoiser": "none",
+   "spoil_macro_f1": 0.9277327935222672,
+   "spoil_acc": 0.938375350140056,
+   "spoil_auc": 0.9763056248491188,
+   "type_macro_f1": 0.9988431917681271,
+   "file": "artifacts/runs/vit_b16_primary/eval/test_gaussian_0.05_none.json"
+  },
+  {
+   "corruption": "gaussian",
+   "level": 0.1,
+   "denoiser": "dncnn",
+   "spoil_macro_f1": 0.8960698689956332,
+   "spoil_acc": 0.9094304388422035,
+   "spoil_auc": 0.9576728092057617,
+   "type_macro_f1": 0.996562181463637,
+   "file": "artifacts/runs/vit_b16_primary/eval/test_gaussian_0.1_dncnn.json"
+  },
+  {
+   "corruption": "gaussian",
+   "level": 0.1,
+   "denoiser": "dncnn2",
+   "spoil_macro_f1": 0.892578930358516,
+   "spoil_acc": 0.907563025210084,
+   "spoil_auc": 0.9634183632413293,
+   "type_macro_f1": 0.997302813469339,
+   "file": "artifacts/runs/vit_b16_primary/eval/test_gaussian_0.1_dncnn2.json"
+  },
+  {
+   "corruption": "gaussian",
+   "level": 0.1,
+   "denoiser": "median",
+   "spoil_macro_f1": 0.8859860201663119,
+   "spoil_acc": 0.9010270774976658,
+   "spoil_auc": 0.961668141948982,
+   "type_macro_f1": 0.9988431917681271,
+   "file": "artifacts/runs/vit_b16_primary/eval/test_gaussian_0.1_median.json"
+  },
+  {
+   "corruption": "gaussian",
+   "level": 0.1,
+   "denoiser": "none",
+   "spoil_macro_f1": 0.8914487449535724,
+   "spoil_acc": 0.9056956115779645,
+   "spoil_auc": 0.9666733724953731,
+   "type_macro_f1": 1.0,
+   "file": "artifacts/runs/vit_b16_primary/eval/test_gaussian_0.1_none.json"
+  },
+  {
+   "corruption": "gaussian",
+   "level": 0.2,
+   "denoiser": "dncnn",
+   "spoil_macro_f1": 0.8373079053025059,
+   "spoil_acc": 0.8524743230625583,
+   "spoil_auc": 0.9335117083769213,
+   "type_macro_f1": 0.9960898141883238,
+   "file": "artifacts/runs/vit_b16_primary/eval/test_gaussian_0.2_dncnn.json"
+  },
+  {
+   "corruption": "gaussian",
+   "level": 0.2,
+   "denoiser": "dncnn2",
+   "spoil_macro_f1": 0.8218517672730963,
+   "spoil_acc": 0.834733893557423,
+   "spoil_auc": 0.9352981411442827,
+   "type_macro_f1": 0.9920199910623899,
+   "file": "artifacts/runs/vit_b16_primary/eval/test_gaussian_0.2_dncnn2.json"
+  },
+  {
+   "corruption": "gaussian",
+   "level": 0.2,
+   "denoiser": "median",
+   "spoil_macro_f1": 0.8126113257552942,
+   "spoil_acc": 0.8291316526610645,
+   "spoil_auc": 0.9296089160698479,
+   "type_macro_f1": 0.9874421312397913,
+   "file": "artifacts/runs/vit_b16_primary/eval/test_gaussian_0.2_median.json"
+  },
+  {
+   "corruption": "gaussian",
+   "level": 0.2,
+   "denoiser": "none",
+   "spoil_macro_f1": 0.8046793668644898,
+   "spoil_acc": 0.8207282913165266,
+   "spoil_auc": 0.9278667417719482,
+   "type_macro_f1": 1.0,
+   "file": "artifacts/runs/vit_b16_primary/eval/test_gaussian_0.2_none.json"
+  },
+  {
+   "corruption": "salt_pepper",
+   "level": 0.02,
+   "denoiser": "dncnn",
+   "spoil_macro_f1": 0.9432297345191609,
+   "spoil_acc": 0.9523809523809523,
+   "spoil_auc": 0.9802969340951154,
+   "type_macro_f1": 1.0,
+   "file": "artifacts/runs/vit_b16_primary/eval/test_salt_pepper_0.02_dncnn.json"
+  },
+  {
+   "corruption": "salt_pepper",
+   "level": 0.02,
+   "denoiser": "dncnn2",
+   "spoil_macro_f1": 0.9412126578738873,
+   "spoil_acc": 0.9505135387488328,
+   "spoil_auc": 0.9887422547678443,
+   "type_macro_f1": 1.0,
+   "file": "artifacts/runs/vit_b16_primary/eval/test_salt_pepper_0.02_dncnn2.json"
+  },
+  {
+   "corruption": "salt_pepper",
+   "level": 0.02,
+   "denoiser": "median",
+   "spoil_macro_f1": 0.9356129202373105,
+   "spoil_acc": 0.9467787114845938,
+   "spoil_auc": 0.9883238110565703,
+   "type_macro_f1": 0.9984596217012118,
+   "file": "artifacts/runs/vit_b16_primary/eval/test_salt_pepper_0.02_median.json"
+  },
+  {
+   "corruption": "salt_pepper",
+   "level": 0.02,
+   "denoiser": "none",
+   "spoil_macro_f1": 0.9189731321310268,
+   "spoil_acc": 0.930905695611578,
+   "spoil_auc": 0.9723143156031222,
+   "type_macro_f1": 1.0,
+   "file": "artifacts/runs/vit_b16_primary/eval/test_salt_pepper_0.02_none.json"
+  },
+  {
+   "corruption": "salt_pepper",
+   "level": 0.05,
+   "denoiser": "dncnn",
+   "spoil_macro_f1": 0.9389942676049774,
+   "spoil_acc": 0.9486461251167133,
+   "spoil_auc": 0.975432525951557,
+   "type_macro_f1": 1.0,
+   "file": "artifacts/runs/vit_b16_primary/eval/test_salt_pepper_0.05_dncnn.json"
+  },
+  {
+   "corruption": "salt_pepper",
+   "level": 0.05,
+   "denoiser": "dncnn2",
+   "spoil_macro_f1": 0.9380484902573256,
+   "spoil_acc": 0.9477124183006536,
+   "spoil_auc": 0.9873943831978755,
+   "type_macro_f1": 1.0,
+   "file": "artifacts/runs/vit_b16_primary/eval/test_salt_pepper_0.05_dncnn2.json"
+  },
+  {
+   "corruption": "salt_pepper",
+   "level": 0.05,
+   "denoiser": "median",
+   "spoil_macro_f1": 0.9356129202373105,
+   "spoil_acc": 0.9467787114845938,
+   "spoil_auc": 0.988331858051018,
+   "type_macro_f1": 0.9984596217012118,
+   "file": "artifacts/runs/vit_b16_primary/eval/test_salt_pepper_0.05_median.json"
+  },
+  {
+   "corruption": "salt_pepper",
+   "level": 0.05,
+   "denoiser": "none",
+   "spoil_macro_f1": 0.8586782861292666,
+   "spoil_acc": 0.8702147525676938,
+   "spoil_auc": 0.9587068479922749,
+   "type_macro_f1": 1.0,
+   "file": "artifacts/runs/vit_b16_primary/eval/test_salt_pepper_0.05_none.json"
+  },
+  {
+   "corruption": "salt_pepper",
+   "level": 0.1,
+   "denoiser": "dncnn",
+   "spoil_macro_f1": 0.9351232308505778,
+   "spoil_acc": 0.9449112978524743,
+   "spoil_auc": 0.9771465357688903,
+   "type_macro_f1": 1.0,
+   "file": "artifacts/runs/vit_b16_primary/eval/test_salt_pepper_0.1_dncnn.json"
+  },
+  {
+   "corruption": "salt_pepper",
+   "level": 0.1,
+   "denoiser": "dncnn2",
+   "spoil_macro_f1": 0.9306059649270763,
+   "spoil_acc": 0.9411764705882353,
+   "spoil_auc": 0.9836766717630965,
+   "type_macro_f1": 1.0,
+   "file": "artifacts/runs/vit_b16_primary/eval/test_salt_pepper_0.1_dncnn2.json"
+  },
+  {
+   "corruption": "salt_pepper",
+   "level": 0.1,
+   "denoiser": "median",
+   "spoil_macro_f1": 0.9344215567041654,
+   "spoil_acc": 0.945845004668534,
+   "spoil_auc": 0.9875915345618411,
+   "type_macro_f1": 0.9984596217012118,
+   "file": "artifacts/runs/vit_b16_primary/eval/test_salt_pepper_0.1_median.json"
+  },
+  {
+   "corruption": "salt_pepper",
+   "level": 0.1,
+   "denoiser": "none",
+   "spoil_macro_f1": 0.7755296632085901,
+   "spoil_acc": 0.7824463118580766,
+   "spoil_auc": 0.9400076446447251,
+   "type_macro_f1": 0.9941391726498101,
+   "file": "artifacts/runs/vit_b16_primary/eval/test_salt_pepper_0.1_none.json"
+  },
+  {
+   "corruption": "speckle",
+   "level": 0.1,
+   "denoiser": "dncnn",
+   "spoil_macro_f1": 0.9210299936915753,
+   "spoil_acc": 0.9327731092436975,
+   "spoil_auc": 0.9745875915345619,
+   "type_macro_f1": 0.9988431917681271,
+   "file": "artifacts/runs/vit_b16_primary/eval/test_speckle_0.1_dncnn.json"
+  },
+  {
+   "corruption": "speckle",
+   "level": 0.1,
+   "denoiser": "dncnn2",
+   "spoil_macro_f1": 0.904011455345828,
+   "spoil_acc": 0.9197012138188608,
+   "spoil_auc": 0.9786432767361392,
+   "type_macro_f1": 1.0,
+   "file": "artifacts/runs/vit_b16_primary/eval/test_speckle_0.1_dncnn2.json"
+  },
+  {
+   "corruption": "speckle",
+   "level": 0.1,
+   "denoiser": "median",
+   "spoil_macro_f1": 0.9011066994377797,
+   "spoil_acc": 0.9169000933706816,
+   "spoil_auc": 0.9746077090206807,
+   "type_macro_f1": 0.9988431917681271,
+   "file": "artifacts/runs/vit_b16_primary/eval/test_speckle_0.1_median.json"
+  },
+  {
+   "corruption": "speckle",
+   "level": 0.1,
+   "denoiser": "none",
+   "spoil_macro_f1": 0.9171976854903685,
+   "spoil_acc": 0.9290382819794585,
+   "spoil_auc": 0.9780538343928543,
+   "type_macro_f1": 1.0,
+   "file": "artifacts/runs/vit_b16_primary/eval/test_speckle_0.1_none.json"
+  },
+  {
+   "corruption": "speckle",
+   "level": 0.3,
+   "denoiser": "dncnn",
+   "spoil_macro_f1": 0.8581175753883643,
+   "spoil_acc": 0.8720821661998133,
+   "spoil_auc": 0.9528063893135914,
+   "type_macro_f1": 0.9988431917681271,
+   "file": "artifacts/runs/vit_b16_primary/eval/test_speckle_0.3_dncnn.json"
+  },
+  {
+   "corruption": "speckle",
+   "level": 0.3,
+   "denoiser": "dncnn2",
+   "spoil_macro_f1": 0.8630596530543921,
+   "spoil_acc": 0.8776844070961718,
+   "spoil_auc": 0.9544338939406132,
+   "type_macro_f1": 0.9902133233493503,
+   "file": "artifacts/runs/vit_b16_primary/eval/test_speckle_0.3_dncnn2.json"
+  },
+  {
+   "corruption": "speckle",
+   "level": 0.3,
+   "denoiser": "median",
+   "spoil_macro_f1": 0.8355466279086612,
+   "spoil_acc": 0.8515406162464986,
+   "spoil_auc": 0.9529049649955741,
+   "type_macro_f1": 0.9903530915389137,
+   "file": "artifacts/runs/vit_b16_primary/eval/test_speckle_0.3_median.json"
+  },
+  {
+   "corruption": "speckle",
+   "level": 0.3,
+   "denoiser": "none",
+   "spoil_macro_f1": 0.8438210114101121,
+   "spoil_acc": 0.8590102707749766,
+   "spoil_auc": 0.9546189748129074,
+   "type_macro_f1": 1.0,
+   "file": "artifacts/runs/vit_b16_primary/eval/test_speckle_0.3_none.json"
+  },
+  {
+   "corruption": "speckle",
+   "level": 0.5,
+   "denoiser": "dncnn",
+   "spoil_macro_f1": 0.79889230975169,
+   "spoil_acc": 0.811391223155929,
+   "spoil_auc": 0.9282690914943268,
+   "type_macro_f1": 0.9764881695231887,
+   "file": "artifacts/runs/vit_b16_primary/eval/test_speckle_0.5_dncnn.json"
+  },
+  {
+   "corruption": "speckle",
+   "level": 0.5,
+   "denoiser": "dncnn2",
+   "spoil_macro_f1": 0.8267902813299233,
+   "spoil_acc": 0.8394024276377218,
+   "spoil_auc": 0.9426893055443791,
+   "type_macro_f1": 0.9754592345215854,
+   "file": "artifacts/runs/vit_b16_primary/eval/test_speckle_0.5_dncnn2.json"
+  },
+  {
+   "corruption": "speckle",
+   "level": 0.5,
+   "denoiser": "median",
+   "spoil_macro_f1": 0.7879780793937421,
+   "spoil_acc": 0.800186741363212,
+   "spoil_auc": 0.919127705801883,
+   "type_macro_f1": 0.9637080067271279,
+   "file": "artifacts/runs/vit_b16_primary/eval/test_speckle_0.5_median.json"
+  },
+  {
+   "corruption": "speckle",
+   "level": 0.5,
+   "denoiser": "none",
+   "spoil_macro_f1": 0.7997184803465934,
+   "spoil_acc": 0.8104575163398693,
+   "spoil_auc": 0.9266395751186931,
+   "type_macro_f1": 0.989137943485531,
+   "file": "artifacts/runs/vit_b16_primary/eval/test_speckle_0.5_none.json"
+  }
+ ],
+ "dncnn_v1": {
+  "history": [
+   {
+    "step": 100,
+    "train_mse": 0.014730564318597317
+   },
+   {
+    "step": 200,
+    "train_mse": 0.010697834193706512
+   },
+   {
+    "step": 300,
+    "train_mse": 0.006615791004151106
+   },
+   {
+    "step": 400,
+    "train_mse": 0.006037722807377577
+   },
+   {
+    "step": 500,
+    "train_mse": 0.006256678607314825
+   },
+   {
+    "step": 600,
+    "train_mse": 0.007749995682388544
+   },
+   {
+    "step": 700,
+    "train_mse": 0.006744587328284979
+   },
+   {
+    "step": 800,
+    "train_mse": 0.004674035124480724
+   },
+   {
+    "step": 900,
+    "train_mse": 0.005392637103796005
+   },
+   {
+    "step": 1000,
+    "train_mse": 0.004860609769821167
+   }
+  ],
+  "steps": 1065,
+  "minutes_budget": 10.0,
+  "paired_val_quality": [
+   {
+    "corruption": "gaussian",
+    "level": 0.05,
+    "n_val_images": 60,
+    "noisy_psnr": 26.107994651794435,
+    "dncnn_psnr": 28.19150733947754,
+    "median_psnr": 33.46060034434001,
+    "noisy_ssim": 0.350938019156456,
+    "dncnn_ssim": 0.48675463646650313,
+    "median_ssim": 0.750022554397583
+   },
+   {
+    "corruption": "gaussian",
+    "level": 0.1,
+    "n_val_images": 60,
+    "noisy_psnr": 20.312708314259847,
+    "dncnn_psnr": 22.991875298817952,
+    "median_psnr": 27.698539956410727,
+    "noisy_ssim": 0.14754423027237257,
+    "dncnn_ssim": 0.25399731447299323,
+    "median_ssim": 0.46337345490852994
+   },
+   {
+    "corruption": "gaussian",
+    "level": 0.2,
+    "n_val_images": 60,
+    "noisy_psnr": 15.017627143859864,
+    "dncnn_psnr": 18.123738066355386,
+    "median_psnr": 21.903059164683025,
+    "noisy_ssim": 0.05812830533832312,
+    "dncnn_ssim": 0.11180446321765582,
+    "median_ssim": 0.2109731691579024
+   },
+   {
+    "corruption": "salt_pepper",
+    "level": 0.02,
+    "n_val_images": 60,
+    "noisy_psnr": 21.84075059890747,
+    "dncnn_psnr": 33.71893749237061,
+    "median_psnr": 47.894740168253584,
+    "noisy_ssim": 0.5371926367282868,
+    "dncnn_ssim": 0.8306152602036794,
+    "median_ssim": 0.9927833050489425
+   },
+   {
+    "corruption": "salt_pepper",
+    "level": 0.05,
+    "n_val_images": 60,
+    "noisy_psnr": 17.849206670125326,
+    "dncnn_psnr": 31.7983234723409,
+    "median_psnr": 46.062456639607746,
+    "noisy_ssim": 0.23939746444423993,
+    "dncnn_ssim": 0.7346079130967458,
+    "median_ssim": 0.992012091477712
+   },
+   {
+    "corruption": "salt_pepper",
+    "level": 0.1,
+    "n_val_images": 60,
+    "noisy_psnr": 14.834178733825684,
+    "dncnn_psnr": 30.6243940671285,
+    "median_psnr": 42.00215663909912,
+    "noisy_ssim": 0.09200048477699359,
+    "dncnn_ssim": 0.6682953904072444,
+    "median_ssim": 0.9886881520350774
+   }
+  ],
+  "note": "Synthetic noise on clean val images; not real sensor noise."
+ },
+ "dncnn_v2": {
+  "history": [
+   {
+    "step": 100,
+    "train_mse": 0.0041706920601427555
+   },
+   {
+    "step": 200,
+    "train_mse": 0.0043954323045909405
+   },
+   {
+    "step": 300,
+    "train_mse": 0.004389141220599413
+   },
+   {
+    "step": 400,
+    "train_mse": 0.003985579125583172
+   },
+   {
+    "step": 500,
+    "train_mse": 0.004603836219757795
+   },
+   {
+    "step": 600,
+    "train_mse": 0.005569515284150839
+   },
+   {
+    "step": 700,
+    "train_mse": 0.005050372797995806
+   },
+   {
+    "step": 800,
+    "train_mse": 0.0037832625675946474
+   },
+   {
+    "step": 900,
+    "train_mse": 0.004015813115984201
+   },
+   {
+    "step": 1000,
+    "train_mse": 0.00359855848364532
+   },
+   {
+    "step": 1100,
+    "train_mse": 0.002350178314372897
+   },
+   {
+    "step": 1200,
+    "train_mse": 0.0022163689136505127
+   },
+   {
+    "step": 1300,
+    "train_mse": 0.0022890723776072264
+   },
+   {
+    "step": 1400,
+    "train_mse": 0.0023976860102266073
+   },
+   {
+    "step": 1500,
+    "train_mse": 0.0022064715158194304
+   },
+   {
+    "step": 1600,
+    "train_mse": 0.0015217737527564168
+   },
+   {
+    "step": 1700,
+    "train_mse": 0.0026388957630842924
+   },
+   {
+    "step": 1800,
+    "train_mse": 0.002886970527470112
+   },
+   {
+    "step": 1900,
+    "train_mse": 0.0017995183588936925
+   },
+   {
+    "step": 2000,
+    "train_mse": 0.0016692420467734337
+   },
+   {
+    "step": 2100,
+    "train_mse": 0.002096639247611165
+   },
+   {
+    "step": 2200,
+    "train_mse": 0.006737405899912119
+   },
+   {
+    "step": 2300,
+    "train_mse": 0.002736204070970416
+   },
+   {
+    "step": 2400,
+    "train_mse": 0.002228531986474991
+   },
+   {
+    "step": 2500,
+    "train_mse": 0.0018496555276215076
+   },
+   {
+    "step": 2600,
+    "train_mse": 0.0019445797661319375
+   },
+   {
+    "step": 2700,
+    "train_mse": 0.00177728570997715
+   }
+  ],
+  "steps": 3821,
+  "steps_this_session": 2756,
+  "resumed_from": "artifacts/experiments/dncnn/dncnn.pt",
+  "lr": 0.0005,
+  "minutes_budget": 30.0,
+  "paired_val_quality": [
+   {
+    "corruption": "gaussian",
+    "level": 0.05,
+    "n_val_images": 60,
+    "noisy_psnr": 26.107994651794435,
+    "dncnn_psnr": 27.367873764038087,
+    "median_psnr": 33.46060034434001,
+    "noisy_ssim": 0.350938019156456,
+    "dncnn_ssim": 0.7199672579765319,
+    "median_ssim": 0.750022554397583
+   },
+   {
+    "corruption": "gaussian",
+    "level": 0.1,
+    "n_val_images": 60,
+    "noisy_psnr": 20.312708314259847,
+    "dncnn_psnr": 26.571028010050455,
+    "median_psnr": 27.698539956410727,
+    "noisy_ssim": 0.14754423027237257,
+    "dncnn_ssim": 0.536574141184489,
+    "median_ssim": 0.46337345490852994
+   },
+   {
+    "corruption": "gaussian",
+    "level": 0.2,
+    "n_val_images": 60,
+    "noisy_psnr": 15.017627143859864,
+    "dncnn_psnr": 23.297004159291586,
+    "median_psnr": 21.903059164683025,
+    "noisy_ssim": 0.05812830533832312,
+    "dncnn_ssim": 0.33051571051279705,
+    "median_ssim": 0.2109731691579024
+   },
+   {
+    "corruption": "salt_pepper",
+    "level": 0.02,
+    "n_val_images": 60,
+    "noisy_psnr": 21.84075059890747,
+    "dncnn_psnr": 32.69077469507853,
+    "median_psnr": 47.894740168253584,
+    "noisy_ssim": 0.5371926367282868,
+    "dncnn_ssim": 0.9165794591108958,
+    "median_ssim": 0.9927833050489425
+   },
+   {
+    "corruption": "salt_pepper",
+    "level": 0.05,
+    "n_val_images": 60,
+    "noisy_psnr": 17.849206670125326,
+    "dncnn_psnr": 31.33375498453776,
+    "median_psnr": 46.062456639607746,
+    "noisy_ssim": 0.23939746444423993,
+    "dncnn_ssim": 0.8600235054890315,
+    "median_ssim": 0.992012091477712
+   },
+   {
+    "corruption": "salt_pepper",
+    "level": 0.1,
+    "n_val_images": 60,
+    "noisy_psnr": 14.834178733825684,
+    "dncnn_psnr": 30.047155348459878,
+    "median_psnr": 42.00215663909912,
+    "noisy_ssim": 0.09200048477699359,
+    "dncnn_ssim": 0.7657431483268737,
+    "median_ssim": 0.9886881520350774
+   }
+  ],
+  "note": "Synthetic noise on clean val images; not real sensor noise."
+ },
+ "noise_profile": {
+  "method": "skimage.restoration.estimate_sigma (wavelet MAD), pixel scale [0,1]",
+  "per_produce": {
+   "Banana": {
+    "n": 20,
+    "sigma_fullres_centre512_mean": 0.003213502375424777,
+    "sigma_model_input_224_mean": 0.0014137992617697889
+   },
+   "Carrot": {
+    "n": 20,
+    "sigma_fullres_centre512_mean": 0.0030928080365882813,
+    "sigma_model_input_224_mean": 0.0014900726818852794
+   },
+   "Guava": {
+    "n": 20,
+    "sigma_fullres_centre512_mean": 0.002844847488999662,
+    "sigma_model_input_224_mean": 0.0018360053340101545
+   },
+   "Indian_Gooseberry": {
+    "n": 20,
+    "sigma_fullres_centre512_mean": 0.002879962738300779,
+    "sigma_model_input_224_mean": 0.0012244284083907015
+   },
+   "Mango": {
+    "n": 20,
+    "sigma_fullres_centre512_mean": 0.0046038588021009175,
+    "sigma_model_input_224_mean": 0.002001905821537781
+   },
+   "Tomato": {
+    "n": 20,
+    "sigma_fullres_centre512_mean": 0.0024163793307952633,
+    "sigma_model_input_224_mean": 0.0014835498109940688
+   }
+  },
+  "overall_fullres_mean": 0.003175226462034946,
+  "overall_model_input_mean": 0.0015749602197646288,
+  "synthetic_gaussian_levels_evaluated": [
+   0.05,
+   0.1,
+   0.2
+  ],
+  "interpretation": "Intrinsic noise of TR-6 photos is far below the synthetic stress levels; robustness results are stress tests, not measurements of TR-6 sensor noise."
+ },
+ "gan": {
+  "train": {
+   "epochs": 41,
+   "minutes_budget": 12.0,
+   "train_images": 3177,
+   "resolution": 64,
+   "conditions": [
+    "Banana/Not_spoiled",
+    "Banana/Spoiled",
+    "Carrot/Not_spoiled",
+    "Carrot/Spoiled",
+    "Guava/Not_spoiled",
+    "Guava/Spoiled",
+    "Indian_Gooseberry/Not_spoiled",
+    "Indian_Gooseberry/Spoiled",
+    "Mango/Not_spoiled",
+    "Mango/Spoiled",
+    "Tomato/Not_spoiled",
+    "Tomato/Spoiled"
+   ],
+   "label_smoothing_real": 0.9,
+   "optimizer": "Adam 2e-4 betas(0.5,0.999)",
+   "batch": 64,
+   "seed": 42
+  },
+  "generation": {
+   "generated": 480,
+   "per_class": 40,
+   "nn_l2_generated_to_train": {
+    "mean": 21.967918288707732,
+    "min": 8.846213340759277,
+    "median": 22.531228065490723
+   },
+   "nn_l2_train_to_train": {
+    "mean": 13.227171541055043,
+    "min": 3.7460567951202393,
+    "median": 12.761597156524658
+   },
+   "interpretation": "If generated NN distances were far below real-real NN distances, that would suggest memorisation. Real-real distances are small because TR-6 has 17 near-identical views per session."
+  },
+  "quality": {
+   "label_consistency_by_primary_vit": {
+    "overall_type_match": 0.3458333333333333,
+    "overall_spoil_match": 0.7770833333333333,
+    "per_condition": {
+     "Banana/Not_spoiled": {
+      "n": 40,
+      "type_match": 0,
+      "spoil_match": 33
+     },
+     "Banana/Spoiled": {
+      "n": 40,
+      "type_match": 0,
+      "spoil_match": 40
+     },
+     "Carrot/Not_spoiled": {
+      "n": 40,
+      "type_match": 34,
+      "spoil_match": 16
+     },
+     "Carrot/Spoiled": {
+      "n": 40,
+      "type_match": 2,
+      "spoil_match": 26
+     },
+     "Guava/Not_spoiled": {
+      "n": 40,
+      "type_match": 2,
+      "spoil_match": 38
+     },
+     "Guava/Spoiled": {
+      "n": 40,
+      "type_match": 0,
+      "spoil_match": 32
+     },
+     "Indian_Gooseberry/Not_spoiled": {
+      "n": 40,
+      "type_match": 27,
+      "spoil_match": 30
+     },
+     "Indian_Gooseberry/Spoiled": {
+      "n": 40,
+      "type_match": 13,
+      "spoil_match": 14
+     },
+     "Mango/Not_spoiled": {
+      "n": 40,
+      "type_match": 1,
+      "spoil_match": 39
+     },
+     "Mango/Spoiled": {
+      "n": 40,
+      "type_match": 7,
+      "spoil_match": 35
+     },
+     "Tomato/Not_spoiled": {
+      "n": 40,
+      "type_match": 40,
+      "spoil_match": 30
+     },
+     "Tomato/Spoiled": {
+      "n": 40,
+      "type_match": 40,
+      "spoil_match": 40
+     }
+    },
+    "note": "Primary ViT-B (trained on real data only) applied to GAN images; agreement with the conditioning label."
+   },
+   "diversity_64px": {
+    "Banana/Not_spoiled": {
+     "generated_mean_pairwise_l2": 13.32929801940918,
+     "real_mean_pairwise_l2": 32.28830337524414,
+     "ratio_generated_to_real": 0.41282125804197334
+    },
+    "Banana/Spoiled": {
+     "generated_mean_pairwise_l2": 18.42642593383789,
+     "real_mean_pairwise_l2": 43.554290771484375,
+     "ratio_generated_to_real": 0.4230679826820171
+    },
+    "Carrot/Not_spoiled": {
+     "generated_mean_pairwise_l2": 28.119550704956055,
+     "real_mean_pairwise_l2": 35.46614074707031,
+     "ratio_generated_to_real": 0.792856231680039
+    },
+    "Carrot/Spoiled": {
+     "generated_mean_pairwise_l2": 22.8013973236084,
+     "real_mean_pairwise_l2": 36.29241943359375,
+     "ratio_generated_to_real": 0.6282688693524381
+    },
+    "Guava/Not_spoiled": {
+     "generated_mean_pairwise_l2": 31.925907135009766,
+     "real_mean_pairwise_l2": 32.46282196044922,
+     "ratio_generated_to_real": 0.9834606237839212
+    },
+    "Guava/Spoiled": {
+     "generated_mean_pairwise_l2": 31.06180191040039,
+     "real_mean_pairwise_l2": 37.21225357055664,
+     "ratio_generated_to_real": 0.8347197207905017
+    },
+    "Indian_Gooseberry/Not_spoiled": {
+     "generated_mean_pairwise_l2": 23.875431060791016,
+     "real_mean_pairwise_l2": 25.651758193969727,
+     "ratio_generated_to_real": 0.9307522268163165
+    },
+    "Indian_Gooseberry/Spoiled": {
+     "generated_mean_pairwise_l2": 23.830928802490234,
+     "real_mean_pairwise_l2": 27.174802780151367,
+     "ratio_generated_to_real": 0.8769494665807284
+    },
+    "Mango/Not_spoiled": {
+     "generated_mean_pairwise_l2": 28.121980667114258,
+     "real_mean_pairwise_l2": 33.72300720214844,
+     "ratio_generated_to_real": 0.8339108223219978
+    },
+    "Mango/Spoiled": {
+     "generated_mean_pairwise_l2": 30.887941360473633,
+     "real_mean_pairwise_l2": 32.99055099487305,
+     "ratio_generated_to_real": 0.9362663074428137
+    },
+    "Tomato/Not_spoiled": {
+     "generated_mean_pairwise_l2": 33.51494216918945,
+     "real_mean_pairwise_l2": 36.69624710083008,
+     "ratio_generated_to_real": 0.9133070767999961
+    },
+    "Tomato/Spoiled": {
+     "generated_mean_pairwise_l2": 30.0698299407959,
+     "real_mean_pairwise_l2": 32.35896301269531,
+     "ratio_generated_to_real": 0.9292581449225884
+    }
+   },
+   "mean_diversity_ratio": 0.7913032276012775
+  }
+ },
+ "kmeans": {
+  "vit_frozen": {
+   "space": "vit_frozen",
+   "preprocessing": "StandardScaler + PCA(50), both fitted on train",
+   "k_selection": "max train silhouette over k=2..12 (labels not used)",
+   "sweep": [
+    {
+     "k": 2,
+     "inertia": 1594814.25,
+     "silhouette_train": 0.2990822494029999
+    },
+    {
+     "k": 3,
+     "inertia": 1292953.25,
+     "silhouette_train": 0.35859739780426025
+    },
+    {
+     "k": 4,
+     "inertia": 1073656.25,
+     "silhouette_train": 0.3976818919181824
+    },
+    {
+     "k": 5,
+     "inertia": 933378.5625,
+     "silhouette_train": 0.42564845085144043
+    },
+    {
+     "k": 6,
+     "inertia": 820211.3125,
+     "silhouette_train": 0.4509992003440857
+    },
+    {
+     "k": 7,
+     "inertia": 739509.875,
+     "silhouette_train": 0.4459686279296875
+    },
+    {
+     "k": 8,
+     "inertia": 693568.6875,
+     "silhouette_train": 0.4518231749534607
+    },
+    {
+     "k": 9,
+     "inertia": 649123.625,
+     "silhouette_train": 0.4450841546058655
+    },
+    {
+     "k": 10,
+     "inertia": 606106.5,
+     "silhouette_train": 0.45097261667251587
+    },
+    {
+     "k": 11,
+     "inertia": 577015.3125,
+     "silhouette_train": 0.4510640799999237
+    },
+    {
+     "k": 12,
+     "inertia": 553050.5625,
+     "silhouette_train": 0.4357514977455139
+    }
+   ],
+   "k_selected": 8,
+   "alignment": {
+    "k6_train": {
+     "ARI_produce": 0.9597510061570294,
+     "NMI_produce": 0.9503330559814662,
+     "ARI_spoilage": 0.18489545693707596,
+     "NMI_spoilage": 0.13428265196558617,
+     "NMI_produce_x_spoilage": 0.8316151141409381
+    },
+    "k6_test": {
+     "ARI_produce": 0.9657789437961766,
+     "NMI_produce": 0.9504631826190569,
+     "ARI_spoilage": 0.19912762211103588,
+     "NMI_spoilage": 0.1412155716015419,
+     "NMI_produce_x_spoilage": 0.8302341723276022
+    },
+    "k8_train": {
+     "ARI_produce": 0.8860933424850077,
+     "NMI_produce": 0.9192926679823783,
+     "ARI_spoilage": 0.2143822098044268,
+     "NMI_spoilage": 0.1803719257073947,
+     "NMI_produce_x_spoilage": 0.8446466111243953
+    },
+    "k8_test": {
+     "ARI_produce": 0.8941856363935824,
+     "NMI_produce": 0.9207555845812135,
+     "ARI_spoilage": 0.2146330672831466,
+     "NMI_spoilage": 0.15649250243751361,
+     "NMI_produce_x_spoilage": 0.8261410297031291
+    },
+    "k12_train": {
+     "ARI_produce": 0.826129407925331,
+     "NMI_produce": 0.8500404806313298,
+     "ARI_spoilage": 0.21000037864206236,
+     "NMI_spoilage": 0.23108671672720388,
+     "NMI_produce_x_spoilage": 0.8340640719751644
+    },
+    "k12_test": {
+     "ARI_produce": 0.8532597907836819,
+     "NMI_produce": 0.8632047937250262,
+     "ARI_spoilage": 0.2205581191456397,
+     "NMI_spoilage": 0.2100957249210242,
+     "NMI_produce_x_spoilage": 0.8245255815025427
+    }
+   },
+   "k6_train_composition": {
+    "0": {
+     "Banana": 187,
+     "Carrot": 0,
+     "Guava": 0,
+     "Indian_Gooseberry": 0,
+     "Mango": 0,
+     "Tomato": 0
+    },
+    "1": {
+     "Banana": 0,
+     "Carrot": 0,
+     "Guava": 0,
+     "Indian_Gooseberry": 793,
+     "Mango": 0,
+     "Tomato": 0
+    },
+    "2": {
+     "Banana": 0,
+     "Carrot": 0,
+     "Guava": 0,
+     "Indian_Gooseberry": 0,
+     "Mango": 0,
+     "Tomato": 1326
+    },
+    "3": {
+     "Banana": 0,
+     "Carrot": 0,
+     "Guava": 0,
+     "Indian_Gooseberry": 7,
+     "Mango": 222,
+     "Tomato": 0
+    },
+    "4": {
+     "Banana": 0,
+     "Carrot": 0,
+     "Guava": 287,
+     "Indian_Gooseberry": 67,
+     "Mango": 0,
+     "Tomato": 0
+    },
+    "5": {
+     "Banana": 0,
+     "Carrot": 288,
+     "Guava": 0,
+     "Indian_Gooseberry": 0,
+     "Mango": 0,
+     "Tomato": 0
+    }
+   },
+   "note": "Clusters are exploratory and are not ground-truth classes."
+  },
+  "colorhist": {
+   "space": "colorhist",
+   "preprocessing": "StandardScaler + PCA(50), both fitted on train",
+   "k_selection": "max train silhouette over k=2..12 (labels not used)",
+   "sweep": [
+    {
+     "k": 2,
+     "inertia": 409232.34375,
+     "silhouette_train": 0.1299709528684616
+    },
+    {
+     "k": 3,
+     "inertia": 388514.25,
+     "silhouette_train": 0.14844635128974915
+    },
+    {
+     "k": 4,
+     "inertia": 372654.1875,
+     "silhouette_train": 0.13661623001098633
+    },
+    {
+     "k": 5,
+     "inertia": 357540.90625,
+     "silhouette_train": 0.14872057735919952
+    },
+    {
+     "k": 6,
+     "inertia": 345404.03125,
+     "silhouette_train": 0.14506693184375763
+    },
+    {
+     "k": 7,
+     "inertia": 335253.875,
+     "silhouette_train": 0.1534089595079422
+    },
+    {
+     "k": 8,
+     "inertia": 323305.25,
+     "silhouette_train": 0.16298124194145203
+    },
+    {
+     "k": 9,
+     "inertia": 312322.8125,
+     "silhouette_train": 0.1672968864440918
+    },
+    {
+     "k": 10,
+     "inertia": 304806.5,
+     "silhouette_train": 0.15708719193935394
+    },
+    {
+     "k": 11,
+     "inertia": 295458.6875,
+     "silhouette_train": 0.14814306795597076
+    },
+    {
+     "k": 12,
+     "inertia": 289606.21875,
+     "silhouette_train": 0.17511090636253357
+    }
+   ],
+   "k_selected": 12,
+   "alignment": {
+    "k6_train": {
+     "ARI_produce": 0.5473744504586493,
+     "NMI_produce": 0.5038680456259742,
+     "ARI_spoilage": 0.1427215002396074,
+     "NMI_spoilage": 0.11594138385810503,
+     "NMI_produce_x_spoilage": 0.4935478644933614
+    },
+    "k6_test": {
+     "ARI_produce": 0.5798884851322257,
+     "NMI_produce": 0.5009993893762992,
+     "ARI_spoilage": 0.15061355512839192,
+     "NMI_spoilage": 0.1056050635655263,
+     "NMI_produce_x_spoilage": 0.4838528912589307
+    },
+    "k12_train": {
+     "ARI_produce": 0.4136363052142834,
+     "NMI_produce": 0.4969492502353366,
+     "ARI_spoilage": 0.10114043200135428,
+     "NMI_spoilage": 0.13707100747370596,
+     "NMI_produce_x_spoilage": 0.5002565681743274
+    },
+    "k12_test": {
+     "ARI_produce": 0.4030285119508794,
+     "NMI_produce": 0.4869984990248155,
+     "ARI_spoilage": 0.0758922411823997,
+     "NMI_spoilage": 0.11145275639773758,
+     "NMI_produce_x_spoilage": 0.4853046337043681
+    }
+   },
+   "k6_train_composition": {
+    "0": {
+     "Banana": 0,
+     "Carrot": 0,
+     "Guava": 0,
+     "Indian_Gooseberry": 15,
+     "Mango": 62,
+     "Tomato": 0
+    },
+    "1": {
+     "Banana": 29,
+     "Carrot": 1,
+     "Guava": 95,
+     "Indian_Gooseberry": 742,
+     "Mango": 7,
+     "Tomato": 0
+    },
+    "2": {
+     "Banana": 50,
+     "Carrot": 0,
+     "Guava": 6,
+     "Indian_Gooseberry": 0,
+     "Mango": 0,
+     "Tomato": 0
+    },
+    "3": {
+     "Banana": 36,
+     "Carrot": 160,
+     "Guava": 0,
+     "Indian_Gooseberry": 0,
+     "Mango": 151,
+     "Tomato": 1215
+    },
+    "4": {
+     "Banana": 0,
+     "Carrot": 0,
+     "Guava": 40,
+     "Indian_Gooseberry": 0,
+     "Mango": 0,
+     "Tomato": 0
+    },
+    "5": {
+     "Banana": 72,
+     "Carrot": 127,
+     "Guava": 146,
+     "Indian_Gooseberry": 110,
+     "Mango": 2,
+     "Tomato": 111
+    }
+   },
+   "note": "Clusters are exploratory and are not ground-truth classes."
+  }
+ },
+ "xai": {
+  "faithfulness": {
+   "method": "attention rollout (head mean, +I, row-normalised)",
+   "n_images": 240,
+   "occlusion": "top-20% rollout patches vs random 20% patches replaced by the per-channel mean pixel",
+   "mean_drop_top_rollout": 0.19217253973086676,
+   "mean_drop_random": 0.01961152764658133,
+   "median_drop_top_rollout": 0.003856062889099121,
+   "median_drop_random": 1.1920928955078125e-07,
+   "wilcoxon_p": 2.3200515594290197e-30,
+   "n_test_correct": 1029,
+   "n_test_incorrect": 42,
+   "limitations": [
+    "Rollout ignores MLP blocks and value vectors; it is an approximation.",
+    "Explanations are qualitative diagnostics, not proof of correctness.",
+    "No reviewed decay masks exist, so overlap with true decay regions cannot be measured."
+   ]
+  },
+  "stability": {
+   "n_images": 150,
+   "method": "Spearman rank correlation of 14x14 rollout maps",
+   "flip_consistency": {
+    "mean": 0.9495828079095535,
+    "median": 0.9525846886978142,
+    "p10": 0.9224706547984287
+   },
+   "gaussian_0.02_consistency": {
+    "mean": 0.9619908224595618,
+    "median": 0.9647881487620429,
+    "p10": 0.9425975185075984
+   },
+   "different_image_baseline": {
+    "mean": 0.5933676944618419,
+    "median": 0.6098128122783671
+   },
+   "spoilage_prediction_unchanged_flip": 0.9733333333333334,
+   "spoilage_prediction_unchanged_noise": 0.9666666666666667
+  },
+  "gallery": [
+   {
+    "figure": "class_gallery.png",
+    "tag": "Banana/NS",
+    "sample_id": "tr6s_02fbb64ea3ab3814",
+    "source": "Classified/Banana/Not_spoiled/sRGB_images/20250911_142826.jpg",
+    "true_type": "Banana",
+    "pred_type": "Banana",
+    "true_spoil": "Not_spoiled",
+    "pred_spoil": "Not_spoiled",
+    "p_spoiled": "0.0000"
+   },
+   {
+    "figure": "class_gallery.png",
+    "tag": "Banana/S",
+    "sample_id": "tr6s_9c2584c369c09770",
+    "source": "Classified/Banana/Spoiled/sRGB_images/20250918_134018.jpg",
+    "true_type": "Banana",
+    "pred_type": "Banana",
+    "true_spoil": "Spoiled",
+    "pred_spoil": "Spoiled",
+    "p_spoiled": "1.0000"
+   },
+   {
+    "figure": "class_gallery.png",
+    "tag": "Carrot/NS",
+    "sample_id": "tr6s_279fb768e5fb43af",
+    "source": "Classified/Carrot/Not_spoiled/sRGB_images/20250726_145305.jpg",
+    "true_type": "Carrot",
+    "pred_type": "Carrot",
+    "true_spoil": "Not_spoiled",
+    "pred_spoil": "Not_spoiled",
+    "p_spoiled": "0.0000"
+   },
+   {
+    "figure": "class_gallery.png",
+    "tag": "Carrot/S",
+    "sample_id": "tr6s_e97ca7437d350157",
+    "source": "Classified/Carrot/Spoiled/sRGB_images/20250804_090448.jpg",
+    "true_type": "Carrot",
+    "pred_type": "Carrot",
+    "true_spoil": "Spoiled",
+    "pred_spoil": "Spoiled",
+    "p_spoiled": "1.0000"
+   },
+   {
+    "figure": "class_gallery.png",
+    "tag": "Guava/NS",
+    "sample_id": "tr6s_6559b8b1da0a897a",
+    "source": "Classified/Guava/Not_spoiled/sRGB_images/20250627_084013.jpg",
+    "true_type": "Guava",
+    "pred_type": "Guava",
+    "true_spoil": "Not_spoiled",
+    "pred_spoil": "Not_spoiled",
+    "p_spoiled": "0.0000"
+   },
+   {
+    "figure": "class_gallery.png",
+    "tag": "Guava/S",
+    "sample_id": "tr6s_6a56a92878432c08",
+    "source": "Classified/Guava/Spoiled/sRGB_images/20250704_083538.jpg",
+    "true_type": "Guava",
+    "pred_type": "Guava",
+    "true_spoil": "Spoiled",
+    "pred_spoil": "Spoiled",
+    "p_spoiled": "1.0000"
+   },
+   {
+    "figure": "class_gallery.png",
+    "tag": "Indian/NS",
+    "sample_id": "tr6s_b2ef30eb12964612",
+    "source": "Classified/Indian_Gooseberry/Not_spoiled/sRGB_images/20250808_142504.jpg",
+    "true_type": "Indian_Gooseberry",
+    "pred_type": "Indian_Gooseberry",
+    "true_spoil": "Not_spoiled",
+    "pred_spoil": "Not_spoiled",
+    "p_spoiled": "0.0000"
+   },
+   {
+    "figure": "class_gallery.png",
+    "tag": "Indian/S",
+    "sample_id": "tr6s_aac4c334379796b7",
+    "source": "Classified/Indian_Gooseberry/Spoiled/sRGB_images/20250815_165038.jpg",
+    "true_type": "Indian_Gooseberry",
+    "pred_type": "Indian_Gooseberry",
+    "true_spoil": "Spoiled",
+    "pred_spoil": "Spoiled",
+    "p_spoiled": "1.0000"
+   },
+   {
+    "figure": "class_gallery.png",
+    "tag": "Mango/NS",
+    "sample_id": "tr6s_c6e83516d00bb3b0",
+    "source": "Classified/Mango/Not_spoiled/sRGB_images/20250920_162532.jpg",
+    "true_type": "Mango",
+    "pred_type": "Mango",
+    "true_spoil": "Not_spoiled",
+    "pred_spoil": "Not_spoiled",
+    "p_spoiled": "0.0000"
+   },
+   {
+    "figure": "class_gallery.png",
+    "tag": "Mango/S",
+    "sample_id": "tr6s_0428101053cb6a5d",
+    "source": "Classified/Mango/Spoiled/sRGB_images/20250929_092043.jpg",
+    "true_type": "Mango",
+    "pred_type": "Mango",
+    "true_spoil": "Spoiled",
+    "pred_spoil": "Spoiled",
+    "p_spoiled": "0.8675"
+   },
+   {
+    "figure": "class_gallery.png",
+    "tag": "Tomato/NS",
+    "sample_id": "tr6s_20b93fbdf99e1c19",
+    "source": "Classified/Tomato/Not_spoiled/sRGB_images/20250813_091049.jpg",
+    "true_type": "Tomato",
+    "pred_type": "Tomato",
+    "true_spoil": "Not_spoiled",
+    "pred_spoil": "Not_spoiled",
+    "p_spoiled": "0.0000"
+   },
+   {
+    "figure": "class_gallery.png",
+    "tag": "Tomato/S",
+    "sample_id": "tr6s_6110ca557663966a",
+    "source": "Classified/Tomato/Spoiled/sRGB_images/20251003_130059.jpg",
+    "true_type": "Tomato",
+    "pred_type": "Tomato",
+    "true_spoil": "Spoiled",
+    "pred_spoil": "Spoiled",
+    "p_spoiled": "1.0000"
+   },
+   {
+    "figure": "failure_cases.png",
+    "tag": "FN",
+    "sample_id": "tr6s_5d3d5553768379ee",
+    "source": "Classified/Indian_Gooseberry/Spoiled/sRGB_images/20250814_134333.jpg",
+    "true_type": "Indian_Gooseberry",
+    "pred_type": "Indian_Gooseberry",
+    "true_spoil": "Spoiled",
+    "pred_spoil": "Not_spoiled",
+    "p_spoiled": "0.0000"
+   },
+   {
+    "figure": "failure_cases.png",
+    "tag": "FN",
+    "sample_id": "tr6s_733aaf2bb22d2887",
+    "source": "Classified/Indian_Gooseberry/Spoiled/sRGB_images/20250814_165625.jpg",
+    "true_type": "Indian_Gooseberry",
+    "pred_type": "Indian_Gooseberry",
+    "true_spoil": "Spoiled",
+    "pred_spoil": "Not_spoiled",
+    "p_spoiled": "0.0939"
+   },
+   {
+    "figure": "failure_cases.png",
+    "tag": "FN",
+    "sample_id": "tr6s_9ae42ebf2c11ffaf",
+    "source": "Classified/Indian_Gooseberry/Spoiled/sRGB_images/20250814_134241.jpg",
+    "true_type": "Indian_Gooseberry",
+    "pred_type": "Indian_Gooseberry",
+    "true_spoil": "Spoiled",
+    "pred_spoil": "Not_spoiled",
+    "p_spoiled": "0.0001"
+   },
+   {
+    "figure": "failure_cases.png",
+    "tag": "FN",
+    "sample_id": "tr6s_9da35aeaf4ba9939",
+    "source": "Classified/Tomato/Spoiled/sRGB_images/20251003_085051.jpg",
+    "true_type": "Tomato",
+    "pred_type": "Tomato",
+    "true_spoil": "Spoiled",
+    "pred_spoil": "Not_spoiled",
+    "p_spoiled": "0.0031"
+   },
+   {
+    "figure": "failure_cases.png",
+    "tag": "FN",
+    "sample_id": "tr6s_f6a9537e1a9c91d2",
+    "source": "Classified/Mango/Spoiled/sRGB_images/20250929_092050.jpg",
+    "true_type": "Mango",
+    "pred_type": "Mango",
+    "true_spoil": "Spoiled",
+    "pred_spoil": "Not_spoiled",
+    "p_spoiled": "0.0000"
+   },
+   {
+    "figure": "failure_cases.png",
+    "tag": "FP",
+    "sample_id": "tr6s_695f70c0f007203f",
+    "source": "Classified/Indian_Gooseberry/Not_spoiled/sRGB_images/20250807_131718.jpg",
+    "true_type": "Indian_Gooseberry",
+    "pred_type": "Indian_Gooseberry",
+    "true_spoil": "Not_spoiled",
+    "pred_spoil": "Spoiled",
+    "p_spoiled": "0.9711"
+   },
+   {
+    "figure": "failure_cases.png",
+    "tag": "FP",
+    "sample_id": "tr6s_d3dba71e684e51fe",
+    "source": "Classified/Indian_Gooseberry/Not_spoiled/sRGB_images/20250808_090006.jpg",
+    "true_type": "Indian_Gooseberry",
+    "pred_type": "Indian_Gooseberry",
+    "true_spoil": "Not_spoiled",
+    "pred_spoil": "Spoiled",
+    "p_spoiled": "0.9999"
+   },
+   {
+    "figure": "failure_cases.png",
+    "tag": "FP",
+    "sample_id": "tr6s_56410f99f79cdb33",
+    "source": "Classified/Indian_Gooseberry/Not_spoiled/sRGB_images/20250808_090020.jpg",
+    "true_type": "Indian_Gooseberry",
+    "pred_type": "Indian_Gooseberry",
+    "true_spoil": "Not_spoiled",
+    "pred_spoil": "Spoiled",
+    "p_spoiled": "0.9673"
+   },
+   {
+    "figure": "failure_cases.png",
+    "tag": "FP",
+    "sample_id": "tr6s_c9ec54e8945c6fba",
+    "source": "Classified/Indian_Gooseberry/Not_spoiled/sRGB_images/20250807_131723.jpg",
+    "true_type": "Indian_Gooseberry",
+    "pred_type": "Indian_Gooseberry",
+    "true_spoil": "Not_spoiled",
+    "pred_spoil": "Spoiled",
+    "p_spoiled": "0.9863"
+   },
+   {
+    "figure": "failure_cases.png",
+    "tag": "FP",
+    "sample_id": "tr6s_5d92d129c4d3e875",
+    "source": "Classified/Indian_Gooseberry/Not_spoiled/sRGB_images/20250809_093931.jpg",
+    "true_type": "Indian_Gooseberry",
+    "pred_type": "Indian_Gooseberry",
+    "true_spoil": "Not_spoiled",
+    "pred_spoil": "Spoiled",
+    "p_spoiled": "0.7919"
+   },
+   {
+    "figure": "class_gallery_part1.png",
+    "tag": "Banana/NS",
+    "sample_id": "tr6s_02fbb64ea3ab3814",
+    "source": "Classified/Banana/Not_spoiled/sRGB_images/20250911_142826.jpg",
+    "true_type": "Banana",
+    "pred_type": "Banana",
+    "true_spoil": "Not_spoiled",
+    "pred_spoil": "Not_spoiled",
+    "p_spoiled": "0.0000"
+   },
+   {
+    "figure": "class_gallery_part1.png",
+    "tag": "Banana/S",
+    "sample_id": "tr6s_9c2584c369c09770",
+    "source": "Classified/Banana/Spoiled/sRGB_images/20250918_134018.jpg",
+    "true_type": "Banana",
+    "pred_type": "Banana",
+    "true_spoil": "Spoiled",
+    "pred_spoil": "Spoiled",
+    "p_spoiled": "1.0000"
+   },
+   {
+    "figure": "class_gallery_part1.png",
+    "tag": "Carrot/NS",
+    "sample_id": "tr6s_279fb768e5fb43af",
+    "source": "Classified/Carrot/Not_spoiled/sRGB_images/20250726_145305.jpg",
+    "true_type": "Carrot",
+    "pred_type": "Carrot",
+    "true_spoil": "Not_spoiled",
+    "pred_spoil": "Not_spoiled",
+    "p_spoiled": "0.0000"
+   },
+   {
+    "figure": "class_gallery_part1.png",
+    "tag": "Carrot/S",
+    "sample_id": "tr6s_e97ca7437d350157",
+    "source": "Classified/Carrot/Spoiled/sRGB_images/20250804_090448.jpg",
+    "true_type": "Carrot",
+    "pred_type": "Carrot",
+    "true_spoil": "Spoiled",
+    "pred_spoil": "Spoiled",
+    "p_spoiled": "1.0000"
+   },
+   {
+    "figure": "class_gallery_part1.png",
+    "tag": "Guava/NS",
+    "sample_id": "tr6s_6559b8b1da0a897a",
+    "source": "Classified/Guava/Not_spoiled/sRGB_images/20250627_084013.jpg",
+    "true_type": "Guava",
+    "pred_type": "Guava",
+    "true_spoil": "Not_spoiled",
+    "pred_spoil": "Not_spoiled",
+    "p_spoiled": "0.0000"
+   },
+   {
+    "figure": "class_gallery_part1.png",
+    "tag": "Guava/S",
+    "sample_id": "tr6s_6a56a92878432c08",
+    "source": "Classified/Guava/Spoiled/sRGB_images/20250704_083538.jpg",
+    "true_type": "Guava",
+    "pred_type": "Guava",
+    "true_spoil": "Spoiled",
+    "pred_spoil": "Spoiled",
+    "p_spoiled": "1.0000"
+   },
+   {
+    "figure": "class_gallery_part2.png",
+    "tag": "Indian/NS",
+    "sample_id": "tr6s_b2ef30eb12964612",
+    "source": "Classified/Indian_Gooseberry/Not_spoiled/sRGB_images/20250808_142504.jpg",
+    "true_type": "Indian_Gooseberry",
+    "pred_type": "Indian_Gooseberry",
+    "true_spoil": "Not_spoiled",
+    "pred_spoil": "Not_spoiled",
+    "p_spoiled": "0.0000"
+   },
+   {
+    "figure": "class_gallery_part2.png",
+    "tag": "Indian/S",
+    "sample_id": "tr6s_aac4c334379796b7",
+    "source": "Classified/Indian_Gooseberry/Spoiled/sRGB_images/20250815_165038.jpg",
+    "true_type": "Indian_Gooseberry",
+    "pred_type": "Indian_Gooseberry",
+    "true_spoil": "Spoiled",
+    "pred_spoil": "Spoiled",
+    "p_spoiled": "1.0000"
+   },
+   {
+    "figure": "class_gallery_part2.png",
+    "tag": "Mango/NS",
+    "sample_id": "tr6s_c6e83516d00bb3b0",
+    "source": "Classified/Mango/Not_spoiled/sRGB_images/20250920_162532.jpg",
+    "true_type": "Mango",
+    "pred_type": "Mango",
+    "true_spoil": "Not_spoiled",
+    "pred_spoil": "Not_spoiled",
+    "p_spoiled": "0.0000"
+   },
+   {
+    "figure": "class_gallery_part2.png",
+    "tag": "Mango/S",
+    "sample_id": "tr6s_0428101053cb6a5d",
+    "source": "Classified/Mango/Spoiled/sRGB_images/20250929_092043.jpg",
+    "true_type": "Mango",
+    "pred_type": "Mango",
+    "true_spoil": "Spoiled",
+    "pred_spoil": "Spoiled",
+    "p_spoiled": "0.8675"
+   },
+   {
+    "figure": "class_gallery_part2.png",
+    "tag": "Tomato/NS",
+    "sample_id": "tr6s_20b93fbdf99e1c19",
+    "source": "Classified/Tomato/Not_spoiled/sRGB_images/20250813_091049.jpg",
+    "true_type": "Tomato",
+    "pred_type": "Tomato",
+    "true_spoil": "Not_spoiled",
+    "pred_spoil": "Not_spoiled",
+    "p_spoiled": "0.0000"
+   },
+   {
+    "figure": "class_gallery_part2.png",
+    "tag": "Tomato/S",
+    "sample_id": "tr6s_6110ca557663966a",
+    "source": "Classified/Tomato/Spoiled/sRGB_images/20251003_130059.jpg",
+    "true_type": "Tomato",
+    "pred_type": "Tomato",
+    "true_spoil": "Spoiled",
+    "pred_spoil": "Spoiled",
+    "p_spoiled": "1.0000"
+   },
+   {
+    "figure": "failure_cases_fn.png",
+    "tag": "FN",
+    "sample_id": "tr6s_5d3d5553768379ee",
+    "source": "Classified/Indian_Gooseberry/Spoiled/sRGB_images/20250814_134333.jpg",
+    "true_type": "Indian_Gooseberry",
+    "pred_type": "Indian_Gooseberry",
+    "true_spoil": "Spoiled",
+    "pred_spoil": "Not_spoiled",
+    "p_spoiled": "0.0000"
+   },
+   {
+    "figure": "failure_cases_fn.png",
+    "tag": "FN",
+    "sample_id": "tr6s_733aaf2bb22d2887",
+    "source": "Classified/Indian_Gooseberry/Spoiled/sRGB_images/20250814_165625.jpg",
+    "true_type": "Indian_Gooseberry",
+    "pred_type": "Indian_Gooseberry",
+    "true_spoil": "Spoiled",
+    "pred_spoil": "Not_spoiled",
+    "p_spoiled": "0.0939"
+   },
+   {
+    "figure": "failure_cases_fn.png",
+    "tag": "FN",
+    "sample_id": "tr6s_9ae42ebf2c11ffaf",
+    "source": "Classified/Indian_Gooseberry/Spoiled/sRGB_images/20250814_134241.jpg",
+    "true_type": "Indian_Gooseberry",
+    "pred_type": "Indian_Gooseberry",
+    "true_spoil": "Spoiled",
+    "pred_spoil": "Not_spoiled",
+    "p_spoiled": "0.0001"
+   },
+   {
+    "figure": "failure_cases_fn.png",
+    "tag": "FN",
+    "sample_id": "tr6s_9da35aeaf4ba9939",
+    "source": "Classified/Tomato/Spoiled/sRGB_images/20251003_085051.jpg",
+    "true_type": "Tomato",
+    "pred_type": "Tomato",
+    "true_spoil": "Spoiled",
+    "pred_spoil": "Not_spoiled",
+    "p_spoiled": "0.0031"
+   },
+   {
+    "figure": "failure_cases_fn.png",
+    "tag": "FN",
+    "sample_id": "tr6s_f6a9537e1a9c91d2",
+    "source": "Classified/Mango/Spoiled/sRGB_images/20250929_092050.jpg",
+    "true_type": "Mango",
+    "pred_type": "Mango",
+    "true_spoil": "Spoiled",
+    "pred_spoil": "Not_spoiled",
+    "p_spoiled": "0.0000"
+   },
+   {
+    "figure": "failure_cases_fp.png",
+    "tag": "FP",
+    "sample_id": "tr6s_695f70c0f007203f",
+    "source": "Classified/Indian_Gooseberry/Not_spoiled/sRGB_images/20250807_131718.jpg",
+    "true_type": "Indian_Gooseberry",
+    "pred_type": "Indian_Gooseberry",
+    "true_spoil": "Not_spoiled",
+    "pred_spoil": "Spoiled",
+    "p_spoiled": "0.9711"
+   },
+   {
+    "figure": "failure_cases_fp.png",
+    "tag": "FP",
+    "sample_id": "tr6s_d3dba71e684e51fe",
+    "source": "Classified/Indian_Gooseberry/Not_spoiled/sRGB_images/20250808_090006.jpg",
+    "true_type": "Indian_Gooseberry",
+    "pred_type": "Indian_Gooseberry",
+    "true_spoil": "Not_spoiled",
+    "pred_spoil": "Spoiled",
+    "p_spoiled": "0.9999"
+   },
+   {
+    "figure": "failure_cases_fp.png",
+    "tag": "FP",
+    "sample_id": "tr6s_56410f99f79cdb33",
+    "source": "Classified/Indian_Gooseberry/Not_spoiled/sRGB_images/20250808_090020.jpg",
+    "true_type": "Indian_Gooseberry",
+    "pred_type": "Indian_Gooseberry",
+    "true_spoil": "Not_spoiled",
+    "pred_spoil": "Spoiled",
+    "p_spoiled": "0.9673"
+   },
+   {
+    "figure": "failure_cases_fp.png",
+    "tag": "FP",
+    "sample_id": "tr6s_c9ec54e8945c6fba",
+    "source": "Classified/Indian_Gooseberry/Not_spoiled/sRGB_images/20250807_131723.jpg",
+    "true_type": "Indian_Gooseberry",
+    "pred_type": "Indian_Gooseberry",
+    "true_spoil": "Not_spoiled",
+    "pred_spoil": "Spoiled",
+    "p_spoiled": "0.9863"
+   },
+   {
+    "figure": "failure_cases_fp.png",
+    "tag": "FP",
+    "sample_id": "tr6s_5d92d129c4d3e875",
+    "source": "Classified/Indian_Gooseberry/Not_spoiled/sRGB_images/20250809_093931.jpg",
+    "true_type": "Indian_Gooseberry",
+    "pred_type": "Indian_Gooseberry",
+    "true_spoil": "Not_spoiled",
+    "pred_spoil": "Spoiled",
+    "p_spoiled": "0.7919"
+   }
+  ]
+ },
+ "resources": {
+  "ViT-B/16 primary": {
+   "parameters": 85804808,
+   "checkpoint_mb": 343.3,
+   "single_image_latency_ms_cpu_median": 200.84977100486867,
+   "single_image_latency_ms_mps_median": 59.07943699276075
+  },
+  "ViT-S/16 ablation": {
+   "parameters": 21668744,
+   "checkpoint_mb": 86.7,
+   "single_image_latency_ms_cpu_median": 35.453082993626595,
+   "single_image_latency_ms_mps_median": 35.22943751886487
+  },
+  "backend_process_rss_mb": null,
+  "hardware": "Apple M5, 16 GB unified memory; torch 2.14.1",
+  "note": "Single-image forward pass only (no decode/resize). Measured while other training jobs may share the GPU.",
+  "backend_rss_method": "macOS `footprint`/`vmmap --summary` on the running uvicorn process after ~200 requests (RSS is unreliable on macOS because idle pages are compressed). Includes 393 MB GPU (IOAccelerator) memory for the MPS model.",
+  "backend_physical_footprint_mb": 712.4,
+  "backend_physical_footprint_peak_mb": 1300
+ },
+ "tests": {
+  "pytest_summary": "33 passed in 4.86s",
+  "pytest_cases": [
+   [
+    "backend/tests/test_api.py::test_health_reports_loaded_model",
+    "PASSED"
+   ],
+   [
+    "backend/tests/test_api.py::test_models_lists_honest_statuses",
+    "PASSED"
+   ],
+   [
+    "backend/tests/test_api.py::test_analyze_valid_jpeg_returns_real_inference_contract",
+    "PASSED"
+   ],
+   [
+    "backend/tests/test_api.py::test_analyze_is_deterministic",
+    "PASSED"
+   ],
+   [
+    "backend/tests/test_api.py::test_analyze_png_and_webp",
+    "PASSED"
+   ],
+   [
+    "backend/tests/test_api.py::test_xai_overlay",
+    "PASSED"
+   ],
+   [
+    "backend/tests/test_api.py::test_rejects_wrong_media_type",
+    "PASSED"
+   ],
+   [
+    "backend/tests/test_api.py::test_rejects_corrupt_image",
+    "PASSED"
+   ],
+   [
+    "backend/tests/test_api.py::test_rejects_empty_file",
+    "PASSED"
+   ],
+   [
+    "backend/tests/test_api.py::test_rejects_tiny_image",
+    "PASSED"
+   ],
+   [
+    "backend/tests/test_api.py::test_rejects_unsupported_decoded_format",
+    "PASSED"
+   ],
+   [
+    "backend/tests/test_api.py::test_missing_field_is_422",
+    "PASSED"
+   ],
+   [
+    "backend/tests/test_api.py::test_oversized_upload_413",
+    "PASSED"
+   ],
+   [
+    "backend/tests/test_api.py::test_missing_checkpoint_fails_clearly",
+    "PASSED"
+   ],
+   [
+    "backend/tests/test_api.py::test_mock_mode_is_explicitly_labelled",
+    "PASSED"
+   ],
+   [
+    "backend/tests/test_api.py::test_history_persists_and_is_queryable",
+    "PASSED"
+   ],
+   [
+    "backend/tests/test_api.py::test_report_text_and_pdf",
+    "PASSED"
+   ],
+   [
+    "backend/tests/test_api.py::test_nutrition_and_tips",
+    "PASSED"
+   ],
+   [
+    "backend/tests/test_api.py::test_cors_allows_dev_origin_only",
+    "PASSED"
+   ],
+   [
+    "backend/tests/test_real_model.py::test_real_model_loads",
+    "PASSED"
+   ],
+   [
+    "backend/tests/test_real_model.py::test_real_inference_on_held_out_source_images",
+    "PASSED"
+   ],
+   [
+    "backend/tests/test_real_model.py::test_backend_preprocessing_matches_training_cache",
+    "PASSED"
+   ],
+   [
+    "backend/tests/test_real_model.py::test_png_upload_of_real_image",
+    "PASSED"
+   ],
+   [
+    "ml/tests/test_ml.py::test_manifest_schema",
+    "PASSED"
+   ],
+   [
+    "ml/tests/test_ml.py::test_eligible_rows_have_valid_labels",
+    "PASSED"
+   ],
+   [
+    "ml/tests/test_ml.py::test_conflicting_labels_excluded",
+    "PASSED"
+   ],
+   [
+    "ml/tests/test_ml.py::test_no_leakage_between_splits",
+    "PASSED"
+   ],
+   [
+    "ml/tests/test_ml.py::test_split_fractions_close_to_60_20_20",
+    "PASSED"
+   ],
+   [
+    "ml/tests/test_ml.py::test_every_stratum_in_every_split",
+    "PASSED"
+   ],
+   [
+    "ml/tests/test_ml.py::test_source_files_unchanged",
+    "PASSED"
+   ],
+   [
+    "ml/tests/test_ml.py::test_corruptions_are_deterministic_and_bounded",
+    "PASSED"
+   ],
+   [
+    "ml/tests/test_ml.py::test_model_forward_shapes",
+    "PASSED"
+   ],
+   [
+    "ml/tests/test_ml.py::test_gan_outputs_marked_synthetic_and_train_only",
+    "PASSED"
+   ]
+  ],
+  "e2e": {
+   "run_at": "2026-10-16T00:06:45",
+   "api": "http://localhost:8000",
+   "ui": "http://localhost:5173",
+   "model_version": "vit_b16_primary@epoch9",
+   "device": "mps",
+   "checks": [
+    {
+     "check": "frontend serves index.html",
+     "pass": true,
+     "detail": "HTTP 200"
+    },
+    {
+     "check": "backend health: real model loaded, mock off",
+     "pass": true,
+     "detail": "vit_b16_primary@epoch9"
+    },
+    {
+     "check": "CORS preflight allows frontend origin",
+     "pass": true,
+     "detail": ""
+    },
+    {
+     "check": "/api/models reports ViT loaded and U-Net unavailable",
+     "pass": true,
+     "detail": ""
+    },
+    {
+     "check": "analysed 60/60 held-out source images via HTTP",
+     "pass": true,
+     "detail": "produce correct 60/60, spoilage correct 57/60 (full-res originals through API)"
+    },
+    {
+     "check": "history grew by the number of scans",
+     "pass": true,
+     "detail": "0 -> 60"
+    },
+    {
+     "check": "history detail endpoint returns the scan",
+     "pass": true,
+     "detail": ""
+    },
+    {
+     "check": "XAI overlay returned",
+     "pass": true,
+     "detail": ""
+    },
+    {
+     "check": "wrong file type rejected with 415 + structured error",
+     "pass": true,
+     "detail": ""
+    },
+    {
+     "check": "corrupt image rejected with 400",
+     "pass": true,
+     "detail": ""
+    },
+    {
+     "check": "PDF report generated",
+     "pass": true,
+     "detail": ""
+    }
+   ],
+   "passed": 11,
+   "total": 11,
+   "held_out_images_via_api": 60,
+   "produce_correct": 60,
+   "spoilage_correct": 57
+  },
+  "latency": {
+   "device": "mps",
+   "note": "end-to-end HTTP latency incl. upload of ~1.9 MB full-res JPEG, decode, resize, ViT-B inference, SQLite write",
+   "samples_ms": [
+    1010.6244170165155,
+    44.938750012079254,
+    40.42291600489989,
+    59.61695799487643,
+    40.57795798871666,
+    42.914749996270984,
+    45.301083009690046,
+    43.83166698971763,
+    62.92283398215659,
+    46.757792006246746,
+    59.69291701330803,
+    40.122666978277266,
+    52.392333978787065,
+    45.40833400096744,
+    75.71066700620577,
+    51.51120899245143,
+    61.271042010048404,
+    54.2021669971291,
+    50.051958998665214,
+    54.52933398191817,
+    50.68762501468882,
+    53.94516699016094,
+    61.7986659926828,
+    57.15904198586941,
+    63.91275001806207,
+    63.78833300550468,
+    65.2283749950584,
+    68.00854200264439,
+    66.97595797595568,
+    67.4261249951087,
+    69.72437497461215,
+    66.7164160113316,
+    59.43079199641943,
+    66.72850000904873,
+    85.19454198540188,
+    76.53308400767855,
+    71.1587079858873,
+    71.43466599518433,
+    83.19966599810869,
+    63.61004200880416,
+    66.98745902394876,
+    63.30887498916127,
+    70.66949998261407,
+    58.02316698827781,
+    61.741250014165416,
+    59.63270799838938,
+    63.16799999331124,
+    62.407499994151294,
+    61.29491701722145,
+    60.88137501501478,
+    61.48208401282318,
+    55.807333992561325,
+    65.29691701871343,
+    57.10612499387935,
+    59.583624999504536,
+    55.09145898395218,
+    56.52741601807065,
+    68.20275000063702,
+    59.28187500103377,
+    55.321541003650054
+   ],
+   "median_ms": 61.07620851253159,
+   "p95_ms": 76.53308400767855
+  },
+  "ui_contract": {
+   "model_version": "vit_b16_primary@epoch9",
+   "source": "model",
+   "mock": false,
+   "fields_checked": 44,
+   "fields_present": 44,
+   "checks": [
+    {
+     "endpoint": "/api/analyze (top level: result/scan)",
+     "field": "items",
+     "present": true,
+     "type": "list",
+     "null_by_design": ""
+    },
+    {
+     "endpoint": "/api/analyze (top level: result/scan)",
+     "field": "mock",
+     "present": true,
+     "type": "bool",
+     "null_by_design": ""
+    },
+    {
+     "endpoint": "/api/analyze (top level: result/scan)",
+     "field": "warnings",
+     "present": true,
+     "type": "list",
+     "null_by_design": ""
+    },
+    {
+     "endpoint": "/api/analyze (top level: result/scan)",
+     "field": "timing_ms",
+     "present": true,
+     "type": "dict",
+     "null_by_design": ""
+    },
+    {
+     "endpoint": "/api/analyze (top level: result/scan)",
+     "field": "model_version",
+     "present": true,
+     "type": "str",
+     "null_by_design": ""
+    },
+    {
+     "endpoint": "/api/analyze (top level: result/scan)",
+     "field": "disclaimer",
+     "present": true,
+     "type": "str",
+     "null_by_design": ""
+    },
+    {
+     "endpoint": "/api/analyze (top level: result/scan)",
+     "field": "scan_id",
+     "present": true,
+     "type": "str",
+     "null_by_design": ""
+    },
+    {
+     "endpoint": "/api/analyze (top level: result/scan)",
+     "field": "id",
+     "present": true,
+     "type": "int",
+     "null_by_design": ""
+    },
+    {
+     "endpoint": "/api/analyze (top level: result/scan)",
+     "field": "ts",
+     "present": true,
+     "type": "int",
+     "null_by_design": ""
+    },
+    {
+     "endpoint": "/api/analyze items[] (item/i/it)",
+     "field": "name",
+     "present": true,
+     "type": "str",
+     "null_by_design": ""
+    },
+    {
+     "endpoint": "/api/analyze items[] (item/i/it)",
+     "field": "tier",
+     "present": true,
+     "type": "str",
+     "null_by_design": ""
+    },
+    {
+     "endpoint": "/api/analyze items[] (item/i/it)",
+     "field": "freshness",
+     "present": true,
+     "type": "int",
+     "null_by_design": ""
+    },
+    {
+     "endpoint": "/api/analyze items[] (item/i/it)",
+     "field": "days",
+     "present": true,
+     "type": "NoneType",
+     "null_by_design": "shelf-life unavailable \u2192 UI shows 'Not available'"
+    },
+    {
+     "endpoint": "/api/analyze items[] (item/i/it)",
+     "field": "decayPct",
+     "present": true,
+     "type": "NoneType",
+     "null_by_design": "segmentation unavailable \u2192 UI shows 'Pending annotation'"
+    },
+    {
+     "endpoint": "/api/analyze items[] (item/i/it)",
+     "field": "action",
+     "present": true,
+     "type": "str",
+     "null_by_design": ""
+    },
+    {
+     "endpoint": "/api/analyze items[] (item/i/it)",
+     "field": "produce_confidence",
+     "present": true,
+     "type": "float",
+     "null_by_design": ""
+    },
+    {
+     "endpoint": "/api/analyze items[] (item/i/it)",
+     "field": "spoilage_label",
+     "present": true,
+     "type": "str",
+     "null_by_design": ""
+    },
+    {
+     "endpoint": "/api/analyze items[] (item/i/it)",
+     "field": "spoilage_confidence",
+     "present": true,
+     "type": "float",
+     "null_by_design": ""
+    },
+    {
+     "endpoint": "/api/analyze items[] (item/i/it)",
+     "field": "xai_overlay",
+     "present": true,
+     "type": "str",
+     "null_by_design": ""
+    },
+    {
+     "endpoint": "/health (health)",
+     "field": "model_loaded",
+     "present": true,
+     "type": "bool",
+     "null_by_design": ""
+    },
+    {
+     "endpoint": "/health (health)",
+     "field": "mock_mode",
+     "present": true,
+     "type": "bool",
+     "null_by_design": ""
+    },
+    {
+     "endpoint": "/health (health)",
+     "field": "model_version",
+     "present": true,
+     "type": "str",
+     "null_by_design": ""
+    },
+    {
+     "endpoint": "/health (health)",
+     "field": "model_error",
+     "present": true,
+     "type": "NoneType",
+     "null_by_design": "null when model loaded"
+    },
+    {
+     "endpoint": "/api/stats (stats)",
+     "field": "totalInspections",
+     "present": true,
+     "type": "int",
+     "null_by_design": ""
+    },
+    {
+     "endpoint": "/api/stats (stats)",
+     "field": "totalItems",
+     "present": true,
+     "type": "int",
+     "null_by_design": ""
+    },
+    {
+     "endpoint": "/api/stats (stats)",
+     "field": "shelfReadyPct",
+     "present": true,
+     "type": "int",
+     "null_by_design": ""
+    },
+    {
+     "endpoint": "/api/stats (stats)",
+     "field": "avgLossPct",
+     "present": true,
+     "type": "int",
+     "null_by_design": ""
+    },
+    {
+     "endpoint": "/api/inspections[] (insp)",
+     "field": "ts",
+     "present": true,
+     "type": "int",
+     "null_by_design": ""
+    },
+    {
+     "endpoint": "/api/inspections[] (insp)",
+     "field": "items",
+     "present": true,
+     "type": "list",
+     "null_by_design": ""
+    },
+    {
+     "endpoint": "/api/models models[] (m / vit)",
+     "field": "id",
+     "present": true,
+     "type": "str",
+     "null_by_design": ""
+    },
+    {
+     "endpoint": "/api/models models[] (m / vit)",
+     "field": "status",
+     "present": true,
+     "type": "str",
+     "null_by_design": ""
+    },
+    {
+     "endpoint": "/api/models models[] (m / vit)",
+     "field": "role",
+     "present": true,
+     "type": "str",
+     "null_by_design": ""
+    },
+    {
+     "endpoint": "/api/models vit entry (vit)",
+     "field": "version",
+     "present": true,
+     "type": "str",
+     "null_by_design": ""
+    },
+    {
+     "endpoint": "/api/models vit entry (vit)",
+     "field": "backbone",
+     "present": true,
+     "type": "str",
+     "null_by_design": ""
+    },
+    {
+     "endpoint": "/api/models vit entry (vit)",
+     "field": "test_metrics",
+     "present": true,
+     "type": "dict",
+     "null_by_design": ""
+    },
+    {
+     "endpoint": "/api/models vit.test_metrics (tm)",
+     "field": "type",
+     "present": true,
+     "type": "dict",
+     "null_by_design": ""
+    },
+    {
+     "endpoint": "/api/models vit.test_metrics (tm)",
+     "field": "spoil",
+     "present": true,
+     "type": "dict",
+     "null_by_design": ""
+    },
+    {
+     "endpoint": "/api/report (report)",
+     "field": "lines",
+     "present": true,
+     "type": "list",
+     "null_by_design": ""
+    },
+    {
+     "endpoint": "/api/nutrition/{name} (data)",
+     "field": "calories",
+     "present": true,
+     "type": "int",
+     "null_by_design": ""
+    },
+    {
+     "endpoint": "/api/nutrition/{name} (data)",
+     "field": "carbs",
+     "present": true,
+     "type": "str",
+     "null_by_design": ""
+    },
+    {
+     "endpoint": "/api/nutrition/{name} (data)",
+     "field": "fiber",
+     "present": true,
+     "type": "str",
+     "null_by_design": ""
+    },
+    {
+     "endpoint": "/api/nutrition/{name} (data)",
+     "field": "vitaminC",
+     "present": true,
+     "type": "str",
+     "null_by_design": ""
+    },
+    {
+     "endpoint": "/api/nutrition/{name} (data)",
+     "field": "potassium",
+     "present": true,
+     "type": "str",
+     "null_by_design": ""
+    },
+    {
+     "endpoint": "/api/nutrition/{name} (data)",
+     "field": "fact",
+     "present": true,
+     "type": "str",
+     "null_by_design": ""
+    }
+   ]
+  },
+  "build_tail": [
+   "dist/index.html                   0.40 kB \u2502 gzip:  0.29 kB",
+   "dist/assets/index-BhM1J76S.css   20.91 kB \u2502 gzip:  4.70 kB",
+   "dist/assets/index-CCfo1J90.js   203.99 kB \u2502 gzip: 63.78 kB",
+   "\u2713 built in 369ms"
+  ]
+ },
+ "tr6plus": {
+  "build_summary": {
+   "generated_at": "2026-10-12T15:54:03.493896+00:00",
+   "source_dataset": "/Users/nandu/Downloads/foresight/TR-6",
+   "audit_output": "/Users/nandu/Downloads/foresight/dataset-preparation/tr6-audit/output",
+   "workspace": "/Users/nandu/Downloads/foresight/Foresight-TR6-plus",
+   "master_manifest_records": 21653,
+   "image_records": 21626,
+   "unique_image_content_ids": 10776,
+   "cross_label_conflict_groups": 170,
+   "pilot_size": 96,
+   "pilot_per_produce_modality": 8,
+   "pilot_source_directory": "Normal",
+   "pilot_spoilage_labels_used": false,
+   "pilot_cross_label_conflicts": 0,
+   "calibration_batch_size": 12,
+   "annotation_status_counts": {
+    "pending": 96
+   },
+   "selection_seed": "20261012",
+   "source_images_copied": 0,
+   "derived_review_contact_sheets": 2
+  },
+  "validation_original": {
+   "generated_at": "2026-10-15T08:51:10.142930+00:00",
+   "dataset": "/Users/nandu/Downloads/foresight/TR-6",
+   "workspace": "/Users/nandu/Downloads/foresight/Foresight-TR6-plus",
+   "hash_mode": "none",
+   "result": "pass",
+   "checks": {
+    "master_records": 21653,
+    "pilot_records": 96,
+    "annotation_records": 96,
+    "calibration_records": 12,
+    "source_paths_found": 21653,
+    "duplicate_groups": 10589,
+    "cross_label_conflict_groups": 170,
+    "pilot_unique_content": 96,
+    "hashes_recomputed": 0,
+    "missing_pending_annotations": 96,
+    "proposal_only_records": 12,
+    "human_complete_records": 0,
+    "proposal_coco_annotations": 12,
+    "human_coco_annotations": 0
+   },
+   "annotation_status_counts": {
+    "pending_review": 12,
+    "pending": 84
+   }
+  },
+  "validation_rerun": {
+   "generated_at": "2026-10-15T15:08:08.910380+00:00",
+   "dataset": "/Users/nandu/Downloads/foresight/dataset/TR-6",
+   "workspace": "/private/tmp/claude-501/-Users-nandu-Downloads-foresight/bdd458f5-bfd3-4deb-96ca-b4e4ad395a8d/scratchpad/tr6plus_copy",
+   "hash_mode": "pilot",
+   "result": "pass",
+   "checks": {
+    "master_records": 21653,
+    "pilot_records": 96,
+    "annotation_records": 96,
+    "calibration_records": 12,
+    "source_paths_found": 21653,
+    "duplicate_groups": 10589,
+    "cross_label_conflict_groups": 170,
+    "pilot_unique_content": 96,
+    "hashes_recomputed": 96,
+    "missing_pending_annotations": 96,
+    "proposal_only_records": 12,
+    "human_complete_records": 0,
+    "proposal_coco_annotations": 12,
+    "human_coco_annotations": 0
+   },
+   "annotation_status_counts": {
+    "pending_review": 12,
+    "pending": 84
+   },
+   "n_errors": 0,
+   "warnings": [
+    {
+     "severity": "warning",
+     "code": "proposal_coco_not_ground_truth",
+     "path": "annotations/coco_annotations.json",
+     "message": "12 polygons in annotations/coco_annotations.json are Python proposals only and must not be exported as completed ground truth"
+    },
+    {
+     "severity": "warning",
+     "code": "annotations_pending",
+     "path": "annotations/annotation_records.csv",
+     "message": "96 pilot images still need human Label Studio annotation"
+    }
+   ]
+  },
+  "annotation_status_counts": {
+   "pending_review": 12,
+   "pending": 84
+  },
+  "calibration": {
+   "generated_at": "2026-10-12T16:56:00.442233+00:00",
+   "batch_size": 12,
+   "annotated": 12,
+   "excluded": 0,
+   "defect_masks": 0,
+   "status": "annotated_pending_human_review",
+   "label_studio_available": false,
+   "coordinate_space": "stored JPEG pixels without EXIF transpose",
+   "srgb_exif_orientation": 6,
+   "images": [
+    {
+     "pilot_id": "tr6p_001",
+     "produce": "Banana",
+     "modality": "srgb",
+     "width": 4000,
+     "height": 3000,
+     "polygon_points": 52,
+     "area": 1704464.0,
+     "mask_fraction": 0.1429,
+     "quality": "annotatable",
+     "defect_count": 0,
+     "overlay": "reports/calibration-overlays/tr6p_001_Banana_srgb.jpg",
+     "raster_mask_path": "annotations/masks/tr6p_001.png"
+    },
+    {
+     "pilot_id": "tr6p_009",
+     "produce": "Banana",
+     "modality": "thermal_ir_fusion",
+     "width": 640,
+     "height": 480,
+     "polygon_points": 105,
+     "area": 83517.0,
+     "mask_fraction": 0.2752,
+     "quality": "ambiguous",
+     "defect_count": 0,
+     "overlay": "reports/calibration-overlays/tr6p_009_Banana_thermal_ir_fusion.jpg",
+     "raster_mask_path": "annotations/masks/tr6p_009.png"
+    },
+    {
+     "pilot_id": "tr6p_017",
+     "produce": "Carrot",
+     "modality": "srgb",
+     "width": 4000,
+     "height": 3000,
+     "polygon_points": 62,
+     "area": 2288064.0,
+     "mask_fraction": 0.1917,
+     "quality": "annotatable",
+     "defect_count": 0,
+     "overlay": "reports/calibration-overlays/tr6p_017_Carrot_srgb.jpg",
+     "raster_mask_path": "annotations/masks/tr6p_017.png"
+    },
+    {
+     "pilot_id": "tr6p_025",
+     "produce": "Carrot",
+     "modality": "thermal_ir_fusion",
+     "width": 640,
+     "height": 480,
+     "polygon_points": 28,
+     "area": 57259.5,
+     "mask_fraction": 0.1895,
+     "quality": "ambiguous",
+     "defect_count": 0,
+     "overlay": "reports/calibration-overlays/tr6p_025_Carrot_thermal_ir_fusion.jpg",
+     "raster_mask_path": "annotations/masks/tr6p_025.png"
+    },
+    {
+     "pilot_id": "tr6p_033",
+     "produce": "Guava",
+     "modality": "srgb",
+     "width": 4000,
+     "height": 3000,
+     "polygon_points": 89,
+     "area": 3971272.0,
+     "mask_fraction": 0.3319,
+     "quality": "annotatable",
+     "defect_count": 0,
+     "overlay": "reports/calibration-overlays/tr6p_033_Guava_srgb.jpg",
+     "raster_mask_path": "annotations/masks/tr6p_033.png"
+    },
+    {
+     "pilot_id": "tr6p_041",
+     "produce": "Guava",
+     "modality": "thermal_ir_fusion",
+     "width": 640,
+     "height": 480,
+     "polygon_points": 73,
+     "area": 65330.5,
+     "mask_fraction": 0.2144,
+     "quality": "ambiguous",
+     "defect_count": 0,
+     "overlay": "reports/calibration-overlays/tr6p_041_Guava_thermal_ir_fusion.jpg",
+     "raster_mask_path": "annotations/masks/tr6p_041.png"
+    },
+    {
+     "pilot_id": "tr6p_049",
+     "produce": "Indian_Gooseberry",
+     "modality": "srgb",
+     "width": 4000,
+     "height": 3000,
+     "polygon_points": 36,
+     "area": 1216704.0,
+     "mask_fraction": 0.102,
+     "quality": "annotatable",
+     "defect_count": 0,
+     "overlay": "reports/calibration-overlays/tr6p_049_Indian_Gooseberry_srgb.jpg",
+     "raster_mask_path": "annotations/masks/tr6p_049.png"
+    },
+    {
+     "pilot_id": "tr6p_057",
+     "produce": "Indian_Gooseberry",
+     "modality": "thermal_ir_fusion",
+     "width": 640,
+     "height": 480,
+     "polygon_points": 99,
+     "area": 88266.0,
+     "mask_fraction": 0.2838,
+     "quality": "ambiguous",
+     "defect_count": 0,
+     "overlay": "reports/calibration-overlays/tr6p_057_Indian_Gooseberry_thermal_ir_fusion.jpg",
+     "raster_mask_path": "annotations/masks/tr6p_057.png"
+    },
+    {
+     "pilot_id": "tr6p_065",
+     "produce": "Mango",
+     "modality": "srgb",
+     "width": 4000,
+     "height": 3000,
+     "polygon_points": 86,
+     "area": 3557488.0,
+     "mask_fraction": 0.2974,
+     "quality": "annotatable",
+     "defect_count": 0,
+     "overlay": "reports/calibration-overlays/tr6p_065_Mango_srgb.jpg",
+     "raster_mask_path": "annotations/masks/tr6p_065.png"
+    },
+    {
+     "pilot_id": "tr6p_073",
+     "produce": "Mango",
+     "modality": "thermal_ir_fusion",
+     "width": 640,
+     "height": 480,
+     "polygon_points": 54,
+     "area": 30668.5,
+     "mask_fraction": 0.1002,
+     "quality": "ambiguous",
+     "defect_count": 0,
+     "overlay": "reports/calibration-overlays/tr6p_073_Mango_thermal_ir_fusion.jpg",
+     "raster_mask_path": "annotations/masks/tr6p_073.png"
+    },
+    {
+     "pilot_id": "tr6p_081",
+     "produce": "Tomato",
+     "modality": "srgb",
+     "width": 4000,
+     "height": 3000,
+     "polygon_points": 54,
+     "area": 3488616.0,
+     "mask_fraction": 0.2916,
+     "quality": "annotatable",
+     "defect_count": 0,
+     "overlay": "reports/calibration-overlays/tr6p_081_Tomato_srgb.jpg",
+     "raster_mask_path": "annotations/masks/tr6p_081.png"
+    },
+    {
+     "pilot_id": "tr6p_089",
+     "produce": "Tomato",
+     "modality": "thermal_ir_fusion",
+     "width": 640,
+     "height": 480,
+     "polygon_points": 84,
+     "area": 114804.5,
+     "mask_fraction": 0.3765,
+     "quality": "annotatable",
+     "defect_count": 0,
+     "overlay": "reports/calibration-overlays/tr6p_089_Tomato_thermal_ir_fusion.jpg",
+     "raster_mask_path": "annotations/masks/tr6p_089.png"
+    }
+   ],
+   "review": {
+    "tr6p_001": {
+     "quality": "annotatable",
+     "notes": "Clear banana silhouette including stem. Brown patches treated as ripening/bruising texture, not a separately delineable defect.",
+     "review_needed": "Confirm exclusion of ripening spots from defect class."
+    },
+    "tr6p_009": {
+     "quality": "ambiguous",
+     "notes": "Banana silhouette is visible but the thermal edge is soft and haloed. Fruit mask placed at the strongest stable transition. No physical defect boundary.",
+     "review_needed": "Confirm fruit/background cutoff on the diffuse thermal halo."
+    },
+    "tr6p_017": {
+     "quality": "annotatable",
+     "notes": "Clear carrot on white background. Pale surface variation looks like normal carrot skin. No localized defect annotated.",
+     "review_needed": "Confirm pale patches are not defects."
+    },
+    "tr6p_025": {
+     "quality": "ambiguous",
+     "notes": "Purple thermal core is distinct, but a warm halo makes the physical edge uncertain. Mask follows the strong purple/orange transition, excluding the outer halo. No defect.",
+     "review_needed": "Confirm whether the halo should be inside the fruit mask."
+    },
+    "tr6p_033": {
+     "quality": "annotatable",
+     "notes": "Clear guava including calyx. Speckling treated as normal surface texture. No localized defect annotated.",
+     "review_needed": "Confirm calyx inclusion and that speckling is not a defect."
+    },
+    "tr6p_041": {
+     "quality": "ambiguous",
+     "notes": "Low-contrast thermal guava with a fuzzy boundary and visible calyx bump. Mask follows the strongest silhouette. No physical defect boundary.",
+     "review_needed": "Confirm low-contrast thermal outline, especially at the calyx."
+    },
+    "tr6p_049": {
+     "quality": "annotatable",
+     "notes": "Clear Indian gooseberry. Tiny dark marks treated as lenticels/normal marks, not defects.",
+     "review_needed": "Confirm small dark marks are not defects."
+    },
+    "tr6p_057": {
+     "quality": "ambiguous",
+     "notes": "Low fruit/background contrast in thermal rendering. Fruit remains visible as a darker disk; outline is uncertain. No physical defect annotated.",
+     "review_needed": "Confirm whether this thermal outline is repeatable enough to keep."
+    },
+    "tr6p_065": {
+     "quality": "annotatable",
+     "notes": "Clear mango including stem. Yellowing treated as ripening color. Small dark marks not confidently separable from normal blemishes, so no defect polygon.",
+     "review_needed": "Confirm small dark marks should remain unannotated as defects."
+    },
+    "tr6p_073": {
+     "quality": "ambiguous",
+     "notes": "Mango body and stem are darker than the table. Outline placed on the strongest dark-to-background transition; table/halo excluded. No physical defect annotated.",
+     "review_needed": "Confirm thermal mango versus table and stem inclusion."
+    },
+    "tr6p_081": {
+     "quality": "annotatable",
+     "notes": "Clear tomato. Brown/yellow region at the top is the calyx/stem scar and is included in the fruit mask, not as a defect.",
+     "review_needed": "Confirm stem-scar/calyx handling."
+    },
+    "tr6p_089": {
+     "quality": "annotatable",
+     "notes": "Tomato thermal disk is visible against the background. Edge is slightly soft; mask follows the round silhouette. No physical defect boundary.",
+     "review_needed": "Confirm thermal disk boundary, including the warmer upper rim."
+    }
+   }
+  },
+  "noise_pilot": {
+   "summary": {
+    "generated_at": "2026-10-15T15:08:30.048283+00:00",
+    "output_name": "noise-pilot-v1",
+    "source_images": 24,
+    "derived_rows": 120,
+    "ok": 120,
+    "failed": 0,
+    "manifest": "manifests/derived/noise_pilot_v1_manifest.csv",
+    "image_root": "derived-data/noise-pilot-v1/images",
+    "disk_estimate": {
+     "generated_at": "2026-10-15T15:08:30.047773+00:00",
+     "source_set": "pilot_sample",
+     "source_images": 24,
+     "derived_images": 120,
+     "estimated_output_bytes": 180977784,
+     "estimated_output_mb": 172.59,
+     "disk_free_bytes": 303690825728,
+     "disk_free_gb": 282.83,
+     "safety_factor": 2.0,
+     "enough_free_space": true,
+     "note": "Estimate uses source JPEG sizes times 1.6. Actual noisy JPEGs may be larger because noise reduces compressibility."
+    },
+    "checkpoint_status": "no_trained_checkpoint_found",
+    "source_dataset_untouched": true
+   },
+   "n_rows": 120,
+   "by_modality_transform": {
+    "srgb/gaussian/low": 12,
+    "srgb/gaussian/high": 12,
+    "srgb/salt_pepper/low": 12,
+    "srgb/salt_pepper/high": 12,
+    "srgb/speckle/mild": 12,
+    "thermal_ir_fusion/gaussian/low": 12,
+    "thermal_ir_fusion/gaussian/high": 12,
+    "thermal_ir_fusion/salt_pepper/low": 12,
+    "thermal_ir_fusion/salt_pepper/high": 12,
+    "thermal_ir_fusion/speckle/mild": 12
+   },
+   "by_split": {
+    "train": 95,
+    "val": 25
+   },
+   "ok": 120,
+   "bytes": 755376389,
+   "is_synthetic_all": true,
+   "independent_test_specimen_any": false
+  },
+  "release": {
+   "package": "Foresight-TR6-plus-dataset-v1.0.0",
+   "unpacked_dir": "/Users/nandu/Downloads/foresight/releases/Foresight-TR6-plus-dataset-v1.0.0",
+   "zip_path": "/Users/nandu/Downloads/foresight/releases/Foresight-TR6-plus-dataset-v1.0.0.zip",
+   "checksum_path": "/Users/nandu/Downloads/foresight/releases/Foresight-TR6-plus-dataset-v1.0.0.zip.sha256",
+   "zip_filename": "Foresight-TR6-plus-dataset-v1.0.0.zip",
+   "checksum_filename": "Foresight-TR6-plus-dataset-v1.0.0.zip.sha256",
+   "zip_bytes": 5303742,
+   "zip_sha256": "807d2f16622be44802b7d25aad41a27a9e349591ef7cb41298bf16378ae04610",
+   "package_file_count": 67,
+   "package_bytes": 27320633,
+   "zip_member_count": 67,
+   "source_images_included": 0,
+   "human_complete_annotations": 0,
+   "result": "pass",
+   "ieee_dataport_uploaded": false,
+   "doi_assigned": false
+  },
+  "zip_sha256_recomputed": "807d2f16622be44802b7d25aad41a27a9e349591ef7cb41298bf16378ae04610",
+  "zip_sha256_matches": true,
+  "licence": {
+   "retrieved_at": "2026-10-15",
+   "method": "GET https://api.figshare.com/v2/articles/30783827",
+   "article_id": 30783827,
+   "title": "TriModal Ripeness 6",
+   "doi": "10.6084/m9.figshare.30783827.v1",
+   "license": {
+    "value": 1,
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+   },
+   "authors": [
+    "Bagyammal T",
+    "Yogini Aishwaryaa P T S",
+    "Krishna Deepak",
+    "Devika Unnikrishnan"
+   ],
+   "figshare_file": {
+    "name": "TR-6.zip",
+    "id": 60094544,
+    "size": 20388430589,
+    "computed_md5": "cdbcc4a667051aa35d46c2de71a723d9"
+   },
+   "local_readme_licence_statement": "none",
+   "v1_policy": "Original images and pixel derivatives are not included in this package."
+  }
+ }
+}

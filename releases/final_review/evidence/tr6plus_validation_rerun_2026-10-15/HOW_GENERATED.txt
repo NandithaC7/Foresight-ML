@@ -1,0 +1,1 @@
+Validator re-run 2026-10-15 on a scratch copy of Foresight-TR6-plus (originals untouched): python3 scripts/validate_extension.py --dataset dataset/TR-6 --workspace <copy> --hash-mode pilot
