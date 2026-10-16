@@ -1,0 +1,15 @@
+{
+  "generated": 480,
+  "per_class": 40,
+  "nn_l2_generated_to_train": {
+    "mean": 21.967918288707732,
+    "min": 8.846213340759277,
+    "median": 22.531228065490723
+  },
+  "nn_l2_train_to_train": {
+    "mean": 13.227171541055043,
+    "min": 3.7460567951202393,
+    "median": 12.761597156524658
+  },
+  "interpretation": "If generated NN distances were far below real-real NN distances, that would suggest memorisation. Real-real distances are small because TR-6 has 17 near-identical views per session."
+}

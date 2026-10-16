@@ -1,0 +1,186 @@
+{
+  "history": [
+    {
+      "step": 100,
+      "train_mse": 0.0041706920601427555
+    },
+    {
+      "step": 200,
+      "train_mse": 0.0043954323045909405
+    },
+    {
+      "step": 300,
+      "train_mse": 0.004389141220599413
+    },
+    {
+      "step": 400,
+      "train_mse": 0.003985579125583172
+    },
+    {
+      "step": 500,
+      "train_mse": 0.004603836219757795
+    },
+    {
+      "step": 600,
+      "train_mse": 0.005569515284150839
+    },
+    {
+      "step": 700,
+      "train_mse": 0.005050372797995806
+    },
+    {
+      "step": 800,
+      "train_mse": 0.0037832625675946474
+    },
+    {
+      "step": 900,
+      "train_mse": 0.004015813115984201
+    },
+    {
+      "step": 1000,
+      "train_mse": 0.00359855848364532
+    },
+    {
+      "step": 1100,
+      "train_mse": 0.002350178314372897
+    },
+    {
+      "step": 1200,
+      "train_mse": 0.0022163689136505127
+    },
+    {
+      "step": 1300,
+      "train_mse": 0.0022890723776072264
+    },
+    {
+      "step": 1400,
+      "train_mse": 0.0023976860102266073
+    },
+    {
+      "step": 1500,
+      "train_mse": 0.0022064715158194304
+    },
+    {
+      "step": 1600,
+      "train_mse": 0.0015217737527564168
+    },
+    {
+      "step": 1700,
+      "train_mse": 0.0026388957630842924
+    },
+    {
+      "step": 1800,
+      "train_mse": 0.002886970527470112
+    },
+    {
+      "step": 1900,
+      "train_mse": 0.0017995183588936925
+    },
+    {
+      "step": 2000,
+      "train_mse": 0.0016692420467734337
+    },
+    {
+      "step": 2100,
+      "train_mse": 0.002096639247611165
+    },
+    {
+      "step": 2200,
+      "train_mse": 0.006737405899912119
+    },
+    {
+      "step": 2300,
+      "train_mse": 0.002736204070970416
+    },
+    {
+      "step": 2400,
+      "train_mse": 0.002228531986474991
+    },
+    {
+      "step": 2500,
+      "train_mse": 0.0018496555276215076
+    },
+    {
+      "step": 2600,
+      "train_mse": 0.0019445797661319375
+    },
+    {
+      "step": 2700,
+      "train_mse": 0.00177728570997715
+    }
+  ],
+  "steps": 3821,
+  "steps_this_session": 2756,
+  "resumed_from": "artifacts/experiments/dncnn/dncnn.pt",
+  "lr": 0.0005,
+  "minutes_budget": 30.0,
+  "paired_val_quality": [
+    {
+      "corruption": "gaussian",
+      "level": 0.05,
+      "n_val_images": 60,
+      "noisy_psnr": 26.107994651794435,
+      "dncnn_psnr": 27.367873764038087,
+      "median_psnr": 33.46060034434001,
+      "noisy_ssim": 0.350938019156456,
+      "dncnn_ssim": 0.7199672579765319,
+      "median_ssim": 0.750022554397583
+    },
+    {
+      "corruption": "gaussian",
+      "level": 0.1,
+      "n_val_images": 60,
+      "noisy_psnr": 20.312708314259847,
+      "dncnn_psnr": 26.571028010050455,
+      "median_psnr": 27.698539956410727,
+      "noisy_ssim": 0.14754423027237257,
+      "dncnn_ssim": 0.536574141184489,
+      "median_ssim": 0.46337345490852994
+    },
+    {
+      "corruption": "gaussian",
+      "level": 0.2,
+      "n_val_images": 60,
+      "noisy_psnr": 15.017627143859864,
+      "dncnn_psnr": 23.297004159291586,
+      "median_psnr": 21.903059164683025,
+      "noisy_ssim": 0.05812830533832312,
+      "dncnn_ssim": 0.33051571051279705,
+      "median_ssim": 0.2109731691579024
+    },
+    {
+      "corruption": "salt_pepper",
+      "level": 0.02,
+      "n_val_images": 60,
+      "noisy_psnr": 21.84075059890747,
+      "dncnn_psnr": 32.69077469507853,
+      "median_psnr": 47.894740168253584,
+      "noisy_ssim": 0.5371926367282868,
+      "dncnn_ssim": 0.9165794591108958,
+      "median_ssim": 0.9927833050489425
+    },
+    {
+      "corruption": "salt_pepper",
+      "level": 0.05,
+      "n_val_images": 60,
+      "noisy_psnr": 17.849206670125326,
+      "dncnn_psnr": 31.33375498453776,
+      "median_psnr": 46.062456639607746,
+      "noisy_ssim": 0.23939746444423993,
+      "dncnn_ssim": 0.8600235054890315,
+      "median_ssim": 0.992012091477712
+    },
+    {
+      "corruption": "salt_pepper",
+      "level": 0.1,
+      "n_val_images": 60,
+      "noisy_psnr": 14.834178733825684,
+      "dncnn_psnr": 30.047155348459878,
+      "median_psnr": 42.00215663909912,
+      "noisy_ssim": 0.09200048477699359,
+      "dncnn_ssim": 0.7657431483268737,
+      "median_ssim": 0.9886881520350774
+    }
+  ],
+  "note": "Synthetic noise on clean val images; not real sensor noise."
+}

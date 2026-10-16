@@ -1,0 +1,20 @@
+{
+  "ViT-B/16 primary": {
+    "parameters": 85804808,
+    "checkpoint_mb": 343.3,
+    "single_image_latency_ms_cpu_median": 200.84977100486867,
+    "single_image_latency_ms_mps_median": 59.07943699276075
+  },
+  "ViT-S/16 ablation": {
+    "parameters": 21668744,
+    "checkpoint_mb": 86.7,
+    "single_image_latency_ms_cpu_median": 35.453082993626595,
+    "single_image_latency_ms_mps_median": 35.22943751886487
+  },
+  "backend_process_rss_mb": null,
+  "hardware": "Apple M5, 16 GB unified memory; torch 2.14.1",
+  "note": "Single-image forward pass only (no decode/resize). Measured while other training jobs may share the GPU.",
+  "backend_rss_method": "macOS `footprint`/`vmmap --summary` on the running uvicorn process after ~200 requests (RSS is unreliable on macOS because idle pages are compressed). Includes 393 MB GPU (IOAccelerator) memory for the MPS model.",
+  "backend_physical_footprint_mb": 712.4,
+  "backend_physical_footprint_peak_mb": 1300
+}
