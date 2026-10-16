@@ -1,13 +1,11 @@
 """
 mock_model.py
 =================
-There is no trained model wired in yet. This module simulates what the real
-pipeline (YOLOv8 detection -> ViT classification/regression -> U-Net segmentation)
-will eventually return, so the API and frontend can be built and demoed end to end.
-
-To go live later: replace `simulate_analysis()`'s body with real inference calls,
-but KEEP the same return shape (list of dicts with these exact keys) so nothing
-else in the backend or frontend needs to change.
+Static nutrition facts / tips used by the UI, plus `simulate_analysis()`,
+a RANDOM simulator kept only for UI development. Real inference lives in
+inference.py. The simulator runs only when FORESIGHT_MOCK_MODE=1 (off by
+default) and every simulated item is flagged `"mock": True` and labelled
+"DEMO MOCK DATA" in the API response.
 """
 
 import random
@@ -88,6 +86,7 @@ def simulate_analysis() -> list[dict]:
             "tier": tier,
             "days": days,
             "decayPct": 100 - freshness,
-            "action": action_for(tier, days),
+            "action": "DEMO MOCK DATA — " + action_for(tier, days),
+            "mock": True,
         })
     return results

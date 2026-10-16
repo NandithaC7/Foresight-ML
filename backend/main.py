@@ -1,58 +1,187 @@
 """
 main.py — Foresight backend (FastAPI)
 =========================================
-Mock backend: no real ML model is wired in yet (see mock_model.py). Every
-endpoint's shape is designed to stay the same once a real model is plugged
-in, so the frontend never has to change.
+Serves real inference from the trained Foresight ViT checkpoint (see
+inference.py). If the checkpoint is missing, /api/analyze returns HTTP 503
+`model_unavailable` — it never fabricates predictions. Mock mode exists only
+for UI development, is OFF by default (FORESIGHT_MOCK_MODE=1 to enable) and
+every mock response is labelled "DEMO MOCK DATA".
 
 Run locally:
     pip install -r requirements.txt
-    uvicorn main:app --reload --port 8000
+    uvicorn main:app --port 8000
 
 Docs (auto-generated): http://localhost:8000/docs
 """
 
-from fastapi import FastAPI, UploadFile, File, HTTPException
-from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import Response
+import asyncio
+import json
+from contextlib import asynccontextmanager
 from datetime import datetime
-from io import BytesIO
 
+from fastapi import FastAPI, File, HTTPException, Query, Request, UploadFile
+from fastapi.concurrency import run_in_threadpool
+from fastapi.exceptions import RequestValidationError
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse, Response
+
+import config
 import db
+import inference
 import mock_model
+from schemas import AnalyzeResponse, Health
 
-app = FastAPI(title="Foresight API", version="0.1.0")
+ALLOWED_CONTENT_TYPES = {"image/jpeg", "image/jpg", "image/png", "image/webp", "application/octet-stream"}
 
-# CORS: wide open for local dev / demo purposes. Before a real deployment,
-# replace "*" with your actual frontend URL(s).
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    db.init_db()
+    inference.service.load()  # load weights once at startup
+    yield
+
+
+app = FastAPI(title="Foresight API", version="1.0.0", lifespan=lifespan)
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
+    allow_origins=config.CORS_ORIGINS,
+    allow_credentials=False,
+    allow_methods=["GET", "POST", "DELETE"],
     allow_headers=["*"],
 )
 
-db.init_db()
+
+def api_error(status: int, code: str, message: str):
+    raise HTTPException(status_code=status, detail={"code": code, "message": message})
 
 
-@app.get("/api/health")
+@app.exception_handler(RequestValidationError)
+async def validation_handler(request: Request, exc: RequestValidationError):
+    return JSONResponse(status_code=422, content={"detail": {
+        "code": "invalid_request", "message": "Request is missing the image file field 'photo'.",
+        "errors": json.loads(json.dumps(exc.errors(), default=str))}})
+
+
+@app.exception_handler(Exception)
+async def unhandled_handler(request: Request, exc: Exception):  # pragma: no cover
+    return JSONResponse(status_code=500, content={"detail": {"code": "internal_error",
+                                                             "message": "Unexpected server error."}})
+
+
+# ---------------------------------------------------------------- status
+def _health() -> dict:
+    s = inference.service
+    return {"status": "ok" if (s.ready or config.MOCK_MODE) else "degraded",
+            "model_loaded": s.ready, "model_version": s.info.get("version"),
+            "model_error": s.error, "mock_mode": config.MOCK_MODE, "device": s.info.get("device")}
+
+
+@app.get("/health", response_model=Health)
+def health_root():
+    return _health()
+
+
+@app.get("/api/health", response_model=Health)
 def health():
-    return {"status": "ok"}
+    return _health()
 
 
-@app.post("/api/analyze")
-async def analyze(photo: UploadFile = File(...)):
-    """
-    Accepts an uploaded produce photo. Currently ignores the actual image
-    content and returns simulated results (see mock_model.py). Once a real
-    detection/classification pipeline exists, read `await photo.read()` here
-    and run it through that pipeline instead — the response shape stays the same.
-    """
-    _ = await photo.read()  # image bytes available here once a real model exists
-    items = mock_model.simulate_analysis()
-    saved = db.insert_inspection(items)
-    return saved
+@app.get("/api/models")
+def models():
+    s = inference.service
+    metrics = None
+    if config.MODEL_METRICS_PATH.exists():
+        metrics = json.loads(config.MODEL_METRICS_PATH.read_text())
+    return {
+        "mock_mode": config.MOCK_MODE,
+        "models": [
+            {"id": "vit", "role": "produce type (6 classes) + spoilage (Spoiled / Not_spoiled) classification",
+             "status": "loaded" if s.ready else "unavailable", "error": s.error, **s.info,
+             "test_metrics": metrics,
+             "confidence_note": "Softmax scores; calibration has not been evaluated."},
+            {"id": "unet", "role": "visible-decay segmentation", "status": "unavailable",
+             "reason": "No human-reviewed decay masks exist yet (12 proposal-only masks). Segmentation is pending annotation."},
+            {"id": "shelf_life", "role": "shelf-life regression", "status": "disabled",
+             "reason": "TR-6 has no measured time-to-endpoint labels."},
+            {"id": "yolo", "role": "multi-item detection", "status": "not_implemented",
+             "reason": "TR-6 is single-item images with no bounding boxes; the app runs in single-item mode."},
+            {"id": "dncnn", "role": "denoising (research experiment only)", "status": "not_in_inference_path"},
+        ],
+    }
+
+
+# ---------------------------------------------------------------- analyze
+async def _read_upload(photo: UploadFile) -> bytes:
+    ctype = (photo.content_type or "").lower()
+    if ctype and ctype not in ALLOWED_CONTENT_TYPES:
+        api_error(415, "unsupported_media_type",
+                  f"Unsupported file type '{ctype}'. Upload a JPG, PNG or WEBP photo.")
+    limit = int(config.MAX_UPLOAD_MB * 1024 * 1024)
+    chunks, size = [], 0
+    while True:
+        chunk = await photo.read(1024 * 1024)
+        if not chunk:
+            break
+        size += len(chunk)
+        if size > limit:
+            api_error(413, "file_too_large", f"File exceeds the {config.MAX_UPLOAD_MB:g} MB limit.")
+        chunks.append(chunk)
+    await photo.close()
+    return b"".join(chunks)
+
+
+@app.post("/api/analyze", response_model=AnalyzeResponse)
+async def analyze(photo: UploadFile = File(...), xai: bool = Query(False, description="Return an attention-rollout overlay")):
+    data = await _read_upload(photo)
+    try:
+        image = await run_in_threadpool(inference.decode_image, data)
+    except inference.ImageValidationError as e:
+        api_error(400, "invalid_image", str(e))
+    finally:
+        del data  # uploaded bytes are never written to disk
+
+    if config.MOCK_MODE:
+        items = mock_model.simulate_analysis()
+        meta = {"status": "ok", "source": "mock", "mock": True, "model_version": "DEMO-MOCK",
+                "mode": "mock", "disclaimer": inference.DISCLAIMER, "timing_ms": {},
+                "warnings": ["DEMO MOCK DATA — randomly simulated, not a model prediction."]}
+        return db.insert_inspection(items, meta)
+
+    svc = inference.service
+    if not svc.ready:
+        api_error(503, "model_unavailable", f"The analysis model is not loaded. {svc.error or ''}".strip())
+    try:
+        pred = await asyncio.wait_for(run_in_threadpool(svc.predict, image, xai), timeout=config.INFERENCE_TIMEOUT_S)
+    except asyncio.TimeoutError:
+        api_error(504, "inference_timeout", "Inference took too long. Please try again.")
+    except Exception as e:  # pragma: no cover
+        api_error(500, "inference_failed", f"Inference failed: {type(e).__name__}")
+
+    item, warnings = inference.compose_item(pred, svc.info["produce_classes"], xai)
+    warnings += [
+        "Single-item mode: the whole photo is treated as one item (no object detection).",
+        "Trained on TR-6 lab photos (one fruit, plain background); other scenes may be unreliable.",
+        "Shelf-life and decay-area estimates are unavailable (no validated labels or masks yet).",
+    ]
+    meta = {"status": "ok", "source": "model", "mock": False, "model_version": svc.info["version"],
+            "mode": "single_item", "disclaimer": inference.DISCLAIMER,
+            "timing_ms": {"inference": round(pred["inference_ms"], 1)}, "warnings": warnings}
+    return db.insert_inspection([item], meta)
+
+
+# ---------------------------------------------------------------- history
+@app.get("/api/history")
+def history(limit: int = Query(100, ge=1, le=1000)):
+    return db.get_inspections(limit)
+
+
+@app.get("/api/history/{scan_id}")
+def history_item(scan_id: str):
+    rec = db.get_inspection(scan_id)
+    if not rec:
+        api_error(404, "not_found", f"No scan with id '{scan_id}'.")
+    return rec
 
 
 @app.get("/api/inspections")
@@ -75,7 +204,7 @@ def stats():
 def nutrition(crop_name: str):
     data = mock_model.NUTRITION.get(crop_name)
     if not data:
-        raise HTTPException(status_code=404, detail=f"No nutrition data for '{crop_name}'")
+        api_error(404, "not_found", f"No nutrition data for '{crop_name}'")
     return {"name": crop_name, **data}
 
 
@@ -84,7 +213,9 @@ def tips():
     return mock_model.TIPS
 
 
+# ---------------------------------------------------------------- report
 def _build_report_lines() -> list[str]:
+    """Template-based summary of stored scans (no LLM involved)."""
     inspections = db.get_inspections()
     items = [it for insp in inspections for it in insp["items"]]
     s = db.compute_stats()
@@ -94,36 +225,37 @@ def _build_report_lines() -> list[str]:
 
     by_tier = {"good": 0, "warn": 0, "bad": 0}
     for i in items:
-        by_tier[i["tier"]] += 1
-    flagged = sorted({i["name"] for i in items if i["tier"] == "bad"})
+        by_tier[i.get("tier", "warn")] += 1
+    flagged = sorted({i["name"] for i in items if i.get("tier") == "bad"})
+    mock_scans = sum(1 for insp in inspections if insp.get("source") == "mock")
+    versions = sorted({insp.get("model_version") for insp in inspections if insp.get("model_version")})
 
     lines = [
         "FORESIGHT - INSPECTION SUMMARY",
         f"Generated {datetime.now().strftime('%Y-%m-%d %H:%M')}",
+        f"Model version(s): {', '.join(versions) if versions else 'unknown'}",
         "",
         f"Total inspections run: {s['totalInspections']}",
         f"Total items analysed: {s['totalItems']}",
-        f"Shelf-ready: {s['shelfReadyPct']}%   Avg loss: {s['avgLossPct']}%",
+        f"No spoilage cues: {s['shelfReadyPct']}%   Spoiled: {s['avgLossPct']}%",
         "",
-        "Breakdown:",
-        f"  Fresh (>=85%):      {by_tier['good']}",
-        f"  Use soon (60-84%):  {by_tier['warn']}",
-        f"  Discarded (<60%):   {by_tier['bad']}",
+        "Breakdown (model prediction):",
+        f"  Not spoiled:  {by_tier['good']}",
+        f"  Uncertain:    {by_tier['warn']}",
+        f"  Spoiled:      {by_tier['bad']}",
         "",
-        f"Items flagged for removal: {', '.join(flagged) if flagged else 'none currently'}",
+        f"Items flagged as spoiled: {', '.join(flagged) if flagged else 'none currently'}",
         "",
-        "Recommendation: prioritise 'use soon' items for discount or immediate",
-        "use before they cross into the discard range on the next check.",
+        "Visual estimate only - not a food-safety guarantee. Shelf-life is not",
+        "estimated (no validated labels). Inspect uncertain items manually.",
     ]
+    if mock_scans:
+        lines.append(f"WARNING: {mock_scans} scan(s) are DEMO MOCK DATA, not model predictions.")
     return lines
 
 
 @app.get("/api/report")
 def report_text():
-    """Plain-text report summary — template-based, not a live LLM call.
-    To generate this with a real LLM instead: send this same stats/items
-    payload to the Claude/OpenAI API from here (server-side, where your API
-    key is safe), and return the model's text instead of _build_report_lines()."""
     return {"lines": _build_report_lines()}
 
 
@@ -150,10 +282,11 @@ def report_pdf():
         if line == "":
             pdf.ln(4)
         else:
-            pdf.multi_cell(0, 6, line, new_x="LMARGIN", new_y="NEXT")
+            pdf.multi_cell(0, 6, line.encode("latin-1", "replace").decode("latin-1"), new_x="LMARGIN", new_y="NEXT")
 
     rows = [
-        (datetime.fromtimestamp(insp["ts"] / 1000).strftime("%Y-%m-%d %H:%M"), it["name"], it["freshness"], it["days"], it["tier"])
+        (datetime.fromtimestamp(insp["ts"] / 1000).strftime("%Y-%m-%d %H:%M"), it["name"],
+         it.get("spoilage_label") or it.get("tier"), it.get("freshness"), insp.get("source", "?"))
         for insp in inspections for it in insp["items"]
     ][:30]
 
@@ -164,9 +297,10 @@ def report_pdf():
         pdf.set_font("Helvetica", "", 9)
         for r in rows:
             pdf.set_x(10)
-            pdf.cell(0, 6, f"{r[0]}   {r[1]}   {r[2]}%   {r[3]}d   {r[4]}", new_x="LMARGIN", new_y="NEXT")
+            pdf.cell(0, 6, f"{r[0]}   {r[1]}   {r[2]}   not-spoiled score {r[3]}%   [{r[4]}]",
+                     new_x="LMARGIN", new_y="NEXT")
 
-    pdf_bytes = bytes(pdf.output(dest="S"))
+    pdf_bytes = bytes(pdf.output())
     return Response(
         content=pdf_bytes,
         media_type="application/pdf",
