@@ -1,8 +1,67 @@
-node_modules/
-dist/
-*.db
-__pycache__/
-*.pyc
-.env
+# Source data and derived copies: not redistributable / too large
+dataset/
+artifacts/cache/
+artifacts/experiments/gan/generated/
+artifacts/experiments/features/
+# Model weights (large) — distribute separately
+*.pt
+backend/models/*.pt
+# Local state
 .venv/
+**/__pycache__/
+backend/foresight.db
+backend/.env
+frontend/node_modules/
+frontend/.env
 .DS_Store
+
+# Secrets and local tool state (Label Studio .env holds a SECRET_KEY)
+.env
+*.env
+Foresight-TR6-plus/.labelstudio-data/
+Foresight-TR6-plus/.label-studio-venv/
+# Large regenerable image derivatives (noise pilot JPEGs, 721 MB; regenerate with generate_noise_dataset.py)
+Foresight-TR6-plus/derived-data/
+# Build outputs and tool installs
+frontend/dist/
+releases/final_review/build/node_modules/
+releases/final_review/build/specs/
+**/node_modules/
+# LaTeX auxiliaries
+*.aux
+*.log.tex
+*.synctex.gz
+# Runtime logs and local DBs
+artifacts/*_server.log
+*.sqlite3
+.claude/
+
+# Generated feature caches
+artifacts/experiments/features/
+
+# Older release archive
+releases/Foresight-TR6-plus-dataset-v1.0.0.zip
+releases/Foresight-TR6-plus-dataset-v1.0.0/
+
+# Large generated audit inventories duplicated in release packages
+dataset-preparation/tr6-audit/output/file_inventory.csv
+dataset-preparation/tr6-audit/output_rerun_2026-10-15/file_inventory.csv
+Foresight-TR6-plus/manifests/master_manifest.csv
+releases/Foresight-TR6-plus-dataset-v1.1.0/manifests/master_manifest.csv
+releases/Foresight-TR6-plus-dataset-v1.1.0/manifests/file_inventory.csv
+
+# Source-derived images: exclude pending licence verification
+Foresight-TR6-plus/annotations/masks/
+Foresight-TR6-plus/reports/**/*.jpg
+Foresight-TR6-plus/reports/**/*.jpeg
+Foresight-TR6-plus/reports/**/*.png
+dataset-preparation/tr6-audit/output/contact-sheet-*.jpg
+dataset-preparation/tr6-audit/output_rerun_2026-10-15/contact-sheet-*.jpg
+
+# Generated GAN and image-explanation samples
+artifacts/experiments/gan/generated/
+artifacts/experiments/gan/*.png
+artifacts/experiments/xai/
+
+# Generated K-means embedding and visualization caches
+artifacts/experiments/kmeans/*.npz
