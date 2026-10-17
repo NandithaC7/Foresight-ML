@@ -1,0 +1,14 @@
+.DS_Store
+__pycache__/
+*.pyc
+
+# The original dataset must remain external and must never be vendored here.
+TR-6/
+source-data/
+original-data/
+
+# Local annotation-tool state and caches.
+.labelstudio/
+.label-studio-venv/
+.labelstudio-data/
+annotation-tool-cache/
