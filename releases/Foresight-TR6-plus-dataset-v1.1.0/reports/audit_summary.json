@@ -1,0 +1,61 @@
+{
+  "dataset_path": "<TR-6-root>",
+  "generated_at": "2026-10-12T20:26:18.522968",
+  "elapsed_seconds": 17.149478912353516,
+  "file_count": 21653,
+  "total_bytes": 21222674418,
+  "total_gib": 19.765155779197812,
+  "zero_byte_files": 0,
+  "unreadable_files": 0,
+  "valid_images": 21626,
+  "corrupt_or_invalid_images": 0,
+  "image_counts": {
+    "thermal_ir_fusion": 10950,
+    "srgb": 10676
+  },
+  "methane_file_count": 18,
+  "methane_record_count": 26928,
+  "duplicate_groups": 10589,
+  "files_in_duplicate_groups": 21439,
+  "duplicate_excess_copies": 10850,
+  "cross_source_duplicate_groups": 10589,
+  "cross_label_duplicate_groups": 170,
+  "unique_image_hashes": 10776,
+  "classified_images_exactly_duplicated_in_normal": 10796,
+  "normal_image_hashes_not_represented_in_classified": 187,
+  "image_size_bytes": {
+    "srgb": {
+      "count": 10676,
+      "min": 594077,
+      "p25": 1623278.0,
+      "median": 1792421.0,
+      "p75": 1918065.0,
+      "p90": 2641995.5,
+      "p95": 3047575.5,
+      "p99": 3539644.0,
+      "max": 4533852,
+      "mean": 1899569.6155863618
+    },
+    "thermal_ir_fusion": {
+      "count": 10950,
+      "min": 76570,
+      "p25": 84757.0,
+      "median": 85757.0,
+      "p75": 86954.0,
+      "p90": 88189.0,
+      "p95": 89211.0,
+      "p99": 92274.85,
+      "max": 95965,
+      "mean": 85950.99716894978
+    }
+  },
+  "methane_null_markers_all_trees": 24,
+  "methane_malformed_lines_all_trees": 6,
+  "probable_session_pairs_all_trees": 530,
+  "contact_sheets": [
+    "EXCLUDED_FROM_PACKAGE/contact-sheet-classified-not-spoiled.jpg",
+    "EXCLUDED_FROM_PACKAGE/contact-sheet-classified-spoiled.jpg",
+    "EXCLUDED_FROM_PACKAGE/contact-sheet-normal.jpg"
+  ],
+  "verified_cross_modal_pairs": 0
+}

@@ -1,0 +1,17 @@
+run,cond,seed,lr,aug,gan_images,n_train,epochs_run,best_epoch,best_val_spoil_mf1,test_spoil_mf1,test_spoil_acc,test_spoil_macro_P,test_spoil_macro_R,test_spoil_auc,test_type_mf1,train_min
+abl2_aug_s42,aug,42,2e-05,conventional,False,3177,10,9,0.9323,0.9291,0.9412,0.9532,0.9121,0.9817,1.0,14.1
+abl2_aug_s43,aug,43,2e-05,conventional,False,3177,10,6,0.9354,0.9205,0.9337,0.9406,0.9058,0.9832,1.0,13.9
+abl2_aug_s44,aug,44,2e-05,conventional,False,3177,9,5,0.9453,0.9337,0.943,0.9377,0.93,0.9773,1.0,13.8
+abl2_gan_s42,gan,42,2e-05,conventional,True,3657,9,5,0.9574,0.9296,0.9393,0.9321,0.9272,0.969,1.0,14.3
+abl2_gan_s43,gan,43,2e-05,conventional,True,3657,10,8,0.9544,0.9286,0.9402,0.9473,0.9145,0.9836,1.0,16.6
+abl2_gan_s44,gan,44,2e-05,conventional,True,3657,8,4,0.9512,0.8985,0.915,0.9154,0.8858,0.9742,1.0,14.5
+abl2_noaug_s42,noaug,42,2e-05,none,False,3177,10,9,0.9573,0.9192,0.9328,0.9409,0.9036,0.9761,1.0,13.7
+abl2_noaug_s43,noaug,43,2e-05,none,False,3177,7,3,0.9577,0.9164,0.9272,0.9145,0.9183,0.9684,1.0,9.6
+abl2_noaug_s44,noaug,44,2e-05,none,False,3177,7,3,0.9542,0.9076,0.9216,0.9175,0.8993,0.9673,1.0,10.9
+day2_aug_s42,daysplit,42,2e-05,conventional,False,3076,5,1,0.8992,0.8334,0.8617,0.8298,0.8375,0.8924,1.0,7.0
+day2_aug_s43,daysplit,43,2e-05,conventional,False,3076,10,7,0.924,0.8347,0.8644,0.8347,0.8347,0.9215,1.0,15.0
+day2_aug_s44,daysplit,44,2e-05,conventional,False,3076,10,6,0.944,0.8221,0.8519,0.8178,0.8269,0.914,0.9893,14.5
+vit_s16_noaug,v1,42,5e-05,none,False,3177,10,6,0.9538,0.926,0.9356,0.9243,0.9276,0.9851,1.0,12.5
+vit_s16_aug,v1,42,5e-05,conventional,False,3177,5,1,0.9344,0.8794,0.9029,0.9215,0.8557,0.936,1.0,5.9
+vit_s16_aug_gan,v1,42,5e-05,conventional,True,3657,10,9,0.9623,0.9373,0.9477,0.9587,0.9216,0.9836,1.0,14.3
+vit_s16_aug_daysplit,daysplit,42,5e-05,conventional,False,3076,10,6,0.9564,0.8115,0.8332,0.7986,0.8404,0.9256,1.0,13.2

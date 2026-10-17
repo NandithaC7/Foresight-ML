@@ -1,0 +1,13 @@
+produce_type,apparent_modality,selected_images,unique_dates,dimensions,annotation_status_pending
+Banana,srgb,8,7,4000x3000,8
+Banana,thermal_ir_fusion,8,4,640x480,8
+Carrot,srgb,8,8,4000x3000,8
+Carrot,thermal_ir_fusion,8,8,640x480,8
+Guava,srgb,8,8,4000x3000,8
+Guava,thermal_ir_fusion,8,8,640x480,8
+Indian_Gooseberry,srgb,8,8,2576x1932;4000x3000,8
+Indian_Gooseberry,thermal_ir_fusion,8,8,640x480,8
+Mango,srgb,8,8,4000x3000,8
+Mango,thermal_ir_fusion,8,8,640x480,8
+Tomato,srgb,8,8,2576x1932;4000x3000,8
+Tomato,thermal_ir_fusion,8,8,640x480,8

@@ -1,0 +1,262 @@
+% =====================================================================
+% Foresight-TR6+ : IEEE DataPort dataset descriptor (IEEEtran journal style)
+% All counts are taken from the local audit, split manifests and release
+% records (see releases/final_review/data/all_facts.json).
+% Fill the author block (marked TODO) before submission.
+% Compile: tectonic TR6plus_IEEE_DataPort_Descriptor.tex  (or pdflatex)
+% =====================================================================
+\documentclass[journal]{IEEEtran}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{url}
+\def\UrlBreaks{\do\/\do\_\do\-\do\.}
+\usepackage{ragged2e}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\setlist[itemize]{leftmargin=*,itemsep=1pt,topsep=2pt,before=\RaggedRight}
+\setlist[enumerate]{leftmargin=*,itemsep=1pt,topsep=2pt,before=\RaggedRight}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\begin{document}
+
+\title{Foresight-TR6+: A Provenance-Audited, Leakage-Controlled Extension of the TriModal Ripeness 6 Dataset for Produce Spoilage Classification}
+
+% TODO: replace with the real author names, affiliations and corresponding-author mark.
+\author{Author~One$^{1,*}$, Author~Two$^{1}$\\[4pt]
+\normalsize $^{1}$Department, Institution, City, State, PIN, Country}
+
+\maketitle
+
+\begin{abstract}
+Fruit and vegetable spoilage datasets are often reused without checking for duplicate images, conflicting labels or train--test leakage, which leads to inflated benchmark results. Foresight-TR6+ is a derived, metadata-only resource built on the public TriModal Ripeness~6 (TR-6) dataset (sRGB, thermal IR-fusion and methane recordings of banana, carrot, guava, Indian gooseberry, mango and tomato). A full audit of the 21,653 TR-6 files (19.77~GiB) found that every one of the 10,796 images in the \emph{Classified} folder is a byte-identical copy of an image in the \emph{Normal} folder, leaving 10,776 unique image contents, and that 170 thermal contents carry both \emph{Spoiled} and \emph{Not spoiled} labels. TR-6+ publishes a SHA-256 provenance manifest for every file, duplicate-group and label-conflict reports, a content-level manifest of 5,335 eligible sRGB images split 60/20/20 (3,177/1,087/1,071) by capture session with zero duplicate or session leakage, a stricter day-grouped sensitivity split, manifests for a reproducible 120-image noise-derivative pilot and 480 synthetic GAN images, an annotation protocol, and validation scripts. No source images are redistributed; users obtain them from the original TR-6 record. The resource enables reproducible, leakage-controlled benchmarking of image-based spoilage classifiers.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Computer vision, Dataset descriptor, Data provenance, Duplicate detection, Food spoilage, Leakage-controlled split, Produce quality, TriModal Ripeness~6.
+\end{IEEEkeywords}
+
+\section{Dataset Overview}
+\noindent\textbf{Source dataset:} \url{https://doi.org/10.6084/m9.figshare.30783827.v1}
+
+Foresight-TR6+ is a derived dataset resource that makes the TriModal Ripeness~6 (TR-6) dataset~\cite{tr6} safe to use for supervised learning. TR-6 tracks six produce types from the unripe to the spoiled stage. It records 17 photographs per capture (16 side views at equal angles around the fruit and one top view) in three modalities: sRGB images, thermal IR-fusion images and methane gas-sensor logs.
+
+TR-6+ does not add new photographs. It adds the information needed to use TR-6 correctly:
+\begin{itemize}
+  \item an audited inventory with a SHA-256 hash for every file;
+  \item explicit duplicate and label-conflict records;
+  \item documented eligibility rules;
+  \item reproducible train/validation/test partitions that keep near-identical views out of different partitions;
+  \item manifests for derived (noisy) and synthetic (GAN) images;
+  \item an annotation protocol and validation tooling.
+\end{itemize}
+The resource was produced as part of the Foresight project, a research prototype for visual produce-spoilage estimation.
+
+\section{Classes and Descriptions}
+Labels are organised along two dimensions: produce type and spoilage state.
+
+\subsection{Produce Types}
+\begin{itemize}
+  \item \textbf{Banana:} elongated fruit whose peel darkens from yellow to brown/black with progressive spotting.
+  \item \textbf{Carrot:} root vegetable that develops dark surface lesions and shrivelling.
+  \item \textbf{Guava:} green round fruit that develops brown spots and soft decayed patches.
+  \item \textbf{Indian Gooseberry (Amla):} small, smooth green fruit; visible change during storage is subtle.
+  \item \textbf{Mango:} large fruit that turns yellow-orange and develops dark blemishes.
+  \item \textbf{Tomato:} red fruit that shows stem-scar decay and wrinkling.
+\end{itemize}
+
+\subsection{Spoilage State}
+\begin{itemize}
+  \item \textbf{Not spoiled / Spoiled:} binary folder labels provided by the TR-6 authors under \path{Classified/}.
+  \item For every produce type, the last \emph{Not spoiled} capture precedes the first \emph{Spoiled} capture. The label therefore marks a stage of the storage time series. It was \textbf{not} independently re-assessed by TR-6+.
+  \item Images found only in \path{Normal/} carry no spoilage label and are marked \texttt{unlabeled}.
+  \item Contents filed under both labels are marked \path{inherited_conflicting} and are never assigned a label automatically.
+\end{itemize}
+
+\section{Data Format}
+The resource is a single ZIP archive (\path{Foresight-TR6-plus-dataset-v1.1.0.zip}, 88 files, 6.9~MB) of CSV, JSON, Markdown and Python files:
+\begin{itemize}
+  \item \textbf{Master provenance manifest} (\path{manifests/master_manifest.csv}): one row per TR-6 file (21,653 rows), with these fields:
+  \begin{itemize}
+    \item[--] \path{record_id} and \path{content_id};
+    \item[--] \path{original_relative_path};
+    \item[--] \texttt{sha256} and \path{size_bytes};
+    \item[--] \path{produce_type} and \path{apparent_modality};
+    \item[--] \path{spoilage_label} and \path{label_status};
+    \item[--] \path{filename_timestamp}, \texttt{width}, \texttt{height};
+    \item[--] \path{duplicate_group_id} and \path{cross_label_conflict};
+    \item[--] the nullable \path{specimen_id} and \path{cross_modal_group_id}, left empty because TR-6 provides no such identifiers.
+  \end{itemize}
+  \item \textbf{Duplicate and conflict reports} (\path{manifests/}): duplicate groups and their members, the label-conflict report, and modality and produce summaries.
+  \item \textbf{ML split manifest} (\path{ml_splits/session_grouped_v1/split_manifest.csv}): one row per unique image content (10,776 rows), with these fields:
+  \begin{itemize}
+    \item[--] \path{sample_id}, \texttt{sha256} and \path{content_group_id};
+    \item[--] \path{source_relative_path} and \path{all_source_paths};
+    \item[--] \path{produce_class}, \path{source_label} and \path{label_status};
+    \item[--] \texttt{modality} and \path{capture_timestamp};
+    \item[--] \path{session_id} and \texttt{split} (\texttt{train}, \texttt{val}, \texttt{test} or \texttt{excluded});
+    \item[--] \path{exclusion_reason}, \path{annotation_status} and \texttt{seed}.
+  \end{itemize}
+  A day-grouped sensitivity split uses the same schema.
+  \item \textbf{Derived and synthetic manifests:}
+  \begin{itemize}
+    \item[--] \path{derived/noise-pilot-v1/} records the parent path and hash, derived hash, transformation, parameters, seed, inherited split and \path{is_synthetic}=\texttt{true} for each derivative.
+    \item[--] \path{synthetic/gan/} records the provenance \path{synthetic_cdcgan_train_only} and quality checks.
+  \end{itemize}
+  \item \textbf{Annotations} (\path{annotations/}): a Label Studio/COCO protocol, a status ledger and proposal-only polygons, which are explicitly not ground truth.
+  \item \textbf{Scripts and integrity:} audit, split, validation, noise-generation and packaging scripts; \path{SHA256SUMS.txt} for every packaged file.
+\end{itemize}
+
+\section{Dataset Composition}
+Table~\ref{tab:split} gives the leakage-controlled partition of the eligible sRGB contents. Table~\ref{tab:class} gives the class distribution, and Table~\ref{tab:spec} summarises the audited source and the TR-6+ records.
+
+\begin{table}[!t]
+\caption{TR-6+ Session-Grouped Split of Eligible sRGB Images}
+\label{tab:split}
+\centering
+\footnotesize
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+Partition & Images & Sessions & Not spoiled & Spoiled & Share \\
+\midrule
+Training   & 3,177 & 189 & 2,192 & 985 & 59.55\% \\
+Validation & 1,087 &  64 &   747 & 340 & 20.37\% \\
+Testing    & 1,071 &  64 &   731 & 340 & 20.07\% \\
+\midrule
+Total      & 5,335 & 317 & 3,670 & 1,665 & 100\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[!t]
+\caption{Eligible sRGB Images per Produce Type and Spoilage State}
+\label{tab:class}
+\centering
+\footnotesize
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Produce & Not spoiled & Spoiled & Total \\
+\midrule
+Banana            &   153 & 170 &   323 \\
+Carrot            &   102 & 356 &   458 \\
+Guava             &   202 & 306 &   508 \\
+Indian Gooseberry &   884 & 527 & 1,411 \\
+Mango             &   256 & 136 &   392 \\
+Tomato            & 2,073 & 170 & 2,243 \\
+\midrule
+Total             & 3,670 & 1,665 & 5,335 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[!t]
+\caption{Audited Source and TR-6+ Record Specifications}
+\label{tab:spec}
+\centering
+\footnotesize
+\begin{tabular}{@{}L{2.55cm}L{1.75cm}L{3.1cm}@{}}
+\toprule
+Parameter & Value & Description \\
+\midrule
+TR-6 files audited & 21,653 & 19.77~GiB; 0 unreadable \\
+sRGB images & 10,676 & $4000\times3000$ JPEG (EXIF orientation 6) \\
+Thermal IR-fusion images & 10,950 & $640\times480$ palette JPEG \\
+Methane logs & 18 files & 26,928 parsed records \\
+Unique image contents & 10,776 & by SHA-256 \\
+Exact-duplicate groups & 10,589 & 10,850 excess copies \\
+Cross-label conflicts & 170 & all thermal (153 banana, 17 gooseberry) \\
+Eligible sRGB contents & 5,335 & conflict-free, labelled \\
+Excluded contents & 5,441 & 5,084 thermal; 187 unlabelled; 170 conflicting \\
+Capture sessions & 317 & $\le$300\,s gap, same date \\
+Noise derivatives & 120 & 24 sources $\times$ 5 transforms (manifest only) \\
+Synthetic GAN images & 480 & 64$\times$64, train split only (manifest only) \\
+Human-reviewed masks & 0 & 12 machine proposals \\
+Verified cross-modal pairs & 0 & not created without provenance \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Collection and Construction Methodology}
+The source images and sensor logs were collected by the TR-6 authors~\cite{tr6}: each fruit was imaged three times a day through natural decomposition. TR-6+ was constructed from a local, read-only copy of the published archive in six steps.
+
+\subsection{Construction Pipeline}
+\begin{enumerate}
+  \item \textbf{Audit:} every file was hashed with SHA-256 and decoded, and its modality, label, resolution and filename timestamp were recorded. An independent re-run of the audit reproduced all summary counts exactly.
+  \item \textbf{De-duplication:} byte-identical files were collapsed into one content record, so the \texttt{Classified} and \texttt{Normal} copies of an image can never be split apart.
+  \item \textbf{Eligibility:}
+  \begin{itemize}
+    \item contents labelled both \emph{Spoiled} and \emph{Not spoiled} were excluded rather than tie-broken;
+    \item \texttt{Normal}-only contents were treated as unlabelled;
+    \item the ML manifest is restricted to sRGB, the modality available from a phone camera.
+  \end{itemize}
+  \item \textbf{Grouping and split:}
+  \begin{itemize}
+    \item images of the same produce and label whose timestamps are at most 300\,s apart on the same date form a capture session, usually the 17 views of one fruit;
+    \item within each produce\,$\times$\,label stratum, sessions were shuffled (seed 42) and assigned 60/20/20;
+    \item the day-grouped variant instead keeps whole capture days together.
+  \end{itemize}
+  \item \textbf{Derivatives:}
+  \begin{itemize}
+    \item a deterministic noise pilot (Gaussian $\sigma\!=\!8,20$; salt-and-pepper 1\%, 4\%; speckle variance 0.04; seed 20261015) was generated for 24 pilot sources;
+    \item every derivative inherits its source's split and is flagged as not usable as an independent test specimen.
+  \end{itemize}
+  \item \textbf{Packaging:} absolute paths were removed, every file was checksummed, and the release was scanned to confirm it contains no image files.
+\end{enumerate}
+
+\subsection{Quality Assurance Workflow}
+\begin{enumerate}
+  \item \textbf{Integrity validation:} the validator found 21,653/21,653 source paths, recomputed 96/96 pilot hashes, and reported 0 errors.
+  \item \textbf{Leakage checks:} no content hash and no capture session occurs in more than one partition. In the day-grouped split only 1.5\% of test images share a produce and capture day with training, against 76.2\% in the session split.
+  \item \textbf{Reproducibility:}
+  \begin{itemize}
+    \item re-running the split script yields a byte-identical manifest;
+    \item regenerating the noise pilot reproduced all 120 SHA-256 hashes.
+  \end{itemize}
+  \item \textbf{Annotation status:} machine-generated masks are labelled \path{proposal_only}; no annotation is described as ground truth unless a human has reviewed it.
+\end{enumerate}
+
+\section{Potential Applications}
+\begin{enumerate}
+  \item \textbf{Leakage-controlled spoilage benchmarks:} training and comparing image classifiers for produce type and visible spoilage on fixed, documented partitions.
+  \item \textbf{Generalisation studies:} measuring how performance changes from session-grouped to day-grouped splits, i.e.\ generalisation to unseen storage days.
+  \item \textbf{Robustness and denoising research:} controlled noise derivatives with recorded parameters and seeds for robustness and denoising experiments.
+  \item \textbf{Synthetic-data evaluation:} studying whether GAN augmentation helps when synthetic images are kept strictly within the training partition.
+  \item \textbf{Dataset-auditing methodology:} a worked example of duplicate, conflict and provenance auditing for public multimodal datasets.
+\end{enumerate}
+
+\section{Usage Notes}
+\textbf{Obtaining images:} download \path{TR-6.zip} from the source DOI. The manifests then resolve every record by its relative path and verify it by SHA-256.
+
+\textbf{Partition integrity:} keep all images of a capture session (and preferably of a capture day) within one partition. Never treat \texttt{Classified} and \texttt{Normal} as independent samples.
+
+\textbf{Augmentation:} apply augmentation after splitting and to training images only. Avoid hue or saturation shifts that alter colour-based decay cues.
+
+\textbf{Derived data:} noisy and GAN images are synthetic and must not be used as validation or test specimens.
+
+\textbf{Reference results (Foresight project):}
+\begin{itemize}
+  \item A ViT-B/16 fine-tuned on the session-grouped split reached a test spoilage macro-F1 of 0.954 and a produce macro-F1 of 1.000.
+  \item On the day-grouped split, the same ViT-S/16 configuration scored 0.098 lower than on the session-grouped split (mean of three seeds).
+\end{itemize}
+
+\section{Limitations}
+\textbf{Specimen identity:} TR-6 provides no specimen identifiers. Each produce type is a small number of fruits photographed over consecutive days, so the same physical fruit appears in several partitions.
+
+\textbf{Label semantics:} the spoilage labels are dataset-provided, date-ordered folder labels. Some \emph{Spoiled} Indian gooseberries show no visible decay.
+
+\textbf{Domain:} all images show a single fruit on a plain background under lab lighting, and class balance is skewed (tomato \emph{Not spoiled} is 38.9\% of eligible images).
+
+\textbf{Annotations:} no human-reviewed segmentation masks exist yet, and no verified RGB--thermal--methane pairs exist.
+
+\textbf{No redistributed images:} images are not included in the archive and must be obtained from the original source.
+
+\section*{Licence and Citation}
+TR-6+ is released under CC~BY~4.0, consistent with the licence of the source dataset, and requires attribution of the TR-6 authors~\cite{tr6}. An IEEE DataPort DOI will be added after publication.
+
+\begin{thebibliography}{1}
+\bibitem{tr6}
+T.~Bagyammal, Y.~A.~P.~T.~S, K.~Deepak, and D.~Unnikrishnan, ``TriModal Ripeness 6,'' figshare, Dataset, 2025. doi: 10.6084/m9.figshare.30783827.v1.
+\end{thebibliography}
+
+\end{document}

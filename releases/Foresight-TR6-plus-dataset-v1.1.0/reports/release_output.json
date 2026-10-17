@@ -1,0 +1,13 @@
+{
+  "package": "Foresight-TR6-plus-dataset-v1.0.0",
+  "zip_filename": "Foresight-TR6-plus-dataset-v1.0.0.zip",
+  "checksum_filename": "Foresight-TR6-plus-dataset-v1.0.0.zip.sha256",
+  "package_file_count": 67,
+  "package_bytes": 27320633,
+  "source_images_included": 0,
+  "human_complete_annotations": 0,
+  "result": "pass",
+  "ieee_dataport_uploaded": false,
+  "doi_assigned": false,
+  "note": "The ZIP SHA-256 is recorded in the sibling .sha256 file so that the checksum covers the archive."
+}

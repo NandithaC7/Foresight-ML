@@ -1,0 +1,17 @@
+{
+  "method": "attention rollout (head mean, +I, row-normalised)",
+  "n_images": 240,
+  "occlusion": "top-20% rollout patches vs random 20% patches replaced by the per-channel mean pixel",
+  "mean_drop_top_rollout": 0.19217253973086676,
+  "mean_drop_random": 0.01961152764658133,
+  "median_drop_top_rollout": 0.003856062889099121,
+  "median_drop_random": 1.1920928955078125e-07,
+  "wilcoxon_p": 2.3200515594290197e-30,
+  "n_test_correct": 1029,
+  "n_test_incorrect": 42,
+  "limitations": [
+    "Rollout ignores MLP blocks and value vectors; it is an approximation.",
+    "Explanations are qualitative diagnostics, not proof of correctness.",
+    "No reviewed decay masks exist, so overlap with true decay regions cannot be measured."
+  ]
+}

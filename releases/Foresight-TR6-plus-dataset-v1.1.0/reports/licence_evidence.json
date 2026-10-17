@@ -1,0 +1,26 @@
+{
+  "retrieved_at": "2026-10-15",
+  "method": "GET https://api.figshare.com/v2/articles/30783827",
+  "article_id": 30783827,
+  "title": "TriModal Ripeness 6",
+  "doi": "10.6084/m9.figshare.30783827.v1",
+  "license": {
+    "value": 1,
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "authors": [
+    "Bagyammal T",
+    "Yogini Aishwaryaa P T S",
+    "Krishna Deepak",
+    "Devika Unnikrishnan"
+  ],
+  "figshare_file": {
+    "name": "TR-6.zip",
+    "id": 60094544,
+    "size": 20388430589,
+    "computed_md5": "cdbcc4a667051aa35d46c2de71a723d9"
+  },
+  "local_readme_licence_statement": "none",
+  "v1_policy": "Original images and pixel derivatives are not included in this package."
+}

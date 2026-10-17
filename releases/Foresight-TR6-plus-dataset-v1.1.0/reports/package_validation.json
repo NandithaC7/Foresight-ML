@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-10-15T08:51:10.947218+00:00",
+  "package": "Foresight-TR6-plus-dataset-v1.0.0",
+  "result": "pass",
+  "source_validate_extension": {
+    "skipped": false,
+    "returncode": 0,
+    "report_result": "pass",
+    "human_complete_records": 0,
+    "proposal_only_records": 12
+  },
+  "errors": [],
+  "warnings": [],
+  "forbidden_binaries": 0,
+  "absolute_local_paths": 0,
+  "ieee_dataport_uploaded": false,
+  "doi_assigned": false,
+  "package_file_count": 67,
+  "package_bytes": 27320633
+}

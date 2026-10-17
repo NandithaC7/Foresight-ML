@@ -1,0 +1,13 @@
+produce,label,n,errors,error_rate
+Banana,Not_spoiled,34,0,0.0
+Banana,Spoiled,34,0,0.0
+Carrot,Not_spoiled,17,0,0.0
+Carrot,Spoiled,68,0,0.0
+Guava,Not_spoiled,35,0,0.0
+Guava,Spoiled,68,0,0.0
+Indian_Gooseberry,Not_spoiled,170,6,0.03529411764705882
+Indian_Gooseberry,Spoiled,102,27,0.2647058823529412
+Mango,Not_spoiled,51,0,0.0
+Mango,Spoiled,34,2,0.058823529411764705
+Tomato,Not_spoiled,424,0,0.0
+Tomato,Spoiled,34,7,0.20588235294117646

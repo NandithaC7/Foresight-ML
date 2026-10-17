@@ -1,0 +1,144 @@
+{
+  "space": "colorhist",
+  "preprocessing": "StandardScaler + PCA(50), both fitted on train",
+  "k_selection": "max train silhouette over k=2..12 (labels not used)",
+  "sweep": [
+    {
+      "k": 2,
+      "inertia": 409232.34375,
+      "silhouette_train": 0.1299709528684616
+    },
+    {
+      "k": 3,
+      "inertia": 388514.25,
+      "silhouette_train": 0.14844635128974915
+    },
+    {
+      "k": 4,
+      "inertia": 372654.1875,
+      "silhouette_train": 0.13661623001098633
+    },
+    {
+      "k": 5,
+      "inertia": 357540.90625,
+      "silhouette_train": 0.14872057735919952
+    },
+    {
+      "k": 6,
+      "inertia": 345404.03125,
+      "silhouette_train": 0.14506693184375763
+    },
+    {
+      "k": 7,
+      "inertia": 335253.875,
+      "silhouette_train": 0.1534089595079422
+    },
+    {
+      "k": 8,
+      "inertia": 323305.25,
+      "silhouette_train": 0.16298124194145203
+    },
+    {
+      "k": 9,
+      "inertia": 312322.8125,
+      "silhouette_train": 0.1672968864440918
+    },
+    {
+      "k": 10,
+      "inertia": 304806.5,
+      "silhouette_train": 0.15708719193935394
+    },
+    {
+      "k": 11,
+      "inertia": 295458.6875,
+      "silhouette_train": 0.14814306795597076
+    },
+    {
+      "k": 12,
+      "inertia": 289606.21875,
+      "silhouette_train": 0.17511090636253357
+    }
+  ],
+  "k_selected": 12,
+  "alignment": {
+    "k6_train": {
+      "ARI_produce": 0.5473744504586493,
+      "NMI_produce": 0.5038680456259742,
+      "ARI_spoilage": 0.1427215002396074,
+      "NMI_spoilage": 0.11594138385810503,
+      "NMI_produce_x_spoilage": 0.4935478644933614
+    },
+    "k6_test": {
+      "ARI_produce": 0.5798884851322257,
+      "NMI_produce": 0.5009993893762992,
+      "ARI_spoilage": 0.15061355512839192,
+      "NMI_spoilage": 0.1056050635655263,
+      "NMI_produce_x_spoilage": 0.4838528912589307
+    },
+    "k12_train": {
+      "ARI_produce": 0.4136363052142834,
+      "NMI_produce": 0.4969492502353366,
+      "ARI_spoilage": 0.10114043200135428,
+      "NMI_spoilage": 0.13707100747370596,
+      "NMI_produce_x_spoilage": 0.5002565681743274
+    },
+    "k12_test": {
+      "ARI_produce": 0.4030285119508794,
+      "NMI_produce": 0.4869984990248155,
+      "ARI_spoilage": 0.0758922411823997,
+      "NMI_spoilage": 0.11145275639773758,
+      "NMI_produce_x_spoilage": 0.4853046337043681
+    }
+  },
+  "k6_train_composition": {
+    "0": {
+      "Banana": 0,
+      "Carrot": 0,
+      "Guava": 0,
+      "Indian_Gooseberry": 15,
+      "Mango": 62,
+      "Tomato": 0
+    },
+    "1": {
+      "Banana": 29,
+      "Carrot": 1,
+      "Guava": 95,
+      "Indian_Gooseberry": 742,
+      "Mango": 7,
+      "Tomato": 0
+    },
+    "2": {
+      "Banana": 50,
+      "Carrot": 0,
+      "Guava": 6,
+      "Indian_Gooseberry": 0,
+      "Mango": 0,
+      "Tomato": 0
+    },
+    "3": {
+      "Banana": 36,
+      "Carrot": 160,
+      "Guava": 0,
+      "Indian_Gooseberry": 0,
+      "Mango": 151,
+      "Tomato": 1215
+    },
+    "4": {
+      "Banana": 0,
+      "Carrot": 0,
+      "Guava": 40,
+      "Indian_Gooseberry": 0,
+      "Mango": 0,
+      "Tomato": 0
+    },
+    "5": {
+      "Banana": 72,
+      "Carrot": 127,
+      "Guava": 146,
+      "Indian_Gooseberry": 110,
+      "Mango": 2,
+      "Tomato": 111
+    }
+  },
+  "note": "Clusters are exploratory and are not ground-truth classes."
+}

@@ -1,0 +1,13 @@
+pilot_id,label_studio_task_id,proposal_status,proposal_raster_path,proposal_coco_path,proposal_suggested_quality,known_issue
+tr6p_001,1,proposal_only,annotations/masks/tr6p_001.png,annotations/coco_annotations.json,annotatable,Unverified Python silhouette; compare only.
+tr6p_009,2,proposal_only,annotations/masks/tr6p_009.png,annotations/coco_annotations.json,ambiguous,Thermal halo; proposal unverified.
+tr6p_017,3,proposal_only,annotations/masks/tr6p_017.png,annotations/coco_annotations.json,annotatable,Unverified Python silhouette; compare only.
+tr6p_025,4,proposal_only,annotations/masks/tr6p_025.png,annotations/coco_annotations.json,ambiguous,Thermal core vs halo cutoff unverified.
+tr6p_033,5,proposal_only,annotations/masks/tr6p_033.png,annotations/coco_annotations.json,annotatable,Unverified Python silhouette; compare only.
+tr6p_041,6,proposal_only,annotations/masks/tr6p_041.png,annotations/coco_annotations.json,ambiguous,Thermal proposal likely too small.
+tr6p_049,7,proposal_only,annotations/masks/tr6p_049.png,annotations/coco_annotations.json,annotatable,Unverified Python silhouette; compare only.
+tr6p_057,8,proposal_only,annotations/masks/tr6p_057.png,annotations/coco_annotations.json,ambiguous,Thermal halo; proposal unverified.
+tr6p_065,9,proposal_only,annotations/masks/tr6p_065.png,annotations/coco_annotations.json,annotatable,Unverified Python silhouette; compare only.
+tr6p_073,10,proposal_only,annotations/masks/tr6p_073.png,annotations/coco_annotations.json,ambiguous,"Proposal covers table/background, not the mango. Do not use as ground truth."
+tr6p_081,11,proposal_only,annotations/masks/tr6p_081.png,annotations/coco_annotations.json,annotatable,Unverified Python silhouette; compare only.
+tr6p_089,12,proposal_only,annotations/masks/tr6p_089.png,annotations/coco_annotations.json,annotatable,Thermal proposal may miss warmer upper rim.

@@ -1,0 +1,19 @@
+source,produce,label,srgb_count,thermal_count,exact_timestamp_candidates,probable_mutual_nearest_within_120s,probable_gap_median_seconds,same_calendar_dates,verified_cross_modal_pairs,limitation,probable_session_pairs_within_30m,probable_session_pairs_both_17
+Classified,Banana,Not_spoiled,153,153,0,1,25.0,3,0,timestamps support candidates only; no shared specimen/view identifier,9,9
+Classified,Banana,Spoiled,170,153,0,0,,0,0,timestamps support candidates only; no shared specimen/view identifier,0,0
+Classified,Carrot,Not_spoiled,102,103,0,2,88.0,2,0,timestamps support candidates only; no shared specimen/view identifier,5,5
+Classified,Carrot,Spoiled,356,355,0,6,35.0,7,0,timestamps support candidates only; no shared specimen/view identifier,17,17
+Classified,Guava,Not_spoiled,204,212,0,7,45.0,4,0,timestamps support candidates only; no shared specimen/view identifier,8,8
+Classified,Guava,Spoiled,306,306,0,13,42.0,6,0,timestamps support candidates only; no shared specimen/view identifier,18,18
+Classified,Indian_Gooseberry,Not_spoiled,884,903,0,21,52.0,18,0,timestamps support candidates only; no shared specimen/view identifier,47,47
+Classified,Indian_Gooseberry,Spoiled,527,525,0,3,87.0,12,0,timestamps support candidates only; no shared specimen/view identifier,21,21
+Classified,Mango,Not_spoiled,256,255,0,10,16.5,5,0,timestamps support candidates only; no shared specimen/view identifier,14,14
+Classified,Mango,Spoiled,136,152,0,0,,3,0,timestamps support candidates only; no shared specimen/view identifier,7,7
+Classified,Tomato,Not_spoiled,2074,2137,3,68,9.5,44,0,timestamps support candidates only; no shared specimen/view identifier,104,104
+Classified,Tomato,Spoiled,170,204,0,0,,4,0,timestamps support candidates only; no shared specimen/view identifier,10,10
+Normal,Banana,,323,340,0,2,60.5,7,0,timestamps support candidates only; no shared specimen/view identifier,19,19
+Normal,Carrot,,458,458,0,8,57.5,9,0,timestamps support candidates only; no shared specimen/view identifier,22,22
+Normal,Guava,,510,518,0,20,42.0,10,0,timestamps support candidates only; no shared specimen/view identifier,26,26
+Normal,Indian_Gooseberry,,1411,1428,0,24,54.5,30,0,timestamps support candidates only; no shared specimen/view identifier,68,68
+Normal,Mango,,392,407,0,10,16.5,8,0,timestamps support candidates only; no shared specimen/view identifier,21,21
+Normal,Tomato,,2244,2341,3,68,9.5,48,0,timestamps support candidates only; no shared specimen/view identifier,114,114

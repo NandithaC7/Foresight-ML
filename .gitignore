@@ -1,0 +1,37 @@
+# Source data and derived copies: not redistributable / too large
+dataset/
+artifacts/cache/
+artifacts/experiments/gan/generated/
+artifacts/experiments/features/
+# Model weights (large) — distribute separately
+*.pt
+backend/models/*.pt
+# Local state
+.venv/
+**/__pycache__/
+backend/foresight.db
+backend/.env
+frontend/node_modules/
+frontend/.env
+.DS_Store
+
+# Secrets and local tool state (Label Studio .env holds a SECRET_KEY)
+.env
+*.env
+Foresight-TR6-plus/.labelstudio-data/
+Foresight-TR6-plus/.label-studio-venv/
+# Large regenerable image derivatives (noise pilot JPEGs, 721 MB; regenerate with generate_noise_dataset.py)
+Foresight-TR6-plus/derived-data/
+# Build outputs and tool installs
+frontend/dist/
+releases/final_review/build/node_modules/
+releases/final_review/build/specs/
+**/node_modules/
+# LaTeX auxiliaries
+*.aux
+*.log.tex
+*.synctex.gz
+# Runtime logs and local DBs
+artifacts/*_server.log
+*.sqlite3
+.claude/

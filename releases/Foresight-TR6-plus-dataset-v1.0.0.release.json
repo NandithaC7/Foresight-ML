@@ -1,0 +1,18 @@
+{
+  "package": "Foresight-TR6-plus-dataset-v1.0.0",
+  "unpacked_dir": "/Users/nandu/Downloads/foresight/releases/Foresight-TR6-plus-dataset-v1.0.0",
+  "zip_path": "/Users/nandu/Downloads/foresight/releases/Foresight-TR6-plus-dataset-v1.0.0.zip",
+  "checksum_path": "/Users/nandu/Downloads/foresight/releases/Foresight-TR6-plus-dataset-v1.0.0.zip.sha256",
+  "zip_filename": "Foresight-TR6-plus-dataset-v1.0.0.zip",
+  "checksum_filename": "Foresight-TR6-plus-dataset-v1.0.0.zip.sha256",
+  "zip_bytes": 5303742,
+  "zip_sha256": "807d2f16622be44802b7d25aad41a27a9e349591ef7cb41298bf16378ae04610",
+  "package_file_count": 67,
+  "package_bytes": 27320633,
+  "zip_member_count": 67,
+  "source_images_included": 0,
+  "human_complete_annotations": 0,
+  "result": "pass",
+  "ieee_dataport_uploaded": false,
+  "doi_assigned": false
+}

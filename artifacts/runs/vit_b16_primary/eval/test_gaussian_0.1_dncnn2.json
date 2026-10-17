@@ -1,0 +1,151 @@
+{
+  "run": "artifacts/runs/vit_b16_primary",
+  "split": "test",
+  "corruption": "gaussian",
+  "level": 0.1,
+  "denoiser": "dncnn2:artifacts/experiments/dncnn_v2/dncnn.pt",
+  "checkpoint_epoch": 9,
+  "backbone": "vit_base_patch16_224.augreg2_in21k_ft_in1k",
+  "device": "mps",
+  "type": {
+    "n": 1071,
+    "accuracy": 0.9981325863678805,
+    "macro_f1": 0.997302813469339,
+    "weighted_f1": 0.9981322047208309,
+    "per_class": {
+      "Banana": {
+        "precision": 1.0,
+        "recall": 0.9852941176470589,
+        "f1": 0.9925925925925926,
+        "support": 68
+      },
+      "Carrot": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 85
+      },
+      "Guava": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 103
+      },
+      "Indian_Gooseberry": {
+        "precision": 0.9963369963369964,
+        "recall": 1.0,
+        "f1": 0.998165137614679,
+        "support": 272
+      },
+      "Mango": {
+        "precision": 0.9883720930232558,
+        "recall": 1.0,
+        "f1": 0.9941520467836257,
+        "support": 85
+      },
+      "Tomato": {
+        "precision": 1.0,
+        "recall": 0.9978165938864629,
+        "f1": 0.9989071038251366,
+        "support": 458
+      }
+    },
+    "confusion_matrix": [
+      [
+        67,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        85,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        103,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        272,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        85,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1,
+        457
+      ]
+    ],
+    "class_names": [
+      "Banana",
+      "Carrot",
+      "Guava",
+      "Indian_Gooseberry",
+      "Mango",
+      "Tomato"
+    ],
+    "roc_auc_ovr_macro": 0.9999994063604912
+  },
+  "spoil": {
+    "n": 1071,
+    "accuracy": 0.907563025210084,
+    "macro_f1": 0.892578930358516,
+    "weighted_f1": 0.9072258830759238,
+    "per_class": {
+      "Not_spoiled": {
+        "precision": 0.927027027027027,
+        "recall": 0.9384404924760602,
+        "f1": 0.9326988443235894,
+        "support": 731
+      },
+      "Spoiled": {
+        "precision": 0.8640483383685801,
+        "recall": 0.8411764705882353,
+        "f1": 0.8524590163934426,
+        "support": 340
+      }
+    },
+    "confusion_matrix": [
+      [
+        686,
+        45
+      ],
+      [
+        54,
+        286
+      ]
+    ],
+    "class_names": [
+      "Not_spoiled",
+      "Spoiled"
+    ],
+    "roc_auc": 0.9634183632413293
+  },
+  "mean_batched_latency_ms_per_image": 23.64377123046993,
+  "note": "Confidence values are softmax scores, not calibrated probabilities.",
+  "composite_macro_f1": 0.9449408719139275
+}

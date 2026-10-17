@@ -1,0 +1,27 @@
+{
+  "package": "Foresight-TR6-plus-dataset-v1.0.0",
+  "generated_at": "2026-10-15T08:51:10.934342+00:00",
+  "source_tr6_files_audited": 21653,
+  "source_images_audited": 21626,
+  "unique_image_hashes": 10776,
+  "duplicate_groups": 10589,
+  "label_conflict_groups": 170,
+  "pilot_images": 96,
+  "calibration_images": 12,
+  "annotation_status_counts": {
+    "pending_review": 12,
+    "pending": 84
+  },
+  "proposal_status_counts": {
+    "proposal_only": 12,
+    "none": 84
+  },
+  "label_studio_status_counts": {
+    "unsubmitted": 12,
+    "not_imported": 84
+  },
+  "human_complete_annotations": 0,
+  "source_images_included_in_package": 0,
+  "pixel_derivatives_included_in_package": 0,
+  "noise_images_included_in_package": 0
+}

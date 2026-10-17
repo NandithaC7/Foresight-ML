@@ -1,0 +1,43 @@
+{
+  "method": "skimage.restoration.estimate_sigma (wavelet MAD), pixel scale [0,1]",
+  "per_produce": {
+    "Banana": {
+      "n": 20,
+      "sigma_fullres_centre512_mean": 0.003213502375424777,
+      "sigma_model_input_224_mean": 0.0014137992617697889
+    },
+    "Carrot": {
+      "n": 20,
+      "sigma_fullres_centre512_mean": 0.0030928080365882813,
+      "sigma_model_input_224_mean": 0.0014900726818852794
+    },
+    "Guava": {
+      "n": 20,
+      "sigma_fullres_centre512_mean": 0.002844847488999662,
+      "sigma_model_input_224_mean": 0.0018360053340101545
+    },
+    "Indian_Gooseberry": {
+      "n": 20,
+      "sigma_fullres_centre512_mean": 0.002879962738300779,
+      "sigma_model_input_224_mean": 0.0012244284083907015
+    },
+    "Mango": {
+      "n": 20,
+      "sigma_fullres_centre512_mean": 0.0046038588021009175,
+      "sigma_model_input_224_mean": 0.002001905821537781
+    },
+    "Tomato": {
+      "n": 20,
+      "sigma_fullres_centre512_mean": 0.0024163793307952633,
+      "sigma_model_input_224_mean": 0.0014835498109940688
+    }
+  },
+  "overall_fullres_mean": 0.003175226462034946,
+  "overall_model_input_mean": 0.0015749602197646288,
+  "synthetic_gaussian_levels_evaluated": [
+    0.05,
+    0.1,
+    0.2
+  ],
+  "interpretation": "Intrinsic noise of TR-6 photos is far below the synthetic stress levels; robustness results are stress tests, not measurements of TR-6 sensor noise."
+}

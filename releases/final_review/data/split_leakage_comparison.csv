@@ -1,0 +1,5 @@
+split_scheme,test_items,test_contents,test_with_exact_duplicate_in_train_pct,test_with_same_session_in_train_pct,test_with_same_produce_day_in_train_pct
+"random split of raw sRGB files (Classified + Normal copies), seed 42",2088,1043,59.81800766283525,100.0,100.0
+"random split of de-duplicated contents (no grouping), seed 42",,1045,0.0,99.90430622009569,100.0
+session-grouped split v1 (used for all main results),,1071,0.0,0.0,76.19047619047619
+day-grouped sensitivity split,,1121,0.0,0.0,1.5165031222123104

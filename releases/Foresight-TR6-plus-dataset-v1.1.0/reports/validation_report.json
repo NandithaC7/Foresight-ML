@@ -1,0 +1,42 @@
+{
+  "generated_at": "2026-10-15T08:51:10.142930+00:00",
+  "dataset": "<TR-6-root>",
+  "workspace": "<Foresight-TR6-plus-workspace>",
+  "hash_mode": "none",
+  "result": "pass",
+  "checks": {
+    "master_records": 21653,
+    "pilot_records": 96,
+    "annotation_records": 96,
+    "calibration_records": 12,
+    "source_paths_found": 21653,
+    "duplicate_groups": 10589,
+    "cross_label_conflict_groups": 170,
+    "pilot_unique_content": 96,
+    "hashes_recomputed": 0,
+    "missing_pending_annotations": 96,
+    "proposal_only_records": 12,
+    "human_complete_records": 0,
+    "proposal_coco_annotations": 12,
+    "human_coco_annotations": 0
+  },
+  "annotation_status_counts": {
+    "pending_review": 12,
+    "pending": 84
+  },
+  "errors": [],
+  "warnings": [
+    {
+      "severity": "warning",
+      "code": "proposal_coco_not_ground_truth",
+      "path": "annotations/coco_annotations.json",
+      "message": "12 polygons in annotations/coco_annotations.json are Python proposals only and must not be exported as completed ground truth"
+    },
+    {
+      "severity": "warning",
+      "code": "annotations_pending",
+      "path": "annotations/annotation_records.csv",
+      "message": "96 pilot images still need human Label Studio annotation"
+    }
+  ]
+}

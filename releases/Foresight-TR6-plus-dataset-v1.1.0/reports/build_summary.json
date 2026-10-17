@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-10-12T15:54:03.493896+00:00",
+  "source_dataset": "<TR-6-root>",
+  "audit_output": "<tr6-audit-output>",
+  "workspace": "<Foresight-TR6-plus-workspace>",
+  "master_manifest_records": 21653,
+  "image_records": 21626,
+  "unique_image_content_ids": 10776,
+  "cross_label_conflict_groups": 170,
+  "pilot_size": 96,
+  "pilot_per_produce_modality": 8,
+  "pilot_source_directory": "Normal",
+  "pilot_spoilage_labels_used": false,
+  "pilot_cross_label_conflicts": 0,
+  "calibration_batch_size": 12,
+  "annotation_status_counts": {
+    "pending": 96
+  },
+  "selection_seed": "20261012",
+  "source_images_copied": 0,
+  "derived_review_contact_sheets": 2
+}

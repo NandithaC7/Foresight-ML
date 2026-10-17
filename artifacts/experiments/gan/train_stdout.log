@@ -1,0 +1,63 @@
+{'epoch': 1, 'loss_d': 1.2801935088877776, 'loss_g': 3.6288176604679654}
+{'epoch': 2, 'loss_d': 1.2912661761653668, 'loss_g': 2.3782906289003334}
+{'epoch': 3, 'loss_d': 1.2469365353486976, 'loss_g': 2.087151748793466}
+{'epoch': 4, 'loss_d': 1.2958467152653907, 'loss_g': 2.0184353991430632}
+{'epoch': 5, 'loss_d': 1.2838202629770552, 'loss_g': 1.9998849581698983}
+{'epoch': 6, 'loss_d': 1.2555028954330756, 'loss_g': 1.9710497320914755}
+{'epoch': 7, 'loss_d': 1.2638536910621487, 'loss_g': 1.8080600463614172}
+{'epoch': 8, 'loss_d': 1.2408669347665748, 'loss_g': 1.8356599868560324}
+{'epoch': 9, 'loss_d': 1.1595420095385338, 'loss_g': 1.9208514094352722}
+{'epoch': 10, 'loss_d': 1.1924594263641202, 'loss_g': 2.0198109624337177}
+{'epoch': 11, 'loss_d': 1.1557886551837533, 'loss_g': 2.1234349693570818}
+{'epoch': 12, 'loss_d': 1.1299459800428273, 'loss_g': 2.0475973207123426}
+{'epoch': 13, 'loss_d': 1.1041178764129171, 'loss_g': 2.2179690258843556}
+{'epoch': 14, 'loss_d': 1.1233609695823825, 'loss_g': 2.1158323993488235}
+{'epoch': 15, 'loss_d': 1.219718956217474, 'loss_g': 1.9726130816401268}
+{'epoch': 16, 'loss_d': 1.2015996599683956, 'loss_g': 1.7210240242432575}
+{'epoch': 17, 'loss_d': 1.1932794804475746, 'loss_g': 1.6782752822856515}
+{'epoch': 18, 'loss_d': 1.2161336772295894, 'loss_g': 1.725717121241044}
+{'epoch': 19, 'loss_d': 1.1753139130923214, 'loss_g': 1.746666809734033}
+{'epoch': 20, 'loss_d': 1.1767063311168127, 'loss_g': 1.692980518146437}
+{'epoch': 21, 'loss_d': 1.2419646406660274, 'loss_g': 1.6763871555425682}
+{'epoch': 22, 'loss_d': 1.2256706746257082, 'loss_g': 1.7127252050808497}
+{'epoch': 23, 'loss_d': 1.1976465035458, 'loss_g': 1.6445687388887211}
+{'epoch': 24, 'loss_d': 1.2415074061374276, 'loss_g': 1.6308110319838232}
+{'epoch': 25, 'loss_d': 1.2126986737153969, 'loss_g': 1.567236220350071}
+{'epoch': 26, 'loss_d': 1.1899667576867707, 'loss_g': 1.6049698445261742}
+{'epoch': 27, 'loss_d': 1.1980258129080947, 'loss_g': 1.675536860008629}
+{'epoch': 28, 'loss_d': 1.2476059149722665, 'loss_g': 1.6965142391165908}
+{'epoch': 29, 'loss_d': 1.1493330828997554, 'loss_g': 1.6718572511964915}
+{'epoch': 30, 'loss_d': 1.1978135692829988, 'loss_g': 1.6887317202529128}
+{'epoch': 31, 'loss_d': 1.1870792763573783, 'loss_g': 1.7179558350115407}
+{'epoch': 32, 'loss_d': 1.1888920336353535, 'loss_g': 1.7002674389858634}
+{'epoch': 33, 'loss_d': 1.164462452032128, 'loss_g': 1.7766395004428164}
+{'epoch': 34, 'loss_d': 1.1500606682835792, 'loss_g': 1.7909994417307329}
+{'epoch': 35, 'loss_d': 1.1240756073776557, 'loss_g': 1.8273028196120749}
+{'epoch': 36, 'loss_d': 1.1305676455400429, 'loss_g': 1.8900234309994444}
+{'epoch': 37, 'loss_d': 1.161220715970409, 'loss_g': 1.8263863227805313}
+{'epoch': 38, 'loss_d': 1.1230061966545728, 'loss_g': 1.8902821698967291}
+{'epoch': 39, 'loss_d': 1.1551470866008682, 'loss_g': 1.8633207897750699}
+{'epoch': 40, 'loss_d': 1.0721530281767553, 'loss_g': 1.9717706952776228}
+{'epoch': 41, 'loss_d': 1.075398092367211, 'loss_g': 1.9486011011259896}
+Traceback (most recent call last):
+  File "/Users/nandu/Downloads/foresight/ml/experiments/gan.py", line 169, in <module>
+    {"train": train, "generate": generate}[a.cmd](a)
+  File "/Users/nandu/Downloads/foresight/ml/experiments/gan.py", line 125, in generate
+    Xf = X.view(len(X), -1).numpy()
+         ^^^^^^^^^^^^^^^^^^
+RuntimeError: view size is not compatible with input tensor's size and stride (at least one dimension spans across two contiguous subspaces). Use .reshape(...) instead.
+{
+  "generated": 480,
+  "per_class": 40,
+  "nn_l2_generated_to_train": {
+    "mean": 21.967918288707732,
+    "min": 8.846213340759277,
+    "median": 22.531228065490723
+  },
+  "nn_l2_train_to_train": {
+    "mean": 13.227171541055043,
+    "min": 3.7460567951202393,
+    "median": 12.761597156524658
+  },
+  "interpretation": "If generated NN distances were far below real-real NN distances, that would suggest memorisation. Real-real distances are small because TR-6 has 17 near-identical views per session."
+}

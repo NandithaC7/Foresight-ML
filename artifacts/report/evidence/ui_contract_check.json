@@ -1,0 +1,317 @@
+{
+  "model_version": "vit_b16_primary@epoch9",
+  "source": "model",
+  "mock": false,
+  "fields_checked": 44,
+  "fields_present": 44,
+  "checks": [
+    {
+      "endpoint": "/api/analyze (top level: result/scan)",
+      "field": "items",
+      "present": true,
+      "type": "list",
+      "null_by_design": ""
+    },
+    {
+      "endpoint": "/api/analyze (top level: result/scan)",
+      "field": "mock",
+      "present": true,
+      "type": "bool",
+      "null_by_design": ""
+    },
+    {
+      "endpoint": "/api/analyze (top level: result/scan)",
+      "field": "warnings",
+      "present": true,
+      "type": "list",
+      "null_by_design": ""
+    },
+    {
+      "endpoint": "/api/analyze (top level: result/scan)",
+      "field": "timing_ms",
+      "present": true,
+      "type": "dict",
+      "null_by_design": ""
+    },
+    {
+      "endpoint": "/api/analyze (top level: result/scan)",
+      "field": "model_version",
+      "present": true,
+      "type": "str",
+      "null_by_design": ""
+    },
+    {
+      "endpoint": "/api/analyze (top level: result/scan)",
+      "field": "disclaimer",
+      "present": true,
+      "type": "str",
+      "null_by_design": ""
+    },
+    {
+      "endpoint": "/api/analyze (top level: result/scan)",
+      "field": "scan_id",
+      "present": true,
+      "type": "str",
+      "null_by_design": ""
+    },
+    {
+      "endpoint": "/api/analyze (top level: result/scan)",
+      "field": "id",
+      "present": true,
+      "type": "int",
+      "null_by_design": ""
+    },
+    {
+      "endpoint": "/api/analyze (top level: result/scan)",
+      "field": "ts",
+      "present": true,
+      "type": "int",
+      "null_by_design": ""
+    },
+    {
+      "endpoint": "/api/analyze items[] (item/i/it)",
+      "field": "name",
+      "present": true,
+      "type": "str",
+      "null_by_design": ""
+    },
+    {
+      "endpoint": "/api/analyze items[] (item/i/it)",
+      "field": "tier",
+      "present": true,
+      "type": "str",
+      "null_by_design": ""
+    },
+    {
+      "endpoint": "/api/analyze items[] (item/i/it)",
+      "field": "freshness",
+      "present": true,
+      "type": "int",
+      "null_by_design": ""
+    },
+    {
+      "endpoint": "/api/analyze items[] (item/i/it)",
+      "field": "days",
+      "present": true,
+      "type": "NoneType",
+      "null_by_design": "shelf-life unavailable \u2192 UI shows 'Not available'"
+    },
+    {
+      "endpoint": "/api/analyze items[] (item/i/it)",
+      "field": "decayPct",
+      "present": true,
+      "type": "NoneType",
+      "null_by_design": "segmentation unavailable \u2192 UI shows 'Pending annotation'"
+    },
+    {
+      "endpoint": "/api/analyze items[] (item/i/it)",
+      "field": "action",
+      "present": true,
+      "type": "str",
+      "null_by_design": ""
+    },
+    {
+      "endpoint": "/api/analyze items[] (item/i/it)",
+      "field": "produce_confidence",
+      "present": true,
+      "type": "float",
+      "null_by_design": ""
+    },
+    {
+      "endpoint": "/api/analyze items[] (item/i/it)",
+      "field": "spoilage_label",
+      "present": true,
+      "type": "str",
+      "null_by_design": ""
+    },
+    {
+      "endpoint": "/api/analyze items[] (item/i/it)",
+      "field": "spoilage_confidence",
+      "present": true,
+      "type": "float",
+      "null_by_design": ""
+    },
+    {
+      "endpoint": "/api/analyze items[] (item/i/it)",
+      "field": "xai_overlay",
+      "present": true,
+      "type": "str",
+      "null_by_design": ""
+    },
+    {
+      "endpoint": "/health (health)",
+      "field": "model_loaded",
+      "present": true,
+      "type": "bool",
+      "null_by_design": ""
+    },
+    {
+      "endpoint": "/health (health)",
+      "field": "mock_mode",
+      "present": true,
+      "type": "bool",
+      "null_by_design": ""
+    },
+    {
+      "endpoint": "/health (health)",
+      "field": "model_version",
+      "present": true,
+      "type": "str",
+      "null_by_design": ""
+    },
+    {
+      "endpoint": "/health (health)",
+      "field": "model_error",
+      "present": true,
+      "type": "NoneType",
+      "null_by_design": "null when model loaded"
+    },
+    {
+      "endpoint": "/api/stats (stats)",
+      "field": "totalInspections",
+      "present": true,
+      "type": "int",
+      "null_by_design": ""
+    },
+    {
+      "endpoint": "/api/stats (stats)",
+      "field": "totalItems",
+      "present": true,
+      "type": "int",
+      "null_by_design": ""
+    },
+    {
+      "endpoint": "/api/stats (stats)",
+      "field": "shelfReadyPct",
+      "present": true,
+      "type": "int",
+      "null_by_design": ""
+    },
+    {
+      "endpoint": "/api/stats (stats)",
+      "field": "avgLossPct",
+      "present": true,
+      "type": "int",
+      "null_by_design": ""
+    },
+    {
+      "endpoint": "/api/inspections[] (insp)",
+      "field": "ts",
+      "present": true,
+      "type": "int",
+      "null_by_design": ""
+    },
+    {
+      "endpoint": "/api/inspections[] (insp)",
+      "field": "items",
+      "present": true,
+      "type": "list",
+      "null_by_design": ""
+    },
+    {
+      "endpoint": "/api/models models[] (m / vit)",
+      "field": "id",
+      "present": true,
+      "type": "str",
+      "null_by_design": ""
+    },
+    {
+      "endpoint": "/api/models models[] (m / vit)",
+      "field": "status",
+      "present": true,
+      "type": "str",
+      "null_by_design": ""
+    },
+    {
+      "endpoint": "/api/models models[] (m / vit)",
+      "field": "role",
+      "present": true,
+      "type": "str",
+      "null_by_design": ""
+    },
+    {
+      "endpoint": "/api/models vit entry (vit)",
+      "field": "version",
+      "present": true,
+      "type": "str",
+      "null_by_design": ""
+    },
+    {
+      "endpoint": "/api/models vit entry (vit)",
+      "field": "backbone",
+      "present": true,
+      "type": "str",
+      "null_by_design": ""
+    },
+    {
+      "endpoint": "/api/models vit entry (vit)",
+      "field": "test_metrics",
+      "present": true,
+      "type": "dict",
+      "null_by_design": ""
+    },
+    {
+      "endpoint": "/api/models vit.test_metrics (tm)",
+      "field": "type",
+      "present": true,
+      "type": "dict",
+      "null_by_design": ""
+    },
+    {
+      "endpoint": "/api/models vit.test_metrics (tm)",
+      "field": "spoil",
+      "present": true,
+      "type": "dict",
+      "null_by_design": ""
+    },
+    {
+      "endpoint": "/api/report (report)",
+      "field": "lines",
+      "present": true,
+      "type": "list",
+      "null_by_design": ""
+    },
+    {
+      "endpoint": "/api/nutrition/{name} (data)",
+      "field": "calories",
+      "present": true,
+      "type": "int",
+      "null_by_design": ""
+    },
+    {
+      "endpoint": "/api/nutrition/{name} (data)",
+      "field": "carbs",
+      "present": true,
+      "type": "str",
+      "null_by_design": ""
+    },
+    {
+      "endpoint": "/api/nutrition/{name} (data)",
+      "field": "fiber",
+      "present": true,
+      "type": "str",
+      "null_by_design": ""
+    },
+    {
+      "endpoint": "/api/nutrition/{name} (data)",
+      "field": "vitaminC",
+      "present": true,
+      "type": "str",
+      "null_by_design": ""
+    },
+    {
+      "endpoint": "/api/nutrition/{name} (data)",
+      "field": "potassium",
+      "present": true,
+      "type": "str",
+      "null_by_design": ""
+    },
+    {
+      "endpoint": "/api/nutrition/{name} (data)",
+      "field": "fact",
+      "present": true,
+      "type": "str",
+      "null_by_design": ""
+    }
+  ]
+}

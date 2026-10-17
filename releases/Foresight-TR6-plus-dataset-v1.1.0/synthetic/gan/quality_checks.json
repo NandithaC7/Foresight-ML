@@ -1,0 +1,132 @@
+{
+  "label_consistency_by_primary_vit": {
+    "overall_type_match": 0.3458333333333333,
+    "overall_spoil_match": 0.7770833333333333,
+    "per_condition": {
+      "Banana/Not_spoiled": {
+        "n": 40,
+        "type_match": 0,
+        "spoil_match": 33
+      },
+      "Banana/Spoiled": {
+        "n": 40,
+        "type_match": 0,
+        "spoil_match": 40
+      },
+      "Carrot/Not_spoiled": {
+        "n": 40,
+        "type_match": 34,
+        "spoil_match": 16
+      },
+      "Carrot/Spoiled": {
+        "n": 40,
+        "type_match": 2,
+        "spoil_match": 26
+      },
+      "Guava/Not_spoiled": {
+        "n": 40,
+        "type_match": 2,
+        "spoil_match": 38
+      },
+      "Guava/Spoiled": {
+        "n": 40,
+        "type_match": 0,
+        "spoil_match": 32
+      },
+      "Indian_Gooseberry/Not_spoiled": {
+        "n": 40,
+        "type_match": 27,
+        "spoil_match": 30
+      },
+      "Indian_Gooseberry/Spoiled": {
+        "n": 40,
+        "type_match": 13,
+        "spoil_match": 14
+      },
+      "Mango/Not_spoiled": {
+        "n": 40,
+        "type_match": 1,
+        "spoil_match": 39
+      },
+      "Mango/Spoiled": {
+        "n": 40,
+        "type_match": 7,
+        "spoil_match": 35
+      },
+      "Tomato/Not_spoiled": {
+        "n": 40,
+        "type_match": 40,
+        "spoil_match": 30
+      },
+      "Tomato/Spoiled": {
+        "n": 40,
+        "type_match": 40,
+        "spoil_match": 40
+      }
+    },
+    "note": "Primary ViT-B (trained on real data only) applied to GAN images; agreement with the conditioning label."
+  },
+  "diversity_64px": {
+    "Banana/Not_spoiled": {
+      "generated_mean_pairwise_l2": 13.32929801940918,
+      "real_mean_pairwise_l2": 32.28830337524414,
+      "ratio_generated_to_real": 0.41282125804197334
+    },
+    "Banana/Spoiled": {
+      "generated_mean_pairwise_l2": 18.42642593383789,
+      "real_mean_pairwise_l2": 43.554290771484375,
+      "ratio_generated_to_real": 0.4230679826820171
+    },
+    "Carrot/Not_spoiled": {
+      "generated_mean_pairwise_l2": 28.119550704956055,
+      "real_mean_pairwise_l2": 35.46614074707031,
+      "ratio_generated_to_real": 0.792856231680039
+    },
+    "Carrot/Spoiled": {
+      "generated_mean_pairwise_l2": 22.8013973236084,
+      "real_mean_pairwise_l2": 36.29241943359375,
+      "ratio_generated_to_real": 0.6282688693524381
+    },
+    "Guava/Not_spoiled": {
+      "generated_mean_pairwise_l2": 31.925907135009766,
+      "real_mean_pairwise_l2": 32.46282196044922,
+      "ratio_generated_to_real": 0.9834606237839212
+    },
+    "Guava/Spoiled": {
+      "generated_mean_pairwise_l2": 31.06180191040039,
+      "real_mean_pairwise_l2": 37.21225357055664,
+      "ratio_generated_to_real": 0.8347197207905017
+    },
+    "Indian_Gooseberry/Not_spoiled": {
+      "generated_mean_pairwise_l2": 23.875431060791016,
+      "real_mean_pairwise_l2": 25.651758193969727,
+      "ratio_generated_to_real": 0.9307522268163165
+    },
+    "Indian_Gooseberry/Spoiled": {
+      "generated_mean_pairwise_l2": 23.830928802490234,
+      "real_mean_pairwise_l2": 27.174802780151367,
+      "ratio_generated_to_real": 0.8769494665807284
+    },
+    "Mango/Not_spoiled": {
+      "generated_mean_pairwise_l2": 28.121980667114258,
+      "real_mean_pairwise_l2": 33.72300720214844,
+      "ratio_generated_to_real": 0.8339108223219978
+    },
+    "Mango/Spoiled": {
+      "generated_mean_pairwise_l2": 30.887941360473633,
+      "real_mean_pairwise_l2": 32.99055099487305,
+      "ratio_generated_to_real": 0.9362663074428137
+    },
+    "Tomato/Not_spoiled": {
+      "generated_mean_pairwise_l2": 33.51494216918945,
+      "real_mean_pairwise_l2": 36.69624710083008,
+      "ratio_generated_to_real": 0.9133070767999961
+    },
+    "Tomato/Spoiled": {
+      "generated_mean_pairwise_l2": 30.0698299407959,
+      "real_mean_pairwise_l2": 32.35896301269531,
+      "ratio_generated_to_real": 0.9292581449225884
+    }
+  },
+  "mean_diversity_ratio": 0.7913032276012775
+}

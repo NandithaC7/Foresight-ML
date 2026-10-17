@@ -1,0 +1,21 @@
+# Commands used for the reproducible TR-6 audit
+#
+# Environment/tooling checks (read only)
+git status --short --branch
+python3 --version
+command -v file
+command -v sips
+python3 -c "import PIL; print(PIL.__version__)"
+
+# Syntax validation (does not import or execute the audit)
+PYTHONDONTWRITEBYTECODE=1 python3 -c "import ast,pathlib; ast.parse(pathlib.Path('dataset-preparation/tr6-audit/audit_tr6.py').read_text())"
+
+# Comprehensive audit. The dataset is only read; outputs are written separately.
+PYTHONDONTWRITEBYTECODE=1 python3 dataset-preparation/tr6-audit/audit_tr6.py \
+  --dataset /Users/nandu/Downloads/foresight/TR-6 \
+  --output /Users/nandu/Downloads/foresight/dataset-preparation/tr6-audit/output
+
+# Output consistency checks
+PYTHONDONTWRITEBYTECODE=1 python3 dataset-preparation/tr6-audit/verify_outputs.py \
+  --dataset /Users/nandu/Downloads/foresight/TR-6 \
+  --output /Users/nandu/Downloads/foresight/dataset-preparation/tr6-audit/output

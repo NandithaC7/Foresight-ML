@@ -1,0 +1,15 @@
+| produce/label | train | val | test | total |
+|---|---|---|---|---|
+| Banana/Not_spoiled | 85 | 34 | 34 | 153 |
+| Banana/Spoiled | 102 | 34 | 34 | 170 |
+| Carrot/Not_spoiled | 68 | 17 | 17 | 102 |
+| Carrot/Spoiled | 220 | 68 | 68 | 356 |
+| Guava/Not_spoiled | 117 | 50 | 35 | 202 |
+| Guava/Spoiled | 170 | 68 | 68 | 306 |
+| Indian_Gooseberry/Not_spoiled | 544 | 170 | 170 | 884 |
+| Indian_Gooseberry/Spoiled | 323 | 102 | 102 | 527 |
+| Mango/Not_spoiled | 154 | 51 | 51 | 256 |
+| Mango/Spoiled | 68 | 34 | 34 | 136 |
+| Tomato/Not_spoiled | 1224 | 425 | 424 | 2073 |
+| Tomato/Spoiled | 102 | 34 | 34 | 170 |
+| TOTAL | 3177 | 1087 | 1071 | 5335 |

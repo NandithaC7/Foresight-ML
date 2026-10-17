@@ -1,0 +1,20 @@
+{
+  "n_images": 150,
+  "method": "Spearman rank correlation of 14x14 rollout maps",
+  "flip_consistency": {
+    "mean": 0.9495828079095535,
+    "median": 0.9525846886978142,
+    "p10": 0.9224706547984287
+  },
+  "gaussian_0.02_consistency": {
+    "mean": 0.9619908224595618,
+    "median": 0.9647881487620429,
+    "p10": 0.9425975185075984
+  },
+  "different_image_baseline": {
+    "mean": 0.5933676944618419,
+    "median": 0.6098128122783671
+  },
+  "spoilage_prediction_unchanged_flip": 0.9733333333333334,
+  "spoilage_prediction_unchanged_noise": 0.9666666666666667
+}

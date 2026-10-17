@@ -1,0 +1,12 @@
+PASS frontend serves index.html — HTTP 200
+PASS backend health: real model loaded, mock off — vit_b16_primary@epoch9
+PASS CORS preflight allows frontend origin
+PASS /api/models reports ViT loaded and U-Net unavailable
+PASS analysed 60/60 held-out source images via HTTP — produce correct 60/60, spoilage correct 57/60 (full-res originals through API)
+PASS history grew by the number of scans — 0 -> 60
+PASS history detail endpoint returns the scan
+PASS XAI overlay returned
+PASS wrong file type rejected with 415 + structured error
+PASS corrupt image rejected with 400
+PASS PDF report generated
+11/11 checks passed; median latency 61 ms

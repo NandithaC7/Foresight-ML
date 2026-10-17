@@ -1,0 +1,158 @@
+{
+  "space": "vit_frozen",
+  "preprocessing": "StandardScaler + PCA(50), both fitted on train",
+  "k_selection": "max train silhouette over k=2..12 (labels not used)",
+  "sweep": [
+    {
+      "k": 2,
+      "inertia": 1594814.25,
+      "silhouette_train": 0.2990822494029999
+    },
+    {
+      "k": 3,
+      "inertia": 1292953.25,
+      "silhouette_train": 0.35859739780426025
+    },
+    {
+      "k": 4,
+      "inertia": 1073656.25,
+      "silhouette_train": 0.3976818919181824
+    },
+    {
+      "k": 5,
+      "inertia": 933378.5625,
+      "silhouette_train": 0.42564845085144043
+    },
+    {
+      "k": 6,
+      "inertia": 820211.3125,
+      "silhouette_train": 0.4509992003440857
+    },
+    {
+      "k": 7,
+      "inertia": 739509.875,
+      "silhouette_train": 0.4459686279296875
+    },
+    {
+      "k": 8,
+      "inertia": 693568.6875,
+      "silhouette_train": 0.4518231749534607
+    },
+    {
+      "k": 9,
+      "inertia": 649123.625,
+      "silhouette_train": 0.4450841546058655
+    },
+    {
+      "k": 10,
+      "inertia": 606106.5,
+      "silhouette_train": 0.45097261667251587
+    },
+    {
+      "k": 11,
+      "inertia": 577015.3125,
+      "silhouette_train": 0.4510640799999237
+    },
+    {
+      "k": 12,
+      "inertia": 553050.5625,
+      "silhouette_train": 0.4357514977455139
+    }
+  ],
+  "k_selected": 8,
+  "alignment": {
+    "k6_train": {
+      "ARI_produce": 0.9597510061570294,
+      "NMI_produce": 0.9503330559814662,
+      "ARI_spoilage": 0.18489545693707596,
+      "NMI_spoilage": 0.13428265196558617,
+      "NMI_produce_x_spoilage": 0.8316151141409381
+    },
+    "k6_test": {
+      "ARI_produce": 0.9657789437961766,
+      "NMI_produce": 0.9504631826190569,
+      "ARI_spoilage": 0.19912762211103588,
+      "NMI_spoilage": 0.1412155716015419,
+      "NMI_produce_x_spoilage": 0.8302341723276022
+    },
+    "k8_train": {
+      "ARI_produce": 0.8860933424850077,
+      "NMI_produce": 0.9192926679823783,
+      "ARI_spoilage": 0.2143822098044268,
+      "NMI_spoilage": 0.1803719257073947,
+      "NMI_produce_x_spoilage": 0.8446466111243953
+    },
+    "k8_test": {
+      "ARI_produce": 0.8941856363935824,
+      "NMI_produce": 0.9207555845812135,
+      "ARI_spoilage": 0.2146330672831466,
+      "NMI_spoilage": 0.15649250243751361,
+      "NMI_produce_x_spoilage": 0.8261410297031291
+    },
+    "k12_train": {
+      "ARI_produce": 0.826129407925331,
+      "NMI_produce": 0.8500404806313298,
+      "ARI_spoilage": 0.21000037864206236,
+      "NMI_spoilage": 0.23108671672720388,
+      "NMI_produce_x_spoilage": 0.8340640719751644
+    },
+    "k12_test": {
+      "ARI_produce": 0.8532597907836819,
+      "NMI_produce": 0.8632047937250262,
+      "ARI_spoilage": 0.2205581191456397,
+      "NMI_spoilage": 0.2100957249210242,
+      "NMI_produce_x_spoilage": 0.8245255815025427
+    }
+  },
+  "k6_train_composition": {
+    "0": {
+      "Banana": 187,
+      "Carrot": 0,
+      "Guava": 0,
+      "Indian_Gooseberry": 0,
+      "Mango": 0,
+      "Tomato": 0
+    },
+    "1": {
+      "Banana": 0,
+      "Carrot": 0,
+      "Guava": 0,
+      "Indian_Gooseberry": 793,
+      "Mango": 0,
+      "Tomato": 0
+    },
+    "2": {
+      "Banana": 0,
+      "Carrot": 0,
+      "Guava": 0,
+      "Indian_Gooseberry": 0,
+      "Mango": 0,
+      "Tomato": 1326
+    },
+    "3": {
+      "Banana": 0,
+      "Carrot": 0,
+      "Guava": 0,
+      "Indian_Gooseberry": 7,
+      "Mango": 222,
+      "Tomato": 0
+    },
+    "4": {
+      "Banana": 0,
+      "Carrot": 0,
+      "Guava": 287,
+      "Indian_Gooseberry": 67,
+      "Mango": 0,
+      "Tomato": 0
+    },
+    "5": {
+      "Banana": 0,
+      "Carrot": 288,
+      "Guava": 0,
+      "Indian_Gooseberry": 0,
+      "Mango": 0,
+      "Tomato": 0
+    }
+  },
+  "note": "Clusters are exploratory and are not ground-truth classes."
+}

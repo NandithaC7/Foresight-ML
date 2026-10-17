@@ -1,0 +1,26 @@
+<View>
+  <Header value="Foresight-TR6+ visible-region calibration. Draw new polygons here. Do not treat Python proposals as ground truth."/>
+  <Header value="Thermal color, palette variation, halo and ripening spots are not visible defects. Defect polygons only for a localized physical boundary visible in this image."/>
+  <Image name="image" value="$image" zoom="true" rotateControl="true"/>
+
+  <Header value="Polygon annotations"/>
+  <PolygonLabels name="regions" toName="image" strokeWidth="2" pointSize="small" opacity="0.25">
+    <Label value="fruit_visible_region"/>
+    <Label value="visible_defect_region"/>
+  </PolygonLabels>
+
+  <Header value="Image disposition (required)"/>
+  <Choices name="image_quality" toName="image" choice="single" required="true">
+    <Choice value="annotatable"/>
+    <Choice value="ambiguous"/>
+    <Choice value="exclude"/>
+  </Choices>
+
+  <Header value="Notes or exclusion reason"/>
+  <TextArea
+    name="notes"
+    toName="image"
+    placeholder="Required for ambiguous or excluded images"
+    rows="3"
+  />
+</View>

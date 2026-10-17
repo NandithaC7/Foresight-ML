@@ -1,0 +1,13 @@
+pilot_id,produce_type,apparent_modality,suggested_disposition_for_human_review,boundary_guidance,defect_guidance,human_confirmation_required,mask_created,annotation_status_changed
+tr6p_001,Banana,srgb,annotatable_candidate,Fruit outline and attached stem are clear; exclude cast shadow.,"Several dark surface patches are possible defect candidates, but require human confirmation at native resolution.",true,false,false
+tr6p_009,Banana,thermal_ir_fusion,ambiguous_candidate,"Banana silhouette is visible but boundary is thermally diffuse, especially near the shadow/stem.",Do not create a defect mask from thermal color variation alone.,true,false,false
+tr6p_017,Carrot,srgb,annotatable_candidate,Carrot outline is clear; exclude the surrounding shadow.,Small marks are not confidently distinguishable from normal surface texture.,true,false,false
+tr6p_025,Carrot,thermal_ir_fusion,annotatable_candidate,Thermal carrot silhouette has strong contrast and a repeatable boundary.,No defensible visible-defect region identified from this rendering.,true,false,false
+tr6p_033,Guava,srgb,annotatable_candidate,Guava outline and attached calyx are clear; exclude shadow.,Mottling may be normal texture; no defect should be drawn without human confirmation.,true,false,false
+tr6p_041,Guava,thermal_ir_fusion,ambiguous_candidate,Guava silhouette is visible but edge contrast is diffuse in places.,Central thermal variation is not a visible physical defect.,true,false,false
+tr6p_049,Indian_Gooseberry,srgb,annotatable_candidate,Indian Gooseberry outline and small attached stem are clear.,A small dark surface spot is visible but its defect status requires human confirmation.,true,false,false
+tr6p_057,Indian_Gooseberry,thermal_ir_fusion,ambiguous_candidate,Indian Gooseberry has low thermal contrast and an uncertain lower/right boundary.,No visible-defect mask recommended from this rendering.,true,false,false
+tr6p_065,Mango,srgb,annotatable_candidate,Mango outline and attached stem are clear; exclude shadow.,Several marks are visible; classify as defects only if boundaries and abnormality are defensible at native resolution.,true,false,false
+tr6p_073,Mango,thermal_ir_fusion,annotatable_candidate,Mango thermal silhouette is sufficiently distinct for a fruit mask.,Thermal color variation alone is not a defect.,true,false,false
+tr6p_081,Tomato,srgb,annotatable_candidate,Tomato outline is clear; include fruit surface but exclude cast shadow.,"The central stem scar/calyx area is normal anatomy, not automatically a defect.",true,false,false
+tr6p_089,Tomato,thermal_ir_fusion,ambiguous_candidate,Tomato silhouette is visible but some thermal boundary regions are soft.,No defensible visible-defect region identified from this rendering.,true,false,false

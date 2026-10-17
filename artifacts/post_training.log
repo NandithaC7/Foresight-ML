@@ -1,0 +1,109 @@
+[19:03:25] 1. primary test evaluation (clean, untouched test split)
+test_clean_0_none: type acc=1.0000 mF1=1.0000 | spoil acc=0.9608 mF1=0.9536 AUC=0.9893
+[19:03:45] 2. XAI
+{'method': 'attention rollout (head mean, +I, row-normalised)', 'n_images': 240, 'occlusion': 'top-20% rollout patches vs random 20% patches replaced by the per-channel mean pixel', 'mean_drop_top_rollout': 0.19217253973086676, 'mean_drop_random': 0.01961152764658133, 'median_drop_top_rollout': 0.003856062889099121, 'median_drop_random': 1.1920928955078125e-07, 'wilcoxon_p': 2.3200515594290197e-30, 'n_test_correct': 1029, 'n_test_incorrect': 42, 'limitations': ['Rollout ignores MLP blocks and value vectors; it is an approximation.', 'Explanations are qualitative diagnostics, not proof of correctness.', 'No reviewed decay masks exist, so overlap with true decay regions cannot be measured.']}
+[19:04:06] 3. noise robustness (no denoiser, median)
+test_gaussian_0.05_none: type acc=0.9991 mF1=0.9988 | spoil acc=0.9384 mF1=0.9277 AUC=0.9763
+test_gaussian_0.1_none: type acc=1.0000 mF1=1.0000 | spoil acc=0.9057 mF1=0.8914 AUC=0.9667
+test_gaussian_0.2_none: type acc=1.0000 mF1=1.0000 | spoil acc=0.8207 mF1=0.8047 AUC=0.9279
+test_salt_pepper_0.02_none: type acc=1.0000 mF1=1.0000 | spoil acc=0.9309 mF1=0.9190 AUC=0.9723
+test_salt_pepper_0.05_none: type acc=1.0000 mF1=1.0000 | spoil acc=0.8702 mF1=0.8587 AUC=0.9587
+test_salt_pepper_0.1_none: type acc=0.9953 mF1=0.9941 | spoil acc=0.7824 mF1=0.7755 AUC=0.9400
+test_speckle_0.1_none: type acc=1.0000 mF1=1.0000 | spoil acc=0.9290 mF1=0.9172 AUC=0.9781
+test_speckle_0.3_none: type acc=1.0000 mF1=1.0000 | spoil acc=0.8590 mF1=0.8438 AUC=0.9546
+test_speckle_0.5_none: type acc=0.9907 mF1=0.9891 | spoil acc=0.8105 mF1=0.7997 AUC=0.9266
+test_gaussian_0.05_median: type acc=0.9991 mF1=0.9988 | spoil acc=0.9225 mF1=0.9098 AUC=0.9699
+test_gaussian_0.1_median: type acc=0.9991 mF1=0.9988 | spoil acc=0.9010 mF1=0.8860 AUC=0.9617
+test_gaussian_0.2_median: type acc=0.9897 mF1=0.9874 | spoil acc=0.8291 mF1=0.8126 AUC=0.9296
+test_salt_pepper_0.02_median: type acc=0.9991 mF1=0.9985 | spoil acc=0.9468 mF1=0.9356 AUC=0.9883
+test_salt_pepper_0.05_median: type acc=0.9991 mF1=0.9985 | spoil acc=0.9468 mF1=0.9356 AUC=0.9883
+test_salt_pepper_0.1_median: type acc=0.9991 mF1=0.9985 | spoil acc=0.9458 mF1=0.9344 AUC=0.9876
+test_speckle_0.1_median: type acc=0.9991 mF1=0.9988 | spoil acc=0.9169 mF1=0.9011 AUC=0.9746
+test_speckle_0.3_median: type acc=0.9925 mF1=0.9904 | spoil acc=0.8515 mF1=0.8355 AUC=0.9529
+test_speckle_0.5_median: type acc=0.9701 mF1=0.9637 | spoil acc=0.8002 mF1=0.7880 AUC=0.9191
+[19:11:52] 4. frozen-ViT features, linear probe, K-means
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+vit_frozen {'X_train': (3177, 768), 'X_val': (1087, 768), 'X_test': (1071, 768)}
+vit_frozen type C 0.01 val mF1 1.0000 test mF1 1.0000 acc 1.0000
+vit_frozen spoil C 0.1 val mF1 0.9416 test mF1 0.9161 acc 0.9300
+vit_frozen k* 8 {'k6_train': 0.95, 'k6_test': 0.95, 'k8_train': 0.919, 'k8_test': 0.921, 'k12_train': 0.85, 'k12_test': 0.863}
+[19:13:42] 5. DnCNN
+{'step': 100, 'train_mse': 0.014730564318597317}
+{'step': 200, 'train_mse': 0.010697834193706512}
+{'step': 300, 'train_mse': 0.006615791004151106}
+{'step': 400, 'train_mse': 0.006037722807377577}
+{'step': 500, 'train_mse': 0.006256678607314825}
+{'step': 600, 'train_mse': 0.007749995682388544}
+{'step': 700, 'train_mse': 0.006744587328284979}
+{'step': 800, 'train_mse': 0.004674035124480724}
+{'step': 900, 'train_mse': 0.005392637103796005}
+{'step': 1000, 'train_mse': 0.004860609769821167}
+{'corruption': 'gaussian', 'level': 0.05, 'n_val_images': 60, 'noisy_psnr': 26.107994651794435, 'dncnn_psnr': 28.19150733947754, 'median_psnr': 33.46060034434001, 'noisy_ssim': 0.350938019156456, 'dncnn_ssim': 0.48675463646650313, 'median_ssim': 0.750022554397583}
+{'corruption': 'gaussian', 'level': 0.1, 'n_val_images': 60, 'noisy_psnr': 20.312708314259847, 'dncnn_psnr': 22.991875298817952, 'median_psnr': 27.698539956410727, 'noisy_ssim': 0.14754423027237257, 'dncnn_ssim': 0.25399731447299323, 'median_ssim': 0.46337345490852994}
+{'corruption': 'gaussian', 'level': 0.2, 'n_val_images': 60, 'noisy_psnr': 15.017627143859864, 'dncnn_psnr': 18.123738066355386, 'median_psnr': 21.903059164683025, 'noisy_ssim': 0.05812830533832312, 'dncnn_ssim': 0.11180446321765582, 'median_ssim': 0.2109731691579024}
+{'corruption': 'salt_pepper', 'level': 0.02, 'n_val_images': 60, 'noisy_psnr': 21.84075059890747, 'dncnn_psnr': 33.71893749237061, 'median_psnr': 47.894740168253584, 'noisy_ssim': 0.5371926367282868, 'dncnn_ssim': 0.8306152602036794, 'median_ssim': 0.9927833050489425}
+{'corruption': 'salt_pepper', 'level': 0.05, 'n_val_images': 60, 'noisy_psnr': 17.849206670125326, 'dncnn_psnr': 31.7983234723409, 'median_psnr': 46.062456639607746, 'noisy_ssim': 0.23939746444423993, 'dncnn_ssim': 0.7346079130967458, 'median_ssim': 0.992012091477712}
+{'corruption': 'salt_pepper', 'level': 0.1, 'n_val_images': 60, 'noisy_psnr': 14.834178733825684, 'dncnn_psnr': 30.6243940671285, 'median_psnr': 42.00215663909912, 'noisy_ssim': 0.09200048477699359, 'dncnn_ssim': 0.6682953904072444, 'median_ssim': 0.9886881520350774}
+test_gaussian_0.05_dncnn: type acc=0.9972 mF1=0.9962 | spoil acc=0.9309 mF1=0.9195 AUC=0.9691
+test_gaussian_0.1_dncnn: type acc=0.9972 mF1=0.9966 | spoil acc=0.9094 mF1=0.8961 AUC=0.9577
+test_gaussian_0.2_dncnn: type acc=0.9963 mF1=0.9961 | spoil acc=0.8525 mF1=0.8373 AUC=0.9335
+test_salt_pepper_0.02_dncnn: type acc=1.0000 mF1=1.0000 | spoil acc=0.9524 mF1=0.9432 AUC=0.9803
+test_salt_pepper_0.05_dncnn: type acc=1.0000 mF1=1.0000 | spoil acc=0.9486 mF1=0.9390 AUC=0.9754
+test_salt_pepper_0.1_dncnn: type acc=1.0000 mF1=1.0000 | spoil acc=0.9449 mF1=0.9351 AUC=0.9771
+test_speckle_0.1_dncnn: type acc=0.9991 mF1=0.9988 | spoil acc=0.9328 mF1=0.9210 AUC=0.9746
+test_speckle_0.3_dncnn: type acc=0.9991 mF1=0.9988 | spoil acc=0.8721 mF1=0.8581 AUC=0.9528
+test_speckle_0.5_dncnn: type acc=0.9767 mF1=0.9765 | spoil acc=0.8114 mF1=0.7989 AUC=0.9283
+[19:31:31] 6. ViT-S/16 ablations (same split, same budget)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+{"epoch": 1, "seconds": 65.1, "train_loss": 0.8656020874552655, "val_loss": 0.1528572837146138, "train_type_acc": 0.853219696969697, "train_spoil_acc": 0.8339646464646465, "val_type_acc": 1.0, "val_spoil_acc": 0.9457221711131555, "val_type_macro_f1": 1.0, "val_spoil_macro_f1": 0.9343750159884985, "val_composite_macro_f1": 0.9671875079942492}
+{"epoch": 2, "seconds": 65.0, "train_loss": 0.18471649372856122, "val_loss": 0.3640414973037196, "train_type_acc": 0.9993686868686869, "train_spoil_acc": 0.9381313131313131, "val_type_acc": 1.0, "val_spoil_acc": 0.890524379024839, "val_type_macro_f1": 1.0, "val_spoil_macro_f1": 0.8570516072065979, "val_composite_macro_f1": 0.928525803603299}
+{"epoch": 3, "seconds": 76.3, "train_loss": 0.1723931637978313, "val_loss": 0.4318970911883387, "train_type_acc": 0.9996843434343434, "train_spoil_acc": 0.9406565656565656, "val_type_acc": 1.0, "val_spoil_acc": 0.8712051517939282, "val_type_macro_f1": 1.0, "val_spoil_macro_f1": 0.8408065744436912, "val_composite_macro_f1": 0.9204032872218456}
+{"epoch": 4, "seconds": 74.4, "train_loss": 0.12241371017128154, "val_loss": 0.3687319942075749, "train_type_acc": 1.0, "train_spoil_acc": 0.9611742424242424, "val_type_acc": 1.0, "val_spoil_acc": 0.9089236430542779, "val_type_macro_f1": 1.0, "val_spoil_macro_f1": 0.8941580532942277, "val_composite_macro_f1": 0.9470790266471139}
+{"epoch": 5, "seconds": 75.2, "train_loss": 0.0715502963431951, "val_loss": 0.29340344949316133, "train_type_acc": 1.0, "train_spoil_acc": 0.9715909090909091, "val_type_acc": 1.0, "val_spoil_acc": 0.921803127874885, "val_type_macro_f1": 1.0, "val_spoil_macro_f1": 0.910519643647471, "val_composite_macro_f1": 0.9552598218237355}
+early stop at epoch 5
+best val composite macro-F1 0.9671875079942492
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+{"epoch": 1, "seconds": 65.1, "train_loss": 0.818321436850561, "val_loss": 0.343218276066416, "train_type_acc": 0.8658459595959596, "train_spoil_acc": 0.8525883838383839, "val_type_acc": 1.0, "val_spoil_acc": 0.8620055197792088, "val_type_macro_f1": 1.0, "val_spoil_macro_f1": 0.8535629863271568, "val_composite_macro_f1": 0.9267814931635784}
+{"epoch": 2, "seconds": 78.2, "train_loss": 0.1582741273962187, "val_loss": 0.18480150802309428, "train_type_acc": 1.0, "train_spoil_acc": 0.9425505050505051, "val_type_acc": 1.0, "val_spoil_acc": 0.9236430542778289, "val_type_macro_f1": 1.0, "val_spoil_macro_f1": 0.9057146410309198, "val_composite_macro_f1": 0.9528573205154599}
+{"epoch": 3, "seconds": 77.7, "train_loss": 0.09944731017958015, "val_loss": 0.4421935135853351, "train_type_acc": 1.0, "train_spoil_acc": 0.9649621212121212, "val_type_acc": 1.0, "val_spoil_acc": 0.9116835326586936, "val_type_macro_f1": 1.0, "val_spoil_macro_f1": 0.8950265572187349, "val_composite_macro_f1": 0.9475132786093674}
+{"epoch": 4, "seconds": 75.7, "train_loss": 0.052730593573704194, "val_loss": 0.20436542695251111, "train_type_acc": 1.0, "train_spoil_acc": 0.9835858585858586, "val_type_acc": 1.0, "val_spoil_acc": 0.9448022079116836, "val_type_macro_f1": 1.0, "val_spoil_macro_f1": 0.934618376627022, "val_composite_macro_f1": 0.967309188313511}
+{"epoch": 5, "seconds": 75.6, "train_loss": 0.012108783949430529, "val_loss": 0.22576540992618818, "train_type_acc": 1.0, "train_spoil_acc": 0.9977904040404041, "val_type_acc": 1.0, "val_spoil_acc": 0.9503219871205152, "val_type_macro_f1": 1.0, "val_spoil_macro_f1": 0.9405341772972622, "val_composite_macro_f1": 0.9702670886486311}
+{"epoch": 6, "seconds": 75.7, "train_loss": 0.0016892232938838364, "val_loss": 0.18052554614191854, "train_type_acc": 1.0, "train_spoil_acc": 0.9990530303030303, "val_type_acc": 1.0, "val_spoil_acc": 0.9595216191352346, "val_type_macro_f1": 1.0, "val_spoil_macro_f1": 0.9537840136054422, "val_composite_macro_f1": 0.9768920068027211}
+{"epoch": 7, "seconds": 75.4, "train_loss": 0.00015489585929011663, "val_loss": 0.22351691391633477, "train_type_acc": 1.0, "train_spoil_acc": 1.0, "val_type_acc": 1.0, "val_spoil_acc": 0.9549218031278749, "val_type_macro_f1": 1.0, "val_spoil_macro_f1": 0.9473594742173795, "val_composite_macro_f1": 0.9736797371086898}
+{"epoch": 8, "seconds": 75.1, "train_loss": 5.845820156867955e-05, "val_loss": 0.2092286653216363, "train_type_acc": 1.0, "train_spoil_acc": 1.0, "val_type_acc": 1.0, "val_spoil_acc": 0.9576816927322908, "val_type_macro_f1": 1.0, "val_spoil_macro_f1": 0.950213476075545, "val_composite_macro_f1": 0.9751067380377725}
+{"epoch": 9, "seconds": 75.4, "train_loss": 5.07491655629234e-05, "val_loss": 0.20908565667979767, "train_type_acc": 1.0, "train_spoil_acc": 1.0, "val_type_acc": 1.0, "val_spoil_acc": 0.9567617295308187, "val_type_macro_f1": 1.0, "val_spoil_macro_f1": 0.9490024386275409, "val_composite_macro_f1": 0.9745012193137704}
+{"epoch": 10, "seconds": 76.0, "train_loss": 4.496249655656154e-05, "val_loss": 0.2085265528720775, "train_type_acc": 1.0, "train_spoil_acc": 1.0, "val_type_acc": 1.0, "val_spoil_acc": 0.9567617295308187, "val_type_macro_f1": 1.0, "val_spoil_macro_f1": 0.9490024386275409, "val_composite_macro_f1": 0.9745012193137704}
+early stop at epoch 10
+best val composite macro-F1 0.9768920068027211
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+{"epoch": 1, "seconds": 74.1, "train_loss": 0.9168875025291192, "val_loss": 0.5038101688342678, "train_type_acc": 0.8426535087719298, "train_spoil_acc": 0.8253837719298246, "val_type_acc": 1.0, "val_spoil_acc": 0.8693652253909844, "val_type_macro_f1": 1.0, "val_spoil_macro_f1": 0.828824213066468, "val_composite_macro_f1": 0.914412106533234}
+{"epoch": 2, "seconds": 89.8, "train_loss": 0.21964265977996483, "val_loss": 0.13352094311695528, "train_type_acc": 0.9961622807017544, "train_spoil_acc": 0.928453947368421, "val_type_acc": 1.0, "val_spoil_acc": 0.9300827966881324, "val_type_macro_f1": 1.0, "val_spoil_macro_f1": 0.9142566529663304, "val_composite_macro_f1": 0.9571283264831651}
+{"epoch": 3, "seconds": 87.7, "train_loss": 0.16382210457436086, "val_loss": 0.12640014729139556, "train_type_acc": 0.9980811403508771, "train_spoil_acc": 0.9495614035087719, "val_type_acc": 1.0, "val_spoil_acc": 0.9466421343146274, "val_type_macro_f1": 1.0, "val_spoil_macro_f1": 0.9391687443555048, "val_composite_macro_f1": 0.9695843721777524}
+{"epoch": 4, "seconds": 87.1, "train_loss": 0.11241168843729324, "val_loss": 0.24762339888632354, "train_type_acc": 0.9983552631578947, "train_spoil_acc": 0.9605263157894737, "val_type_acc": 1.0, "val_spoil_acc": 0.9245630174793008, "val_type_macro_f1": 1.0, "val_spoil_macro_f1": 0.9058122627712544, "val_composite_macro_f1": 0.9529061313856272}
+{"epoch": 5, "seconds": 87.8, "train_loss": 0.105787616731648, "val_loss": 0.14490949718937923, "train_type_acc": 0.9997258771929824, "train_spoil_acc": 0.9679276315789473, "val_type_acc": 1.0, "val_spoil_acc": 0.9448022079116836, "val_type_macro_f1": 1.0, "val_spoil_macro_f1": 0.9375244269719751, "val_composite_macro_f1": 0.9687622134859876}
+{"epoch": 6, "seconds": 86.1, "train_loss": 0.08371604818711874, "val_loss": 0.14603989669006137, "train_type_acc": 1.0, "train_spoil_acc": 0.9706688596491229, "val_type_acc": 1.0, "val_spoil_acc": 0.9475620975160993, "val_type_macro_f1": 1.0, "val_spoil_macro_f1": 0.9404350923338265, "val_composite_macro_f1": 0.9702175461669132}
+{"epoch": 7, "seconds": 86.7, "train_loss": 0.04561362394311449, "val_loss": 0.18969062612912074, "train_type_acc": 1.0, "train_spoil_acc": 0.9824561403508771, "val_type_acc": 1.0, "val_spoil_acc": 0.9586016559337627, "val_type_macro_f1": 1.0, "val_spoil_macro_f1": 0.9502214922256381, "val_composite_macro_f1": 0.975110746112819}
+{"epoch": 8, "seconds": 86.4, "train_loss": 0.03544260967413593, "val_loss": 0.15047182708617948, "train_type_acc": 1.0, "train_spoil_acc": 0.9860197368421053, "val_type_acc": 1.0, "val_spoil_acc": 0.952161913523459, "val_type_macro_f1": 1.0, "val_spoil_macro_f1": 0.9439992708135185, "val_composite_macro_f1": 0.9719996354067593}
+{"epoch": 9, "seconds": 86.1, "train_loss": 0.025845983821662293, "val_loss": 0.0930519479816555, "train_type_acc": 1.0, "train_spoil_acc": 0.9893092105263158, "val_type_acc": 1.0, "val_spoil_acc": 0.9678012879484821, "val_type_macro_f1": 1.0, "val_spoil_macro_f1": 0.962276143192998, "val_composite_macro_f1": 0.981138071596499}
+{"epoch": 10, "seconds": 86.1, "train_loss": 0.014234989400408762, "val_loss": 0.10409860047271857, "train_type_acc": 1.0, "train_spoil_acc": 0.9939692982456141, "val_type_acc": 1.0, "val_spoil_acc": 0.9650413983440662, "val_type_macro_f1": 1.0, "val_spoil_macro_f1": 0.9588720019754502, "val_composite_macro_f1": 0.9794360009877251}
+best val composite macro-F1 0.981138071596499
+{"epoch": 1, "seconds": 82.3, "train_loss": 0.8582594201434404, "val_loss": 0.2684805439310459, "train_type_acc": 0.8658854166666666, "train_spoil_acc": 0.8310546875, "val_type_acc": 1.0, "val_spoil_acc": 0.9077328646748682, "val_type_macro_f1": 1.0, "val_spoil_macro_f1": 0.8755057027327483, "val_composite_macro_f1": 0.9377528513663742}
+{"epoch": 2, "seconds": 131.6, "train_loss": 0.12300163654920955, "val_loss": 0.5043705011814544, "train_type_acc": 1.0, "train_spoil_acc": 0.955078125, "val_type_acc": 1.0, "val_spoil_acc": 0.9086115992970123, "val_type_macro_f1": 1.0, "val_spoil_macro_f1": 0.8771349198769189, "val_composite_macro_f1": 0.9385674599384595}
+{"epoch": 3, "seconds": 72.9, "train_loss": 0.09982116646945845, "val_loss": 0.29554579023481303, "train_type_acc": 1.0, "train_spoil_acc": 0.9697265625, "val_type_acc": 1.0, "val_spoil_acc": 0.9217926186291739, "val_type_macro_f1": 1.0, "val_spoil_macro_f1": 0.9006473295082787, "val_composite_macro_f1": 0.9503236647541393}
+{"epoch": 4, "seconds": 66.4, "train_loss": 0.08028060472740133, "val_loss": 0.32875993999411957, "train_type_acc": 1.0, "train_spoil_acc": 0.9788411458333334, "val_type_acc": 1.0, "val_spoil_acc": 0.9173989455184535, "val_type_macro_f1": 1.0, "val_spoil_macro_f1": 0.8875928914892901, "val_composite_macro_f1": 0.943796445744645}
+{"epoch": 5, "seconds": 77.8, "train_loss": 0.05596195704144217, "val_loss": 0.3280554770631961, "train_type_acc": 1.0, "train_spoil_acc": 0.984375, "val_type_acc": 1.0, "val_spoil_acc": 0.9279437609841827, "val_type_macro_f1": 1.0, "val_spoil_macro_f1": 0.903356366408166, "val_composite_macro_f1": 0.951678183204083}
+{"epoch": 6, "seconds": 74.5, "train_loss": 0.05860782720355928, "val_loss": 0.1597467570517356, "train_type_acc": 1.0, "train_spoil_acc": 0.9860026041666666, "val_type_acc": 1.0, "val_spoil_acc": 0.9639718804920914, "val_type_macro_f1": 1.0, "val_spoil_macro_f1": 0.9563707022224217, "val_composite_macro_f1": 0.9781853511112109}
+{"epoch": 7, "seconds": 73.3, "train_loss": 0.026576647666540037, "val_loss": 0.3444877446953188, "train_type_acc": 1.0, "train_spoil_acc": 0.9925130208333334, "val_type_acc": 1.0, "val_spoil_acc": 0.9244288224956063, "val_type_macro_f1": 1.0, "val_spoil_macro_f1": 0.9038972159376572, "val_composite_macro_f1": 0.9519486079688286}
+{"epoch": 8, "seconds": 72.5, "train_loss": 0.01268371200266453, "val_loss": 0.2401419448936751, "train_type_acc": 1.0, "train_spoil_acc": 0.99609375, "val_type_acc": 1.0, "val_spoil_acc": 0.9393673110720563, "val_type_macro_f1": 1.0, "val_spoil_macro_f1": 0.9234441830468088, "val_composite_macro_f1": 0.9617220915234044}
+{"epoch": 9, "seconds": 71.9, "train_loss": 0.013544970813162157, "val_loss": 0.30144401394961784, "train_type_acc": 1.0, "train_spoil_acc": 0.9964192708333334, "val_type_acc": 1.0, "val_spoil_acc": 0.9332161687170475, "val_type_macro_f1": 1.0, "val_spoil_macro_f1": 0.9148957943833271, "val_composite_macro_f1": 0.9574478971916636}
+{"epoch": 10, "seconds": 70.5, "train_loss": 0.010307609573563544, "val_loss": 0.2862969909269634, "train_type_acc": 1.0, "train_spoil_acc": 0.99609375, "val_type_acc": 1.0, "val_spoil_acc": 0.9340949033391915, "val_type_macro_f1": 1.0, "val_spoil_macro_f1": 0.9161026820601289, "val_composite_macro_f1": 0.9580513410300644}
+early stop at epoch 10
+best val composite macro-F1 0.9781853511112109
+test_clean_0_none: type acc=1.0000 mF1=1.0000 | spoil acc=0.9029 mF1=0.8794 AUC=0.9360
+test_clean_0_none: type acc=1.0000 mF1=1.0000 | spoil acc=0.9356 mF1=0.9260 AUC=0.9851
+test_clean_0_none: type acc=1.0000 mF1=1.0000 | spoil acc=0.9477 mF1=0.9373 AUC=0.9836
+test_clean_0_none: type acc=1.0000 mF1=1.0000 | spoil acc=0.8332 mF1=0.8115 AUC=0.9256
+[20:22:38] 7. figures and tables
+made 23 outputs; skipped 0
+[20:22:41] DONE
+EXIT 0

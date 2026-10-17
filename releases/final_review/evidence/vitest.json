@@ -1,0 +1,45 @@
+{
+  "tool": "vitest 2.1.9 (jsdom)",
+  "command": "cd frontend && npx vitest run",
+  "numTotalTests": 7,
+  "numPassedTests": 7,
+  "numFailedTests": 0,
+  "success": true,
+  "tests": [
+    {
+      "file": "src/__tests__/api.test.js",
+      "name": "api.js posts the photo as multipart field \"photo\" to /api/analyze with xai=true",
+      "status": "passed"
+    },
+    {
+      "file": "src/__tests__/api.test.js",
+      "name": "api.js surfaces the backend structured error message and code",
+      "status": "passed"
+    },
+    {
+      "file": "src/__tests__/api.test.js",
+      "name": "api.js reports a network error clearly when the backend is unreachable",
+      "status": "passed"
+    },
+    {
+      "file": "src/__tests__/api.test.js",
+      "name": "api.js handles non-JSON error bodies",
+      "status": "passed"
+    },
+    {
+      "file": "src/__tests__/components.test.jsx",
+      "name": "ItemCard renders real model fields and never invents shelf-life or decay values",
+      "status": "passed"
+    },
+    {
+      "file": "src/__tests__/components.test.jsx",
+      "name": "ItemCard labels simulated items as DEMO MOCK DATA",
+      "status": "passed"
+    },
+    {
+      "file": "src/__tests__/components.test.jsx",
+      "name": "About page shows the live model status and held-out metrics from /api/models",
+      "status": "passed"
+    }
+  ]
+}
