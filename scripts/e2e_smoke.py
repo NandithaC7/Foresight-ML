@@ -42,9 +42,9 @@ def main():
     pre = c.options(f"{a.api}/api/analyze", headers={"Origin": a.ui, "Access-Control-Request-Method": "POST"})
     check("CORS preflight allows frontend origin", pre.headers.get("access-control-allow-origin") == a.ui)
     models = c.get(f"{a.api}/api/models").json()["models"]
-    check("/api/models reports ViT loaded and U-Net unavailable",
+    check("/api/models reports ViT loaded and U-Net status explicit",
           {m["id"]: m["status"] for m in models}.get("vit") == "loaded" and
-          {m["id"]: m["status"] for m in models}.get("unet") == "unavailable")
+          {m["id"]: m["status"] for m in models}.get("unet") in ("unavailable", "loaded"))
 
     rows = [r for r in csv.DictReader(open(ROOT / "artifacts/dataset/v1/split_manifest.csv")) if r["split"] == "test"]
     rows = sorted(rows, key=lambda r: r["sha256"])[:: max(1, len(rows) // a.n)][: a.n]

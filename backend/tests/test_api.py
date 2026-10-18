@@ -33,7 +33,7 @@ def test_analyze_valid_jpeg_returns_real_inference_contract(client):
     assert it["produce_class"] in ["Banana", "Carrot", "Guava", "Indian_Gooseberry", "Mango", "Tomato"]
     assert 0 <= it["freshness"] <= 100 and it["tier"] in ("good", "warn", "bad")
     assert abs(sum(it["produce_probabilities"].values()) - 1) < 1e-3
-    assert it["days"] is None and it["decayPct"] is None and it["decay_mask_available"] is False
+    assert it["days"] is None and it["decayPct"] is None and it["decay_mask_available"] is False  # no optional models in fixture
     assert it["xai_overlay"] is None
 
 
@@ -126,7 +126,7 @@ def test_history_persists_and_is_queryable(monkeypatch, tmp_path, tiny_ckpt):
         assert c.get("/api/history/nope").status_code == 404
         assert c.get("/api/stats").json()["totalInspections"] == 2
     # new app instance, same DB file -> history survives restart
-    with make_client(monkeypatch, tmp_path, tiny_ckpt) as c2:
+    with make_client(monkeypatch, tmp_path, tiny_ckpt, fresh=False) as c2:
         assert len(c2.get("/api/inspections").json()) == 2
         assert c2.delete("/api/inspections").json() == {"cleared": True}
         assert c2.get("/api/history").json() == []
@@ -151,3 +151,10 @@ def test_cors_allows_dev_origin_only(client):
     assert ok.headers.get("access-control-allow-origin") == "http://localhost:5173"
     bad = client.get("/health", headers={"Origin": "http://evil.example"})
     assert "access-control-allow-origin" not in bad.headers
+
+
+def test_visible_decay_unavailable_without_probe(client):
+    it = post(client, image_bytes()).json()["items"][0]
+    assert it["visible_decay_status"] == "unavailable" and it["visible_decay_probability"] is None
+    models = {m["id"]: m for m in client.get("/api/models").json()["models"]}
+    assert models["visible_decay"]["status"] == "unavailable" and models["unet"]["status"] == "unavailable"

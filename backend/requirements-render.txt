@@ -1,0 +1,11 @@
+# Slim runtime for 512 MB hosts (Render free): ONNX Runtime instead of PyTorch. Use with FORESIGHT_RUNTIME=onnx.
+fastapi==0.143.1
+uvicorn[standard]==0.54.0
+python-multipart==0.0.32
+fpdf2==2.8.9
+pydantic==2.14.1
+pillow==12.3.0
+numpy==2.4.6
+onnxruntime==1.31.0
+huggingface_hub>=0.30
+psycopg[binary]==3.2.10

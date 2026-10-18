@@ -17,10 +17,15 @@ class Item(BaseModel):
     tier: Literal["good", "warn", "bad"]
     days: Optional[int] = None
     shelf_life_status: str = "unavailable"
+    shelf_life_days_estimate: Optional[float] = None
     decayPct: Optional[float] = None
     decay_mask_available: bool = False
     segmentation_status: str = "annotation_pending"
+    decay_mask_overlay: Optional[str] = None
     action: str
+    visible_decay_probability: Optional[float] = None
+    visible_decay_label: Optional[str] = None
+    visible_decay_status: str = "unavailable"
     xai_overlay: Optional[str] = None
     xai_method: Optional[str] = None
 

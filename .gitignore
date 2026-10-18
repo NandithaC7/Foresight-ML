@@ -35,3 +35,10 @@ releases/final_review/build/specs/
 artifacts/*_server.log
 *.sqlite3
 .claude/
+
+# U-Net annotation image copies (derived TR-6 pixels, regenerable)
+Foresight-TR6-plus/unet-annotation/images/
+
+# ONNX model exports (hosted on Hugging Face: nandithcc/foresight-models)
+*.onnx
+artifacts/*.log

@@ -79,6 +79,7 @@ export default function About() {
             <span className="pill">Single item per photo</span>
             <span className="pill">Produce type + spoilage estimate</span>
             <span className="pill">Attention-rollout XAI</span>
+            <span className="pill">Visible-decay check (human labels)</span>
             <span className="pill">Shelf-life: not estimated</span>
             <span className="pill">Decay masks: pending annotation</span>
           </div>

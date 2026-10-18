@@ -1,0 +1,32 @@
+{
+ "run_id": "vit_b16_primary",
+ "backbone": "vit_base_patch16_224.augreg2_in21k_ft_in1k",
+ "img_size": 224,
+ "mean": [
+  0.5,
+  0.5,
+  0.5
+ ],
+ "std": [
+  0.5,
+  0.5,
+  0.5
+ ],
+ "produce_classes": [
+  "Banana",
+  "Carrot",
+  "Guava",
+  "Indian_Gooseberry",
+  "Mango",
+  "Tomato"
+ ],
+ "spoilage_classes": [
+  "Not_spoiled",
+  "Spoiled"
+ ],
+ "finished_at": null,
+ "best_val_composite_macro_f1": null,
+ "epoch": 9,
+ "feature_dim": 768,
+ "quantization": "onnxruntime dynamic int8"
+}

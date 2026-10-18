@@ -1,0 +1,89 @@
+{
+  "target": "PROXY: days until the produce series' first TR-6 'Spoiled' capture (0 once spoiled); not measured shelf life",
+  "spoilage_label_onset": {
+    "Banana": "2025-09-15T09:25:24",
+    "Carrot": "2025-07-28T08:54:54",
+    "Guava": "2025-06-30T08:49:13",
+    "Indian_Gooseberry": "2025-08-13T08:58:13",
+    "Mango": "2025-09-29T09:20:02",
+    "Tomato": "2025-09-26T09:33:25"
+  },
+  "target_range_days": [
+    0.0,
+    65.00892639160156
+  ],
+  "model": "StandardScaler + Ridge on frozen deployed ViT-B/16 CLS embedding",
+  "alpha_grid_val": [
+    {
+      "alpha": 1,
+      "val_mae_days": 4.155298233032227
+    },
+    {
+      "alpha": 10,
+      "val_mae_days": 4.07909631729126
+    },
+    {
+      "alpha": 100,
+      "val_mae_days": 4.06691312789917
+    },
+    {
+      "alpha": 1000,
+      "val_mae_days": 4.40404748916626
+    },
+    {
+      "alpha": 10000,
+      "val_mae_days": 5.299229621887207
+    }
+  ],
+  "alpha_selected": 100,
+  "clip_days": [
+    0,
+    64.88581085205078
+  ],
+  "val": {
+    "n": 1087,
+    "mae_days": 4.06691312789917,
+    "rmse_days": 6.1140055656433105,
+    "r2": 0.9156610369682312,
+    "mae_not_yet_spoiled_days": 5.135250568389893
+  },
+  "test": {
+    "n": 1071,
+    "mae_days": 4.292901992797852,
+    "rmse_days": 6.236607074737549,
+    "r2": 0.8883332014083862,
+    "mae_not_yet_spoiled_days": 5.216364860534668
+  },
+  "baseline_test_mae_days_per_produce_mean": 9.947704315185547,
+  "per_produce_test": {
+    "Banana": {
+      "n": 68,
+      "mae_days": 2.2790634632110596
+    },
+    "Carrot": {
+      "n": 85,
+      "mae_days": 1.5006482601165771
+    },
+    "Guava": {
+      "n": 103,
+      "mae_days": 2.1521048545837402
+    },
+    "Indian_Gooseberry": {
+      "n": 272,
+      "mae_days": 3.124685049057007
+    },
+    "Mango": {
+      "n": 85,
+      "mae_days": 4.276525974273682
+    },
+    "Tomato": {
+      "n": 458,
+      "mae_days": 6.288387298583984
+    }
+  },
+  "limitations": [
+    "Each produce is a single storage series of a few specimens; the model can learn date-specific appearance.",
+    "Target is derived from the dataset's folder labels, which are date-based and not independently verified.",
+    "Same specimens appear in train and test (no specimen IDs)."
+  ]
+}

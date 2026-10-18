@@ -1,7 +1,8 @@
 """
 db.py
 =========
-Plain sqlite3 storage for scan history. One table: inspections. Each row keeps
+Scan-history storage: SQLite by default, or Postgres when DATABASE_URL is set
+(used for hosted deployments, where container disks are not persistent). One table: inspections. Each row keeps
 the scan's items (JSON) plus a metadata blob (model version, warnings, source
 = "model" or "mock"). Uploaded images are NOT stored.
 """
@@ -14,13 +15,42 @@ import uuid
 import config
 
 
+PG = bool(config.DATABASE_URL)
+
+
+class _PgConn:
+    """Minimal sqlite3-like wrapper over psycopg so the queries below work on both backends."""
+
+    def __init__(self):
+        import psycopg
+        from psycopg.rows import dict_row
+        self.c = psycopg.connect(config.DATABASE_URL, row_factory=dict_row, connect_timeout=15)
+
+    def execute(self, q, params=()):
+        return self.c.execute(q.replace("?", "%s"), params)
+
+    def commit(self):
+        self.c.commit()
+
+    def close(self):
+        self.c.close()
+
+
 def get_conn():
+    if PG:
+        return _PgConn()
     conn = sqlite3.connect(config.DB_PATH)
     conn.row_factory = sqlite3.Row
     return conn
 
 
 def init_db():
+    if PG:
+        conn = get_conn()
+        conn.execute("""CREATE TABLE IF NOT EXISTS inspections (
+            id BIGSERIAL PRIMARY KEY, ts BIGINT NOT NULL, items TEXT NOT NULL, scan_id TEXT, meta TEXT)""")
+        conn.commit(); conn.close()
+        return
     config.DB_PATH.parent.mkdir(parents=True, exist_ok=True)
     conn = get_conn()
     conn.execute("""
@@ -49,12 +79,12 @@ def insert_inspection(items: list[dict], meta: dict | None = None) -> dict:
     ts = int(time.time() * 1000)
     scan_id = uuid.uuid4().hex[:12]
     # XAI overlays are large data URIs: not persisted in history.
-    stored = [{k: v for k, v in it.items() if k != "xai_overlay"} for it in items]
+    stored = [{k: v for k, v in it.items() if k not in ("xai_overlay", "decay_mask_overlay")} for it in items]
     conn = get_conn()
-    cur = conn.execute("INSERT INTO inspections (ts, items, scan_id, meta) VALUES (?, ?, ?, ?)",
+    cur = conn.execute("INSERT INTO inspections (ts, items, scan_id, meta) VALUES (?, ?, ?, ?)" + (" RETURNING id" if PG else ""),
                        (ts, json.dumps(stored), scan_id, json.dumps(meta or {})))
+    new_id = cur.fetchone()["id"] if PG else cur.lastrowid
     conn.commit()
-    new_id = cur.lastrowid
     conn.close()
     return {"id": new_id, "scan_id": scan_id, "ts": ts, "items": items, **(meta or {})}
 

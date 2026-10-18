@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-16T00:06:45",
+  "run_at": "2026-10-17T13:09:41",
   "api": "http://localhost:8000",
   "ui": "http://localhost:5173",
   "model_version": "vit_b16_primary@epoch9",
@@ -21,7 +21,7 @@
       "detail": ""
     },
     {
-      "check": "/api/models reports ViT loaded and U-Net unavailable",
+      "check": "/api/models reports ViT loaded and U-Net status explicit",
       "pass": true,
       "detail": ""
     },

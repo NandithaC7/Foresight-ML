@@ -1,0 +1,1622 @@
+[
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_001.jpg",
+   "annotation_id": "unet_001",
+   "produce": "Banana",
+   "dataset_label": "Not_spoiled",
+   "split": "test"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_002.jpg",
+   "annotation_id": "unet_002",
+   "produce": "Banana",
+   "dataset_label": "Not_spoiled",
+   "split": "test"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_003.jpg",
+   "annotation_id": "unet_003",
+   "produce": "Banana",
+   "dataset_label": "Not_spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_004.jpg",
+   "annotation_id": "unet_004",
+   "produce": "Banana",
+   "dataset_label": "Not_spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_005.jpg",
+   "annotation_id": "unet_005",
+   "produce": "Banana",
+   "dataset_label": "Not_spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_006.jpg",
+   "annotation_id": "unet_006",
+   "produce": "Banana",
+   "dataset_label": "Not_spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_007.jpg",
+   "annotation_id": "unet_007",
+   "produce": "Banana",
+   "dataset_label": "Not_spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_008.jpg",
+   "annotation_id": "unet_008",
+   "produce": "Banana",
+   "dataset_label": "Not_spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_009.jpg",
+   "annotation_id": "unet_009",
+   "produce": "Banana",
+   "dataset_label": "Not_spoiled",
+   "split": "val"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_010.jpg",
+   "annotation_id": "unet_010",
+   "produce": "Banana",
+   "dataset_label": "Not_spoiled",
+   "split": "val"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_011.jpg",
+   "annotation_id": "unet_011",
+   "produce": "Banana",
+   "dataset_label": "Spoiled",
+   "split": "test"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_012.jpg",
+   "annotation_id": "unet_012",
+   "produce": "Banana",
+   "dataset_label": "Spoiled",
+   "split": "test"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_013.jpg",
+   "annotation_id": "unet_013",
+   "produce": "Banana",
+   "dataset_label": "Spoiled",
+   "split": "test"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_014.jpg",
+   "annotation_id": "unet_014",
+   "produce": "Banana",
+   "dataset_label": "Spoiled",
+   "split": "test"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_015.jpg",
+   "annotation_id": "unet_015",
+   "produce": "Banana",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_016.jpg",
+   "annotation_id": "unet_016",
+   "produce": "Banana",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_017.jpg",
+   "annotation_id": "unet_017",
+   "produce": "Banana",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_018.jpg",
+   "annotation_id": "unet_018",
+   "produce": "Banana",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_019.jpg",
+   "annotation_id": "unet_019",
+   "produce": "Banana",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_020.jpg",
+   "annotation_id": "unet_020",
+   "produce": "Banana",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_021.jpg",
+   "annotation_id": "unet_021",
+   "produce": "Banana",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_022.jpg",
+   "annotation_id": "unet_022",
+   "produce": "Banana",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_023.jpg",
+   "annotation_id": "unet_023",
+   "produce": "Banana",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_024.jpg",
+   "annotation_id": "unet_024",
+   "produce": "Banana",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_025.jpg",
+   "annotation_id": "unet_025",
+   "produce": "Banana",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_026.jpg",
+   "annotation_id": "unet_026",
+   "produce": "Banana",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_027.jpg",
+   "annotation_id": "unet_027",
+   "produce": "Banana",
+   "dataset_label": "Spoiled",
+   "split": "val"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_028.jpg",
+   "annotation_id": "unet_028",
+   "produce": "Banana",
+   "dataset_label": "Spoiled",
+   "split": "val"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_029.jpg",
+   "annotation_id": "unet_029",
+   "produce": "Banana",
+   "dataset_label": "Spoiled",
+   "split": "val"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_030.jpg",
+   "annotation_id": "unet_030",
+   "produce": "Banana",
+   "dataset_label": "Spoiled",
+   "split": "val"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_031.jpg",
+   "annotation_id": "unet_031",
+   "produce": "Carrot",
+   "dataset_label": "Not_spoiled",
+   "split": "test"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_032.jpg",
+   "annotation_id": "unet_032",
+   "produce": "Carrot",
+   "dataset_label": "Not_spoiled",
+   "split": "test"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_033.jpg",
+   "annotation_id": "unet_033",
+   "produce": "Carrot",
+   "dataset_label": "Not_spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_034.jpg",
+   "annotation_id": "unet_034",
+   "produce": "Carrot",
+   "dataset_label": "Not_spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_035.jpg",
+   "annotation_id": "unet_035",
+   "produce": "Carrot",
+   "dataset_label": "Not_spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_036.jpg",
+   "annotation_id": "unet_036",
+   "produce": "Carrot",
+   "dataset_label": "Not_spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_037.jpg",
+   "annotation_id": "unet_037",
+   "produce": "Carrot",
+   "dataset_label": "Not_spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_038.jpg",
+   "annotation_id": "unet_038",
+   "produce": "Carrot",
+   "dataset_label": "Not_spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_039.jpg",
+   "annotation_id": "unet_039",
+   "produce": "Carrot",
+   "dataset_label": "Not_spoiled",
+   "split": "val"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_040.jpg",
+   "annotation_id": "unet_040",
+   "produce": "Carrot",
+   "dataset_label": "Not_spoiled",
+   "split": "val"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_041.jpg",
+   "annotation_id": "unet_041",
+   "produce": "Carrot",
+   "dataset_label": "Spoiled",
+   "split": "test"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_042.jpg",
+   "annotation_id": "unet_042",
+   "produce": "Carrot",
+   "dataset_label": "Spoiled",
+   "split": "test"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_043.jpg",
+   "annotation_id": "unet_043",
+   "produce": "Carrot",
+   "dataset_label": "Spoiled",
+   "split": "test"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_044.jpg",
+   "annotation_id": "unet_044",
+   "produce": "Carrot",
+   "dataset_label": "Spoiled",
+   "split": "test"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_045.jpg",
+   "annotation_id": "unet_045",
+   "produce": "Carrot",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_046.jpg",
+   "annotation_id": "unet_046",
+   "produce": "Carrot",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_047.jpg",
+   "annotation_id": "unet_047",
+   "produce": "Carrot",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_048.jpg",
+   "annotation_id": "unet_048",
+   "produce": "Carrot",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_049.jpg",
+   "annotation_id": "unet_049",
+   "produce": "Carrot",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_050.jpg",
+   "annotation_id": "unet_050",
+   "produce": "Carrot",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_051.jpg",
+   "annotation_id": "unet_051",
+   "produce": "Carrot",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_052.jpg",
+   "annotation_id": "unet_052",
+   "produce": "Carrot",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_053.jpg",
+   "annotation_id": "unet_053",
+   "produce": "Carrot",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_054.jpg",
+   "annotation_id": "unet_054",
+   "produce": "Carrot",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_055.jpg",
+   "annotation_id": "unet_055",
+   "produce": "Carrot",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_056.jpg",
+   "annotation_id": "unet_056",
+   "produce": "Carrot",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_057.jpg",
+   "annotation_id": "unet_057",
+   "produce": "Carrot",
+   "dataset_label": "Spoiled",
+   "split": "val"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_058.jpg",
+   "annotation_id": "unet_058",
+   "produce": "Carrot",
+   "dataset_label": "Spoiled",
+   "split": "val"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_059.jpg",
+   "annotation_id": "unet_059",
+   "produce": "Carrot",
+   "dataset_label": "Spoiled",
+   "split": "val"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_060.jpg",
+   "annotation_id": "unet_060",
+   "produce": "Carrot",
+   "dataset_label": "Spoiled",
+   "split": "val"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_061.jpg",
+   "annotation_id": "unet_061",
+   "produce": "Guava",
+   "dataset_label": "Not_spoiled",
+   "split": "test"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_062.jpg",
+   "annotation_id": "unet_062",
+   "produce": "Guava",
+   "dataset_label": "Not_spoiled",
+   "split": "test"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_063.jpg",
+   "annotation_id": "unet_063",
+   "produce": "Guava",
+   "dataset_label": "Not_spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_064.jpg",
+   "annotation_id": "unet_064",
+   "produce": "Guava",
+   "dataset_label": "Not_spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_065.jpg",
+   "annotation_id": "unet_065",
+   "produce": "Guava",
+   "dataset_label": "Not_spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_066.jpg",
+   "annotation_id": "unet_066",
+   "produce": "Guava",
+   "dataset_label": "Not_spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_067.jpg",
+   "annotation_id": "unet_067",
+   "produce": "Guava",
+   "dataset_label": "Not_spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_068.jpg",
+   "annotation_id": "unet_068",
+   "produce": "Guava",
+   "dataset_label": "Not_spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_069.jpg",
+   "annotation_id": "unet_069",
+   "produce": "Guava",
+   "dataset_label": "Not_spoiled",
+   "split": "val"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_070.jpg",
+   "annotation_id": "unet_070",
+   "produce": "Guava",
+   "dataset_label": "Not_spoiled",
+   "split": "val"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_071.jpg",
+   "annotation_id": "unet_071",
+   "produce": "Guava",
+   "dataset_label": "Spoiled",
+   "split": "test"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_072.jpg",
+   "annotation_id": "unet_072",
+   "produce": "Guava",
+   "dataset_label": "Spoiled",
+   "split": "test"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_073.jpg",
+   "annotation_id": "unet_073",
+   "produce": "Guava",
+   "dataset_label": "Spoiled",
+   "split": "test"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_074.jpg",
+   "annotation_id": "unet_074",
+   "produce": "Guava",
+   "dataset_label": "Spoiled",
+   "split": "test"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_075.jpg",
+   "annotation_id": "unet_075",
+   "produce": "Guava",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_076.jpg",
+   "annotation_id": "unet_076",
+   "produce": "Guava",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_077.jpg",
+   "annotation_id": "unet_077",
+   "produce": "Guava",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_078.jpg",
+   "annotation_id": "unet_078",
+   "produce": "Guava",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_079.jpg",
+   "annotation_id": "unet_079",
+   "produce": "Guava",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_080.jpg",
+   "annotation_id": "unet_080",
+   "produce": "Guava",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_081.jpg",
+   "annotation_id": "unet_081",
+   "produce": "Guava",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_082.jpg",
+   "annotation_id": "unet_082",
+   "produce": "Guava",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_083.jpg",
+   "annotation_id": "unet_083",
+   "produce": "Guava",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_084.jpg",
+   "annotation_id": "unet_084",
+   "produce": "Guava",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_085.jpg",
+   "annotation_id": "unet_085",
+   "produce": "Guava",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_086.jpg",
+   "annotation_id": "unet_086",
+   "produce": "Guava",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_087.jpg",
+   "annotation_id": "unet_087",
+   "produce": "Guava",
+   "dataset_label": "Spoiled",
+   "split": "val"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_088.jpg",
+   "annotation_id": "unet_088",
+   "produce": "Guava",
+   "dataset_label": "Spoiled",
+   "split": "val"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_089.jpg",
+   "annotation_id": "unet_089",
+   "produce": "Guava",
+   "dataset_label": "Spoiled",
+   "split": "val"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_090.jpg",
+   "annotation_id": "unet_090",
+   "produce": "Guava",
+   "dataset_label": "Spoiled",
+   "split": "val"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_091.jpg",
+   "annotation_id": "unet_091",
+   "produce": "Indian_Gooseberry",
+   "dataset_label": "Not_spoiled",
+   "split": "test"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_092.jpg",
+   "annotation_id": "unet_092",
+   "produce": "Indian_Gooseberry",
+   "dataset_label": "Not_spoiled",
+   "split": "test"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_093.jpg",
+   "annotation_id": "unet_093",
+   "produce": "Indian_Gooseberry",
+   "dataset_label": "Not_spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_094.jpg",
+   "annotation_id": "unet_094",
+   "produce": "Indian_Gooseberry",
+   "dataset_label": "Not_spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_095.jpg",
+   "annotation_id": "unet_095",
+   "produce": "Indian_Gooseberry",
+   "dataset_label": "Not_spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_096.jpg",
+   "annotation_id": "unet_096",
+   "produce": "Indian_Gooseberry",
+   "dataset_label": "Not_spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_097.jpg",
+   "annotation_id": "unet_097",
+   "produce": "Indian_Gooseberry",
+   "dataset_label": "Not_spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_098.jpg",
+   "annotation_id": "unet_098",
+   "produce": "Indian_Gooseberry",
+   "dataset_label": "Not_spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_099.jpg",
+   "annotation_id": "unet_099",
+   "produce": "Indian_Gooseberry",
+   "dataset_label": "Not_spoiled",
+   "split": "val"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_100.jpg",
+   "annotation_id": "unet_100",
+   "produce": "Indian_Gooseberry",
+   "dataset_label": "Not_spoiled",
+   "split": "val"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_101.jpg",
+   "annotation_id": "unet_101",
+   "produce": "Indian_Gooseberry",
+   "dataset_label": "Spoiled",
+   "split": "test"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_102.jpg",
+   "annotation_id": "unet_102",
+   "produce": "Indian_Gooseberry",
+   "dataset_label": "Spoiled",
+   "split": "test"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_103.jpg",
+   "annotation_id": "unet_103",
+   "produce": "Indian_Gooseberry",
+   "dataset_label": "Spoiled",
+   "split": "test"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_104.jpg",
+   "annotation_id": "unet_104",
+   "produce": "Indian_Gooseberry",
+   "dataset_label": "Spoiled",
+   "split": "test"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_105.jpg",
+   "annotation_id": "unet_105",
+   "produce": "Indian_Gooseberry",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_106.jpg",
+   "annotation_id": "unet_106",
+   "produce": "Indian_Gooseberry",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_107.jpg",
+   "annotation_id": "unet_107",
+   "produce": "Indian_Gooseberry",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_108.jpg",
+   "annotation_id": "unet_108",
+   "produce": "Indian_Gooseberry",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_109.jpg",
+   "annotation_id": "unet_109",
+   "produce": "Indian_Gooseberry",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_110.jpg",
+   "annotation_id": "unet_110",
+   "produce": "Indian_Gooseberry",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_111.jpg",
+   "annotation_id": "unet_111",
+   "produce": "Indian_Gooseberry",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_112.jpg",
+   "annotation_id": "unet_112",
+   "produce": "Indian_Gooseberry",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_113.jpg",
+   "annotation_id": "unet_113",
+   "produce": "Indian_Gooseberry",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_114.jpg",
+   "annotation_id": "unet_114",
+   "produce": "Indian_Gooseberry",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_115.jpg",
+   "annotation_id": "unet_115",
+   "produce": "Indian_Gooseberry",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_116.jpg",
+   "annotation_id": "unet_116",
+   "produce": "Indian_Gooseberry",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_117.jpg",
+   "annotation_id": "unet_117",
+   "produce": "Indian_Gooseberry",
+   "dataset_label": "Spoiled",
+   "split": "val"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_118.jpg",
+   "annotation_id": "unet_118",
+   "produce": "Indian_Gooseberry",
+   "dataset_label": "Spoiled",
+   "split": "val"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_119.jpg",
+   "annotation_id": "unet_119",
+   "produce": "Indian_Gooseberry",
+   "dataset_label": "Spoiled",
+   "split": "val"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_120.jpg",
+   "annotation_id": "unet_120",
+   "produce": "Indian_Gooseberry",
+   "dataset_label": "Spoiled",
+   "split": "val"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_121.jpg",
+   "annotation_id": "unet_121",
+   "produce": "Mango",
+   "dataset_label": "Not_spoiled",
+   "split": "test"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_122.jpg",
+   "annotation_id": "unet_122",
+   "produce": "Mango",
+   "dataset_label": "Not_spoiled",
+   "split": "test"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_123.jpg",
+   "annotation_id": "unet_123",
+   "produce": "Mango",
+   "dataset_label": "Not_spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_124.jpg",
+   "annotation_id": "unet_124",
+   "produce": "Mango",
+   "dataset_label": "Not_spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_125.jpg",
+   "annotation_id": "unet_125",
+   "produce": "Mango",
+   "dataset_label": "Not_spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_126.jpg",
+   "annotation_id": "unet_126",
+   "produce": "Mango",
+   "dataset_label": "Not_spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_127.jpg",
+   "annotation_id": "unet_127",
+   "produce": "Mango",
+   "dataset_label": "Not_spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_128.jpg",
+   "annotation_id": "unet_128",
+   "produce": "Mango",
+   "dataset_label": "Not_spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_129.jpg",
+   "annotation_id": "unet_129",
+   "produce": "Mango",
+   "dataset_label": "Not_spoiled",
+   "split": "val"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_130.jpg",
+   "annotation_id": "unet_130",
+   "produce": "Mango",
+   "dataset_label": "Not_spoiled",
+   "split": "val"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_131.jpg",
+   "annotation_id": "unet_131",
+   "produce": "Mango",
+   "dataset_label": "Spoiled",
+   "split": "test"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_132.jpg",
+   "annotation_id": "unet_132",
+   "produce": "Mango",
+   "dataset_label": "Spoiled",
+   "split": "test"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_133.jpg",
+   "annotation_id": "unet_133",
+   "produce": "Mango",
+   "dataset_label": "Spoiled",
+   "split": "test"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_134.jpg",
+   "annotation_id": "unet_134",
+   "produce": "Mango",
+   "dataset_label": "Spoiled",
+   "split": "test"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_135.jpg",
+   "annotation_id": "unet_135",
+   "produce": "Mango",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_136.jpg",
+   "annotation_id": "unet_136",
+   "produce": "Mango",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_137.jpg",
+   "annotation_id": "unet_137",
+   "produce": "Mango",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_138.jpg",
+   "annotation_id": "unet_138",
+   "produce": "Mango",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_139.jpg",
+   "annotation_id": "unet_139",
+   "produce": "Mango",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_140.jpg",
+   "annotation_id": "unet_140",
+   "produce": "Mango",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_141.jpg",
+   "annotation_id": "unet_141",
+   "produce": "Mango",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_142.jpg",
+   "annotation_id": "unet_142",
+   "produce": "Mango",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_143.jpg",
+   "annotation_id": "unet_143",
+   "produce": "Mango",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_144.jpg",
+   "annotation_id": "unet_144",
+   "produce": "Mango",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_145.jpg",
+   "annotation_id": "unet_145",
+   "produce": "Mango",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_146.jpg",
+   "annotation_id": "unet_146",
+   "produce": "Mango",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_147.jpg",
+   "annotation_id": "unet_147",
+   "produce": "Mango",
+   "dataset_label": "Spoiled",
+   "split": "val"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_148.jpg",
+   "annotation_id": "unet_148",
+   "produce": "Mango",
+   "dataset_label": "Spoiled",
+   "split": "val"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_149.jpg",
+   "annotation_id": "unet_149",
+   "produce": "Mango",
+   "dataset_label": "Spoiled",
+   "split": "val"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_150.jpg",
+   "annotation_id": "unet_150",
+   "produce": "Mango",
+   "dataset_label": "Spoiled",
+   "split": "val"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_151.jpg",
+   "annotation_id": "unet_151",
+   "produce": "Tomato",
+   "dataset_label": "Not_spoiled",
+   "split": "test"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_152.jpg",
+   "annotation_id": "unet_152",
+   "produce": "Tomato",
+   "dataset_label": "Not_spoiled",
+   "split": "test"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_153.jpg",
+   "annotation_id": "unet_153",
+   "produce": "Tomato",
+   "dataset_label": "Not_spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_154.jpg",
+   "annotation_id": "unet_154",
+   "produce": "Tomato",
+   "dataset_label": "Not_spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_155.jpg",
+   "annotation_id": "unet_155",
+   "produce": "Tomato",
+   "dataset_label": "Not_spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_156.jpg",
+   "annotation_id": "unet_156",
+   "produce": "Tomato",
+   "dataset_label": "Not_spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_157.jpg",
+   "annotation_id": "unet_157",
+   "produce": "Tomato",
+   "dataset_label": "Not_spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_158.jpg",
+   "annotation_id": "unet_158",
+   "produce": "Tomato",
+   "dataset_label": "Not_spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_159.jpg",
+   "annotation_id": "unet_159",
+   "produce": "Tomato",
+   "dataset_label": "Not_spoiled",
+   "split": "val"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_160.jpg",
+   "annotation_id": "unet_160",
+   "produce": "Tomato",
+   "dataset_label": "Not_spoiled",
+   "split": "val"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_161.jpg",
+   "annotation_id": "unet_161",
+   "produce": "Tomato",
+   "dataset_label": "Spoiled",
+   "split": "test"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_162.jpg",
+   "annotation_id": "unet_162",
+   "produce": "Tomato",
+   "dataset_label": "Spoiled",
+   "split": "test"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_163.jpg",
+   "annotation_id": "unet_163",
+   "produce": "Tomato",
+   "dataset_label": "Spoiled",
+   "split": "test"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_164.jpg",
+   "annotation_id": "unet_164",
+   "produce": "Tomato",
+   "dataset_label": "Spoiled",
+   "split": "test"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_165.jpg",
+   "annotation_id": "unet_165",
+   "produce": "Tomato",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_166.jpg",
+   "annotation_id": "unet_166",
+   "produce": "Tomato",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_167.jpg",
+   "annotation_id": "unet_167",
+   "produce": "Tomato",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_168.jpg",
+   "annotation_id": "unet_168",
+   "produce": "Tomato",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_169.jpg",
+   "annotation_id": "unet_169",
+   "produce": "Tomato",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_170.jpg",
+   "annotation_id": "unet_170",
+   "produce": "Tomato",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_171.jpg",
+   "annotation_id": "unet_171",
+   "produce": "Tomato",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_172.jpg",
+   "annotation_id": "unet_172",
+   "produce": "Tomato",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_173.jpg",
+   "annotation_id": "unet_173",
+   "produce": "Tomato",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_174.jpg",
+   "annotation_id": "unet_174",
+   "produce": "Tomato",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_175.jpg",
+   "annotation_id": "unet_175",
+   "produce": "Tomato",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_176.jpg",
+   "annotation_id": "unet_176",
+   "produce": "Tomato",
+   "dataset_label": "Spoiled",
+   "split": "train"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_177.jpg",
+   "annotation_id": "unet_177",
+   "produce": "Tomato",
+   "dataset_label": "Spoiled",
+   "split": "val"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_178.jpg",
+   "annotation_id": "unet_178",
+   "produce": "Tomato",
+   "dataset_label": "Spoiled",
+   "split": "val"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_179.jpg",
+   "annotation_id": "unet_179",
+   "produce": "Tomato",
+   "dataset_label": "Spoiled",
+   "split": "val"
+  }
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=Foresight-TR6-plus/unet-annotation/images/unet_180.jpg",
+   "annotation_id": "unet_180",
+   "produce": "Tomato",
+   "dataset_label": "Spoiled",
+   "split": "val"
+  }
+ }
+]

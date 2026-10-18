@@ -370,7 +370,10 @@ COPY = {"split_distribution.png": A / "report/figures/12_split_distribution.png"
         "xai_class_gallery.png": A / "experiments/xai/class_gallery.png", "xai_failure_cases.png": A / "experiments/xai/failure_cases.png",
         "xai_class_gallery_part1.png": A / "experiments/xai/class_gallery_part1.png", "xai_class_gallery_part2.png": A / "experiments/xai/class_gallery_part2.png",
         "xai_failure_fn.png": A / "experiments/xai/failure_cases_fn.png", "xai_failure_fp.png": A / "experiments/xai/failure_cases_fp.png",
-        "noise_examples.png": A / "experiments/noise_examples.png", "ablation_v1_bars.png": A / "report/figures/09_ablation_comparison.png"}
+        "noise_examples.png": A / "experiments/noise_examples.png",
+        "human_vs_dataset_label.png": A / "experiments/visible_decay/human_vs_dataset_label.png",
+        "shelf_life_proxy.png": A / "experiments/shelf_life_proxy/pred_vs_target.png", "unet_pilot_overlays.png": A / "experiments/unet_pilot/test_examples.png",
+        "unet_auto_masks_preview.png": A / "experiments/unet_pilot/auto_masks_preview.png", "visible_decay_test_confusions.png": A / "experiments/visible_decay/test_confusions.png", "ablation_v1_bars.png": A / "report/figures/09_ablation_comparison.png"}
 for k, src in COPY.items():
     shutil.copy(src, FIG / k)
 

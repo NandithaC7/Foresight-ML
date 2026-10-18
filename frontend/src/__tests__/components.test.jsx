@@ -11,6 +11,7 @@ const realItem = {
   p_spoiled: 0.998, freshness: 0, tier: 'bad', days: null, decayPct: null, decay_mask_available: false,
   action: 'Visible spoilage cues detected — inspect closely and discard if decay is confirmed.',
   xai_overlay: 'data:image/png;base64,iVBORw0KGgo=', xai_method: 'attention_rollout',
+  visible_decay_probability: 0.91, visible_decay_label: 'Visible decay', visible_decay_status: 'model',
 }
 
 describe('ItemCard', () => {
@@ -20,6 +21,7 @@ describe('ItemCard', () => {
     expect(screen.getByText('Spoiled (100%)')).toBeTruthy()
     expect(screen.getByText('Not available')).toBeTruthy()
     expect(screen.getByText('Pending annotation')).toBeTruthy()
+    expect(screen.getByText('Visible decay (91%)')).toBeTruthy()
     expect(screen.getByAltText(/Attention rollout heat-map for Banana/)).toBeTruthy()
     expect(screen.queryByText(/day/)).toBeNull()
   })

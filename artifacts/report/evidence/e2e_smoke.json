@@ -1,9 +1,9 @@
 {
-  "run_at": "2026-10-16T00:06:45",
-  "api": "http://localhost:8000",
+  "run_at": "2026-10-18T13:03:19",
+  "api": "http://localhost:8001",
   "ui": "http://localhost:5173",
-  "model_version": "vit_b16_primary@epoch9",
-  "device": "mps",
+  "model_version": "vit_b16_primary@epoch9 (int8 ONNX)",
+  "device": "cpu (onnxruntime int8)",
   "checks": [
     {
       "check": "frontend serves index.html",
@@ -13,7 +13,7 @@
     {
       "check": "backend health: real model loaded, mock off",
       "pass": true,
-      "detail": "vit_b16_primary@epoch9"
+      "detail": "vit_b16_primary@epoch9 (int8 ONNX)"
     },
     {
       "check": "CORS preflight allows frontend origin",
@@ -21,19 +21,19 @@
       "detail": ""
     },
     {
-      "check": "/api/models reports ViT loaded and U-Net unavailable",
+      "check": "/api/models reports ViT loaded and U-Net status explicit",
       "pass": true,
       "detail": ""
     },
     {
-      "check": "analysed 60/60 held-out source images via HTTP",
+      "check": "analysed 40/40 held-out source images via HTTP",
       "pass": true,
-      "detail": "produce correct 60/60, spoilage correct 57/60 (full-res originals through API)"
+      "detail": "produce correct 40/40, spoilage correct 37/40 (full-res originals through API)"
     },
     {
       "check": "history grew by the number of scans",
       "pass": true,
-      "detail": "0 -> 60"
+      "detail": "41 -> 81"
     },
     {
       "check": "history detail endpoint returns the scan",
@@ -63,7 +63,7 @@
   ],
   "passed": 11,
   "total": 11,
-  "held_out_images_via_api": 60,
-  "produce_correct": 60,
-  "spoilage_correct": 57
+  "held_out_images_via_api": 40,
+  "produce_correct": 40,
+  "spoilage_correct": 37
 }

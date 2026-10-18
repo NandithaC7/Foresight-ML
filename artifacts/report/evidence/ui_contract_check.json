@@ -93,15 +93,15 @@
       "endpoint": "/api/analyze items[] (item/i/it)",
       "field": "days",
       "present": true,
-      "type": "NoneType",
-      "null_by_design": "shelf-life unavailable \u2192 UI shows 'Not available'"
+      "type": "int",
+      "null_by_design": ""
     },
     {
       "endpoint": "/api/analyze items[] (item/i/it)",
       "field": "decayPct",
       "present": true,
-      "type": "NoneType",
-      "null_by_design": "segmentation unavailable \u2192 UI shows 'Pending annotation'"
+      "type": "float",
+      "null_by_design": ""
     },
     {
       "endpoint": "/api/analyze items[] (item/i/it)",

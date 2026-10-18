@@ -21,9 +21,21 @@ export default function ItemCard({ item, onNutritionClick }) {
         <div className="item-meta"><span>Spoilage prediction</span><b>{item.spoilage_label} ({pct(item.spoilage_confidence)})</b></div>
       )}
       <div className="item-meta"><span>Not-spoiled score (ring)</span><b>{item.freshness}%</b></div>
-      <div className="item-meta"><span>Decay coverage</span><b>{item.decayPct != null ? `${item.decayPct}%` : 'Pending annotation'}</b></div>
-      <div className="item-meta"><span>Shelf-life left</span><b>{item.days != null ? `${item.days} day${item.days === 1 ? '' : 's'}` : 'Not available'}</b></div>
+      {item.visible_decay_probability != null && (
+        <div className="item-meta"><span>Visible decay check</span><b>{item.visible_decay_label} ({pct(item.visible_decay_probability)})</b></div>
+      )}
+      <div className="item-meta"><span>Decay coverage{item.segmentation_status === 'pilot_model' ? ' (pilot U-Net)' : ''}</span><b>{item.decayPct != null ? `${item.decayPct}%` : (item.decay_mask_available ? '–' : 'Pending annotation')}</b></div>
+      <div className="item-meta"><span>Shelf-life left{item.shelf_life_status === 'proxy_target' ? ' (proxy estimate)' : ''}</span><b>{item.days != null ? `${item.days} day${item.days === 1 ? '' : 's'}` : 'Not available'}</b></div>
       <div className={`action-line ${item.tier}`}>{item.action}</div>
+      {item.decay_mask_overlay && (
+        <figure style={{ margin: '12px 0 0' }}>
+          <img src={item.decay_mask_overlay} alt={`Decay segmentation mask for ${item.name}`}
+            style={{ width: '100%', borderRadius: 8, display: 'block' }} />
+          <figcaption style={{ fontSize: '0.75rem', color: 'var(--ink-soft)', marginTop: 4 }}>
+            Pilot U-Net segmentation: green = fruit, orange = predicted decay. Trained on machine-generated masks (gated by human decay labels) — indicative only.
+          </figcaption>
+        </figure>
+      )}
       {item.xai_overlay && (
         <figure style={{ margin: '12px 0 0' }}>
           <img src={item.xai_overlay} alt={`Attention rollout heat-map for ${item.name}`}

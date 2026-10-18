@@ -1,0 +1,17 @@
+<View>
+  <Header value="Foresight U-Net annotation: draw the WHOLE fruit, then every visibly decayed area."/>
+  <Header value="Decay = rot, mould, lesion, collapsed/sunken or necrotic tissue, dark bruise with a clear edge. NOT ripening colour, normal spots, stem scar, shadows, reflections."/>
+  <Image name="image" value="$image" zoom="true"/>
+  <PolygonLabels name="regions" toName="image" strokeWidth="2" pointSize="small" opacity="0.3">
+    <Label value="fruit" background="#2F6B4F"/>
+    <Label value="decay" background="#C1622E"/>
+  </PolygonLabels>
+  <Header value="Image decision (required)"/>
+  <Choices name="decision" toName="image" choice="single" required="true">
+    <Choice value="annotated_has_decay"/>
+    <Choice value="annotated_no_visible_decay"/>
+    <Choice value="ambiguous"/>
+    <Choice value="exclude"/>
+  </Choices>
+  <TextArea name="notes" toName="image" placeholder="Required if ambiguous or exclude" rows="2"/>
+</View>

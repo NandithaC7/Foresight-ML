@@ -41,7 +41,7 @@ def tiny_ckpt(tmp_path_factory):
     return p
 
 
-def make_client(monkeypatch, tmp_path, ckpt_path, mock=False, max_mb=None):
+def make_client(monkeypatch, tmp_path, ckpt_path, mock=False, max_mb=None, probe=None, unet=None, shelf=None, fresh=True):
     from fastapi.testclient import TestClient
 
     import main
@@ -50,9 +50,16 @@ def make_client(monkeypatch, tmp_path, ckpt_path, mock=False, max_mb=None):
     monkeypatch.setattr(config, "MOCK_MODE", mock)
     monkeypatch.setattr(config, "DEVICE", "cpu")
     monkeypatch.setattr(config, "MODEL_METRICS_PATH", tmp_path / "none.json")
+    monkeypatch.setattr(config, "SHELF_LIFE_PROXY_PATH", shelf if shelf is not None else tmp_path / "no_shelf.json")
+    monkeypatch.setattr(config, "UNET_PATH", unet if unet is not None else tmp_path / "no_unet.pt")
+    monkeypatch.setattr(config, "VISIBLE_DECAY_PROBE_PATH", probe if probe is not None else tmp_path / "no_probe.json")
     if max_mb is not None:
         monkeypatch.setattr(config, "MAX_UPLOAD_MB", max_mb)
     monkeypatch.setattr(inference, "service", inference.ModelService(Path(ckpt_path)))
+    import db
+    if db.PG and fresh:  # shared Postgres database (DATABASE_URL): start each test from an empty table
+        db.init_db()
+        db.clear_inspections()
     return TestClient(main.app)
 
 

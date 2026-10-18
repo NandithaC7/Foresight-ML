@@ -34,8 +34,28 @@ from schemas import AnalyzeResponse, Health
 ALLOWED_CONTENT_TYPES = {"image/jpeg", "image/jpg", "image/png", "image/webp", "application/octet-stream"}
 
 
+MODEL_FILES = (["foresight_vit_int8.onnx", "foresight_vit_meta.json", "unet_pilot.onnx", "unet_pilot_meta.json"] if config.RUNTIME == "onnx"
+               else ["foresight_vit.pt", "unet_pilot.pt"]) + ["foresight_vit_test_metrics.json", "visible_decay_probe.json", "shelf_life_proxy.json"]
+
+
+def fetch_models():
+    """Download any missing model files from the Hugging Face repo in FORESIGHT_MODEL_REPO."""
+    if not config.MODEL_REPO:
+        return
+    from huggingface_hub import hf_hub_download
+    dest = config.MODEL_PATH.parent
+    dest.mkdir(parents=True, exist_ok=True)
+    for name in MODEL_FILES:
+        if not (dest / name).exists():
+            try:
+                hf_hub_download(config.MODEL_REPO, name, local_dir=dest)
+            except Exception as e:  # pragma: no cover - surfaced via /health and /api/models
+                print(f"[startup] could not download {name}: {type(e).__name__}: {e}", flush=True)
+
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    fetch_models()
     db.init_db()
     inference.service.load()  # load weights once at startup
     yield
@@ -46,6 +66,7 @@ app = FastAPI(title="Foresight API", version="1.0.0", lifespan=lifespan)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=config.CORS_ORIGINS,
+    allow_origin_regex=config.CORS_ORIGIN_REGEX,
     allow_credentials=False,
     allow_methods=["GET", "POST", "DELETE"],
     allow_headers=["*"],
@@ -100,10 +121,20 @@ def models():
              "status": "loaded" if s.ready else "unavailable", "error": s.error, **s.info,
              "test_metrics": metrics,
              "confidence_note": "Softmax scores; calibration has not been evaluated."},
-            {"id": "unet", "role": "visible-decay segmentation", "status": "unavailable",
-             "reason": "No human-reviewed decay masks exist yet (12 proposal-only masks). Segmentation is pending annotation."},
-            {"id": "shelf_life", "role": "shelf-life regression", "status": "disabled",
-             "reason": "TR-6 has no measured time-to-endpoint labels."},
+            {"id": "visible_decay", "role": "image-level visible-decay check (logistic probe on the ViT embedding, trained on human labels)",
+             "status": "loaded" if getattr(s, "probe", None) else "unavailable", "error": getattr(s, "probe_error", None),
+             **(getattr(s, "probe_info", None) or {}),
+             "note": "Trained on 102 human image-level judgements; test n=29, so uncertainty is large."},
+            ({"id": "unet", "role": "fruit + visible-decay segmentation (PILOT)", "status": "loaded", **s.unet_info,
+              "reason": "PILOT trained on " + s.unet_info.get("mask_source", "") + " masks; demonstrates the pipeline, not a validated decay segmenter."}
+             if getattr(s, "unet", None) else
+             {"id": "unet", "role": "visible-decay segmentation", "status": "unavailable",
+              "reason": "No trained U-Net yet: needs human-drawn decay polygons (" + str(getattr(s, "unet_error", "")) + ")"}),
+            ({"id": "shelf_life", "role": "PROXY shelf-life regression (days until the TR-6 'Spoiled' label)", "status": "loaded", **s.shelf_info,
+              "reason": "Proxy target derived from date-ordered dataset labels; not measured remaining shelf life."}
+             if getattr(s, "shelf", None) else
+             {"id": "shelf_life", "role": "shelf-life regression", "status": "disabled",
+              "reason": "TR-6 has no measured time-to-endpoint labels (" + str(getattr(s, "shelf_error", "")) + ")"}),
             {"id": "yolo", "role": "multi-item detection", "status": "not_implemented",
              "reason": "TR-6 is single-item images with no bounding boxes; the app runs in single-item mode."},
             {"id": "dncnn", "role": "denoising (research experiment only)", "status": "not_in_inference_path"},
@@ -162,7 +193,9 @@ async def analyze(photo: UploadFile = File(...), xai: bool = Query(False, descri
     warnings += [
         "Single-item mode: the whole photo is treated as one item (no object detection).",
         "Trained on TR-6 lab photos (one fruit, plain background); other scenes may be unreliable.",
-        "Shelf-life and decay-area estimates are unavailable (no validated labels or masks yet).",
+        ("Shelf-life is a PROXY estimate (days until the dataset's 'Spoiled' label, test MAE about 4 days) — not a measured shelf life. "
+         if getattr(svc, "shelf", None) else "Shelf-life is unavailable (no validated labels). ") + ("Decay coverage comes from a PILOT U-Net trained on machine-generated masks — indicative only."
+            if getattr(svc, "unet", None) else "Decay-area segmentation is pending human mask annotation."),
     ]
     meta = {"status": "ok", "source": "model", "mock": False, "model_version": svc.info["version"],
             "mode": "single_item", "disclaimer": inference.DISCLAIMER,

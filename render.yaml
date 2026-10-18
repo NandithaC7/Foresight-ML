@@ -1,0 +1,27 @@
+# Render blueprint for the Foresight backend (free plan, 512 MB RAM).
+# Uses the slim ONNX runtime; models are downloaded at startup from the Hugging Face repo.
+# DATABASE_URL (hosted Postgres, e.g. Neon) is optional; set it in the Render dashboard (sync: false).
+services:
+  - type: web
+    name: foresight-api
+    runtime: python
+    plan: free
+    rootDir: backend
+    buildCommand: pip install -r requirements-render.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: FORESIGHT_RUNTIME
+        value: onnx
+      - key: FORESIGHT_MODEL_REPO
+        value: nandithcc/foresight-models
+      - key: FORESIGHT_CORS_ORIGINS
+        value: http://localhost:5173
+      - key: FORESIGHT_CORS_ORIGIN_REGEX
+        value: https://.*\.vercel\.app
+      - key: FORESIGHT_INFERENCE_TIMEOUT_S
+        value: "60"
+      - key: DATABASE_URL
+        sync: false

@@ -1,0 +1,206 @@
+{
+  "labels_file": "Foresight-TR6-plus/unet-annotation/human_visible_decay_labels.csv",
+  "n_definite": 165,
+  "n_by_split": {
+    "train": {
+      "n": 102,
+      "visible_decay": 48
+    },
+    "val": {
+      "n": 34,
+      "visible_decay": 15
+    },
+    "test": {
+      "n": 29,
+      "visible_decay": 15
+    }
+  },
+  "features": "CLS embedding of deployed vit_base_patch16_224.augreg2_in21k_ft_in1k (vit_b16_primary@epoch9), frozen",
+  "classifier": "StandardScaler + LogisticRegression(class_weight=balanced)",
+  "C_grid_val": [
+    {
+      "C": 0.001,
+      "val_macro_f1": 0.970357454228422
+    },
+    {
+      "C": 0.01,
+      "val_macro_f1": 0.970357454228422
+    },
+    {
+      "C": 0.1,
+      "val_macro_f1": 1.0
+    },
+    {
+      "C": 1.0,
+      "val_macro_f1": 1.0
+    },
+    {
+      "C": 10.0,
+      "val_macro_f1": 1.0
+    }
+  ],
+  "C_selected": 0.1,
+  "probe_val": {
+    "n": 34,
+    "accuracy": 1.0,
+    "macro_f1": 1.0,
+    "weighted_f1": 1.0,
+    "per_class": {
+      "no_visible_decay": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 19
+      },
+      "visible_decay": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 15
+      }
+    },
+    "confusion_matrix": [
+      [
+        19,
+        0
+      ],
+      [
+        0,
+        15
+      ]
+    ],
+    "class_names": [
+      "no_visible_decay",
+      "visible_decay"
+    ],
+    "roc_auc": 1.0,
+    "accuracy_95ci_wilson": [
+      0.8984820937803899,
+      1.0
+    ]
+  },
+  "spoilage_head_as_decay_val": {
+    "n": 34,
+    "accuracy": 0.7941176470588235,
+    "macro_f1": 0.793939393939394,
+    "weighted_f1": 0.7932263814616756,
+    "per_class": {
+      "no_visible_decay": {
+        "precision": 0.9285714285714286,
+        "recall": 0.6842105263157895,
+        "f1": 0.7878787878787878,
+        "support": 19
+      },
+      "visible_decay": {
+        "precision": 0.7,
+        "recall": 0.9333333333333333,
+        "f1": 0.8,
+        "support": 15
+      }
+    },
+    "confusion_matrix": [
+      [
+        13,
+        6
+      ],
+      [
+        1,
+        14
+      ]
+    ],
+    "class_names": [
+      "no_visible_decay",
+      "visible_decay"
+    ],
+    "roc_auc": 0.9052631578947368,
+    "accuracy_95ci_wilson": [
+      0.6320128389178601,
+      0.8965060397764868
+    ]
+  },
+  "probe_test": {
+    "n": 29,
+    "accuracy": 0.9310344827586207,
+    "macro_f1": 0.930952380952381,
+    "weighted_f1": 0.9310344827586207,
+    "per_class": {
+      "no_visible_decay": {
+        "precision": 0.9285714285714286,
+        "recall": 0.9285714285714286,
+        "f1": 0.9285714285714286,
+        "support": 14
+      },
+      "visible_decay": {
+        "precision": 0.9333333333333333,
+        "recall": 0.9333333333333333,
+        "f1": 0.9333333333333333,
+        "support": 15
+      }
+    },
+    "confusion_matrix": [
+      [
+        13,
+        1
+      ],
+      [
+        1,
+        14
+      ]
+    ],
+    "class_names": [
+      "no_visible_decay",
+      "visible_decay"
+    ],
+    "roc_auc": 0.9857142857142858,
+    "accuracy_95ci_wilson": [
+      0.7803505240414808,
+      0.9808791359020055
+    ]
+  },
+  "spoilage_head_as_decay_test": {
+    "n": 29,
+    "accuracy": 0.896551724137931,
+    "macro_f1": 0.8945454545454545,
+    "weighted_f1": 0.8950470219435737,
+    "per_class": {
+      "no_visible_decay": {
+        "precision": 1.0,
+        "recall": 0.7857142857142857,
+        "f1": 0.88,
+        "support": 14
+      },
+      "visible_decay": {
+        "precision": 0.8333333333333334,
+        "recall": 1.0,
+        "f1": 0.9090909090909091,
+        "support": 15
+      }
+    },
+    "confusion_matrix": [
+      [
+        11,
+        3
+      ],
+      [
+        0,
+        15
+      ]
+    ],
+    "class_names": [
+      "no_visible_decay",
+      "visible_decay"
+    ],
+    "roc_auc": 0.880952380952381,
+    "accuracy_95ci_wilson": [
+      0.7361455275293085,
+      0.9641857596186989
+    ]
+  },
+  "dataset_label_vs_human": {
+    "agreement": 0.7393939393939394,
+    "n": 165,
+    "spoiled_labelled_with_visible_decay": "72/109",
+    "not_spoiled_labelled_with_visible_decay": "6/56"
+  },
+  "note": "Test set is small (n=29); treat the confidence intervals as the primary uncertainty. Labels are a single annotator's image-level judgements; no pixel masks were drawn."
+}

@@ -17,7 +17,7 @@ FIG = FR / "figures"
 SPECS = FR / "build/specs"
 SPECS.mkdir(parents=True, exist_ok=True)
 F = json.loads((FR / "build/facts.json").read_text())
-DATE = "15 October 2026"
+DATE = "17 October 2026"
 PROD = ["Banana", "Carrot", "Guava", "Indian_Gooseberry", "Mango", "Tomato"]
 
 
@@ -106,6 +106,29 @@ pytest_cases = T["pytest_cases"]
 n_pass = sum(1 for _, s in pytest_cases if s == "PASSED")
 VITEST = json.loads((FR / "evidence/vitest.json").read_text()) if (FR / "evidence/vitest.json").exists() else None
 ABL_STATUS = "COMPLETE" if v2_done == 9 else "IN PROGRESS"
+UP = json.loads((ROOT / "artifacts/experiments/unet_pilot/results.json").read_text())
+SL = json.loads((ROOT / "artifacts/experiments/shelf_life_proxy/results.json").read_text())
+VDR = json.loads((ROOT / "artifacts/experiments/visible_decay/results.json").read_text())
+
+
+def extra_models_section(d, title="Additional deployed components (visible decay, pilot U-Net, proxy shelf-life)"):
+    d.h1(title)
+    d.p("Three further components are served by `/api/analyze` alongside the ViT classifier. Each is labelled in the API and UI with what it was trained on.")
+    d.table("Additional components: status, training data and held-out results.", ["Component", "Status", "Training data", "Held-out result", "Caveat"], [
+        ["Visible-decay check (logistic probe on ViT embedding)", "COMPLETE", f"{VDR['n_by_split']['train']['n']} human image-level decisions (train split)",
+         f"test n={VDR['probe_test']['n']}: accuracy {VDR['probe_test']['accuracy']:.3f} (95% CI {VDR['probe_test']['accuracy_95ci_wilson'][0]:.2f}–{VDR['probe_test']['accuracy_95ci_wilson'][1]:.2f}), AUC {VDR['probe_test']['roc_auc']:.3f}",
+         "one annotator; small test set"],
+        ["U-Net segmentation (fruit + decay), ResNet-18 encoder", "IN PROGRESS", f"{UP['n_train']} MACHINE-GENERATED masks (colour/darkness heuristics, decay only on human-judged decay images)",
+         f"n={UP['n_eval']} val+test: fruit Dice {UP['mean']['fruit_dice']:.3f}, decay Dice {UP['mean']['decay_dice']:.3f} vs machine masks",
+         "PILOT — not human ground truth; human polygons still needed"],
+        ["Proxy shelf-life (ridge on ViT embedding)", "COMPLETE", f"{SPL['split_counts']['train']:,} train images; target = days until the series' first TR-6 'Spoiled' capture",
+         f"test n={SL['test']['n']}: MAE {SL['test']['mae_days']:.2f} d, RMSE {SL['test']['rmse_days']:.2f} d, R² {SL['test']['r2']:.3f} (baseline MAE {SL['baseline_test_mae_days_per_produce_mean']:.2f} d)",
+         "PROXY from date-based labels; not measured shelf life"]], widths=[20, 11, 25, 27, 17], small=True)
+    d.fig("shelf_life_proxy.png", "Proxy shelf-life: predicted vs target days on the test split, and residuals.")
+    d.fig("unet_auto_masks_preview.png", "Machine-generated training masks for the pilot U-Net (green fruit, orange dark/decay region). Not human ground truth.")
+    d.fig("unet_pilot_overlays.png", "Pilot U-Net on held-out test images: input, machine-generated reference mask and U-Net prediction.")
+    d.p("The U-Net demonstrates the complete segmentation pipeline (data → masks → training with BCE + Dice → API → UI overlay and decay-coverage %). Because its reference masks are machine-generated, its Dice/IoU measure agreement with those masks, not with human decay boundaries; decay Dice is also inflated by images with no decay (both masks empty count as perfect). A validated U-Net requires human-drawn polygons.")
+
 DAY_STATUS = "COMPLETE" if day_done == 3 else "IN PROGRESS"
 
 
@@ -181,8 +204,12 @@ def doc_status():
          f"frozen-ViT features, k=6: NMI(produce) {F['kmeans']['vit_frozen']['alignment']['k6_test']['NMI_produce']:.3f} on test"],
         ["XAI implementation + explanations", "COMPLETE", "`backend/inference.py` (served), `artifacts/experiments/xai/`; Document B",
          f"attention rollout; deletion test drop {XF['mean_drop_top_rollout']:.3f} vs random {XF['mean_drop_random']:.3f}; stability ρ(flip) {XS['flip_consistency']['mean']:.2f}"],
-        ["U-Net segmentation", "BLOCKED", "`Foresight-TR6-plus/annotations/` (12 proposal-only masks)",
-         "0 human-reviewed masks (annotation status: " + ", ".join(f"{k} {v}" for k, v in TR["annotation_status_counts"].items()) + "); training on proposals would be fabricated ground truth"],
+        ["U-Net segmentation", "IN PROGRESS", "`ml/experiments/unet_pilot.py`, `backend/models/unet_pilot.pt`, `backend/unet_model.py`",
+         f"PILOT served by the API: trained on {UP['n_train']} machine-generated masks; fruit Dice {UP['mean']['fruit_dice']:.2f}, decay Dice {UP['mean']['decay_dice']:.2f} vs machine masks (n={UP['n_eval']}); 0 human-drawn polygons, so not validated"],
+        ["Visible-decay check (human labels)", "COMPLETE", "`ml/experiments/visible_decay_probe.py`, `backend/models/visible_decay_probe.json`",
+         f"165 human decisions; test accuracy {VDR['probe_test']['accuracy']:.3f} (n={VDR['probe_test']['n']}); served by the API"],
+        ["Shelf-life (proxy regression)", "COMPLETE", "`ml/experiments/shelf_life_proxy.py`, `backend/models/shelf_life_proxy.json`",
+         f"PROXY target (days to 'Spoiled' label); test MAE {SL['test']['mae_days']:.2f} d, R² {SL['test']['r2']:.2f}; served by the API"],
         ["YOLO detection", "NOT IMPLEMENTED", "—", "TR-6 images are single-item with no bounding boxes; detection not justified for the current data"],
         ["FastAPI backend", "COMPLETE", "`backend/main.py`, `inference.py`, `db.py`; 23 backend tests", "real checkpoint loaded at startup; validation, structured errors, CORS, SQLite history, PDF, XAI"],
         ["React frontend integration", "COMPLETE", "`frontend/src/api.js`, pages; build + 7 Vitest tests + UI contract check",
@@ -199,14 +226,14 @@ def doc_status():
             rows, widths=[19, 14, 33, 34], small=True)
     d.h1("Does an actual AI model exist?")
     q = [
-        ["1. Which AI/ML models are implemented?", "ViT-B/16 two-head classifier (deployed); ViT-S/16 (ablations); class-conditional DCGAN; DnCNN denoiser; logistic-regression baselines on colour histograms and frozen ViT features; K-means; attention-rollout XAI. U-Net, shelf-life regression and YOLO are NOT implemented.", "`ml/`, `backend/inference.py`"],
+        ["1. Which AI/ML models are implemented?", "ViT-B/16 two-head classifier (deployed); ViT-S/16 (ablations); class-conditional DCGAN; DnCNN denoiser; logistic-regression baselines on colour histograms and frozen ViT features; K-means; attention-rollout XAI; visible-decay probe (human labels); PILOT U-Net (machine-generated masks); PROXY shelf-life ridge regressor. YOLO is NOT implemented.", "`ml/`, `backend/inference.py`"],
         ["2. Which have been trained?", f"ViT-B/16 primary (1 run); ViT-S/16 ({len([r for r in V1.values() if r])} v1 runs + {v2_done} controlled v2 runs + {day_done} day-split runs); cDCGAN ({F['gan']['train']['epochs']} epochs); DnCNN; both logistic-regression baselines; K-means fitted on train.", "`artifacts/runs/`, `artifacts/experiments/`"],
         ["3. Which checkpoints exist and where?", f"`{P['checkpoint']}` and its deployed copy `backend/models/foresight_vit.pt`; `artifacts/runs/*/best.pt` for every ViT-S run; `artifacts/experiments/gan/cdcgan.pt`; `artifacts/experiments/dncnn/dncnn.pt`" + (", `dncnn_v2/dncnn.pt`" if dn2 else "") + ".", "file listing"],
-        ["4. Which models does the backend load?", f"Only the ViT-B/16 checkpoint, loaded once at startup (version `vit_b16_primary@epoch{P['best_epoch']}`, device {E2E['device']}). GAN, DnCNN and baselines are research-only.", "`/health`, `/api/models`"],
+        ["4. Which models does the backend load?", f"The ViT-B/16 checkpoint (version `vit_b16_primary@epoch{P['best_epoch']}`, device {E2E['device']}) plus three add-ons: visible-decay probe, pilot U-Net, proxy shelf-life. GAN, DnCNN and baselines are research-only.", "`/health`, `/api/models`"],
         ["5. Does the frontend invoke genuine inference?", f"Yes. The UI posts the image to `POST /api/analyze`; the response comes from the ViT forward pass. Verified through the browser UI and by sending {E2E['held_out_images_via_api']} held-out originals through HTTP (produce {E2E['produce_correct']}/{E2E['held_out_images_via_api']}, spoilage {E2E['spoilage_correct']}/{E2E['held_out_images_via_api']} correct).", "`evidence/e2e_smoke_final.json`"],
         ["6. Are any predictions mock/hard-coded/simulated?", "No in the default configuration. `mock_model.py` keeps a random simulator for UI development only; it runs only when `FORESIGHT_MOCK_MODE=1` (default 0) and every such response is labelled **DEMO MOCK DATA** (test B15). Hard-coded fake detections (\"Apple 98%\") and fixed values were removed from the UI. Nutrition facts and tips are static reference text, not predictions.", "test B15, UI contract check (`mock=false`)"],
         ["7. Is a working AI component demonstrable from upload to UI?", "Yes: upload → validation → decode/EXIF/resize → ViT-B/16 → softmax → deterministic result composer → JSON → React card with attention-rollout overlay → SQLite history.", "Document E, Section 7"],
-        ["8. What remains before it is an *integrated AI application* in the full specified sense?", "It already is an integrated single-model AI application. The originally specified multi-model scope still lacks: reviewed decay masks → U-Net; valid time-to-endpoint labels → shelf-life; bounding boxes → detection; evaluation on real-world (non-lab) photos; calibration; third-party deployment.", "Section 5"],
+        ["8. What remains before it is an *integrated AI application* in the full specified sense?", "It is an integrated AI application. Still missing for the full specified scope: human-drawn decay masks → a validated U-Net (current one is a pilot); measured time-to-endpoint labels → true shelf-life (current one is a proxy); bounding boxes → detection; evaluation on real-world (non-lab) photos; calibration; third-party deployment.", "Section 5"],
     ]
     d.table("Questions on the existence and integration of a genuine AI model.", ["Question", "Answer", "Evidence"], q, widths=[22, 58, 20], small=True)
     d.h1("Backend and frontend integration verification")
@@ -233,8 +260,8 @@ def doc_status():
             widths=[10, 30, 60], small=True)
     d.h1("Remaining work")
     d.table("Items that cannot honestly be called complete.", ["Item", "Status", "What is required"], [
-        ["U-Net decay segmentation", "BLOCKED", "Human-reviewed decay masks (≥ a few hundred) with a written rubric; currently 0 reviewed, 12 machine proposals."],
-        ["Shelf-life regression", "BLOCKED", "Measured time-to-endpoint labels; TR-6 provides none."],
+        ["Validated U-Net decay segmentation", "IN PROGRESS", "Human-drawn decay polygons (current pilot is trained on machine-generated masks)."],
+        ["True shelf-life prediction", "BLOCKED", "Measured time-to-endpoint labels; the served estimate is a proxy from date-based labels."],
         ["YOLO detection", "NOT IMPLEMENTED", "Multi-item photographs with bounding-box annotations."],
         ["Real-world generalisation", "NOT RUN", "A labelled set of phone photos outside the TR-6 lab setting."],
         ["Human annotation (TR-6+)", "IN PROGRESS", "0 of 96 pilot images annotated by a human in Label Studio/CVAT."],
@@ -551,7 +578,10 @@ def doc_results():
         ["Conditional DCGAN", "training-only augmentation", "YES", "artifacts/experiments/gan/cdcgan.pt", "research only"],
         ["DnCNN (depth 17)", "denoising experiment", "YES (under-trained)" if not dn2 else "YES", "artifacts/experiments/dncnn*/dncnn.pt", "research only"],
         ["Logistic regression ×2", "baselines", "YES", "metrics only", "research only"], ["K-means", "exploratory clustering", "YES (fit on train)", "metrics only", "research only"],
-        ["U-Net", "decay segmentation", "NOT RUN", "—", "BLOCKED"], ["YOLO", "detection", "NOT RUN", "—", "NOT IMPLEMENTED"], ["Shelf-life regressor", "regression", "NOT RUN", "—", "BLOCKED"]],
+        ["U-Net (ResNet-18 encoder)", "fruit + decay segmentation", "PILOT (machine masks)", "backend/models/unet_pilot.pt", "YES (labelled pilot)"],
+        ["Visible-decay probe", "image-level visible decay", "YES (human labels)", "backend/models/visible_decay_probe.json", "YES"],
+        ["Shelf-life ridge regressor", "PROXY days to 'Spoiled' label", "YES", "backend/models/shelf_life_proxy.json", "YES (labelled proxy)"],
+        ["YOLO", "detection", "NOT RUN", "—", "NOT IMPLEMENTED"]],
         widths=[22, 20, 15, 29, 14], small=True)
     d.h1("Training history")
     d.fig("primary_training_loss.png", "Training (augmented) and validation loss of the deployed ViT-B/16.")
@@ -613,12 +643,13 @@ def doc_results():
         ["Primary training time", f"{P['train_minutes']} min (12 epochs, MPS)"]], widths=[55, 45])
     d.fig("api_latency.png", "Distribution of end-to-end API latency in the E2E smoke test.", width=0.6)
     d.h1("API / UI integration results")
-    d.p(f"The React UI calls the FastAPI backend, which loads the selected checkpoint once at startup. In the end-to-end test {E2E['held_out_images_via_api']} held-out full-resolution originals were analysed via HTTP: produce correct {E2E['produce_correct']}/{E2E['held_out_images_via_api']}, spoilage correct {E2E['spoilage_correct']}/{E2E['held_out_images_via_api']}; {E2E['passed']}/{E2E['total']} E2E checks passed and {T['ui_contract']['fields_present']}/{T['ui_contract']['fields_checked']} UI-consumed fields were present in real responses. Limitations: single-item mode only; no shelf-life or decay-area output; mock mode exists but is off by default and labelled.")
+    d.p(f"The React UI calls the FastAPI backend, which loads the selected checkpoint once at startup. In the end-to-end test {E2E['held_out_images_via_api']} held-out full-resolution originals were analysed via HTTP: produce correct {E2E['produce_correct']}/{E2E['held_out_images_via_api']}, spoilage correct {E2E['spoilage_correct']}/{E2E['held_out_images_via_api']}; {E2E['passed']}/{E2E['total']} E2E checks passed and {T['ui_contract']['fields_present']}/{T['ui_contract']['fields_checked']} UI-consumed fields were present in real responses. The API also returns a visible-decay check, a pilot U-Net decay mask with decay-coverage %, and a proxy shelf-life estimate, each labelled in the UI. Limitations: single-item mode only; the U-Net is a pilot and shelf-life is a proxy; mock mode exists but is off by default and labelled.")
     d.h1("Conclusions")
     d.bul([f"A genuine ViT-B/16 classifier was trained on {SPL['eligible_samples']:,} de-duplicated TR-6 images and reaches test spoilage macro-F1 {f3(TS['macro_f1'])} (session-bootstrap 95% CI {BOOT['spoil_macro_f1_95ci'][0]:.3f}–{BOOT['spoil_macro_f1_95ci'][1]:.3f}) and perfect produce classification; it is integrated and serving real predictions.",
            "Performance is optimistic for real-world use: specimens recur across splits, a day-grouped split lowers performance (Document C), lab backgrounds are uniform, and confidence is poorly calibrated on errors.",
            "The weakest point is recall of 'Spoiled' for Indian Gooseberry and Tomato, plausibly because date-based labels precede visible decay.",
-           "Segmentation, shelf-life and detection remain blocked by missing annotations, not by code."])
+           "A pilot U-Net (machine-generated masks), a human-label visible-decay check and a proxy shelf-life estimate are integrated and labelled as such; validated segmentation and true shelf-life still require human masks and measured endpoint labels."])
+    extra_models_section(d)
     return d.save("D_Final_Results_and_Model_Metrics_Report.docx")
 
 
@@ -626,6 +657,8 @@ def doc_results():
 TEST_DESC = {
     "test_health_reports_loaded_model": ("API", "Health reports model state", "tiny fixture checkpoint", "GET /health, /api/health", "200; model_loaded true; mock false"),
     "test_models_lists_honest_statuses": ("API", "Honest model statuses", "fixture", "GET /api/models", "vit loaded; unet unavailable; shelf_life disabled"),
+    "test_unet_segmentation_when_trained": ("Model", "Pilot U-Net served", "real checkpoint + U-Net", "POST original", "mask overlay; decay % in [0,100]"),
+    "test_shelf_life_proxy_served": ("Model", "Proxy shelf-life served", "real checkpoint + proxy", "POST original", "status proxy_target; integer days ≥ 0"),
     "test_analyze_valid_jpeg_returns_real_inference_contract": ("API", "Inference contract; no invented values", "fixture", "POST JPEG", "200; source model; probabilities sum 1; days/decayPct null"),
     "test_analyze_is_deterministic": ("Model", "Deterministic inference", "fixture", "POST same image twice", "identical probabilities"),
     "test_analyze_png_and_webp": ("API", "PNG/WEBP accepted", "fixture", "POST PNG and WEBP", "200"),
@@ -647,6 +680,8 @@ TEST_DESC = {
     "test_real_inference_on_held_out_source_images": ("Model", "Real inference on held-out originals", "12 test originals (1/stratum)", "POST full-res JPEGs", "produce ≥11/12, spoilage ≥9/12"),
     "test_backend_preprocessing_matches_training_cache": ("Data", "Reproducible preprocessing", "1 original + cache", "decode/EXIF/resize vs cache", "same size; mean abs diff < 3"),
     "test_png_upload_of_real_image": ("Model", "PNG of real image + XAI", "real checkpoint", "POST PNG ?xai", "200; overlay present"),
+    "test_visible_decay_unavailable_without_probe": ("API", "Visible-decay check absent → explicit status", "fixture, no probe", "POST JPEG; GET /api/models", "status unavailable; probability null"),
+    "test_visible_decay_probe_served": ("Model", "Visible-decay probe served", "real checkpoint + probe", "GET /api/models; POST original", "loaded; probability in [0,1]"),
     "test_manifest_schema": ("Data", "Manifest schema", "split manifest", "check columns; unique hashes", "required fields; 1 row/content"),
     "test_eligible_rows_have_valid_labels": ("Data", "Valid labels; no invented IDs", "manifest", "check eligible rows", "6 classes × 2 labels; specimen_id empty"),
     "test_conflicting_labels_excluded": ("Data", "Conflicts excluded", "manifest", "count conflicts", "170 excluded"),
@@ -737,10 +772,11 @@ def doc_eval():
     d = Doc("AI Model Testing and Evaluation Report", "AI model evaluation", "Problem definition, data, training, evaluation, robustness, limitations and deployment verification of the Foresight spoilage classifier.", META("F — AI model testing and evaluation"))
     d.h1("Problem statement and intended use")
     d.p("Task: given one RGB photograph of a single fruit or vegetable from six supported types, predict (a) the produce type and (b) whether it shows the visual characteristics of TR-6 images labelled 'Spoiled'. "
-        "Intended use: an educational research prototype that flags visible spoilage cues. It is **not** a food-safety determination, cannot see internal decay, and does **not** estimate shelf life (no valid time-to-endpoint labels exist).")
+        "Intended use: an educational research prototype that flags visible spoilage cues. It is **not** a food-safety determination, cannot see internal decay, and its shelf-life output is a **proxy** (days until the dataset's 'Spoiled' label), not measured remaining shelf life.")
     d.table("Prediction scope.", ["Output", "Classes / form", "Supported?"], [
         ["Produce type", ", ".join(nice(c) for c in PROD), "YES"], ["Spoilage", "Not spoiled / Spoiled (softmax score, uncalibrated)", "YES"],
-        ["Shelf-life (days)", "—", "NO (BLOCKED: no labels)"], ["Decay mask / area", "—", "NO (BLOCKED: no reviewed masks)"], ["Multiple items per photo", "—", "NO (single-item mode)"]], widths=[25, 55, 20])
+        ["Shelf-life (days)", "proxy: days until TR-6 'Spoiled' label", "PROXY"], ["Decay mask / area", "pilot U-Net (machine-generated training masks)", "PILOT"],
+        ["Visible decay (image-level)", "probe trained on human labels", "YES"], ["Multiple items per photo", "—", "NO (single-item mode)"]], widths=[25, 55, 20])
     d.h1("Do the labels support a spoilage interpretation?")
     d.p("The spoilage target is the TR-6 `Classified/{Spoiled, Not_spoiled}` folder label supplied by the dataset authors. Evidence gathered: (i) every Classified image is a byte-identical copy of a Normal image, i.e. the labels were assigned to an existing time series; "
         f"(ii) within each produce type the label is a function of capture date — the last Not_spoiled capture precedes the first Spoiled capture for {sum(v['all_not_spoiled_before_all_spoiled'] for v in F['label_date_order'].values())} of 6 produce types (" + "; ".join(f"{nice(t)}: NS {v['not_spoiled_first'][:10]}→{v['not_spoiled_last'][:10]}, S {v['spoiled_first'][:10]}→{v['spoiled_last'][:10]}" for t, v in F['label_date_order'].items()) + "); "
@@ -795,6 +831,19 @@ def doc_eval():
         ["Frozen ViT-B + LogReg", f3(b["vit_frozen"]["test_spoil"]["macro_f1"]), f3(b["vit_frozen"]["test_spoil"]["accuracy"]), f3(b["vit_frozen"]["test_spoil"]["roc_auc"])],
         ["ViT-B/16 fine-tuned (deployed)", f3(TS["macro_f1"]), f3(TS["accuracy"]), f3(TS["roc_auc"])]], widths=[40, 20, 20, 20],
         source="Majority-class values computed from test support (always predicting Not spoiled).")
+    VD = json.loads((ROOT / "artifacts/experiments/visible_decay/results.json").read_text())
+    d.h1("Human visible-decay labels and the visible-decay check")
+    d.p(f"A 180-image annotation round in Label Studio produced image-level human decisions (no polygons were drawn, so U-Net segmentation remains BLOCKED). {VD['n_definite']} images received a definite decision. "
+        f"Agreement with the TR-6 folder label is {pct(VD['dataset_label_vs_human']['agreement'])}: Spoiled-labelled images showed visible decay in {VD['dataset_label_vs_human']['spoiled_labelled_with_visible_decay']}, Not-spoiled-labelled images in {VD['dataset_label_vs_human']['not_spoiled_labelled_with_visible_decay']}.")
+    d.fig("human_vs_dataset_label.png", "Share of images judged to show visible decay by the human annotator, per produce and TR-6 folder label.")
+    pt, bt = VD["probe_test"], VD["spoilage_head_as_decay_test"]
+    d.table(f"Test agreement with human visible-decay labels (n = {pt['n']}; probe C = {VD['C_selected']} selected on validation).", ["Predictor", "Accuracy (95% Wilson CI)", "Macro-F1", "ROC-AUC"], [
+        ["Visible-decay probe on deployed ViT embedding (served by the API)", f"{pt['accuracy']:.3f} ({pt['accuracy_95ci_wilson'][0]:.2f}–{pt['accuracy_95ci_wilson'][1]:.2f})", f3(pt["macro_f1"]), f3(pt["roc_auc"])],
+        ["Spoilage head used as a decay check (p ≥ 0.5)", f"{bt['accuracy']:.3f} ({bt['accuracy_95ci_wilson'][0]:.2f}–{bt['accuracy_95ci_wilson'][1]:.2f})", f3(bt["macro_f1"]), f3(bt["roc_auc"])]],
+        widths=[46, 22, 14, 18], source="`artifacts/experiments/visible_decay/results.json`")
+    d.fig("visible_decay_test_confusions.png", "Test confusion matrices against human visible-decay labels.", width=0.8)
+    d.p("The probe is trained on one annotator's judgements of 102 images; the test set is small and the intervals overlap, so it is an indicative, human-aligned check rather than a validated detector. It is shown in the UI as 'Visible decay check'.")
+    extra_models_section(d, "Pilot U-Net and proxy shelf-life")
     d.h1("Limitations")
     d.bul(["Specimen leakage: TR-6 has no specimen IDs; the same fruits appear in train and test. A day-grouped split lowers performance (Document C).",
            "Labels are date-based folder labels, not independent assessments of spoilage.",
@@ -858,7 +907,7 @@ def doc_tr6():
     d.h1("Annotations")
     cal = TR["calibration"]
     d.p(f"Label Studio calibration batch: {cal['batch_size']} images with machine-generated foreground polygons (status `{cal['status']}`, defect masks {cal['defect_masks']}). These are **proposals**, not ground truth; proposal `tr6p_073` (Mango thermal) is known to be wrong. "
-        "No human has reviewed or submitted an annotation; CVAT is not installed. Consequently U-Net training is blocked.")
+        "A second round (180 images, project 'Foresight U-Net decay') collected 180 image-level human decisions but 0 polygons; these decisions train the visible-decay check and gate the machine-generated masks used by the pilot U-Net. Human-drawn decay polygons remain outstanding.")
     d.h1("Documentation present")
     d.table("Publication documentation in the v1.1.0 package.", ["Document", "Present", "Notes"], [
         ["README with purpose, scope, structure, provenance", "YES", "v1.0.0 README + v1.1.0 section"], ["DATA_DICTIONARY.md", "YES", "field definitions"],

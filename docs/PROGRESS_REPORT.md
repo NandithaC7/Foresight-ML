@@ -1,5 +1,14 @@
 # Foresight — progress report (2026-10-15)
 
+> **Update 2026-10-17 (visible-decay check):** The 180-image annotation round recorded image-level decisions only (0 polygons), so U-Net remains BLOCKED.
+> - **Human decisions:** 78 visible decay, 87 no visible decay, 15 ambiguous.
+> - **New model:** a logistic probe on the deployed ViT embedding (`ml/experiments/visible_decay_probe.py`), trained on the 102 train-split human labels.
+> - **Test result (n = 29):** accuracy 0.931 (95% CI 0.78–0.98), ROC-AUC 0.986.
+> - **Comparison:** the spoilage head used as a decay check scores 0.897.
+> - **Labels vs humans:** TR-6 "Spoiled" images showed visible decay in only 72/109 cases (tomato 2/20).
+> - **Integration:** served by `/api/analyze` as `visible_decay_*` fields and shown in the UI.
+
+
 > **Update 2026-10-16:** superseded where it conflicts by `releases/final_review/`. Completed since this file was written:
 > - a controlled 3-seed ablation (real only 0.914 ± 0.006, conventional augmentation 0.928 ± 0.007, + GAN 0.919 ± 0.018 test spoilage macro-F1; no GAN benefit)
 > - a 3-seed day-grouped split (0.830 ± 0.007, i.e. −0.098 vs the session split)

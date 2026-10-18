@@ -1,0 +1,17 @@
+{
+ "runtime": "onnxruntime 1.31 int8 (MatMul/Gemm only)",
+ "n": 1071,
+ "type_accuracy": 1.0,
+ "spoil_accuracy": 0.9561157796451915,
+ "spoil_macro_f1": 0.9481404556370481,
+ "cm": [
+  [
+   722,
+   9
+  ],
+  [
+   38,
+   302
+  ]
+ ]
+}

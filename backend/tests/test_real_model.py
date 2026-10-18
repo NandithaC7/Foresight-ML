@@ -33,7 +33,10 @@ def held_out_rows(per_stratum=1):
 @pytest.fixture(scope="module")
 def real_client(tmp_path_factory):
     mp = pytest.MonkeyPatch()
-    with make_client(mp, tmp_path_factory.mktemp("real"), REAL_CKPT) as c:
+    probe = REAL_CKPT.parent / "visible_decay_probe.json"
+    with make_client(mp, tmp_path_factory.mktemp("real"), REAL_CKPT, probe=probe if probe.exists() else None,
+                     unet=(REAL_CKPT.parent / "unet_pilot.pt") if (REAL_CKPT.parent / "unet_pilot.pt").exists() else None,
+                     shelf=(REAL_CKPT.parent / "shelf_life_proxy.json") if (REAL_CKPT.parent / "shelf_life_proxy.json").exists() else None) as c:
         yield c
     mp.undo()
 
@@ -79,3 +82,31 @@ def test_png_upload_of_real_image(real_client):
     res = real_client.post("/api/analyze", files={"photo": ("x.png", buf.getvalue(), "image/png")}, params={"xai": "true"})
     assert res.status_code == 200
     assert res.json()["items"][0]["xai_overlay"].startswith("data:image/png")
+
+
+def test_visible_decay_probe_served(real_client):
+    models = {m["id"]: m for m in real_client.get("/api/models").json()["models"]}
+    assert models["visible_decay"]["status"] == "loaded"
+    r = held_out_rows()[0]
+    it = real_client.post("/api/analyze", files={"photo": ("x.jpg", (DATASET / r["source_relative_path"]).read_bytes(), "image/jpeg")}).json()["items"][0]
+    assert it["visible_decay_status"] == "model" and 0 <= it["visible_decay_probability"] <= 1
+    assert it["visible_decay_label"] in ("Visible decay", "No visible decay")
+
+
+def test_unet_segmentation_when_trained(real_client):
+    models = {m["id"]: m for m in real_client.get("/api/models").json()["models"]}
+    if models["unet"]["status"] != "loaded":
+        pytest.skip("no trained U-Net checkpoint")
+    r = held_out_rows()[0]
+    it = real_client.post("/api/analyze", files={"photo": ("x.jpg", (DATASET / r["source_relative_path"]).read_bytes(), "image/jpeg")}).json()["items"][0]
+    assert it["decay_mask_available"] is True and it["segmentation_status"] == "pilot_model"
+    assert it["decay_mask_overlay"].startswith("data:image/png") and (it["decayPct"] is None or 0 <= it["decayPct"] <= 100)
+
+
+def test_shelf_life_proxy_served(real_client):
+    models = {m["id"]: m for m in real_client.get("/api/models").json()["models"]}
+    if models["shelf_life"]["status"] != "loaded":
+        pytest.skip("no shelf-life proxy model")
+    r = held_out_rows()[0]
+    it = real_client.post("/api/analyze", files={"photo": ("x.jpg", (DATASET / r["source_relative_path"]).read_bytes(), "image/jpeg")}).json()["items"][0]
+    assert it["shelf_life_status"] == "proxy_target" and isinstance(it["days"], int) and it["days"] >= 0
